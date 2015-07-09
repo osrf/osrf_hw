@@ -1,16 +1,8 @@
 #!/usr/bin/env python
 
 import csv
-#import argparse
 import os
 import sys
-
-#parser = argparse.ArgumentParser()
-#parser.add_argument('-s','--schfile', default=None, help='SCH file to update')
-#parser.add_argument('-b','--bomfile', default=None, help='BOM/CSV file to import')
-#
-#args = parser.parse_args()
-#
 
 #FIXME: Pair stuff is very messy
 def findBloc(string, keyword):

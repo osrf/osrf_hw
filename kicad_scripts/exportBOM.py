@@ -1,14 +1,9 @@
 #!/usr/bin/env python
 
 import csv
-#import argparse
 import os
 import sys
 
-#parser = argparse.ArgumentParser()
-#parser.add_argument('-f','--file', default=None, help='file to convert')
-#
-#args = parser.parse_args()
 def findBloc(string, keyword):
     keyword = keyword[0].upper() + keyword[1:].lower()
     idx = string.find('$'+keyword)
@@ -24,7 +19,7 @@ def findSheets(filename):
         idxbeg =0;idxend=0
         sheetList = []
 
-        while txt != '': # while there are still $Comp tags
+        while txt != '': 
             # find sheet blocs
             [idx1,idx2] = findBloc(txt,'Sheet')
             if idx1 == -1 :
@@ -40,11 +35,7 @@ def findSheets(filename):
                     idx3 = sheetContent.find('\n')
                     line = sheetContent[0:idx3]
                     sheetContent = sheetContent[idx3+1:]
-                    # extract the ID: we shouldn't need the ID
-                    if line.startswith('U'):
-                        linelist = line.split(' ')
-                        ID = linelist[-1]
-                    elif line.startswith('F'):
+                    if line.startswith('F'):
                         if line.find('.sch') != -1:
                             listt = line.split(' ')
                             for l in listt:
@@ -94,7 +85,7 @@ def extractComponentList(filename,dictComponent):
                                 pair.append([idxq1, idxq2])
                     # perform space based separation
                     linelist = line[0:pair[0][0]].split(' ')
-                    #generate liste with all resulting elements
+                    #generate list with all resulting elements
                     for i in range(len(pair)):
                         linelist.append(line[pair[i][0]:pair[i][1]+1])
                         try:

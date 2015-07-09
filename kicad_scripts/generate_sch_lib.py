@@ -88,7 +88,7 @@ parser.add_argument('--NInth',default=0,type=int, help='number of missing rows i
 parser.add_argument('--NIntw',default=0,type=int, help='number of missing cols in the center of the package ONLY IF BGA')
 parser.add_argument('--name',default='COMPONENT_NAME', help='component name')
 parser.add_argument('--prefix',default='U', help='component prefix')
-parser.add_argument('--module',default='module or package name', help='module or package name')
+parser.add_argument('--footprint',default='NO_FOOTPRINT', help='footrpint reference LIBRARYNAME:FOOTPRINTNAME')
 parser.add_argument('--brief',default='DESCRIPTION', help='component/package description')
 parser.add_argument('-f', '--pinoutFile',default='', help='path of the pinout CSV file: CSV format should be: PIN_NAME,PIN_NUMBER')
 args = parser.parse_args()
@@ -161,7 +161,7 @@ outstring += '#\n# ' + str(args.name) + '\n#\nDEF '
 outstring += args.name + ' U 0 40 Y Y 1 0 N\n'
 outstring += 'F0 "' + args.prefix + '" ' + str(rectxmin) + ' ' + str(rectymax+2*pinNumberTextSize) + ' 50 H V C C\n'
 outstring += 'F1 "' + args.name + '" ' + str(rectxmin) + ' ' + str(rectymin - 2*pinNumberTextSize) + ' 50 H V C C\n'
-outstring += 'F2 "' + args.module + '" 0 ' + str(-pinNumberTextSize)+ ' 50 H I C C\n'
+outstring += 'F2 "' + args.footprint + '" 0 ' + str(-pinNumberTextSize)+ ' 50 H I C C\n'
 outstring += 'F3 "' + args.brief + '" 0 ' + str(pinNumberTextSize) + ' 50 H I C C\nDRAW\n'
 outstring += 'S '+str(rectxmin)+' '+str(rectymin)+' '+str(rectxmax)+' '\
              +str(rectymax)+ ' 0 1 0 f\n'
