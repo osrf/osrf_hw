@@ -55,3 +55,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Temp and backup
+*.swp
+*.bak
+*.bck
+*-rescue*
