@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SN74LVC1T45
+D Voltage level translator
+K Voltage translator 5V
+F http://www.digikey.com/product-detail/en/SN74LVC1T45DBVR/296-16843-2-ND/639455
+$ENDCMP
+#
+#End Doc Library

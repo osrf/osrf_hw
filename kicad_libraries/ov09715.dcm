@@ -1,3 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP OV09715
+D Omnivision vision sensor, 1280x800, 640x480, 
+K Camera Vision OV  1280x800 640x480 60fps
+F http://www.ovt.com/download_document.php?type=sensor&sensorid=43
+$ENDCMP
+#
 #End Doc Library

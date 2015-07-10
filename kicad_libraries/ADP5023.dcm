@@ -1,3 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP ADP5023
+D DualBuck Single LDO
+K DC-DC Converter Buck Dual-Buck
+F http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5023.pdf
+$ENDCMP
+#
 #End Doc Library

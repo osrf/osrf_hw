@@ -6,8 +6,9 @@ import time
 import sys
 import csv
 
+#FIXME Add fields F4-F21 (add only necessary according to Reference ?)
 #TODO allow config file instead of commandline arguments
-#FIXME FEATURE: sort dictionary ? add pin by name and not by pin number ==> allow to put together power, banks etc
+#TODO FEATURE: sort dictionary ? add pin by name and not by pin number ==> allow to put together power, banks etc
 #               Would require a "TRUST MY PINOUT" file argument: +> sort + resize + give number of pins and CSV layout
 #TODO Detect pinout file ? like check for known colums names: or ask user to put specific names to the column wanted
 #LIMITATIONS doesnt handle UFBGA like packages
@@ -91,6 +92,9 @@ parser.add_argument('--prefix',default='U', help='component prefix')
 parser.add_argument('--footprint',default='NO_FOOTPRINT', help='footrpint reference LIBRARYNAME:FOOTPRINTNAME')
 parser.add_argument('--brief',default='DESCRIPTION', help='component/package description')
 parser.add_argument('-f', '--pinoutFile',default='', help='path of the pinout CSV file: CSV format should be: PIN_NAME,PIN_NUMBER')
+parser.add_argument('-d', '--datasheet',default='http://www.digikey.com', help='URI of the datasheet')
+parser.add_argument('-k', '--keywords',default='Some Keywords', help='Keyword defining the component for quick search')
+
 args = parser.parse_args()
 
 ################################
@@ -104,25 +108,39 @@ def importCSV(filename):
         reader = csv.reader(infile)
         pinDict = {rows[1]:rows[0] for rows in reader}
     return pinDict
+def correctModulo(table):
+    for r in table:
+        if r%100 != 0:
+            r -= r%100
+    return table
 
 def rectCorners(width,height, typechip, package, stepx, stepy, initoffsetx, initoffsety):
 # return coordinate of top-left and bottom-right corner of the schematic rectangle
+    res = []
     if typechip == 'BGA':
-        return [-(2*initoffsetx+(width*height-args.NIntw*args.NInth)/8*stepx),\
+        res = [-(2*initoffsetx+(width*height-args.NIntw*args.NInth)/8*stepx),\
                 -(2*initoffsety+(width*height-args.NIntw*args.NInth)/8*stepy),\
                 2*initoffsetx+(width*height-args.NIntw*args.NInth)/8*stepx, \
                 2*initoffsety+(width*height-args.NIntw*args.NInth)/8*stepy]
+        res = correctModulo(res)
+        return res
     elif typechip == 'OTHER':
         if package == 'SIL' or package == 'SIL-ALT':
-            return [-initoffsetx,-(initoffsety + height/2*stepy), initoffsetx, initoffsety + height/2*stepy]
+            res = [-initoffsetx,-(initoffsety + height/2*stepy), initoffsetx, initoffsety + height/2*stepy]
+            res = correctModulo(res)
+            return res
         elif package == 'DIL' or package == 'CONN1' or package == 'CONN2':
             if(width !=2):
                 print('WARNING: assume width=2 because of package chosen')
-            return [-2*initoffsetx,-height/2*stepy-initoffsety,2*initoffsetx,height/2*stepy+initoffsety]
+                res = [-2*initoffsetx,-height/2*stepy-initoffsety,2*initoffsetx,height/2*stepy+initoffsety]
+                res = correctModulo(res)
+                return res
         elif package == 'PLCC' or package == 'PQFP':
             Npin = 2*height+2*width
-            return [-(2*initoffsetx + Npin/8*stepx),-(2*initoffsety + Npin/8*stepy)\
+            res = [-(2*initoffsetx + Npin/8*stepx),-(2*initoffsety + Npin/8*stepy)\
                     , 2*initoffsetx + Npin/8*stepx, 2*initoffsety + Npin/8*stepy]
+            res = correctModulo(res)
+            return res
         else:
             print('unknown package, expected SIL,SIL-ALT,DIL,CONN1,CONN2,PLCC,PQFP')
     else:
@@ -150,19 +168,19 @@ BGAdico=['A','B','C','D','E','F','G','H','J','K','L','M','N','P','R','T','U','V'
         'W','Y','AA','AB','AC','AD','AE','AF','AG','AH','AJ','AK']
 length = 300
 typePin = 'U'
-pinNumberTextSize = 50
-pinNameTextSize = 50
+textSize = 50
 stepx = 200; stepy = 200
 initoffsetx = 200
 initoffsety = 200
+#TODO Add other parameters F4 -> F21
 [rectxmin,rectymin,rectxmax,rectymax]=rectCorners(args.width,args.height,args.typechip,args.package,stepx,stepy,initoffsetx,initoffsety)
 outstring = 'EESchema-LIBRARY Version 2.2 Date: ' + time.strftime("%d/%m/%Y") + '-' + time.strftime('%H:%M:%S') + '\n'
-outstring += '#\n# ' + str(args.name) + '\n#\nDEF '
-outstring += args.name + ' U 0 40 Y Y 1 0 N\n'
-outstring += 'F0 "' + args.prefix + '" ' + str(rectxmin) + ' ' + str(rectymax+2*pinNumberTextSize) + ' 50 H V C C\n'
-outstring += 'F1 "' + args.name + '" ' + str(rectxmin) + ' ' + str(rectymin - 2*pinNumberTextSize) + ' 50 H V C C\n'
-outstring += 'F2 "' + args.footprint + '" 0 ' + str(-pinNumberTextSize)+ ' 50 H I C C\n'
-outstring += 'F3 "' + args.brief + '" 0 ' + str(pinNumberTextSize) + ' 50 H I C C\nDRAW\n'
+outstring += '#encoding utf-8\n#\n# ' + str(args.name) + '\n#\nDEF '
+outstring += args.name + ' U 0 40 Y Y 1 F N\n'
+outstring += 'F0 "' + args.prefix + '" ' + str(rectxmin) + ' ' + str(rectymax+2*textSize) + ' 50 H V C C\n'
+outstring += 'F1 "' + args.name + '" ' + str(rectxmin) + ' ' + str(rectymin - 2*textSize) + ' 50 H V C C\n'
+outstring += 'F2 "' + args.footprint + '" 0 ' + str(-textSize)+ ' 50 H I C C\n'
+outstring += 'F3 "' + args.brief + '" 0 ' + str(textSize) + ' 50 H I C C\nDRAW\n'
 outstring += 'S '+str(rectxmin)+' '+str(rectymin)+' '+str(rectxmax)+' '\
              +str(rectymax)+ ' 0 1 0 f\n'
 
@@ -212,8 +230,8 @@ if args.typechip == 'BGA':
                     posy = rectymax + length
                 outstring += 'X '+ checkPinList(string) + ' ' + string\
                             + ' ' + str(posx) + ' ' + str(posy) + ' ' + str(length)\
-                            + ' ' + side + ' ' + str(pinNumberTextSize) + ' ' + \
-                            str(pinNameTextSize) + ' 1 1 ' + typePin + '\n'
+                            + ' ' + side + ' ' + str(textSize) + ' ' + \
+                            str(textSize) + ' 1 1 ' + typePin + '\n'
 elif args.typechip == 'OTHER':
     #### One side schematics ###
     side = 'R'
@@ -222,23 +240,23 @@ elif args.typechip == 'OTHER':
             outstring += 'X '+ checkPinList(str(i+1)) + ' ' + str(i+1)\
                         + ' ' + str(rectxmin - length) + ' ' + str(rectymin + \
                         initoffsety + (args.height-i)*stepy) + ' ' + str(length)\
-                        + ' ' + side + ' ' + str(pinNumberTextSize) + ' ' + \
-                        str(pinNameTextSize) + ' 1 1 ' + typePin + '\n'
+                        + ' ' + side + ' ' + str(textSize) + ' ' + \
+                        str(textSize) + ' 1 1 ' + typePin + '\n'
     elif args.package == 'SIL-ALT':
         for i in range(args.height):
             if i%2==0:
                 outstring += 'X '+ checkPinList(str(i/2+1)) + ' ' + str(i/2+1)\
                              + ' ' + str(rectxmin - length) + ' ' + str(rectymin + \
                             initoffsety + (args.height-i)*stepy) + ' ' + \
-                            str(length) + ' ' + side + ' ' + str(pinNumberTextSize)\
-                            + ' ' + str(pinNameTextSize) + ' 1 1 ' + typePin + '\n'
+                            str(length) + ' ' + side + ' ' + str(textSize)\
+                            + ' ' + str(textSize) + ' 1 1 ' + typePin + '\n'
             else:
                 outstring += 'X '+ checkPinList(str((args.height+i)/2+1)) + ' '\
                             + str((args.height+i)/2+1) + ' ' + str(rectxmin - \
                             length) + ' ' + str(rectymin + initoffsety + \
                             (args.height-i)*stepy) + ' ' + str(length) + ' ' +\
-                            side + ' ' + str(pinNumberTextSize) + ' ' + \
-                            str(pinNameTextSize) + ' 1 1 ' + typePin + '\n'
+                            side + ' ' + str(textSize) + ' ' + \
+                            str(textSize) + ' 1 1 ' + typePin + '\n'
                 
     ### Two sides schematics ###
     elif args.package == 'CONN2':
@@ -253,8 +271,8 @@ elif args.typechip == 'OTHER':
                 side = 'L'
             outstring += 'X '+ checkPinList(str(i+1)) + ' ' + str(i+1)\
                         + ' ' + str(posx) + ' ' + str(posy) + ' ' +\
-                        str(length) + ' ' + side + ' ' + str(pinNumberTextSize)\
-                        + ' ' + str(pinNameTextSize) + ' 1 1 ' + typePin\
+                        str(length) + ' ' + side + ' ' + str(textSize)\
+                        + ' ' + str(textSize) + ' 1 1 ' + typePin\
                         + '\n'
 
     elif args.package == 'CONN1':
@@ -269,8 +287,8 @@ elif args.typechip == 'OTHER':
                 side = 'L'
             outstring += 'X '+ checkPinList(str(i+1)) + ' ' + str(i+1)\
                         + ' ' + str(posx) + ' ' + str(posy) + ' ' +\
-                        str(length) + ' ' + side + ' ' + str(pinNumberTextSize)\
-                        + ' ' + str(pinNameTextSize) + ' 1 1 ' + typePin\
+                        str(length) + ' ' + side + ' ' + str(textSize)\
+                        + ' ' + str(textSize) + ' 1 1 ' + typePin\
                         + '\n'
 
     elif args.package == 'DIL':
@@ -285,8 +303,8 @@ elif args.typechip == 'OTHER':
                 side = 'L'
             outstring += 'X '+ checkPinList(str(i+1)) + ' ' + str(i+1)\
                         + ' ' + str(posx) + ' ' + str(posy) + ' ' +\
-                        str(length) + ' ' + side + ' ' + str(pinNumberTextSize)\
-                        + ' ' + str(pinNameTextSize) + ' 1 1 ' + typePin\
+                        str(length) + ' ' + side + ' ' + str(textSize)\
+                        + ' ' + str(textSize) + ' 1 1 ' + typePin\
                         + '\n'
             
     ### Four sides schematics ###
@@ -315,8 +333,8 @@ elif args.typechip == 'OTHER':
     
             outstring += 'X '+ checkPinList(str(i+1)) + ' ' + str(i+1)\
                         + ' ' + str(posx) + ' ' + str(posy) + ' ' + str(length)\
-                        + ' ' + side + ' ' + str(pinNumberTextSize) + ' ' + \
-                        str(pinNameTextSize) + ' 1 1 ' + typePin + '\n'
+                        + ' ' + side + ' ' + str(textSize) + ' ' + \
+                        str(textSize) + ' 1 1 ' + typePin + '\n'
     elif args.package == 'PLCC':
         print('PLCC not implemented yet sorry')
         exit(0)
@@ -327,4 +345,13 @@ else:
 with open(args.name+'.lib', 'w+') as outfile:
     outstring += 'ENDDRAW\nENDDEF\n#\n#End Library'
     outfile.write(outstring)
+
+docstring = 'EESchema-DOCLIB Version 2.0\n#\n$CMP '+args.name+'\n'
+docstring += 'D ' + args.brief + '\n'
+docstring += 'K ' + args.keywords + '\n'
+docstring += 'F ' + args.datasheet + '\n'
+docstring += '$ENDCMP\n#\n#End Doc Library'
+
+with open(args.name+'.dcm','w+') as docfile:
+   docfile.write(docstring) 
 

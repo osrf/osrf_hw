@@ -1,3 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP TUSB1210
+D USB PHY Transceiver
+K USB PHY USB2.0 Transceiver
+F http://www.ti.com/lit/ds/sllse09h/sllse09h.pdf
+$ENDCMP
+#
 #End Doc Library

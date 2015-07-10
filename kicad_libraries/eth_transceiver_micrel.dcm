@@ -3,11 +3,13 @@ EESchema-DOCLIB  Version 2.0
 $CMP KSZ8081RNX
 D KSZ8081RNX, 10/100Mbps ETH PHY Tranceiver, Micrel technology, 25 or 50MHz input clock, 24-QFN Exposed Pad
 K Gigabit ETH PHY 24-QFN-4x4
+F http://www.micrel.com/_PDF/Ethernet/datasheets/KSZ8081RNA-RND.pdf
 $ENDCMP
 #
 $CMP KSZ9031RNX
 D KSZ9031RNX, Gigabit ETH PHY Tranceiver, Micrel technology, 25 or 50MHz input clock, 48-QFN Exposed Pad, 64-QFN Exposed Pad
 K Gigabit ETH PHY 48-QFN
+F http://www.micrel.com/_PDF/Ethernet/datasheets/KSZ9031RNX.pdf
 $ENDCMP
 #
 #End Doc Library

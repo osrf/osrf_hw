@@ -1,3 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP ISSI61WV102416
+D SRAM 16MB
+K SRAM BGA48
+F http://www.issi.com/WW/pdf/61WV102416ALL.pdf
+$ENDCMP
+#
 #End Doc Library
