@@ -1,33 +1,33 @@
 EESchema-LIBRARY Version 2.3
 #encoding utf-8
 #
-# ISSI61WV102416
+# SI61WV102416
 #
-DEF ISSI61WV102416 U 0 40 Y Y 1 F N
+DEF SI61WV102416 U 0 40 Y Y 1 F N
 F0 "U" -500 1300 50 H V C CNN
-F1 "ISSI61WV102416" 0 -1400 50 H V C CNN
-F2 "" 0 1200 50 H V C CNN
-F3 "" 0 1200 50 H V C CNN
-F4 "_" 0 0 50 H V C CNN "MFN"
-F5 "_" 0 0 50 H V C CNN "MFP"
-F6 "digikey" 0 0 50 H V C CNN "D1"
-F7 "mouser" 0 0 50 H V C CNN "D2"
-F8 "_" 0 0 50 H V C CNN "D1PN"
-F9 "_" 0 0 50 H V C CNN "D1PL"
-F10 "_" 0 0 50 H V C CNN "D2PN"
-F11 "_" 0 0 50 H V C CNN "D2PL"
-F12 "_" 0 0 50 H V C CNN "Package"
-F13 "_" 0 0 50 H V C CNN "Description"
-F14 "_" 0 0 50 H V C CNN "Voltage"
-F15 "_" 0 0 50 H V C CNN "Power"
-F16 "_" 0 0 50 H V C CNN "Tolerance"
-F17 "_" 0 0 50 H V C CNN "Temperature"
-F18 "_" 0 0 50 H V C CNN "ReverseVoltage"
-F19 "_" 0 0 50 H V C CNN "ForwardVoltage"
-F20 "_" 0 0 50 H V C CNN "Cont.Current"
-F21 "_" 0 0 50 H V C CNN "Frequency"
-F22 "_" 0 0 50 H V C CNN "Impedence(Peak)"
-F23 "_" 0 0 50 H V C CNN "ResonnanceFreq"
+F1 "SI61WV102416" 0 -1400 50 H V C CNN
+F2 "" 0 1200 50 H I C CNN
+F3 "http://www.issi.com/WW/pdf/61WV102416ALL.pdf" 0 1200 50 H I C CNN
+F4 "_" 0 0 50 H I C CNN "MFN"
+F5 "_" 0 0 50 H I C CNN "MFP"
+F6 "digikey" 0 0 50 H I C CNN "D1"
+F7 "mouser" 0 0 50 H I C CNN "D2"
+F8 "_" 0 0 50 H I C CNN "D1PN"
+F9 "_" 0 0 50 H I C CNN "D1PL"
+F10 "_" 0 0 50 H I C CNN "D2PN"
+F11 "_" 0 0 50 H I C CNN "D2PL"
+F12 "_" 0 0 50 H I C CNN "Package"
+F13 "_" 0 0 50 H I C CNN "Description"
+F14 "_" 0 0 50 H I C CNN "Voltage"
+F15 "_" 0 0 50 H I C CNN "Power"
+F16 "_" 0 0 50 H I C CNN "Tolerance"
+F17 "_" 0 0 50 H I C CNN "Temperature"
+F18 "_" 0 0 50 H I C CNN "ReverseVoltage"
+F19 "_" 0 0 50 H I C CNN "ForwardVoltage"
+F20 "_" 0 0 50 H I C CNN "Cont.Current"
+F21 "_" 0 0 50 H I C CNN "Frequency"
+F22 "_" 0 0 50 H I C CNN "Impedence(Peak)"
+F23 "_" 0 0 50 H I C CNN "ResonnanceFreq"
 DRAW
 S -500 1200 400 -1300 0 1 0 f
 X LB# A1 600 500 200 L 50 50 1 1 I

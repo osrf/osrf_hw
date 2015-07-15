@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP OSCILLATOR
+D 50MHz Oscillator
+K 50M 50MHz Oscillator Abracon
+F http://www.abracon.com/Oscillators/ASFL1.pdf
+$ENDCMP
+#
+#End Doc Library
