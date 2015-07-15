@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP T9V034
+D ON Semi vision sensor
+K CLCC 48pin 48CLCC 0.8mm pitch
+F http://download.siliconexpert.com/pdfs/2015/6/2/1/9/17/466/ons_/manual/20mt9v034-d.pdf
+$ENDCMP
+#
+#End Doc Library

@@ -17,6 +17,17 @@ F9 "_" 0 0 50 H I C CNN "D1PL"
 F10 "_" 0 0 50 H I C CNN "D2PN"
 F11 "_" 0 0 50 H I C CNN "D2PL"
 F12 "24-QFN-4x4" 0 0 50 H I C CNN "Package"
+F13 "_" 0 0 50 H V C CNN "Description"
+F14 "_" 0 0 50 H V C CNN "Voltage"
+F15 "_" 0 0 50 H V C CNN "Power"
+F16 "_" 0 0 50 H V C CNN "Tolerance"
+F17 "_" 0 0 50 H V C CNN "Temperature"
+F18 "_" 0 0 50 H V C CNN "ReverseVoltage"
+F19 "_" 0 0 50 H V C CNN "ForwardVoltage"
+F20 "_" 0 0 50 H V C CNN "Cont.Current"
+F21 "_" 0 0 50 H V C CNN "Frequency"
+F22 "_" 0 0 50 H V C CNN "Impedence(Peak)"
+F23 "_" 0 0 50 H V C CNN "ResonnanceFreq"
 $FPLIST
  24-QFN*
  QFN-24*
@@ -44,11 +55,11 @@ X LED0/AN_EN 23 600 -200 200 L 50 50 1 1 I
 X VDDIO 14 -700 300 200 R 50 50 1 1 I
 X RST# 24 -700 -1200 200 R 50 50 1 1 I
 X CRS_DV/PHYAD[1:0] 15 -700 -900 200 R 50 50 1 1 I
+X GND 25 0 -1500 200 U 50 50 1 1 I
 X REF_CLK 16 -700 -800 200 R 50 50 1 1 I
 X RXER 17 -700 -100 200 R 50 50 1 1 I
 X INTRP 18 600 -300 200 L 50 50 1 1 I
 X TXEN 19 -700 -600 200 R 50 50 1 1 I
-X GND EPAD 0 -1500 200 U 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
@@ -68,6 +79,17 @@ F9 "_" 0 0 50 H I C CNN "D1PL"
 F10 "_" 0 0 50 H I C CNN "D2PN"
 F11 "_" 0 0 50 H I C CNN "D2PL"
 F12 "_" 0 0 50 H I C CNN "Package"
+F13 "_" 0 0 50 H V C CNN "Description"
+F14 "_" 0 0 50 H V C CNN "Voltage"
+F15 "_" 0 0 50 H V C CNN "Power"
+F16 "_" 0 0 50 H V C CNN "Tolerance"
+F17 "_" 0 0 50 H V C CNN "Temperature"
+F18 "_" 0 0 50 H V C CNN "ReverseVoltage"
+F19 "_" 0 0 50 H V C CNN "ForwardVoltage"
+F20 "_" 0 0 50 H V C CNN "Cont.Current"
+F21 "_" 0 0 50 H V C CNN "Frequency"
+F22 "_" 0 0 50 H V C CNN "Impedence(Peak)"
+F23 "_" 0 0 50 H V C CNN "ResonnanceFreq"
 DRAW
 S -1200 1900 1100 -2000 0 1 0 f
 X AVDDH 1 1300 1700 200 L 50 50 1 1 I
