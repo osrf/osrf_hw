@@ -1,0 +1,73 @@
+# chiptype [BGA, OTHER]
+chiptype=OTHER
+# pinOrder: chose how the pin will be ordered [BYNAME, SIL,SIL-ALT,DIL,CONN1,CONN2,PLCC,PQFP], default SIL 
+pinOrder=BYNAME
+#nbSide: number of side of the schematic [1,2 or 4] used only if BYNAME ored used 
+nbSide=2
+# number of vertical pins
+height=32
+# number of horizontal pins
+width=20
+# number of missing rows in the middle of the BGA chip
+NInth=2
+# number of missing columns in the middle of the BGA chip
+NIntw=2
+# name of the component and the files generated
+name=BGA2020
+# alternative name for the same symbol
+alias=BIGBGA
+# designator for your component [C,D,FB,R,L,U,P,J,Y,SW]
+prefix=U
+# Description of the component
+Description=here is a BGAchip
+# URI of component datasheet
+datasheet=http://www.ds.com/dsSIL32
+# keywords displayed when you use the component inside kicad
+keywords=BGA 20x20 pitch 0.8mm
+# substrings to look for when associating footprint, for example: *QFN*,32QFN*,QFN_32*
+footprintFormat=*BGA400*,*20x20*,*BGA*0.8mm
+# File containing pindefinition of the component. Expected format: PIN_NAME,PIN_NUMBER
+PinoutFile=/home/mikael/kicad_ws/osrf_hw/kicad_scripts/pinoutFile.csv
+# prefix added to pinName in pinout file not provided. default: "PIN_", meaning pin 1 will be named PIN_1
+PinFormat=
+# directory to store the generated files
+outLibrary=/home/mikael/kicad_ws/osrf_hw/kicad_libraries/bigbga.lib
+################################
+################################
+#### Additional parameters #####
+################################
+################################
+# manufacturer name
+MFN=fgdsfgf
+# manufacturer part number
+MFP=dfgn435
+# digikey part number
+D1PN=3445-54634
+# digikey part link/URI
+D1PL=http://testlink
+# mouser part number
+D2PN=
+# mouser part link/URI
+D2PL=
+# chip package, e.g. 0402, BGA216, QFN48
+Package=
+# voltage rating (CAPACITORS)
+Voltage=
+# power rating (RESISTORS)
+Power=
+# Tolerance e.g. 10%
+Tolerance=
+# Temperature coefficient(CAPACITORS) e.g. X5R
+Temperature=
+# breakdown/reverse voltage (DIODES)
+ReverseVoltage=
+# forward voltage (DIODES)
+ForwardVoltage=
+# current rating e.g 500m 1.5
+ContinuousCurrent=
+# Peak frequency for ferrite beads 
+Frequency=
+# DEPRECATED
+ImpedancePreak=
+# INDUCTORS, e.g. 100M 1G
+ResonnanceFrequency=

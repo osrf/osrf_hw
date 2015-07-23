@@ -1,0 +1,34 @@
+# chiptype [BGA, OTHER]
+chiptype=BGA
+# pinOrder: chose how the pin will be ordered [BYNAME, SIL,SIL-ALT,DIL,CONN1,CONN2,PLCC,PQFP], default SIL 
+pinOrder=BYNAME
+#nbSide: number of side of the schematic [1,2 or 4] used only if BYNAME ored used 
+nbSide=2
+# number of vertical pins
+height=10
+# number of horizontal pins
+width=10
+# number of missing rows in the middle of the BGA chip
+NInth=2
+# number of missing columns in the middle of the BGA chip
+NIntw=2
+# name of the component and the files generated
+name=BGA2020
+# alternative name for the same symbol
+alias=BIGBGA
+# designator for your component [C,D,FB,R,L,U,P,J,Y,SW]
+prefix=U
+# Description of the component
+Description=here is a BGAchip
+# URI of component datasheet
+datasheet=http://www.ds.com/dsSIL32
+# keywords displayed when you use the component inside kicad
+keywords=BGA 20x20 pitch 0.8mm
+# substrings to look for when associating footprint, for example: *QFN*,32QFN*,QFN_32*
+footprintFormat=*BGA400*,*20x20*,*BGA*0.8mm
+# File containing pin definition of the component. Expected format: PIN_NAME,PIN_NUMBER
+PinoutFile=/home/mikael/kicad_ws/osrf_hw/kicad_scripts/pinoutFileBGA.csv
+# prefix added to pinName in pinout file not provided. default: "PIN_", meaning pin 1 will be named PIN_1
+PinFormat=PIN_
+# directory to store the generated files, default: Current Directory
+outLibrary=/home/mikael/kicad_ws/osrf_hw/kicad_scripts/stm32.lib

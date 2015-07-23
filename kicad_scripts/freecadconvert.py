@@ -1,12 +1,11 @@
+# Set the directory variable before running
+
 import FreeCAD
 import ImportGui
 import FreeCADGui
 import os
 
-#path ="/home/mikael/testlibkicad/530480210.stp"
-path = "/home/mikael/testlibkicad/microusb/473460001.stp"
-#path = args.input
-directory = "/home/mikael/kicad_ws/osrf_hw/kicad_3dmodels"
+directory = "/home/mikael/kicad_ws/osrf_hw/kicad_3dmodels/BGA"
 if not os.path.isdir(directory):
     print "ERROR directory " + directory + " doesn't exist"
     exit(1)

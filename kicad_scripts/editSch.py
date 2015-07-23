@@ -1,19 +1,19 @@
 #!/usr/bin/env python
 #-*- coding:utf-8 -*-
-import csv
 
+from __future__ import print_function
+import csv
 import sip
-#import exportBOM as bom
-#import updateSCH as upSCH
 sip.setapi('QString', 2)
 sip.setapi('QVariant', 2)
 
 import os
 import sys
 from PyQt4 import QtGui, QtCore, Qt 
-from sch import *
+from sch.sch import *
 
 #BUGS supports only copy past of block cells not isolated cells
+#TODO Retest inside kicad
 #TODO Resolve paths(every path relative to ws path)
 #TODO Sort designator considering numerical values(C1,C10,...,C19,C2)--> (C1,C2,...C9,C10)
 #TODO Undo function: meaning bufferize each new selected cell
@@ -41,7 +41,7 @@ class BOMEditor(QtGui.QWidget):
         self.model = QtGui.QStandardItemModel(self)
         self.sortOrder = 1 
 
-        print 'edition mode'
+        print('edition mode')
         ############################
         #### Action Management #####
         ############################
@@ -151,7 +151,7 @@ class BOMEditor(QtGui.QWidget):
 
         self.header.sectionClicked.connect(self.onSectionClicked)
         
-        self.tableView.setFont(QtGui.QFont('Courier', 10, QtGui.QFont.Bold))
+#        self.tableView.setFont(QtGui.QFont('Courier', 10, QtGui.QFont.Bold))
         if self.mode == 'edit':
             if fileName.lower().endswith('sch'):
                 self.loadSch(self.fileName)
@@ -166,108 +166,14 @@ class BOMEditor(QtGui.QWidget):
             if self.fileName.lower().endswith('xml'):
                 self.fileName = self.fileName[:-3]+'sch'
             if not os.path.isfile(self.fileName):
-                print 'Sch file doesnt exist'
+                print('Sch file doesnt exist')
                 return
             self.loadSch(self.fileName)
             self.saveCsv(self.fileOut)
             sys.exit()
         else:
-            print  '"' + self.mode + '"is not a known mode'
-    ## test sch lib
-#        self.testLoadSchLib(self.fileName)
+            print('"' + self.mode + '"is not a known mode')
 
-
-
-#### SANDBOX ####
-    def addCompToTable(self, filename, dictComponent,firstRow=True):
-        columnOrder = {}
-        sch = Schematic(filename)
-        first = True
-        for comp in sch.components:
-            if '#PWR' in comp.labels['ref']:
-                continue
-            if first:
-                i = 1
-                compRow0 = []
-                compRow0.append(QtGui.QStandardItem('ID'))
-                columnOrder['ID'] = 0
-                for field in comp.fields:
-                    if field['name'] == '':
-                        compRow0.append(QtGui.QStandardItem(dictComponent[field['id']]))
-                        columnOrder[field['id']] = i
-                    else:
-                        compRow0.append(QtGui.QStandardItem(field['name'][1:-1]))
-                        columnOrder[field['name'][1:-1]] = i
-                    i+=1
-                if firstRow:
-                    self.model.appendRow(compRow0)
-                    firstRow = False
-                first = False
-
-            compRow = []
-            for i in range(len(compRow0)):
-                compRow.append('_')
-            compRow[0] = comp.unit['time_stamp']
-            for field in comp.fields:
-                if field['name'] == '':
-                    compRow[columnOrder[field['id']]] = field['ref'][1:-1]
-                elif field['name'][1:-1] == '':
-                    continue
-                else:
-                    compRow[columnOrder[field['name'][1:-1]]] = field['ref'][1:-1]
-            self.model.appendRow([ QtGui.QStandardItem(x) for x in compRow])
-
-        for sh in sch.sheets:
-            for field in sh.fields:
-                if field[0] == 'F1':
-                    if field[1].find('.sch')!= -1:
-                        sheetname = field[1][1:-1]
-            sheetname = os.path.join(os.path.dirname(filename),sheetname)
-            self.addCompToTable(sheetname,dictComponent,False)
-
-    def saveSch(self,fname):
-        sch = Schematic(fname)
-        for sh in sch.sheets:
-            for field in sh.fields:
-                if field[0] == 'F1':
-                    if field[1].find('.sch')!= -1:
-                        sheetname = field[1][1:-1]
-                        sheetname = os.path.join(os.path.dirname(fname),sheetname)
-                        self.saveSch(sheetname)
-
-
-        for row in range(self.model.rowCount()):
-            for comp in sch.components:
-                if not str(comp.unit['time_stamp']) == str(self.model.data(self.model.index(row,0),
-                QtCore.Qt.DisplayRole)):
-                    continue
-                for col in range(self.model.columnCount()):
-                    for field in comp.fields:
-                        compareField = ''
-                        if field['name'] != '':
-                            compareField = field['name'][1:-1]
-                        if self.model.data(self.model.index(0,col),QtCore.Qt.DisplayRole) == compareField:
-#Update only if necessary: Worth it ?
-#                            if field['ref'] != '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"':
-                            field['ref'] = '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"'
-                        elif col<= 4:
-                            if field['id'] == str(col-1):
-#                                if field['ref'] != '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"':
-                                print 'before update: ' + field['ref']           
-                                field['ref'] = '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"'
-                                print 'after: ' + field['ref']           
-        sch.save()
-    def loadSch(self,fname):
-#    def testLoadSchLib(self):
-        if not (os.path.isfile(fname) and fname.endswith('.sch')):
-            sys.exit(0)
-        dictComponent = {'0':'Designator',
-                         '1':'Value',
-                         '2':'Footprint',
-                         '3':'Datasheet',
-                        }
-        self.addCompToTable(fname,dictComponent)
-            
                            
 
     def help(self):
@@ -295,6 +201,7 @@ class BOMEditor(QtGui.QWidget):
     ############################
     ## Cell Edition Functions ##
     ############################
+#TODO
 #    def undo(self):
 
     def deleteCells(self):
@@ -388,9 +295,11 @@ class BOMEditor(QtGui.QWidget):
         # DBFORMAT: KEY, Footprint, Datasheet, MFN, MFP, D1PN, D1PL, D2PN, D2PL
         keyGen = []
         dicParam = {}
+        #FIXME comply to IEEE 315-1975 ?? https://en.wikipedia.org/wiki/Reference_designator
         classDico = {'C':'CAPA','D':'DIOD','FB':'BEAD','R':'RES','L':'INDU','U':'IC','P':'CONN','J':'CONN','Y':'XTAL', 'SW':'BUTN'}
-        keyComp = '' ; compClass = ''
+        classFiles = {'C':'capacitors.csv','D':'diodes.csv','FB':'beads.csv','R':'resistors.csv','L':'inductors.csv','U':'ICs.csv','P':'connectors.csv','J':'connectors.csv','Y':'crystals.csv', 'SW':'switches.csv'}
 
+        keyComp = '' ; compClass = ''
         desigIdx = -1
         for col in range(self.model.columnCount()):
             if str(self.model.data(self.model.index(0, col),
@@ -411,55 +320,49 @@ class BOMEditor(QtGui.QWidget):
                         QtCore.Qt.DisplayRole)).startswith(key):
                     compClass = classDico[key]
             if compClass == '':
-                print 'not complete'
+                print('not complete')
                 continue
 
-##Voltage	Power	Tolerance	Temperature	ReverseVoltage	ForwardVoltage	Cont.Current	Frequency	Impedence(Peak)	ResonnanceFreq
+##Voltage	Power	Tolerance	Temperature	ReverseVoltage	ForwardVoltage	Cont.Current	Frequency	Impedance(Peak)	ResonnanceFreq
             if compClass != prevClass:
                 first = True
-                # set filename according to class
                 # create keyDico
                 if compClass == classDico['C']:
                     # keyFormat is CAPA_VALUE_PACKAGE_VOLTAGE_TOLERANCE_TEMPERATURE
-                    fileName = os.path.join(os.getcwd(),'db_files','capacitors.csv')
                     keyGen = ['Value','Package','Voltage','Tolerance','Temperature']
                 elif compClass == classDico['D']:
 #                    # keyFormat is DIOD_VALUE_PACKAGE_FORWARDVOLTAGE_REVERSEVOLTAGE_CONTINUOUSCURRENT
-                    fileName = os.path.join(os.getcwd(),'db_files','diodes.csv')
                     keyGen = ['Value','Package','ForwardVoltage','ReverseVoltage','Cont.Current']
                 elif compClass == classDico['FB']:
                     #FIXME Here value is impedance at frequency.
                     # keyFormat is BEAD_VALUE_PACKAGE_FREQUENCY_CONTINUOUSCURRENT
-                    fileName = os.path.join(os.getcwd(),'db_files','beads.csv')
                     keyGen = ['Value','Package','Frequency','Cont.Current']
                 elif compClass == classDico['R']:
                     # keyFormat is RES_VALUE_PACKAGE_POWER_TOLERANCE
                     keyGen = ['Value','Package','Power','Tolerance']
-                    fileName = os.path.join(os.getcwd(),'db_files','resistors.csv')
                 elif compClass == classDico['L']:
                     # keyFormat is INDU_VALUE_PACKAGE_CONT.CURRENT_RESONNANCEFREQ
                     keyGen = ['Value','Package','Cont.Current','ResonnanceFreq']
-                    fileName = os.path.join(os.getcwd(),'db_files','inductors.csv')
                 elif compClass == classDico['U']:
                     # keyFormat is IC_VALUE_PACKAGE
                     keyGen = ['Value','Package']
-                    fileName = os.path.join(os.getcwd(),'db_files','ICs.csv')
                 elif compClass == classDico['J'] or compClass == classDico['P']:
                     # keyFormat is CONN_VALUE_PACKAGE
                     keyGen = ['Value','Package']
-                    fileName = os.path.join(os.getcwd(),'db_files','connectors.csv')
                 elif compClass == classDico['Y']:
                     # keyFormat is XTAL_VALUE_PACKAGE
-                    #FIXME Chose if value is  the frequency or the reference of the component
+                    #FIXME Chose if value is the frequency or the reference of the component
                     keyGen = ['Value','Package']
-                    fileName = os.path.join(os.getcwd(),'db_files','crystals.csv')
                 elif compClass == classDico['SW']:
                     # keyFormat is BUTN_VALUE_PACKAGE
                     keyGen = ['Value']
-                    fileName = os.path.join(os.getcwd(),'db_files','switches.csv')
                 else:
                     continue
-                #print 'CLASS:'+compClass
+
+                # set filename according to class
+                for key,value in classDico.iteritems():
+                    if value == compClass:
+                        fileName = os.path.join(os.getcwd(),'db_files',classFiles[key])
 
                 keyGenIdx = {}
                 dbParamList = {}
@@ -496,8 +399,6 @@ class BOMEditor(QtGui.QWidget):
                                     )
             else:
                 first = False
-
-            if not first:
                 for k in keyGenIdx:
                     if str(self.model.data(self.model.index(curRow, keyGenIdx[k]),QtCore.Qt.DisplayRole)) == '_':
                         color = QtCore.Qt.red
@@ -516,7 +417,7 @@ class BOMEditor(QtGui.QWidget):
                     
 
             if len(keyGen) > len(keyGenIdx):
-                print 'Missing parameters in you sch file'
+                print('Missing parameters in you sch file')
                 continue
             if not (fileName !='' and os.path.isfile(fileName)):
                 continue
@@ -533,7 +434,7 @@ class BOMEditor(QtGui.QWidget):
 #                    keyFail = True
 #            if keyFail == True:
 #                continue
-            #print 'new dbKey is :' + keyComp
+            #print('new dbKey is :' + keyComp)
             # openfile 
             with open(fileName, "rb") as fileInput:
             # create dbParamlist from first row
@@ -544,7 +445,7 @@ class BOMEditor(QtGui.QWidget):
                             if row[j] != '' and row[j] != 'KEY':
                                 dbParamList[row[j]] = j 
                         first = False
-                        #print dbParamList
+                        #print(dbParamList)
                     else:
                         if row[0]==keyComp:
                             #update table
@@ -561,59 +462,17 @@ class BOMEditor(QtGui.QWidget):
     def load(self):
         path = os.getcwd()
         fname = QtGui.QFileDialog.getOpenFileName(self, 'Open file',os.path.dirname(self.fileName), "*.csv *.sch")
-        print fname
+        print(fname)
         if fname.lower().endswith('sch'):
             self.loadSch(fname)
         else:
             self.loadCsv(fname)
 
-#    def loadSch(self,fname):
-#        if not os.path.isfile(fname):
-#            print('file doesnt exist')
-#            return
-##        print('Generating BOM from SCH file')
-#        dictComponent = {'0':'Designator',
-#                         '1':'Value',
-#                         '2':'Footprint',
-#                         '3':'Datasheet',
-#                        }
-#        # list of dictionaries, each dictionary is a component
-#        cList = []
-#        cList = bom.extractComponentList(fname,dictComponent)
-#        sheetStr = []
-#        sheetStr = bom.findSheets(fname)
-#
-#        for sh in sheetStr:
-##            print 'processing ' + sh + ' sheet'
-#            cList += bom.extractComponentList(os.path.join(os.path.dirname(fname),sh),dictComponent)
-#        tmpCsvFile = fname + '.tmp'
-#        with open(tmpCsvFile,mode='w+') as fo:
-#            # create first line with column titles
-#            strout = 'ID(DO_NOT_CHANGE),'
-#            for i in range(len(dictComponent)):
-#                strout += dictComponent[str(i)] + ','
-#            strout += '\n'
-##            print dictComponent
-#            # add all component as lines
-#            for comp in cList:
-#                strout += comp['ID'] + ','
-#                #print comp['ID']
-#                for i in range(len(dictComponent)):
-#                    strout +=  comp[dictComponent[str(i)]] + ',' 
-#                strout += '\n'
-#            fo.write(strout)
-#        self.loadCsv(tmpCsvFile)
-#        os.remove(tmpCsvFile)
-#        #remove empty column and sort table
-#        self.model.removeColumn(self.model.columnCount()-1)
-#        self.sortOrder = 1
-#        self.onSectionClicked(1)
-
     def loadCsv(self, fileName):
         if fileName !='' and os.path.isfile(fileName):
             self.model.removeRows(0, int(self.model.rowCount()))
             with open(fileName, "rb") as fileInput:
-                print 'loading csv'
+                print('loading csv')
                 for row in csv.reader(fileInput):    
                     items = [
                         QtGui.QStandardItem(field)
@@ -621,6 +480,95 @@ class BOMEditor(QtGui.QWidget):
                     ]
                     self.model.appendRow(items)
 
+    def loadSch(self,fname):
+        if not (os.path.isfile(fname) and fname.endswith('.sch')):
+            sys.exit(0)
+        dictComponent = {'0':'Designator',
+                         '1':'Value',
+                         '2':'Footprint',
+                         '3':'Datasheet',
+                        }
+        self.addCompToTable(fname,dictComponent)
+
+    def addCompToTable(self, filename, dictComponent,firstRow=True):
+        columnOrder = {}
+        sch = Schematic(filename)
+        first = True
+        for comp in sch.components:
+            if '#PWR' in comp.labels['ref']:
+                continue
+            if first:
+                i = 1
+                compRow0 = []
+                compRow0.append(QtGui.QStandardItem('ID'))
+                columnOrder['ID'] = 0
+                for field in comp.fields:
+                    if field['name'] == '':
+                        compRow0.append(QtGui.QStandardItem(dictComponent[field['id']]))
+                        columnOrder[field['id']] = i
+                    else:
+                        compRow0.append(QtGui.QStandardItem(field['name'][1:-1]))
+                        columnOrder[field['name'][1:-1]] = i
+                    i+=1
+                if firstRow:
+                    self.model.appendRow(compRow0)
+                    firstRow = False
+                first = False
+
+            compRow = []
+            for i in range(len(compRow0)):
+                compRow.append('_')
+            compRow[0] = comp.unit['time_stamp']
+            for field in comp.fields:
+                if field['name'] == '':
+                    compRow[columnOrder[field['id']]] = field['ref'][1:-1]
+                elif field['name'][1:-1] == '':
+                    continue
+                else:
+                    try:
+                        compRow[columnOrder[field['name'][1:-1]]] = field['ref'][1:-1]
+                    except KeyError:
+                        pass
+            self.model.appendRow([ QtGui.QStandardItem(x) for x in compRow])
+
+        for sh in sch.sheets:
+            for field in sh.fields:
+                if field['id'] == 'F1':
+                    if field['value'].find('.sch')!= -1:
+                        sheetname = field['value'][1:-1]
+            sheetname = os.path.join(os.path.dirname(filename),sheetname)
+            self.addCompToTable(sheetname,dictComponent,False)
+
+    def saveSch(self,fname):
+        sch = Schematic(fname)
+        for sh in sch.sheets:
+            for field in sh.fields:
+                if field['id'] == 'F1':
+                    if field['value'].find('.sch')!= -1:
+                        sheetname = field['value'][1:-1]
+                        sheetname = os.path.join(os.path.dirname(fname),sheetname)
+                        self.saveSch(sheetname)
+        for row in range(self.model.rowCount()):
+            for comp in sch.components:
+                if not str(comp.unit['time_stamp']) == str(self.model.data(self.model.index(row,0),
+                QtCore.Qt.DisplayRole)):
+                    continue
+                for col in range(self.model.columnCount()):
+                    for field in comp.fields:
+                        compareField = ''
+                        if field['name'] != '':
+                            compareField = field['name'][1:-1]
+                        if self.model.data(self.model.index(0,col),QtCore.Qt.DisplayRole) == compareField:
+#FIXME
+#Update only if necessary: Worth it ?
+#                            if field['ref'] != '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"':
+                            field['ref'] = '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"'
+                        elif col<= 4:
+                            if field['id'] == str(col-1):
+#                                if field['ref'] != '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"':
+                                field['ref'] = '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"'
+        sch.save()
+            
     @QtCore.pyqtSlot()
     def saveSchSlot(self):
         print('SCH Saved')
@@ -630,50 +578,16 @@ class BOMEditor(QtGui.QWidget):
             return
         self.saveSch(fname)
 
-#    @QtCore.pyqtSlot()
-#    def saveSchSlot(self):
-#        print('SCH Saved')
-#        fname = QtGui.QFileDialog.getSaveFileName(self, 'Update SCH file', os.path.dirname(self.fileName), "*sch")
-#        if not os.path.isfile(fname):
-#            print('ERROR Schematic file not found')
-#            return
-#        self.saveSch(fname)
-#
-#
-#    def saveSch(self, fname):
-#        # write temporary csv file
-#        tempfilename = fname[:-4] + '.tmpcsv2sch'
-#        self.saveCsv(tempfilename)
-##        sheetStr = fname
-#        sheetStr = []
-#        sheetStr = bom.findSheets(fname)
-#        sheetStr.append(fname)
-#        print sheetStr
-#        for sh in sheetStr:
-#            sh = os.path.join(os.path.dirname(fname), sh)
-#            # load it as dictionary and update SCH
-#            if not upSCH.csv2Sch(tempfilename,sh):
-#                print 'couldnt update SCH File'
-#                #remove temps files and leave SCH file unchanged
-#                os.remove(sh + '.TMP')
-#            else:
-#                # replace SCH file with updated one
-#                os.rename(sh + '.TMP', sh)
-#        os.remove(tempfilename)
-#        return
-
-
     @QtCore.pyqtSlot()
     def saveCsvSlot(self):
         path = os.path.dirname(self.fileName)
         fname = QtGui.QFileDialog.getSaveFileName(self, 'Save BOM', path, "*.csv")
-        print fname
+        print(fname)
         if fname != '':
             self.saveCsv(fname)
 
-
     def saveCsv(self, fileName):
-        print 'filename='+fileName
+        print('filename=' + fileName)
         with open(fileName, "wb") as fileOutput:
             writer = csv.writer(fileOutput,delimiter=',',quotechar="'")
             for rowNumber in range(self.model.rowCount()):
