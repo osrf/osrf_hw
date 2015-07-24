@@ -35,7 +35,7 @@
   (fp_circle (center 10 0) (end 8 0) (layer F.SilkS) (width 0.15))
   (pad HOLE thru_hole circle (at 10 0) (size 2.1 2.1) (drill 2) (layers *.Cu *.Mask F.SilkS))
   (pad HOLE thru_hole circle (at -10 0) (size 2.1 2.1) (drill 2) (layers *.Cu *.Mask F.SilkS))
-  (model ${KIWORKSPACE}/osrf_hw/kicad_3dmodels/LensHolder/M12_sunex_cmt104-6h.wrl
+  (model ${KIWORKSPACE}/osrf_hw/kicad_3dmodels/LensHolder.3dshapes/M12_sunex_cmt104-6h.wrl
     (at (xyz 0 0 0))
     (scale (xyz 0.3937 0.3937 0.3937))
     (rotate (xyz 90 180 180))

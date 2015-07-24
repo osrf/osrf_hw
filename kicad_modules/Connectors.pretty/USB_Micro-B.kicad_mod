@@ -26,7 +26,7 @@
   (pad 6 thru_hole oval (at 2.4991 -1.56254 90) (size 0.95 1.25) (drill oval 0.55 0.85) (layers *.Cu *.Mask F.SilkS))
   (pad 6 thru_hole oval (at -3.5009 1.13746 90) (size 1.55 1) (drill oval 1.15 0.5) (layers *.Cu *.Mask F.SilkS))
   (pad 6 thru_hole oval (at 3.4991 1.13746 90) (size 1.55 1) (drill oval 1.15 0.5) (layers *.Cu *.Mask F.SilkS))
-  (model ${KIWORKSPACE}/osrf_hw/kicad_3dmodels/USB.3dshapes/USBMicro.wrl
+  (model ${KIWORKSPACE}/osrf_hw/kicad_3dmodels/Connectors.3dshapes/USBMicro.wrl
     (at (xyz 0 -0.04 0.045))
     (scale (xyz 0.3937 0.3937 0.3937))
     (rotate (xyz 90 180 180))
