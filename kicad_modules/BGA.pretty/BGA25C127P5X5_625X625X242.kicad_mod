@@ -42,7 +42,7 @@
   (pad C5 smd circle (at 2.54 0) (size 0.63 0.63) (layers F.Cu F.Paste F.Mask))
   (pad D5 smd circle (at 2.54 1.27) (size 0.63 0.63) (layers F.Cu F.Paste F.Mask))
   (pad E5 smd circle (at 2.54 2.54) (size 0.63 0.63) (layers F.Cu F.Paste F.Mask))
-  (model /home/mikael/kicad_ws/osrf_hw/kicad_3dmodels/BGA/BGA25C127P5X5_625X625X242.wrl
+  (model ${KIWORKSPACE}/osrf_hw/kicad_3dmodels/BGA.3dshapes/BGA25C127P5X5_625X625X242.wrl
     (at (xyz 0 0 0))
     (scale (xyz 0.3937 0.3937 0.3937))
     (rotate (xyz 0 0 0))
