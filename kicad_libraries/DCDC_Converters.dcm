@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LTM4623
+D 3A DC-DC converter 
+K DC-DC buck converter LGA
+F http://cds.linear.com/docs/en/datasheet/4623fa.pdf
+$ENDCMP
+#
+#End Doc Library
