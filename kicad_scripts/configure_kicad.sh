@@ -66,10 +66,14 @@ done
 
 DIR=$( dirname "$DIR" )
 WORKING_TREES=$DIR
-echo "$WORKING_TREES"
-mkdir -p "$WORKING_TREES/resources/3dmodels"
-mkdir "$WORKING_TREES/resources/modules"
-mkdir "$WORKING_TREES/resources/libraries"
+#echo "$WORKING_TREES"
+
+DIRS="3dmodels modules libraries"
+for dirtocreate in $DIRS;do
+    if [ ! -d "$WORKING_TREES/resources/$dirtocreate" ]; then
+        mkdir -p "$WORKING_TREES/resources/$dirtocreate"
+    fi
+done
 
 MODULE_DIR="$WORKING_TREES/resources/modules"
 LIB_DIR="$WORKING_TREES/resources/libraries"
@@ -77,31 +81,49 @@ MODELS_DIR="$WORKING_TREES/resources/3dmodels"
 echo $MODULE_DIR
 
 ### clone osrf and kicad pretty repositories
+#FIXME not use kicatTools organization ?
 #checkout_or_update_libraries "kicadTools KiCad"
-checkout_or_update_libraries "kicadTools"
+checkout_or_update_libraries "KiCad"
 
 
-### clone kicadlibrary in temporaryfolder
-#git clone "https://github.com/KiCad/kicad-library.git" "$WORKING_TREES/kicad-library"
-#cp -r "$WORKING_TREES/kicad-library/library"/* "$LIB_DIR"
-cp "$WORKING_TREES/osrf_hw/kicad_libraries"/* "$LIB_DIR"
-
+### clone/update kicad-library repo
+if [ ! -e "$WORKING_TREES/kicad-library" ];then
+    git clone "https://github.com/KiCad/kicad-library.git" "$WORKING_TREES/kicad-library"
+else
+    cd "$WORKING_TREES/kicad-library"
+    git pull
+fi
+# copy content in workspace resources
+cp -r "$WORKING_TREES/kicad-library/library"/* "$LIB_DIR"
 #FIXME should copy only the .3dshape folders ?
-#cp -r "$WORKING_TREES/kicad-library/modules/package3d"/* "$MODELS_DIR"
-cp -r "$WORKING_TREES/osrf_hw/kicad_3dmodels"/* "$MODELS_DIR"
+cp -r "$WORKING_TREES/kicad-library/modules/packages3d"/* "$MODELS_DIR"
 
 MODULE_LIST=$(ls $MODULE_DIR)
 FILENAME=$HOME/.config/kicad/fp-lib-table
 echo "(fp_lib_table" > "$FILENAME"
 for mod in $MODULE_LIST;do
-    echo "  (lib (name ${mod%".pretty"})(type KiCad)(uri \${KYSYSMOD/$mod})(options \"\")(descr \"\"))" >> "$FILENAME"    
+    echo "  (lib (name ${mod%".pretty"})(type KiCad)(uri \${KISYSMOD}/$mod)(options \"\")(descr \"\"))" >> "$FILENAME"    
+done
+
+## Now handling osrf libraries
+# need to copy the 3dmodels, relativepaths with '..' are not handled
+cp -r "$WORKING_TREES/osrf_hw/kicad_3dmodels"/* "$MODELS_DIR"
+
+MODULE_LIST=$(ls "$WORKING_TREES/osrf_hw/kicad_modules")
+for mod in $MODULE_LIST;do
+    echo "  (lib (name ${mod%".pretty"})(type KiCad)(uri \${KIWORKSPACE}/osrf_hw/kicad_modules/$mod)(options \"\")(descr \"\"))" >> "$FILENAME"    
 done
     echo ")" >> "$FILENAME"    
 
 ### now update the global kicad config file
 CONFFILE=$HOME/.config/kicad/kicad_common
-sed -i "s#\(Editor *= *\).*#\1/usr/bin/gvim#" $CONFFILE
-sed -i "s#\(KISYSMOD *= *\).*#\1$MODULE_DIR#" $CONFFILE
-sed -i "s#\(KISYS3DMOD *= *\).*#\1$MODELS_DIR#" $CONFFILE
-sed -i "s#\(WorkingDir *= *\).*#\1$WORKING_TREES#" $CONFFILE
+
+declare -A arr=( ["Editor"]="/usr/bin/vim" ["KISYSMOD"]="$MODULE_DIR" ["KISYS3DMOD"]="$MODELS_DIR" ["KIWORKSPACE"]="$WORKING_TREES" ["KISYSLIB"]="$LIB_DIR")
+for key in ${!arr[@]};do
+    if grep -q "$key *=" $CONFFILE; then
+        sed -i "s#\(${key} *= *\).*#\1${arr[${key}]}#" $CONFFILE
+    else
+        echo "$key=${arr[${key}]}" >> $CONFFILE
+    fi
+done
 
