@@ -106,8 +106,6 @@ for mod in $MODULE_LIST;do
 done
 
 ## Now handling osrf libraries
-# need to copy the 3dmodels, relativepaths with '..' are not handled
-cp -r "$WORKING_TREES/osrf_hw/kicad_3dmodels"/* "$MODELS_DIR"
 
 MODULE_LIST=$(ls "$WORKING_TREES/osrf_hw/kicad_modules")
 for mod in $MODULE_LIST;do
