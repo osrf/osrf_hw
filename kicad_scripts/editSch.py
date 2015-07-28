@@ -169,7 +169,7 @@ class BOMEditor(QtGui.QWidget):
                 print('Sch file doesnt exist')
                 return
             self.loadSch(self.fileName)
-            self.saveCsv(self.fileOut)
+            self.saveBOM(self.fileOut)
             sys.exit()
         else:
             print('"' + self.mode + '"is not a known mode')
@@ -362,7 +362,7 @@ class BOMEditor(QtGui.QWidget):
                 # set filename according to class
                 for key,value in classDico.iteritems():
                     if value == compClass:
-                        fileName = os.path.join(os.getcwd(),'db_files',classFiles[key])
+                        fileName = os.path.join(os.path.dirname(os.path.abspath(__file__)),'db_files',classFiles[key])
 
                 keyGenIdx = {}
                 dbParamList = {}
@@ -584,7 +584,26 @@ class BOMEditor(QtGui.QWidget):
         fname = QtGui.QFileDialog.getSaveFileName(self, 'Save BOM', path, "*.csv")
         print(fname)
         if fname != '':
-            self.saveCsv(fname)
+            self.saveBOM(fname)
+
+    def saveBOM(self, fileName):
+        print('filename=' + fileName)
+        with open(fileName, "wb") as fileOutput:
+            writer = csv.writer(fileOutput,delimiter=',',quotechar="'")
+            for rowNumber in range(self.model.rowCount()):
+                fields=[]
+                for columnNumber in [1,2,5,6,7,9,10,8,11,12]:
+                    a = str(self.model.data(self.model.index(rowNumber, columnNumber),
+                        QtCore.Qt.DisplayRole ))
+                    if len(a)>0:
+                        if columnNumber != 0:
+                            if a[0]!='"':
+                                a = '"' + str(a) + '"'
+                        fields.append(a)
+                    else:
+                        a = '""'
+                        fields.append(a)
+                writer.writerow(fields)
 
     def saveCsv(self, fileName):
         print('filename=' + fileName)

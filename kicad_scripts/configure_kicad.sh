@@ -1,5 +1,6 @@
 #!/bin/bash
-
+#TODO write BOM plugin in eeschema file
+#TODO install kicad-library-utils scripts
 detect_pretty_repos()
 {
     # Check for the correct option to enable extended regular expressions in
