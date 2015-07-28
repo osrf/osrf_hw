@@ -26,8 +26,7 @@ F18 "_" -50 100 50 H I C CNN "ReverseVoltage"
 F19 "_" -50 100 50 H I C CNN "ForwardVoltage"
 F20 "_" -50 100 50 H I C CNN "Cont.Current"
 F21 "_" -50 100 50 H I C CNN "Frequency"
-F22 "_" -50 100 50 H I C CNN "Impedence(Peak)"
-F23 "_" -50 100 50 H I C CNN "ResonnanceFreq"
+F22 "_" -50 100 50 H I C CNN "ResonnanceFreq"
 DRAW
 S -300 -200 300 200 0 1 0 f
 X 1 1 -400 100 100 R 50 50 1 1 U

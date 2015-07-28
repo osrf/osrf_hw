@@ -187,10 +187,9 @@ dictParameters=OrderedDict([
 ('Temperature','_'),
 ('ReverseVoltage','_'),
 ('ForwardVoltage','_'),
-('ContinuousCurrent','_'),
+('Cont.Current','_'),
 ('Frequency','_'),
-('ImpedancePreak','_'),
-('ResonnanceFrequency','_')
+('ResonnanceFreq','_')
 ])
 whitelist = ['PinFormat']
 with open(infile,'r+') as inf:

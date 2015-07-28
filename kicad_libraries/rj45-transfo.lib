@@ -8,6 +8,25 @@ F0 "J" 100 600 60 H V L CNN
 F1 "RJ45-TRANSFO" -50 600 60 H V R CNN
 F2 "" 0 0 60 H V C CNN
 F3 "" 0 0 60 H V C CNN
+F4 "_" 0 0 50 H I C CNN "MFN"
+F5 "_" 0 0 50 H I C CNN "MFP"
+F6 "_" 0 0 50 H I C CNN "D1"
+F7 "_" 0 0 50 H I C CNN "D2"
+F8 "_" 0 0 50 H I C CNN "D1PN"
+F9 "_" 0 0 50 H I C CNN "D1PL"
+F10 "_" 0 0 50 H I C CNN "D2PN"
+F11 "_" 0 0 50 H I C CNN "D2PL"
+F12 "_" 0 0 50 H I C CNN "Package"
+F13 "_" 0 0 50 H I C CNN "Description"
+F14 "_" 0 0 50 H I C CNN "Voltage"
+F15 "_" 0 0 50 H I C CNN "Power"
+F16 "_" 0 0 50 H I C CNN "Tolerance"
+F17 "_" 0 0 50 H I C CNN "Temperature"
+F18 "_" 0 0 50 H I C CNN "ReverseVoltage"
+F19 "_" 0 0 50 H I C CNN "ForwardVoltage"
+F20 "_" 0 0 50 H I C CNN "Cont.Current"
+F21 "_" 0 0 50 H I C CNN "Frequency"
+F22 "_" 0 0 50 H I C CNN "ResonnanceFreq"
 DRAW
 T 0 -575 -250 40 0 0 0 GREEN  Normal 0 C C
 T 0 -275 475 40 0 0 0 J1  Normal 0 C C

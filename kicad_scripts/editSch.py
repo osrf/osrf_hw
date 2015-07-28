@@ -13,7 +13,6 @@ from PyQt4 import QtGui, QtCore, Qt
 from sch.sch import *
 
 #BUGS supports only copy past of block cells not isolated cells
-#TODO Retest inside kicad
 #TODO Resolve paths(every path relative to ws path)
 #TODO Sort designator considering numerical values(C1,C10,...,C19,C2)--> (C1,C2,...C9,C10)
 #TODO Undo function: meaning bufferize each new selected cell
@@ -323,7 +322,7 @@ class BOMEditor(QtGui.QWidget):
                 print('not complete')
                 continue
 
-##Voltage	Power	Tolerance	Temperature	ReverseVoltage	ForwardVoltage	Cont.Current	Frequency	Impedance(Peak)	ResonnanceFreq
+##Voltage	Power	Tolerance	Temperature	ReverseVoltage	ForwardVoltage	Cont.Current	Frequency	ResonnanceFreq
             if compClass != prevClass:
                 first = True
                 # create keyDico
@@ -543,10 +542,12 @@ class BOMEditor(QtGui.QWidget):
         sch = Schematic(fname)
         for sh in sch.sheets:
             for field in sh.fields:
+                # Find sheetname
                 if field['id'] == 'F1':
                     if field['value'].find('.sch')!= -1:
                         sheetname = field['value'][1:-1]
                         sheetname = os.path.join(os.path.dirname(fname),sheetname)
+                        # update the sheet sch file
                         self.saveSch(sheetname)
         for row in range(self.model.rowCount()):
             for comp in sch.components:
@@ -562,6 +563,8 @@ class BOMEditor(QtGui.QWidget):
 #FIXME
 #Update only if necessary: Worth it ?
 #                            if field['ref'] != '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"':
+                            if self.model.data(self.model.index(0,col),QtCore.Qt.DisplayRole) == None:
+                                self.model.setData(self.model.index(row,col),'_')
                             field['ref'] = '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"'
                         elif col<= 4:
                             if field['id'] == str(col-1):
