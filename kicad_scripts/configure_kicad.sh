@@ -1,6 +1,6 @@
 #!/bin/bash
 #TODO add options and function: --update_repos,--update_config
-#TODO security check if files exist in ~/.confic/kicad 
+
 detect_pretty_repos()
 {
     # Check for the correct option to enable extended regular expressions in
@@ -111,6 +111,10 @@ sudo python setup.py install
 
 MODULE_LIST=$(ls $MODULE_DIR)
 FILENAME=$HOME/.config/kicad/fp-lib-table
+if [ -f $FILENAME ];then
+    echo "$FILENAME doesnt exist, creating a new footprint library table file"
+    touch $FILENAME
+fi
 echo "(fp_lib_table" > "$FILENAME"
 for mod in $MODULE_LIST;do
     echo "  (lib (name ${mod%".pretty"})(type KiCad)(uri \${KISYSMOD}/$mod)(options \"\")(descr \"\"))" >> "$FILENAME"    
@@ -126,23 +130,30 @@ done
 
 ### now update the global kicad config file
 CONFFILE=$HOME/.config/kicad/kicad_common
-
-declare -A arr=( ["Editor"]="/usr/bin/vim" ["KISYSMOD"]="$MODULE_DIR" ["KISYS3DMOD"]="$MODELS_DIR" ["KIWORKSPACE"]="$WORKING_TREES" ["KISYSLIB"]="$LIB_DIR")
-for key in ${!arr[@]};do
-    if grep -q "$key *=" $CONFFILE; then
-        sed -i "s#\(${key} *= *\).*#\1${arr[${key}]}#" $CONFFILE
-    else
-        echo "$key=${arr[${key}]}" >> $CONFFILE
-    fi
-done
+if [ -f $CONFFILE ];then
+    declare -A arr=( ["Editor"]="/usr/bin/vim" ["KISYSMOD"]="$MODULE_DIR" ["KISYS3DMOD"]="$MODELS_DIR" ["KIWORKSPACE"]="$WORKING_TREES" ["KISYSLIB"]="$LIB_DIR")
+    for key in ${!arr[@]};do
+        if grep -q "$key *=" $CONFFILE; then
+            sed -i "s#\(${key} *= *\).*#\1${arr[${key}]}#" $CONFFILE
+        else
+            echo "$key=${arr[${key}]}" >> $CONFFILE
+        fi
+    done
+else
+    echo "file $CONFFILE doesnt exist, please open KiCad software and launch eeschema or pcbnew to create it"
+fi
 
 # add the BOM scripts to eeschema
 EESCHEMAFILE=$HOME/.config/kicad/eeschema
-declare -A arr=( ["FieldNames"]="(templatefields (field (name MFN)(value _)) (field (name MFP)(value _)) (field (name D1)(value digikey)) (field (name D2)(value mouser)) (field (name D1PN)(value _)) (field (name D1PL)(value _)) (field (name D2PN)(value _)) (field (name D2PL)(value _)) (field (name Package)(value _)) (field (name Description)(value _) visible) (field (name Voltage)(value _)) (field (name Power)(value _)) (field (name Tolerance)(value _)) (field (name Temperature)(value _)) (field (name ReverseVoltage)(value _)) (field (name ForwardVoltage)(value _)) (field (name Cont.Current)(value _)) (field (name Frequency)(value _)) (field (name ResonnanceFreq)(value _)))" ["bom_plugins"]="(plugins  (plugin generateBOM (cmd \"python \\\\\\\\\"$WORKING_TREES/osrf_hw/kicad_scripts/editSch.py\\\\\\\\\" \\\\\\\\\"%I\\\\\\\\\" \\\\\\\\\"%O.csv\\\\\\\\\" generate\"))  (plugin editBOM_SCH_PyQt (cmd \"python \\\\\\\\\"$WORKING_TREES/osrf_hw/kicad_scripts/editSch.py\\\\\\\\\" \\\\\\\\\"%I\\\\\\\\\" \\\\\\\\\"%O\\\\\\\\\" edit\")))" ["bom_plugin_selected"]="editBOM_SCH_PyQt")
-for key in ${!arr[@]};do
-    if grep -q "$key *=" $EESCHEMAFILE; then
-        sed -i "s#\(${key} *= *\).*#\1${arr[${key}]}#" $EESCHEMAFILE
-    else
-        echo "$key=${arr[${key}]}" >> $EESCHEMAFILE
-    fi
-done
+if [ -f $EESCHEMAFILE ];then
+    declare -A arr=( ["FieldNames"]="(templatefields (field (name MFN)(value _)) (field (name MFP)(value _)) (field (name D1)(value digikey)) (field (name D2)(value mouser)) (field (name D1PN)(value _)) (field (name D1PL)(value _)) (field (name D2PN)(value _)) (field (name D2PL)(value _)) (field (name Package)(value _)) (field (name Description)(value _) visible) (field (name Voltage)(value _)) (field (name Power)(value _)) (field (name Tolerance)(value _)) (field (name Temperature)(value _)) (field (name ReverseVoltage)(value _)) (field (name ForwardVoltage)(value _)) (field (name Cont.Current)(value _)) (field (name Frequency)(value _)) (field (name ResonnanceFreq)(value _)))" ["bom_plugins"]="(plugins  (plugin generateBOM (cmd \"python \\\\\\\\\"$WORKING_TREES/osrf_hw/kicad_scripts/editSch.py\\\\\\\\\" \\\\\\\\\"%I\\\\\\\\\" \\\\\\\\\"%O.csv\\\\\\\\\" generate\"))  (plugin editBOM_SCH_PyQt (cmd \"python \\\\\\\\\"$WORKING_TREES/osrf_hw/kicad_scripts/editSch.py\\\\\\\\\" \\\\\\\\\"%I\\\\\\\\\" \\\\\\\\\"%O\\\\\\\\\" edit\")))" ["bom_plugin_selected"]="editBOM_SCH_PyQt")
+    for key in ${!arr[@]};do
+        if grep -q "$key *=" $EESCHEMAFILE; then
+            sed -i "s#\(${key} *= *\).*#\1${arr[${key}]}#" $EESCHEMAFILE
+        else
+            echo "$key=${arr[${key}]}" >> $EESCHEMAFILE
+        fi
+    done
+else
+    echo "file $EESCHEMAFILE doesnt exist, please open KiCad software and launch eeschema to create it"
+fi
