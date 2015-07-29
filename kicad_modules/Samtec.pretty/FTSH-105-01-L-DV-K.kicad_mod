@@ -1,10 +1,8 @@
-(module FTSH-105-01-L-DV-K (layer F.Cu) (tedit 55AC61CC)
-  (fp_text reference P** (at 0 5.8) (layer F.SilkS)
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
-  (fp_text value FTSH-105-01-L-DV-K (at 0 -7.1) (layer F.Fab) hide
-    (effects (font (size 1 1) (thickness 0.15)))
-  )
+(module FTSH-105-01-L-DV-K
+  (layer F.Cu)
+  (tedit 55AC61CC)
+  (fp_text reference P** (at 0 5.8) (layer F.SilkS) (effects (font (size 1 1) (thickness 0.15))))
+  (fp_text value FTSH-105-01-L-DV-K (at 0 -7.1) (layer F.Fab)hide (effects (font (size 1 1) (thickness 0.15))))
   (fp_line (start 3.2 4) (end -3.2 4) (layer F.CrtYd) (width 0.05))
   (fp_line (start 3.2 -4) (end 3.2 4) (layer F.SilkS) (width 0.15))
   (fp_line (start 3.2 -4) (end -3.2 -4) (layer F.SilkS) (width 0.15))
@@ -23,9 +21,4 @@
   (pad 8 smd rect (at 1.27 -2.032) (size 0.74 2.79) (layers F.Cu F.Paste F.Mask))
   (pad 9 smd rect (at 2.54 2.032) (size 0.74 2.79) (layers F.Cu F.Paste F.Mask))
   (pad 10 smd rect (at 2.54 -2.032) (size 0.74 2.79) (layers F.Cu F.Paste F.Mask))
-  (model ${KIWORKSPACE}/osrf_hw/kicad_3dmodels/Samtec/FTSH-105-01-X-DV-K.wrl
-    (at (xyz 0 0 0.015))
-    (scale (xyz 0.3937 0.3937 0.3937))
-    (rotate (xyz -90 0 0))
-  )
-)
+  (model ${KIWORKSPACE}/osrf_hw_nonfree/kicad_3dmodels/Samtec/FTSH-105-01-X-DV-K.wrl (at (xyz 0 0 0.015)) (scale (xyz 0.3937 0.3937 0.3937)) (rotate (xyz -90 0 0))))

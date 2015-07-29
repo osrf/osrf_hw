@@ -1,13 +1,13 @@
 #!/bin/bash
-#TODO add options and function: --update_repos,--update_config
 
 usage()
 {
     echo ""
     echo "usage: ./configure_kicad.sh <cmd>"
     echo "possible <cmd>:"
-    echo "      --install-update-modules    (clone/update all the modules from KiCad github organization) and populate the kicad workspace"
+    echo "      --install-update-modules    (clone/update all the modules from KiCad github organization and populate the kicad workspace)"
     echo "      --install-update-libraries  (clone/update libraries from kicad-library repo and populate the kicad workspace)"
+    echo "      --install-update-3dmodels   (clone/update 3dmodels from osrf_hw_nonfree repo and populate the kicad workspace)"
     echo "      --install-update-utils      (clone/update and install utils to parse and modify kicad files)"
     echo "      --update-kicad-config       (update the kicag configuration files in ~/.config/kicad)"
     echo "      --all                       (all the previous commands sequentialy)"
@@ -207,6 +207,11 @@ if [ $# -eq 1 -a "$1" == "--install-update-utils" ]; then
     exit
 fi
 
+if [ $# -eq 1 -a "$1" == "--install-update-3dmodels" ]; then
+    checkout_or_update_repo "osrf" "osrf_hw_nonfree"
+    exit
+fi
+
 if [ $# -eq 1 -a "$1" == "--update-kicad-config" ]; then
     update_config_files
     exit
@@ -220,6 +225,8 @@ if [ $# -eq 1 -a "$1" == "--all" ]; then
     cp -r "$WORKING_TREES/kicad-library/library"/* "$LIB_DIR"
     #FIXME should copy only the .3dshape folders ?
     cp -r "$WORKING_TREES/kicad-library/modules/packages3d"/* "$MODELS_DIR"
+
+    checkout_or_update_repo "osrf" "osrf_hw_nonfree"
 
     checkout_or_update_repo "keulYSMB" "kicad-library-utils"
     cd "$WORKING_TREES/kicad-library-utils"
