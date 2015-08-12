@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP CYUSB3013
+D FX3 SuperSpeed USB controller
+K FX3 Superspeed SuperSpeed USB controller
+F http://www.cypress.com/?docID
+$ENDCMP
+#
+#End Doc Library

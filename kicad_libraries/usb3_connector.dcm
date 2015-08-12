@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP USB_3.1_microB
+D micro connector
+K USB USB3.1 USB3 TypeB USB_micro
+F http://www.usb.org/developers/ssusb
+$ENDCMP
+#
+#End Doc Library
