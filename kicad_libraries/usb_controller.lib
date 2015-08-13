@@ -7,7 +7,7 @@ DEF CYUSB3013 U 0 40 Y Y 1 F N
 F0 "U" -3400 3500 50 H V C CNN
 F1 "CYUSB3013" -3400 -3500 50 H V C CNN
 F2 "_" 0 0 50 H I C CNN
-F3 "http://www.cypress.com/?docID" 0 0 50 H I C CNN
+F3 "http://www.cypress.com/file/140296/download" 0 0 50 H I C CNN
 F4 "_" 0 0 50 H I C CNN "MFN"
 F5 "_" 0 0 50 H I C CNN "MFP"
 F6 "digikey" 0 0 50 H I C CNN "D1"
