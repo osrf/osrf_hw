@@ -1,5 +1,6 @@
 KEY,"Footprint","Datasheet","MFN","MFP","D1PN","D1PL","D2PN","D2PL"
 CONN_MicroUSB__,"Connectors:USB_Micro-B","http://www.jae.com/z-en/pdf_download_exec.cfm?param=MB-0187-3E_DX4.pdf","JAE","DX4R005HJ5R2000","670-2674","http://www.digikey.com/product-detail/en/DX4R005HJ5R2000/670-2674-1-ND/3903234","_","_"
+CONN_USB_3.1_microB__,"Connectors:USB3_Micro-B","http://media.digikey.com/pdf/Data%20Sheets/Amphenol%20PDFs/GSB4_Series_USB_31_rev2.pdf","Amphenol Commercial Products","GSB443133HR","GSB443133HR","http://www.digikey.com/product-detail/en/GSB443133HR/GSB443133HRCT-ND/4936161","_","_"
 CONN_CONN_01X01__,"Pin_Headers:Pin_Header_Straight_1x01","DNP","DNP","DNP","DNP","DNP","_","_"
 CONN_CONN_01X02__,"Pin_Headers:Pin_Header_Straight_1x02","DNP","DNP","DNP","DNP","DNP","_","_"
 CONN_CONN_01X03__,"Pin_Headers:Pin_Header_Straight_1x03","DNP","DNP","DNP","DNP","DNP","_","_"
