@@ -32,7 +32,7 @@
   (pad 9 smd rect (at 4.8 -1.3375) (size 0.4 1.35) (layers F.Cu F.Paste F.Mask))
   (pad 10 smd rect (at 5.45 -1.3375) (size 0.4 1.35) (layers F.Cu F.Paste F.Mask))
   (pad SHLD smd rect (at -6.55 1.3375) (size 1.8 1.9) (layers F.Cu F.Paste F.Mask))
-  (model /home/mikael/work/kicad_ws/osrf_hw_nonfree/kicad_3dmodels/Connectors.3dshapes/USB3_Micro-B.wrl
+  (model ${KIWORKSPACE}/osrf_hw_nonfree/kicad_3dmodels/Connectors.3dshapes/USB3_Micro-B.wrl
     (at (xyz -0.248 -0.31 0.095))
     (scale (xyz 0.3937 0.3937 0.3937))
     (rotate (xyz -90 0 90))
