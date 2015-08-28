@@ -15,68 +15,69 @@ import operator
 #FIXME Think if PQFP and PLCC are supposed to be square chips
 #add list of packages ? or just number of pins ? 
 stringhelp = '### SCH NUMEROTATION TYPES ###                                       \n'\
-'#   ######## ONE SIDE ########                                             \n'\
-'#                                                                          \n'\
-'#      SIL          SIL-ALT                                                \n'\
-'#       ___           ___                                                  \n'\
-'#   1 --|  |       1--|  |                                                 \n'\
-'#   2 --|  |   N/2+1--|  |                                                 \n'\
-'#   3 --|  |       2--|  |                                                 \n'\
-'#   . --|  |   N/2+2--|  |                                                 \n'\
-'#   . --|  |     ...--|  |                                                 \n'\
-'#   . --|  |     N/2--|  |                                                 \n'\
-'#   N --|__|       N--|__|                                                 \n'\
-'#                                                                          \n'\
-'#                                                                          \n'\
-'   ######## TWO SIDES ########                                             \n'\
-'#                                                                          \n'\
-'#        DIL                   CONN1             CONN2                     \n'\
-'#       _____                  _____             _____                     \n'\
-'#   1 --|    |--N          1 --|    |--2     1 --|    |--N/2+1             \n'\
-'#   2 --|    |--           3 --|    |--4     2 --|    |--N/2+2             \n'\
-'#   3 --|    |--^          . --|    |--      3 --|    |--                  \n'\
-'#   . --|    |--.          . --|    |--.     . --|    |--.                 \n'\
-'#   . --|    |--.          . --|    |--.     . --|    |--.                 \n'\
-'#   . --|    |--N/2+2      . --|    |--.     . --|    |--.                 \n'\
-'#  N/2--|____|--N/2+1     N-1--|____|--N    N/2--|____|--N                 \n'\
-'#                                                                          \n'\
-'#                                                                          \n'\
-'#  ######### FOUR SIDES #########                                          \n'\
-'#                                                                          \n'\
-'#              PLCC                                PQFP                    \n'\
-'#              <--     <--                       <--     <--               \n'\
-'#       __|_|_|_|_|_|_|_|_                __|_|_|_|_|_|_|_|_               \n'\
-'#     --|                 |--          1--|o                |--            \n'\
-'#     --|                 |--          2--|                 |--            \n'\
-'#     --|                 |-- ^        3--|                 |-- ^          \n'\
-'#     --|                 |-- |         --|                 |-- |          \n'\
-'#    1--|o                |--           --|                 |--            \n'\
-'#    2--|                 |--           --|                 |--            \n'\
-'#    3--|                 |--           --|                 |--            \n'\
-'#     --|                 |-- ^         --|                 |-- ^          \n'\
-'#     --|_________________|-- |         --|_________________|-- |          \n'\
-'#         | | | | | | | |                   | | | | | | | |                \n'\
-'#           -->      -->                      -->      -->                 \n'\
-'#                                                                          \n'\
-'#  ############ BGA #############                                          \n'\
-'#       1 2 3 4 ....                                                       \n'\
-'#      ___________________________                                         \n'\
-'#    A|o o o o o o o o o o o o o o| ^                                      \n'\
-'#    B|o o o o o o o o o o o o o o| |                                      \n'\
-'#    C|o o o o o o o o o o o o o o| |                                      \n'\
-'#    .|o o o o o o o o o o o o o o| |                                      \n'\
-'#    .|o o o o o <------>o o o o o| |                                      \n'\
-'#    .|o o o o o ^ NIntw o o o o o| |           ==> BGA Represented as PQFP\n'\
-'#     |o o o o o |       o o o o o| |  height                              \n'\
-'#     |o o o o o |NInth  o o o o o| |                                      \n'\
-'#     |o o o o o |       o o o o o| |                                      \n'\
-'#     |o o o o o ^       o o o o o| |                                      \n'\
-'#     |o o o o o o o o o o o o o o| |                                      \n'\
-'#     |o o o o o o o o o o o o o o| |                                      \n'\
-'#     |o o o o o o o o o o o o o o| |                                      \n'\
-'#     |___________________________| |                                      \n'\
-'#               width               ^                                      \n'\
-'#     <---------------------------->                                       \n'
+'   ######## ONE SIDE ########                                             \n'\
+'                                                                          \n'\
+'      SIL          SIL-ALT                                                \n'\
+'       ___           ___                                                  \n'\
+'   1 --|  |       1--|  |                                                 \n'\
+'   2 --|  |   N/2+1--|  |                                                 \n'\
+'   3 --|  |       2--|  |                                                 \n'\
+'   . --|  |   N/2+2--|  |                                                 \n'\
+'   . --|  |     ...--|  |                                                 \n'\
+'   . --|  |     N/2--|  |                                                 \n'\
+'   N --|__|       N--|__|                                                 \n'\
+'                                                                          \n'\
+'                                                                          \n'\
+'  ######## TWO SIDES ########                                             \n'\
+'                                                                          \n'\
+'        DIL                   CONN1             CONN2                     \n'\
+'       _____                  _____             _____                     \n'\
+'   1 --|    |--N          1 --|    |--2     1 --|    |--N/2+1             \n'\
+'   2 --|    |--           3 --|    |--4     2 --|    |--N/2+2             \n'\
+'   3 --|    |--^          . --|    |--      3 --|    |--                  \n'\
+'   . --|    |--.          . --|    |--.     . --|    |--.                 \n'\
+'   . --|    |--.          . --|    |--.     . --|    |--.                 \n'\
+'   . --|    |--N/2+2      . --|    |--.     . --|    |--.                 \n'\
+'  N/2--|____|--N/2+1     N-1--|____|--N    N/2--|____|--N                 \n'\
+'                                                                          \n'\
+'                                                                          \n'\
+'  ######### FOUR SIDES #########                                          \n'\
+'                                                                          \n'\
+'              PLCC                                PQFP                    \n'\
+'              <--     <--                       <--     <--               \n'\
+'       __|_|_|_|_|_|_|_|_                __|_|_|_|_|_|_|_|_               \n'\
+'     --|                 |--          1--|o                |--            \n'\
+'     --|                 |--          2--|                 |--            \n'\
+'     --|                 |-- ^        3--|                 |-- ^          \n'\
+'     --|                 |-- |         --|                 |-- |          \n'\
+'    1--|o                |--           --|                 |--            \n'\
+'    2--|                 |--           --|                 |--            \n'\
+'    3--|                 |--           --|                 |--            \n'\
+'     --|                 |-- ^         --|                 |-- ^          \n'\
+'     --|_________________|-- |         --|_________________|-- |          \n'\
+'         | | | | | | | |                   | | | | | | | |                \n'\
+'           -->      -->                      -->      -->                 \n'\
+'                                                                          \n'\
+'  ############ BGA #############                                          \n'\
+'       1 2 3 4 ....                                                       \n'\
+'      ___________________________                                         \n'\
+'    A|o o o o o o o o o o o o o o| ^                                      \n'\
+'    B|o o o o o o o o o o o o o o| |                                      \n'\
+'    C|o o o o o o o o o o o o o o| |                                      \n'\
+'    .|o o o o o o o o o o o o o o| |                                      \n'\
+'    .|o o o o o <------>o o o o o| |                                      \n'\
+'    .|o o o o o ^ NIntw o o o o o| |           ==> BGA Represented as PQFP\n'\
+'     |o o o o o |       o o o o o| |  height                              \n'\
+'     |o o o o o |NInth  o o o o o| |                                      \n'\
+'     |o o o o o |       o o o o o| |                                      \n'\
+'     |o o o o o ^       o o o o o| |                                      \n'\
+'     |o o o o o o o o o o o o o o| |                                      \n'\
+'     |o o o o o o o o o o o o o o| |                                      \n'\
+'     |o o o o o o o o o o o o o o| |                                      \n'\
+'     |___________________________| |                                      \n'\
+'               width               ^                                      \n'\
+'     <---------------------------->                                       \n'\
+'  usage: ./generate_component.py ConfigFile.txt                           \n'
 
 print(stringhelp)
 if len(sys.argv) >1:
@@ -247,7 +248,7 @@ outstring += 'F7 "mouser' + stdString + ' "D2"\n'
 i=0
 for key in dictParameters:
 #17 = index of D1PN
-    if(i>len(dictParameters)-17):
+    if(i>len(dictParameters)-16):
         outstring += 'F'+str(i-10)+' "' + dictParameters[key] + stdString + ' "' + key + '"\n'
     i+=1
 

@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ECP545
+D Lattice 45k FPGA
+K FPGA Lattice
+F http://www.latticesemi.com/view_document?document_id
+$ENDCMP
+#
+$CMP ECP5-85
+D Lattice 85k FPGA
+K FPGA Lattice
+F http://www.latticesemi.com/view_document?document_id
+$ENDCMP
+#
+#End Doc Library
