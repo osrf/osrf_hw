@@ -1,5 +1,13 @@
 #!/usr/bin/env python
 
+# This scripts take a config file just as generate_component.py.
+# Advantage: create a different component unit/section/rectangle for every different bank of your device
+# Restriction: - must provide a csv file with the complete pinout of your chip, every size parameter will be ignored
+#              - the csv file must contain a column containing "Bank" to allow multi part generation according to Bank number
+#              - the pin number (e.g A11 or 42) are located in the last column
+#              - the csv file must contain only a title row
+#              - only 1 component / package per csv file
+
 from __future__ import print_function
 import os
 import argparse
@@ -15,14 +23,15 @@ else:
     print('please provide a configuration file')
     sys.exit()
 
-
 ################################
 ##### Function declaration #####
 ################################
-#function to override for each manufacturer
-def importCSV(filename):
+#TODO adapt it for uControllers
+#FIXME assumes that last column is the pin number
+#FIXME assumes that the component has several banks and that one column contains "Bank" string
+def importCSV(filename): 
 # expected csv format: 
-# PIN_NAME, Function, Alternative func, Bank, PIN_NUMBER
+# ....,BANK,..., PIN_NUMBER
   if not os.path.isfile(filename):
     print('pinfile not found')
     return
@@ -32,38 +41,31 @@ def importCSV(filename):
     banks={}
     for row in reader2:
       if first:
-#        print(row)
         for i in range(len(row)):
-          if row[i] == 'Bank':
+          if row[i].find('Bank') != -1:
             bankIdx = i
             break
         first = False
         continue
       banks[row[bankIdx]]={}
-#    print(banks)
-#    print(len(banks))
   with open(filename, mode='r') as infile:
     first = True;
     reader = csv.reader(infile)
     for row in reader:
       if first:
-#        print(row)
         first = False
         continue
-#      print(row)
-#      print(banks[row[bankIdx]])
-      string = row[0]
-      if row[2] != '-':
-        string+= '/'+row[2]
-      if row[3] != '-':
-        string+= '/'+row[3]
-      if row[1] != '-':
-        string+= '/BANK'+row[1]
-      banks[row[bankIdx]][row[4]]=string#(row[0]+'/'+row[1]+'/'+row[2])
-#        pinlist[int(row[3])][row[5]]=str(row[0]+'/'+row[1]+'/'+row[2])
-#  print(pinlist[0])
-#  print(len(banks['0']))
-#  print(banks['0'])
+      string = ''
+      for i in range(len(row)-1):
+        if i == bankIdx:
+          continue
+        if row[i] != '-' and row[i] != '':
+          if string != '':
+            string += '/'
+          string+= row[i]
+      if row[bankIdx] != '-' and row[bankIdx] != '':
+        string+= '/BANK'+row[bankIdx]
+      banks[row[bankIdx]][row[-1]]=string
   return banks
 
 def correctModuloTable(table):
@@ -155,7 +157,8 @@ outstring = 'EESchema-LIBRARY Version 2.2 Date: ' + time.strftime("%d/%m/%Y") + 
 outstring += '#encoding utf-8\n#\n# ' + dictParameters['name'] + '\n#\nDEF '
 #create a component with all the fields
 outstring += dictParameters['name'] + ' U 0 40 Y Y '+ str(len(banks)) + ' F N\n'
-outstring += 'F0 "' + dictParameters['prefix'] + '" 0 '+ str(len(banks['-']) *step+ 2*textSize) + ' 50 H V C C\n'
+#  outstring += 'F0 "' + dictParameters['prefix'] + '" 0 '+ str(len(banks[key]) *step+ 2*textSize) + ' 50 H V C C\n'
+outstring += 'F0 "' + dictParameters['prefix'] + '" 0 0 50 H V C C\n'
 outstring += 'F1 "' + dictParameters['name'] + '" 0 ' + str(0 - 2*textSize) + ' 50 H V C C\n'
 outstring += 'F2 "_'+ stdString +'\n'
 outstring += 'F3 "' + dictParameters['datasheet'] + stdString + '\n'
@@ -183,7 +186,7 @@ if dictParameters['footprintFormat'] != '':
 
 outstring += 'DRAW\n'
 unit = 1
-for key in banks:
+for key,val in sorted(banks.items()):
   #create a rectangle for each bank
   Npin = len(banks[key])
   halfNpin = Npin /2
