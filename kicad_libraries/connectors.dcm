@@ -1,3 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP microSD_Card
+D microSD Card Reader
+K microSD connector
+F http://www.molex.com/webdocs/datasheets/pdf/en-us/5031821853_MEMORY_CARD_SOCKET.pdf
+$ENDCMP
+#
 #End Doc Library
