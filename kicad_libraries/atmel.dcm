@@ -1,0 +1,9 @@
+EESchema-DOCLIB Version 2.0
+#
+$CMP SAM-S70-144BGA
+D Atmel Cortex-M7 300MHz, 2048kB Flash,
+K ARM Cortex-M7 SAM S70
+F http://www.atmel.com/Images/Atmel-11242-32-bit-Cortex-M7-Microcontroller-SAM-S70Q-SAM-S70N-SAM-S70J_Datasheet.pdf
+$ENDCMP
+#
+#End Doc Library

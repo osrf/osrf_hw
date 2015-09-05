@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NOIV2SN1300A
+D VITA1300 ONSemiconductor LVDS version
+K VITA1300
+F http://www.onsemi.com/pub_link/Collateral/NOIV1SN1300A-D.PDF
+$ENDCMP
+#
+#End Doc Library

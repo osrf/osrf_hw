@@ -1,0 +1,9 @@
+EESchema-DOCLIB Version 2.0
+#
+$CMP MAX10m50da-484
+D Altera Max10 484 pin FPGA
+K FPGA Altera Max10 50k BGA484
+F https://www.altera.com/en_US/pdfs/literature/hb/max-10/m10_datasheet.pdf
+$ENDCMP
+#
+#End Doc Library
