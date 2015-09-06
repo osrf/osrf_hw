@@ -1,6 +1,7 @@
 (module BGA144C80P12X12_1000X1000X140 (layer F.Cu) (tedit 55E8C406)
   (descr "BGA 12x12 0.8mm pitch 10mmx10mmx1.4mm")
   (tags "BGA144 0.8mm 12X12 10mmx10mm")
+  (attr smd)
   (fp_text reference REF** (at 0 7) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
