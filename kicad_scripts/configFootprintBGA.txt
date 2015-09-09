@@ -1,0 +1,10 @@
+# name of the component and the files generated
+name=BGA1764C80P42X42_4000X4000X140
+# Description of the component
+Description=here is a BGAchip
+# keywords displayed when you use the component inside kicad
+keywords=BGA 42x42 pitch 0.4mm
+# directory to store the generated files
+#outLibrary=/home/mikael/kicad_ws/osrf_hw/kicad_modules/testScript.pretty
+outLibrary=/media/ROS/work/osrf_hw/kicad_modules/testScript.pretty
+
