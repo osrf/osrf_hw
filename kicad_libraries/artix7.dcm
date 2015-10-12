@@ -1,0 +1,9 @@
+EESchema-DOCLIB Version 2.0
+#
+$CMP Artix7-484
+D Xilinx Artix7 FPGA, 484pins, 100 000 cells
+K FPGA Xilinx Artix7 100k BGA484
+F http://www.xilinx.com/support/documentation/data_sheets/ds181_Artix_7_Data_Sheet.pdf
+$ENDCMP
+#
+#End Doc Library
