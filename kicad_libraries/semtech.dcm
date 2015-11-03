@@ -1,0 +1,10 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP SC189
+D Single Buck converter
+K DC-DC Converter Buck
+F http://www.semtech.com/images/datasheet/sc189.pdf
+$ENDCMP
+#
+
+#End Doc Library

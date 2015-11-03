@@ -6,4 +6,10 @@ K DC-DC Converter Buck Dual-Buck
 F http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5023.pdf
 $ENDCMP
 #
+$CMP ADP5052
+D QuadBuck Single LDO
+K DC-DC Converter Buck Quad-Buck
+F http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5052.pdf
+$ENDCMP
+#
 #End Doc Library
