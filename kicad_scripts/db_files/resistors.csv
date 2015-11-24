@@ -1,4 +1,5 @@
 KEY,"Footprint","Datasheet","MFN","MFP","D1PN","D1PL","D2PN","D2PL"
+## RESISTOR 0402
 RES_1_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW04021R00FKED","541-1.00LL","http://www.digikey.com/product-detail/en/CRCW04021R00FKED/541-1.00LLCT-ND/1961882","_","_"
 RES_1_0402_0.063_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW04021R00FKED","541-1.00LL","http://www.digikey.com/product-detail/en/CRCW04021R00FKED/541-1.00LLCT-ND/1961882","_","_"
 RES_1.0_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW04021R00FKED","541-1.00LL","http://www.digikey.com/product-detail/en/CRCW04021R00FKED/541-1.00LLCT-ND/1961882","_","_"
@@ -53,6 +54,7 @@ RES_56_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcw
 RES_62_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040262R0FKED","541-62.0LCT","http://www.digikey.com/product-detail/en/CRCW040262R0FKED/541-62.0LCT-ND/1182986","_","_"
 RES_68_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040268R0FKED","541-68.0LCT","http://www.digikey.com/product-detail/en/CRCW040268R0FKED/541-68.0LCT-ND/1182990","_","_"
 RES_75_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040275R0FKED","541-75.0LCT","http://www.digikey.com/product-detail/en/CRCW040275R0FKED/541-75.0LCT-ND/1182995","_","_"
+RES_80.6_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040280R6FKED","541-80.6LCT","http://www.digikey.com/product-detail/en/CRCW040280R6FKED/541-80.6LCT-ND/1182998","_","_"
 RES_82_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040282R0FKED","541-82.0LCT","http://www.digikey.com/product-detail/en/CRCW040282R0FKED/541-82.0LCT-ND/1182999","_","_"
 RES_91_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040291R0FKED","541-91.0LCT","http://www.digikey.com/product-detail/en/CRCW040291R0FKED/541-91.0LCT-ND/1183005","_","_"
 RES_100_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW0402100RFKED","541-100LCT","http://www.digikey.com/product-detail/en/CRCW0402100RFKED/541-100LCT-ND/1183009","_","_"
@@ -188,3 +190,6 @@ RES_680k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcr
 RES_750k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","_","_","_","_","_"
 RES_820k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW0402820KFKED","541-820KL","http://www.digikey.com/product-detail/en/CRCW0402820KFKED/541-820KLCT-ND/1183455","_","_"
 RES_910k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","_","_","_","_","_"
+## RESISTOR 0201
+RES_2k_0201_1/20_1%,"Dipoles_SMD:C_0201","http://www.vishay.com/docs/20052/crcw0201e3.pdf","Vishay","CRCW02012K0FNED","541-2.00KAB","http://www.digikey.com/product-detail/en/CRCW02012K00FNED/541-2.00KABCT-ND/2720672","_","_"
+RES_59k_0201_1/20_1%,"Dipoles_SMD:C_0201","http://www.vishay.com/docs/20052/crcw0201e3.pdf","Vishay","CRCW020159K0FKED","541-59.0KAAB","http://www.digikey.com/product-detail/en/CRCW020159K0FKED/541-59.0KAABCT-ND/1968321","_","_"

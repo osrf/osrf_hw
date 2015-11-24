@@ -6,14 +6,14 @@ EESchema-LIBRARY Version 2.2 Date: 12/10/2015-17:33:37
 DEF Artix7-484 U 0 40 Y Y 9 F N
 F0 "U" 0 0 50 H V C C
 F1 "Artix7-484" 0 -100 50 H V C C
-F2 "_" 0 0 50 H I C C
+F2 "BGA:BGA484C100P22X22_2300X2300X185" 0 0 50 H I C C
 F3 "http://www.xilinx.com/support/documentation/data_sheets/ds181_Artix_7_Data_Sheet.pdf" 0 0 50 H I C C
-F4 "_" 0 0 50 H I C C "MFN"
-F5 "_" 0 0 50 H I C C "MFP"
+F4 "Xilinx" 0 0 50 H I C C "MFN"
+F5 "XC7A100T-1FGG484C" 0 0 50 H I C C "MFP"
 F6 "digikey" 0 0 50 H I C C "D1"
 F7 "mouser" 0 0 50 H I C C "D2"
-F7 "_" 0 0 50 H I C C "D1PN"
-F8 "_" 0 0 50 H I C C "D1PL"
+F7 "122-1885" 0 0 50 H I C C "D1PN"
+F8 "http://www.digikey.com/product-detail/en/XC7A100T-1FGG484C/122-1885-ND/3925804" 0 0 50 H I C C "D1PL"
 F9 "_" 0 0 50 H I C C "D2PN"
 F10 "_" 0 0 50 H I C C "D2PL"
 F11 "BGA484" 0 0 50 H I C C "Package"
