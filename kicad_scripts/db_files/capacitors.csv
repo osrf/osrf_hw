@@ -34,7 +34,7 @@ CAPA_10u_0603_6.3_10%_X5R,"Dipoles_SMD:C_0603","http://product.tdk.com/en/catalo
 CAPA_10u_0603_10_10%_X5R,"Dipoles_SMD:C_0603","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C1608X5R1A106K080AC","445-7486","http://www.digikey.com/product-detail/en/C1608X5R1A106K080AC/445-7486-1-ND/2733558","_","_"
 CAPA_22u_0603_6.3_20%_X5R,"Dipoles_SMD:C_0603","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C1608X5R0J226M080AC","445-8028","http://www.digikey.com/product-detail/en/C1608X5R0J226M080AC/445-8028-1-ND/2792158","_","_"
 ## 0805 capacitors
-CAPA_10u_0805_16_10%_JB,"Dipoles_SMD:C_0805","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C2012JB1C106K125AB","445-11430","http://www.digikey.com/product-detail/en/C2012JB1C106K125AB/445-11430-1-ND/3953096","_","_"
+CAPA_10u_0805_16_10%_JB,"Capacitors_SMD:C_0805","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C2012JB1C106K125AB","445-11430","http://www.digikey.com/product-detail/en/C2012JB1C106K125AB/445-11430-1-ND/3953096","_","_"
 CAPA_22u_0805_6.3_10%_X5R,"Capacitors_SMD:C_0805","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C2012X5R0J226K125AB","445-7679","http://www.digikey.com/product-detail/en/C2012X5R0J226K125AB/445-7679-1-ND/2733751","_","_"
 CAPA_47u_0805_10_20%_X5R,"Capacitors_SMD:C_0805","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C2012X5R1A476M125AC","445-8239","http://www.digikey.com/product-detail/en/C2012X5R1A476M125AC/445-8239-1-ND/2812081","_","_"
 ## 0201 capacitors

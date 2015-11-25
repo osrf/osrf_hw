@@ -160,6 +160,7 @@ RES_47k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrc
 RES_51k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","_","_","_","_","_"
 RES_56k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040256K0FKED","541-56.0KL","http://www.digikey.com/product-detail/en/CRCW040256K0FKED/541-56.0KLCT-ND/1183322","_","_"
 RES_57.6k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040257K6FKED","541-57.6KL","http://www.digikey.com/product-detail/en/CRCW040257K6FKED/541-57.6KLCT-ND/1183324","_","_"
+RES_59k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040259K0FKED","541-59.0KL","http://www.digikey.com/product-detail/en/CRCW040259K0FKED/541-59.0KLCT-ND/1183325","_","_"
 RES_62k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","_","_","_","_","_"
 RES_68k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040268K0FKED","541-68.0KL","http://www.digikey.com/product-detail/en/CRCW040268K0FKED/541-68.0KLCT-ND/1183332","_","_"
 RES_75k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","_","_","_","_","_"
@@ -191,5 +192,9 @@ RES_750k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcr
 RES_820k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW0402820KFKED","541-820KL","http://www.digikey.com/product-detail/en/CRCW0402820KFKED/541-820KLCT-ND/1183455","_","_"
 RES_910k_0402_1/16_1%,"Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","_","_","_","_","_"
 ## RESISTOR 0201
+RES_240_0201_1/20_1%,"Dipoles_SMD:C_0201","http://media.digikey.com/pdf/Data%20Sheets/Panasonic%20Resistors%20Thermistors%20PDFs/ERJ_G,R,E_Rev08.pdf","Panasonic","ERJ-1GEF2400C","P240AB","http://www.digikey.com/product-detail/en/ERJ-1GEF2400C/P240ABDKR-ND/575358","_","_"
+RES_330_0201_1/20_1%,"Dipoles_SMD:C_0201","http://www.vishay.com/docs/20052/crcw0201e3.pdf","Vishay","CRCW0201330RFKED","541-330AAB","http://www.digikey.com/product-detail/en/CRCW0201330RFKED/541-330AABCT-ND/1968201","_","_"
+RES_1k_0201_1/20_1%,"Dipoles_SMD:C_0201","http://www.vishay.com/docs/20052/crcw0201e3.pdf","Vishay","CRCW02011K00FNED","541-1.00KAB","http://www.digikey.com/product-detail/en/CRCW02011K00FNED/541-1.00KABCT-ND/1183599","_","_"
 RES_2k_0201_1/20_1%,"Dipoles_SMD:C_0201","http://www.vishay.com/docs/20052/crcw0201e3.pdf","Vishay","CRCW02012K0FNED","541-2.00KAB","http://www.digikey.com/product-detail/en/CRCW02012K00FNED/541-2.00KABCT-ND/2720672","_","_"
+RES_4.7k_0201_1/20_1%,"Dipoles_SMD:C_0201","http://www.vishay.com/docs/20052/crcw0201e3.pdf","Vishay","CRCW02016K7FKED","541-4.70KAAB","http://www.digikey.com/product-detail/en/CRCW02014K70FKED/541-4.70KAABCT-ND/1968253","_","_"
 RES_59k_0201_1/20_1%,"Dipoles_SMD:C_0201","http://www.vishay.com/docs/20052/crcw0201e3.pdf","Vishay","CRCW020159K0FKED","541-59.0KAAB","http://www.digikey.com/product-detail/en/CRCW020159K0FKED/541-59.0KAABCT-ND/1968321","_","_"
