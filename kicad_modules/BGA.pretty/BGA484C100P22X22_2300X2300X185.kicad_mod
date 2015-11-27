@@ -1,4 +1,7 @@
 (module BGA484C100P22X22_2300X2300X185 (layer F.Cu) (tedit 55E7792A)
+  (descr "BGA, 22x22 484pins, 1mm pitch, 23X23mm")
+  (tags "BGA484 BGA484C100P")
+  (attr smd)
   (fp_text reference REF** (at 0 14.1) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
