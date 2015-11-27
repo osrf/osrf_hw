@@ -6,8 +6,27 @@ EESchema-LIBRARY Version 2.3
 DEF SC189 U 0 40 Y Y 1 F N
 F0 "U" -150 300 50 H V C CNN
 F1 "SC189" 150 -250 50 H V C CNN
-F2 "" 0 -50 50 H V C CNN
-F3 "" 0 -50 50 H V C CNN
+F2 "UFDFN:6-UFDFN(2x2)" 0 0 50 H I C CNN
+F3 "http://www.semtech.com/images/datasheet/sc189.pdf" 0 0 50 H I C CNN
+F4 "Semtech" 0 0 50 H I C CNN "MFN"
+F5 "SC189CULTRT" 0 0 50 H I C CNN "MFP"
+F6 "digikey" 0 0 50 H I C CNN "D1"
+F7 "mouser" 0 0 50 H I C CNN "D2"
+F8 "SC189CUL" 0 0 50 H I C CNN "D1PN"
+F9 "http://www.digikey.com/product-detail/en/SC189CULTRT/SC189CULCT-ND/2182355" 0 0 50 H I C CNN "D1PL"
+F10 "_" 0 0 50 H I C CNN "D2PN"
+F11 "_" 0 0 50 H I C CNN "D2PL"
+F12 "UFDFN6" 0 0 50 H I C CNN "Package"
+F13 "_" 0 0 50 H I C CNN "Description"
+F14 "_" 0 0 50 H I C CNN "Voltage"
+F15 "_" 0 0 50 H I C CNN "Power"
+F16 "_" 0 0 50 H I C CNN "Tolerance"
+F17 "_" 0 0 50 H I C CNN "Temperature"
+F18 "_" 0 0 50 H I C CNN "ReverseVoltage"
+F19 "_" 0 0 50 H I C CNN "ForwardVoltage"
+F20 "_" 0 0 50 H I C CNN "Cont.Current"
+F21 "_" 0 0 50 H I C CNN "Frequency"
+F22 "_" 0 0 50 H I C CNN "ResonnanceFreq"
 DRAW
 S -300 200 300 -200 0 1 0 f
 X NC 1 0 400 200 D 50 50 1 1 U

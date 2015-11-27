@@ -1,6 +1,6 @@
 EESchema-DOCLIB  Version 2.0
 #
-$CMP I2C_Flash_SO8_ST_M24M02
+$CMP M24M02
 D Flash 2Mbits, I2C, STMicroelectronics, SO8 package
 K Flash 2Mbits, I2C, SO8
 F http://www.st.com/web/en/resource/technical/document/datasheet/CD00290537.pdf

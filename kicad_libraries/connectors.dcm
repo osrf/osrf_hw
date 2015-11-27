@@ -1,5 +1,11 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP CONN_02X30_1GND
+D 60 contacts connector + 1 shield
+K 02x30 1GND
+F http://dummy.dummy
+$ENDCMP
+#
 $CMP microSD_Card
 D microSD Card Reader
 K microSD connector

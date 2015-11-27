@@ -6,27 +6,27 @@ EESchema-LIBRARY Version 2.3
 DEF OV09715 U 0 40 Y Y 1 F N
 F0 "U" 0 1200 50 H V C CNN
 F1 "OV09715" 0 -1400 50 H V C CNN
-F2 "" 0 1200 50 H V C CNN
-F3 "" 0 1200 50 H V C CNN
-F4 "_" 0 0 50 H V C CNN "MFN"
-F5 "_" 0 0 50 H V C CNN "MFP"
-F6 "digikey" 0 0 50 H V C CNN "D1"
-F7 "mouser" 0 0 50 H V C CNN "D2"
-F8 "_" 0 0 50 H V C CNN "D1PN"
-F9 "_" 0 0 50 H V C CNN "D1PL"
-F10 "_" 0 0 50 H V C CNN "D2PN"
-F11 "_" 0 0 50 H V C CNN "D2PL"
-F12 "_" 0 0 50 H V C CNN "Package"
-F13 "_" 0 0 50 H V C CNN "Description"
-F14 "_" 0 0 50 H V C CNN "Voltage"
-F15 "_" 0 0 50 H V C CNN "Power"
-F16 "_" 0 0 50 H V C CNN "Tolerance"
-F17 "_" 0 0 50 H V C CNN "Temperature"
-F18 "_" 0 0 50 H V C CNN "ReverseVoltage"
-F19 "_" 0 0 50 H V C CNN "ForwardVoltage"
-F20 "_" 0 0 50 H V C CNN "Cont.Current"
-F21 "_" 0 0 50 H V C CNN "Frequency"
-F22 "_" 0 0 50 H V C CNN "ResonnanceFreq"
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+F4 "_" 0 0 50 H I C CNN "MFN"
+F5 "_" 0 0 50 H I C CNN "MFP"
+F6 "digikey" 0 0 50 H I C CNN "D1"
+F7 "mouser" 0 0 50 H I C CNN "D2"
+F8 "_" 0 0 50 H I C CNN "D1PN"
+F9 "_" 0 0 50 H I C CNN "D1PL"
+F10 "_" 0 0 50 H I C CNN "D2PN"
+F11 "_" 0 0 50 H I C CNN "D2PL"
+F12 "_" 0 0 50 H I C CNN "Package"
+F13 "_" 0 0 50 H I C CNN "Description"
+F14 "_" 0 0 50 H I C CNN "Voltage"
+F15 "_" 0 0 50 H I C CNN "Power"
+F16 "_" 0 0 50 H I C CNN "Tolerance"
+F17 "_" 0 0 50 H I C CNN "Temperature"
+F18 "_" 0 0 50 H I C CNN "ReverseVoltage"
+F19 "_" 0 0 50 H I C CNN "ForwardVoltage"
+F20 "_" 0 0 50 H I C CNN "Cont.Current"
+F21 "_" 0 0 50 H I C CNN "Frequency"
+F22 "_" 0 0 50 H I C CNN "ResonnanceFreq"
 DRAW
 S -700 1100 700 -1300 0 1 0 f
 X AVDD A1 -900 1000 200 R 50 50 1 1 I

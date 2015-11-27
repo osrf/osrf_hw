@@ -1,3 +1,9 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP W631GGK6KB
+D DDR3 2GB 96pins BGA
+K DDR3L Micron 96BGA
+F http://www.micron.com/~/media/documents/products/data-sheet/dram/ddr3/2gb_1_35v_ddr3l.pdf
+$ENDCMP
+#
 #End Doc Library

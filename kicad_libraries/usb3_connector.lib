@@ -6,16 +6,35 @@ EESchema-LIBRARY Version 2.3
 DEF USB_3.1_microB P 0 40 Y Y 1 F N
 F0 "P" -150 -650 50 H V C CNN
 F1 "USB_3.1_microB" -100 700 50 H V C CNN
-F2 "" -200 -100 50 V V C CNN
-F3 "" -200 -100 50 V V C CNN
+F2 "" 0 0 50 V V C CNN
+F3 "" 0 0 50 V V C CNN
+F4 "_" 0 0 50 H I C CNN "MFN"
+F5 "_" 0 0 50 H I C CNN "MFP"
+F6 "digikey" 0 0 50 H I C CNN "D1"
+F7 "mouser" 0 0 50 H I C CNN "D2"
+F8 "_" 0 0 50 H I C CNN "D1PN"
+F9 "_" 0 0 50 H I C CNN "D1PL"
+F10 "_" 0 0 50 H I C CNN "D2PN"
+F11 "_" 0 0 50 H I C CNN "D2PL"
+F12 "_" 0 0 50 H I C CNN "Package"
+F13 "_" 0 0 50 H I C CNN "Description"
+F14 "_" 0 0 50 H I C CNN "Voltage"
+F15 "_" 0 0 50 H I C CNN "Power"
+F16 "_" 0 0 50 H I C CNN "Tolerance"
+F17 "_" 0 0 50 H I C CNN "Temperature"
+F18 "_" 0 0 50 H I C CNN "ReverseVoltage"
+F19 "_" 0 0 50 H I C CNN "ForwardVoltage"
+F20 "_" 0 0 50 H I C CNN "Cont.Current"
+F21 "_" 0 0 50 H I C CNN "Frequency"
+F22 "_" 0 0 50 H I C CNN "ResonnanceFreq"
 $FPLIST
  USB*
 $ENDFPLIST
 DRAW
-T 900 150 250 50 0 0 0 USB2.0  Normal 0 C C
-T 900 150 -150 50 0 0 0 USB3.1  Normal 0 C C
-P 2 0 0 0  -250 50  200 50 N
-S 250 -550 -300 450 0 1 0 N
+T 900 100 300 50 0 0 0 USB2.0  Normal 0 C C
+T 900 100 -200 50 0 0 0 USB3.1  Normal 0 C C
+P 2 0 0 0  -300 50  200 50 N
+S 200 -600 -300 400 0 1 0 N
 X VBUS 1 -500 400 200 R 50 50 1 1 U
 X VBUS 1 -500 400 200 R 50 50 1 1 U
 X D- 2 -500 300 200 R 50 50 1 1 U
@@ -27,7 +46,7 @@ X TX+ 7 -500 -100 200 R 50 50 1 1 U
 X GND 8 -500 -500 200 R 50 50 1 1 U
 X RX- 9 -500 -200 200 R 50 50 1 1 U
 X RX+ 10 -500 -300 200 R 50 50 1 1 U
-X SHIELD SHLD 0 -750 200 U 50 50 1 1 I
+X SHIELD SHLD 0 -800 200 U 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #

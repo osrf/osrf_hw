@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP IC10pins
+D 10-pin component
+K 10 pin component
+F dummy
+$ENDCMP
+#
+$CMP IC8pins
+D 8-pin component
+K 8 pin component
+F dummy
+$ENDCMP
+#
+#End Doc Library

@@ -6,27 +6,27 @@ EESchema-LIBRARY Version 2.3
 DEF ADP5023 U 0 40 Y Y 1 F N
 F0 "U" 0 1100 50 H V C CNN
 F1 "ADP5023" 200 -1300 50 H V C CNN
-F2 "" 0 0 50 H V C CNN
-F3 "" 0 0 50 H V C CNN
-F4 "_" 0 0 50 H V C CNN "MFN"
-F5 "_" 0 0 50 H V C CNN "MFP"
-F6 "digikey" 0 0 50 H V C CNN "D1"
-F7 "mouser" 0 0 50 H V C CNN "D2"
-F8 "_" 0 0 50 H V C CNN "D1PN"
-F9 "_" 0 0 50 H V C CNN "D1PL"
-F10 "_" 0 0 50 H V C CNN "D2PN"
-F11 "_" 0 0 50 H V C CNN "D2PL"
-F12 "_" 0 0 50 H V C CNN "Package"
-F13 "_" 0 0 50 H V C CNN "Description"
-F14 "_" 0 0 50 H V C CNN "Voltage"
-F15 "_" 0 0 50 H V C CNN "Power"
-F16 "_" 0 0 50 H V C CNN "Tolerance"
-F17 "_" 0 0 50 H V C CNN "Temperature"
-F18 "_" 0 0 50 H V C CNN "ReverseVoltage"
-F19 "_" 0 0 50 H V C CNN "ForwardVoltage"
-F20 "_" 0 0 50 H V C CNN "Cont.Current"
-F21 "_" 0 0 50 H V C CNN "Frequency"
-F22 "_" 0 0 50 H V C CNN "ResonnanceFreq"
+F2 "Housings_DFN_QFN:QFN-24-1EP_4x4mm_Pitch0.5mm" 0 0 50 H I C CNN
+F3 "http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5023.pdf" 0 0 50 H I C CNN
+F4 "Analog Devices" 0 0 50 H I C CNN "MFN"
+F5 "_" 0 0 50 H I C CNN "MFP"
+F6 "digikey" 0 0 50 H I C CNN "D1"
+F7 "mouser" 0 0 50 H I C CNN "D2"
+F8 "_" 0 0 50 H I C CNN "D1PN"
+F9 "_" 0 0 50 H I C CNN "D1PL"
+F10 "_" 0 0 50 H I C CNN "D2PN"
+F11 "_" 0 0 50 H I C CNN "D2PL"
+F12 "_" 0 0 50 H I C CNN "Package"
+F13 "_" 0 0 50 H I C CNN "Description"
+F14 "_" 0 0 50 H I C CNN "Voltage"
+F15 "_" 0 0 50 H I C CNN "Power"
+F16 "_" 0 0 50 H I C CNN "Tolerance"
+F17 "_" 0 0 50 H I C CNN "Temperature"
+F18 "_" 0 0 50 H I C CNN "ReverseVoltage"
+F19 "_" 0 0 50 H I C CNN "ForwardVoltage"
+F20 "_" 0 0 50 H I C CNN "Cont.Current"
+F21 "_" 0 0 50 H I C CNN "Frequency"
+F22 "_" 0 0 50 H I C CNN "ResonnanceFreq"
 DRAW
 S -600 900 500 -1200 0 1 0 f
 X AGND 1 -800 -1100 200 R 50 50 1 1 I
@@ -62,8 +62,27 @@ ENDDEF
 DEF ADP5052 U 0 40 Y Y 1 F N
 F0 "U" 0 1600 50 H V C CNN
 F1 "ADP5052" 700 -1500 50 H V C CNN
-F2 "" 0 200 50 H V C CNN
-F3 "" 0 200 50 H V C CNN
+F2 "" 0 200 50 H I C CNN
+F3 "" 0 200 50 H I C CNN
+F4 "_" 0 0 50 H I C CNN "MFN"
+F5 "_" 0 0 50 H I C CNN "MFP"
+F6 "digikey" 0 0 50 H I C CNN "D1"
+F7 "mouser" 0 0 50 H I C CNN "D2"
+F8 "_" 0 0 50 H I C CNN "D1PN"
+F9 "_" 0 0 50 H I C CNN "D1PL"
+F10 "_" 0 0 50 H I C CNN "D2PN"
+F11 "_" 0 0 50 H I C CNN "D2PL"
+F12 "QFN24" 0 0 50 H I C CNN "Package"
+F13 "_" 0 0 50 H I C CNN "Description"
+F14 "_" 0 0 50 H I C CNN "Voltage"
+F15 "_" 0 0 50 H I C CNN "Power"
+F16 "_" 0 0 50 H I C CNN "Tolerance"
+F17 "_" 0 0 50 H I C CNN "Temperature"
+F18 "_" 0 0 50 H I C CNN "ReverseVoltage"
+F19 "_" 0 0 50 H I C CNN "ForwardVoltage"
+F20 "_" 0 0 50 H I C CNN "Cont.Current"
+F21 "_" 0 0 50 H I C CNN "Frequency"
+F22 "_" 0 0 50 H I C CNN "ResonnanceFreq"
 DRAW
 S -400 1500 500 -1600 0 1 0 f
 X BST3 1 700 -300 200 L 50 50 1 1 I
