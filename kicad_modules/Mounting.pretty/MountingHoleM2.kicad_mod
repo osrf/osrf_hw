@@ -1,7 +1,7 @@
-(module MountingHoleM2 (layer F.Cu) (tedit 55F0A149)
+(module MountingHoleM2 (layer F.Cu) (tedit 565CB098)
   (descr "MountingHole M2 screws")
   (tags "M2 Mount Hole")
-  (fp_text reference REF** (at 0.1 4.4) (layer F.SilkS)
+  (fp_text reference REF** (at 0.1 4.4) (layer F.SilkS) hide
     (effects (font (size 1 1) (thickness 0.15)))
   )
   (fp_text value MountingHoleM2 (at 0 -4) (layer F.Fab)
@@ -11,5 +11,5 @@
   (fp_circle (center 0 0) (end -1 -1) (layer B.CrtYd) (width 0.05))
   (fp_circle (center 0 0) (end -1 -1) (layer B.SilkS) (width 0.15))
   (fp_circle (center 0 0) (end -1.4142 -1.4142) (layer F.SilkS) (width 0.15))
-  (pad "" np_thru_hole circle (at 0 0) (size 2.1 2.1) (drill 2.1) (layers *.Cu *.Mask F.SilkS))
+  (pad "" np_thru_hole circle (at 0 0) (size 2.5 2.5) (drill 2.1) (layers *.Cu *.Mask F.SilkS))
 )
