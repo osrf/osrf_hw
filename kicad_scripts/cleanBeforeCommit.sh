@@ -15,6 +15,7 @@ do
   rm *bak *.bck *.swp *-cache.lib
 ##DIRWORKSPACE=$( dirname "$DIRECTORYTEST")
   outString=""
+  first=0
   while IFS='' read -r line || [[ -n "$line" ]]; do
       if [[ $line == LibName* ]] && [[ $line == *osrf_hw* ]] && [[ $line != ../../osrf_hw* ]];
       then
@@ -27,7 +28,12 @@ do
       then
         line=$libDirLine
       fi
-      outString=$outString"$line\n"
+      if [[ $first != 0 ]]
+      then
+        outString=$outString"\n"
+      fi
+      outString=$outString"$line"
+      first=1
   done < $file
   echo -e $outString > $file 
 done
