@@ -1,0 +1,1768 @@
+EESchema Schematic File Version 2
+LIBS:rj45-transfo
+LIBS:eth_transceiver_micrel
+LIBS:LED_WS2812B
+LIBS:SN74LVC1T45
+LIBS:STM32F74xNx
+LIBS:T9V034
+LIBS:is61wv102416
+LIBS:OSCILLATOR
+LIBS:DCDC_Converters
+LIBS:crystal
+LIBS:device
+LIBS:74xgxx
+LIBS:74xx
+LIBS:ac-dc
+LIBS:actel
+LIBS:adc-dac
+LIBS:Altera
+LIBS:analog_devices
+LIBS:analog_switches
+LIBS:atmel
+LIBS:audio
+LIBS:brooktre
+LIBS:cmos4000
+LIBS:cmos_ieee
+LIBS:conn
+LIBS:contrib
+LIBS:cypress
+LIBS:dc-dc
+LIBS:digital-audio
+LIBS:display
+LIBS:dsp
+LIBS:elec-unifil
+LIBS:ESD_Protection
+LIBS:ftdi
+LIBS:gennum
+LIBS:graphic
+LIBS:hc11
+LIBS:intel
+LIBS:interface
+LIBS:ir
+LIBS:Lattice
+LIBS:linear
+LIBS:logo
+LIBS:maxim
+LIBS:memory
+LIBS:microchip
+LIBS:microchip_dspic33dsc
+LIBS:microchip_pic10mcu
+LIBS:microchip_pic12mcu
+LIBS:microchip_pic16mcu
+LIBS:microchip_pic18mcu
+LIBS:microchip_pic32mcu
+LIBS:microcontrollers
+LIBS:motor_drivers
+LIBS:motorola
+LIBS:msp430
+LIBS:nordicsemi
+LIBS:nxp_armmcu
+LIBS:onsemi
+LIBS:opto
+LIBS:Oscillators
+LIBS:philips
+LIBS:power
+LIBS:powerint
+LIBS:Power_Management
+LIBS:pspice
+LIBS:references
+LIBS:regul
+LIBS:relays
+LIBS:rfcom
+LIBS:sensors
+LIBS:silabs
+LIBS:siliconi
+LIBS:stm8
+LIBS:stm32
+LIBS:supertex
+LIBS:switches
+LIBS:texas
+LIBS:transf
+LIBS:transistors
+LIBS:ttl_ieee
+LIBS:valves
+LIBS:video
+LIBS:Xicor
+LIBS:xilinx
+LIBS:Zilog
+EELAYER 25 0
+EELAYER END
+$Descr A2 23386 16535
+encoding utf-8
+Sheet 3 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L STM32F74xNx U8
+U 1 1 5593C1D1
+P 10900 5300
+AR Path="/5593C1D1" Ref="U8"  Part="1" 
+AR Path="/5593AC77/5593C1D1" Ref="U8"  Part="1" 
+F 0 "U8" H 14150 150 60  0000 C CNN
+F 1 "STM32F74xNx" H 10900 50  60  0000 C CNN
+F 2 "BGA:BGA216C80P15X15_1300X1300X110" H 10900 5300 60  0001 C CNN
+F 3 "http://www.st.com/web/en/resource/technical/document/datasheet/DM00166116.pdf" H 10900 5300 60  0001 C CNN
+F 4 "STMicroelectronics" H 10900 5300 60  0001 C CNN "MFN"
+F 5 "STM32F746NGH6" H 10900 5300 60  0001 C CNN "MFP"
+F 6 "digikey" H 10900 5300 60  0001 C CNN "D1"
+F 7 "mouser" H 10900 5300 60  0001 C CNN "D2"
+F 8 "497-15818" H 10900 5300 60  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/STM32F746NGH6/497-15818-ND/5287177" H 10900 5300 60  0001 C CNN "D1PL"
+F 10 "_" H 10900 5300 60  0001 C CNN "D2PN"
+F 11 "_" H 10900 5300 60  0001 C CNN "D2PL"
+F 12 "BGA216" H 10900 5300 60  0001 C CNN "Package"
+F 13 "_" H 10900 5300 60  0000 C CNN "Description"
+F 14 "_" H 10900 5300 60  0001 C CNN "Voltage"
+F 15 "_" H 10900 5300 60  0001 C CNN "Power"
+F 16 "_" H 10900 5300 60  0001 C CNN "Tolerance"
+F 17 "_" H 10900 5300 60  0001 C CNN "Temperature"
+F 18 "_" H 10900 5300 60  0001 C CNN "ReverseVoltage"
+F 19 "_" H 10900 5300 60  0001 C CNN "ForwardVoltage"
+F 20 "_" H 10900 5300 60  0001 C CNN "Cont.Current"
+F 21 "_" H 10900 5300 60  0001 C CNN "Frequency"
+F 22 "_" H 10900 5300 60  0001 C CNN "ResonnanceFreq"
+	1    10900 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L R_Small R16
+U 1 1 5593C1D8
+P 8450 2600
+AR Path="/5593C1D8" Ref="R16"  Part="1" 
+AR Path="/5593AC77/5593C1D8" Ref="R16"  Part="1" 
+F 0 "R16" H 8480 2620 50  0000 L CNN
+F 1 "10k" H 8480 2560 50  0000 L CNN
+F 2 "Dipoles_SMD:R_0402" H 8450 2600 60  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 8450 2600 60  0001 C CNN
+F 4 "Vishay" H 8450 2600 60  0001 C CNN "MFN"
+F 5 "CRCW040210K0FKED" H 8450 2600 60  0001 C CNN "MFP"
+F 6 "digikey" H 8450 2600 60  0001 C CNN "D1"
+F 7 "mouser" H 8450 2600 60  0001 C CNN "D2"
+F 8 "541-10.0KL" H 8450 2600 60  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/CRCW040210K0FKED/541-10.0KLCT-ND/1183237" H 8450 2600 60  0001 C CNN "D1PL"
+F 10 "_" H 8450 2600 60  0001 C CNN "D2PN"
+F 11 "_" H 8450 2600 60  0001 C CNN "D2PL"
+F 12 "0402" H 8450 2600 60  0001 C CNN "Package"
+F 13 "_" H 8350 2600 60  0000 C CNN "Description"
+F 14 "_" H 8450 2600 60  0001 C CNN "Voltage"
+F 15 "1/16" H 8450 2600 60  0001 C CNN "Power"
+F 16 "1%" H 8450 2600 60  0001 C CNN "Tolerance"
+F 17 "_" H 8450 2600 60  0001 C CNN "Temperature"
+F 18 "_" H 8450 2600 60  0001 C CNN "ReverseVoltage"
+F 19 "_" H 8450 2600 60  0001 C CNN "ForwardVoltage"
+F 20 "_" H 8450 2600 60  0001 C CNN "Cont.Current"
+F 21 "_" H 8450 2600 60  0001 C CNN "Frequency"
+F 22 "_" H 8450 2600 60  0001 C CNN "ResonnanceFreq"
+	1    8450 2600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR055
+U 1 1 5593C1DF
+P 8450 2250
+F 0 "#PWR055" H 8450 2000 50  0001 C CNN
+F 1 "GND" H 8450 2100 50  0000 C CNN
+F 2 "" H 8450 2250 60  0000 C CNN
+F 3 "" H 8450 2250 60  0000 C CNN
+	1    8450 2250
+	-1   0    0    1   
+$EndComp
+$Comp
+L C C66
+U 1 1 5593C1E5
+P 8900 2450
+F 0 "C66" H 8925 2550 50  0000 L CNN
+F 1 "2.2u" H 8925 2350 50  0000 L CNN
+F 2 "Dipoles_SMD:C_0402" H 8938 2300 30  0001 C CNN
+F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 8900 2450 60  0001 C CNN
+F 4 "TDK" H 8900 2450 60  0001 C CNN "MFN"
+F 5 "C1005X5R0J225K050BC" H 8900 2450 60  0001 C CNN "MFP"
+F 6 "digikey" H 8900 2450 60  0001 C CNN "D1"
+F 7 "mouser" H 8900 2450 60  0001 C CNN "D2"
+F 8 "445-6847" H 8900 2450 60  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/C1005X5R0J225K050BC/445-6847-1-ND/2619209" H 8900 2450 60  0001 C CNN "D1PL"
+F 10 "_" H 8900 2450 60  0001 C CNN "D2PN"
+F 11 "_" H 8900 2450 60  0001 C CNN "D2PL"
+F 12 "0402" H 8900 2450 60  0001 C CNN "Package"
+F 13 "_" H 9100 2450 60  0000 C CNN "Description"
+F 14 "6.3" H 8900 2450 60  0001 C CNN "Voltage"
+F 15 "_" H 8900 2450 60  0001 C CNN "Power"
+F 16 "10%" H 8900 2450 60  0001 C CNN "Tolerance"
+F 17 "X5R" H 8900 2450 60  0001 C CNN "Temperature"
+F 18 "_" H 8900 2450 60  0001 C CNN "ReverseVoltage"
+F 19 "_" H 8900 2450 60  0001 C CNN "ForwardVoltage"
+F 20 "_" H 8900 2450 60  0001 C CNN "Cont.Current"
+F 21 "_" H 8900 2450 60  0001 C CNN "Frequency"
+F 22 "_" H 8900 2450 60  0001 C CNN "ResonnanceFreq"
+	1    8900 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C65
+U 1 1 5593C1EC
+P 8700 2450
+F 0 "C65" H 8725 2550 50  0000 L CNN
+F 1 "2.2u" H 8725 2350 50  0000 L CNN
+F 2 "Dipoles_SMD:C_0402" H 8738 2300 30  0001 C CNN
+F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 8700 2450 60  0001 C CNN
+F 4 "TDK" H 8700 2450 60  0001 C CNN "MFN"
+F 5 "C1005X5R0J225K050BC" H 8700 2450 60  0001 C CNN "MFP"
+F 6 "digikey" H 8700 2450 60  0001 C CNN "D1"
+F 7 "mouser" H 8700 2450 60  0001 C CNN "D2"
+F 8 "445-6847" H 8700 2450 60  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/C1005X5R0J225K050BC/445-6847-1-ND/2619209" H 8700 2450 60  0001 C CNN "D1PL"
+F 10 "_" H 8700 2450 60  0001 C CNN "D2PN"
+F 11 "_" H 8700 2450 60  0001 C CNN "D2PL"
+F 12 "0402" H 8700 2450 60  0001 C CNN "Package"
+F 13 "_" H 8600 2450 60  0000 C CNN "Description"
+F 14 "6.3" H 8700 2450 60  0001 C CNN "Voltage"
+F 15 "_" H 8700 2450 60  0001 C CNN "Power"
+F 16 "10%" H 8700 2450 60  0001 C CNN "Tolerance"
+F 17 "X5R" H 8700 2450 60  0001 C CNN "Temperature"
+F 18 "_" H 8700 2450 60  0001 C CNN "ReverseVoltage"
+F 19 "_" H 8700 2450 60  0001 C CNN "ForwardVoltage"
+F 20 "_" H 8700 2450 60  0001 C CNN "Cont.Current"
+F 21 "_" H 8700 2450 60  0001 C CNN "Frequency"
+F 22 "_" H 8700 2450 60  0001 C CNN "ResonnanceFreq"
+	1    8700 2450
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR056
+U 1 1 5593C1F3
+P 8600 10500
+F 0 "#PWR056" H 8600 10250 50  0001 C CNN
+F 1 "GND" H 8600 10350 50  0000 C CNN
+F 2 "" H 8600 10500 60  0000 C CNN
+F 3 "" H 8600 10500 60  0000 C CNN
+	1    8600 10500
+	1    0    0    -1  
+$EndComp
+$Comp
+L R_Small R15
+U 1 1 5593C256
+P 7950 1300
+AR Path="/5593C256" Ref="R15"  Part="1" 
+AR Path="/5593AC77/5593C256" Ref="R15"  Part="1" 
+F 0 "R15" H 7980 1320 50  0000 L CNN
+F 1 "10k" H 7980 1260 50  0000 L CNN
+F 2 "Dipoles_SMD:R_0402" H 7950 1300 60  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 7950 1300 60  0001 C CNN
+F 4 "Vishay" H 7950 1300 60  0001 C CNN "MFN"
+F 5 "CRCW040210K0FKED" H 7950 1300 60  0001 C CNN "MFP"
+F 6 "digikey" H 7950 1300 60  0001 C CNN "D1"
+F 7 "mouser" H 7950 1300 60  0001 C CNN "D2"
+F 8 "541-10.0KL" H 7950 1300 60  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/CRCW040210K0FKED/541-10.0KLCT-ND/1183237" H 7950 1300 60  0001 C CNN "D1PL"
+F 10 "_" H 7950 1300 60  0001 C CNN "D2PN"
+F 11 "_" H 7950 1300 60  0001 C CNN "D2PL"
+F 12 "0402" H 7950 1300 60  0001 C CNN "Package"
+F 13 "_" H 8200 1300 60  0000 C CNN "Description"
+F 14 "_" H 7950 1300 60  0001 C CNN "Voltage"
+F 15 "1/16" H 7950 1300 60  0001 C CNN "Power"
+F 16 "1%" H 7950 1300 60  0001 C CNN "Tolerance"
+F 17 "_" H 7950 1300 60  0001 C CNN "Temperature"
+F 18 "_" H 7950 1300 60  0001 C CNN "ReverseVoltage"
+F 19 "_" H 7950 1300 60  0001 C CNN "ForwardVoltage"
+F 20 "_" H 7950 1300 60  0001 C CNN "Cont.Current"
+F 21 "_" H 7950 1300 60  0001 C CNN "Frequency"
+F 22 "_" H 7950 1300 60  0001 C CNN "ResonnanceFreq"
+	1    7950 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L R_Small R14
+U 1 1 5593C261
+P 7700 2350
+AR Path="/5593C261" Ref="R14"  Part="1" 
+AR Path="/5593AC77/5593C261" Ref="R14"  Part="1" 
+F 0 "R14" H 7730 2370 50  0000 L CNN
+F 1 "10k" H 7730 2310 50  0000 L CNN
+F 2 "Dipoles_SMD:R_0402" H 7700 2350 60  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 7700 2350 60  0001 C CNN
+F 4 "Vishay" H 7700 2350 60  0001 C CNN "MFN"
+F 5 "CRCW040210K0FKED" H 7700 2350 60  0001 C CNN "MFP"
+F 6 "digikey" H 7700 2350 60  0001 C CNN "D1"
+F 7 "mouser" H 7700 2350 60  0001 C CNN "D2"
+F 8 "541-10.0KL" H 7700 2350 60  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/CRCW040210K0FKED/541-10.0KLCT-ND/1183237" H 7700 2350 60  0001 C CNN "D1PL"
+F 10 "_" H 7700 2350 60  0001 C CNN "D2PN"
+F 11 "_" H 7700 2350 60  0001 C CNN "D2PL"
+F 12 "0402" H 7700 2350 60  0001 C CNN "Package"
+F 13 "_" H 7850 2350 60  0000 C CNN "Description"
+F 14 "_" H 7700 2350 60  0001 C CNN "Voltage"
+F 15 "1/16" H 7700 2350 60  0001 C CNN "Power"
+F 16 "1%" H 7700 2350 60  0001 C CNN "Tolerance"
+F 17 "_" H 7700 2350 60  0001 C CNN "Temperature"
+F 18 "_" H 7700 2350 60  0001 C CNN "ReverseVoltage"
+F 19 "_" H 7700 2350 60  0001 C CNN "ForwardVoltage"
+F 20 "_" H 7700 2350 60  0001 C CNN "Cont.Current"
+F 21 "_" H 7700 2350 60  0001 C CNN "Frequency"
+F 22 "_" H 7700 2350 60  0001 C CNN "ResonnanceFreq"
+	1    7700 2350
+	1    0    0    -1  
+$EndComp
+$Comp
+L R_Small R13
+U 1 1 5593C26F
+P 7550 2600
+AR Path="/5593C26F" Ref="R13"  Part="1" 
+AR Path="/5593AC77/5593C26F" Ref="R13"  Part="1" 
+F 0 "R13" V 7500 2550 50  0000 L CNN
+F 1 "10k" V 7650 2550 50  0000 L CNN
+F 2 "Dipoles_SMD:R_0402" H 7550 2600 60  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 7550 2600 60  0001 C CNN
+F 4 "Vishay" H 7550 2600 60  0001 C CNN "MFN"
+F 5 "CRCW040210K0FKED" H 7550 2600 60  0001 C CNN "MFP"
+F 6 "digikey" H 7550 2600 60  0001 C CNN "D1"
+F 7 "mouser" H 7550 2600 60  0001 C CNN "D2"
+F 8 "541-10.0KL" H 7550 2600 60  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/CRCW040210K0FKED/541-10.0KLCT-ND/1183237" H 7550 2600 60  0001 C CNN "D1PL"
+F 10 "_" H 7550 2600 60  0001 C CNN "D2PN"
+F 11 "_" H 7550 2600 60  0001 C CNN "D2PL"
+F 12 "0402" H 7550 2600 60  0001 C CNN "Package"
+F 13 "_" H 7550 2600 60  0000 C CNN "Description"
+F 14 "_" H 7550 2600 60  0001 C CNN "Voltage"
+F 15 "1/16" H 7550 2600 60  0001 C CNN "Power"
+F 16 "1%" H 7550 2600 60  0001 C CNN "Tolerance"
+F 17 "_" H 7550 2600 60  0001 C CNN "Temperature"
+F 18 "_" H 7550 2600 60  0001 C CNN "ReverseVoltage"
+F 19 "_" H 7550 2600 60  0001 C CNN "ForwardVoltage"
+F 20 "_" H 7550 2600 60  0001 C CNN "Cont.Current"
+F 21 "_" H 7550 2600 60  0001 C CNN "Frequency"
+F 22 "_" H 7550 2600 60  0001 C CNN "ResonnanceFreq"
+	1    7550 2600
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR057
+U 1 1 5593C276
+P 7450 2650
+F 0 "#PWR057" H 7450 2400 50  0001 C CNN
+F 1 "GND" H 7450 2500 50  0000 C CNN
+F 2 "" H 7450 2650 60  0000 C CNN
+F 3 "" H 7450 2650 60  0000 C CNN
+	1    7450 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW1
+U 1 1 55937468
+P 6750 1100
+AR Path="/55937468" Ref="SW1"  Part="1" 
+AR Path="/5593AC77/55937468" Ref="SW1"  Part="1" 
+F 0 "SW1" H 6650 1200 50  0000 C CNN
+F 1 "EVPAA" H 6750 1020 50  0000 C CNN
+F 2 "Switches:SWITCH_EVPAA" H 6750 1100 60  0001 C CNN
+F 3 "http://industrial.panasonic.com/lecs/www-data/pdf/ATK0000/ATK0000CE26.pdf" H 6750 1100 60  0001 C CNN
+F 4 " Panasonic" H 6750 1100 60  0001 C CNN "MFN"
+F 5 " EVP-AA402W" H 6750 1100 60  0001 C CNN "MFP"
+F 6 "digikey" H 6750 1100 60  0001 C CNN "D1"
+F 7 "mouser" H 6750 1100 60  0001 C CNN "D2"
+F 8 "P13349STR" H 6750 1100 60  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/EVP-AA402W/P13349STR-ND/822253" H 6750 1100 60  0001 C CNN "D1PL"
+F 10 "_" H 6750 1100 60  0001 C CNN "D2PN"
+F 11 "_" H 6750 1100 60  0001 C CNN "D2PL"
+F 12 "_" H 6750 1100 60  0001 C CNN "Package"
+F 13 "SW_RESET" H 6750 950 60  0000 C CNN "Description"
+F 14 "_" H 6750 1100 60  0001 C CNN "Voltage"
+F 15 "_" H 6750 1100 60  0001 C CNN "Power"
+F 16 "_" H 6750 1100 60  0001 C CNN "Tolerance"
+F 17 "_" H 6750 1100 60  0001 C CNN "Temperature"
+F 18 "_" H 6750 1100 60  0001 C CNN "ReverseVoltage"
+F 19 "_" H 6750 1100 60  0001 C CNN "ForwardVoltage"
+F 20 "_" H 6750 1100 60  0001 C CNN "Cont.Current"
+F 21 "_" H 6750 1100 60  0001 C CNN "Frequency"
+F 22 "_" H 6750 1100 60  0001 C CNN "ResonnanceFreq"
+	1    6750 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR058
+U 1 1 55937470
+P 6100 1100
+F 0 "#PWR058" H 6100 850 50  0001 C CNN
+F 1 "GND" H 6100 950 50  0000 C CNN
+F 2 "" H 6100 1100 60  0000 C CNN
+F 3 "" H 6100 1100 60  0000 C CNN
+	1    6100 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C63
+U 1 1 559379C3
+P 6750 850
+F 0 "C63" V 6700 650 50  0000 L CNN
+F 1 "100n" V 6700 950 50  0000 L CNN
+F 2 "Dipoles_SMD:C_0402" H 6788 700 30  0001 C CNN
+F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 6750 850 60  0001 C CNN
+F 4 "TDK" H 6750 850 60  0001 C CNN "MFN"
+F 5 "C1005X5R0J104K050BA" H 6750 850 60  0001 C CNN "MFP"
+F 6 "digikey" H 6750 850 60  0001 C CNN "D1"
+F 7 "mouser" H 6750 850 60  0001 C CNN "D2"
+F 8 "445-1266" H 6750 850 60  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/C1005X5R0J104K050BA/445-1266-1-ND/567731" H 6750 850 60  0001 C CNN "D1PL"
+F 10 "_" H 6750 850 60  0001 C CNN "D2PN"
+F 11 "_" H 6750 850 60  0001 C CNN "D2PL"
+F 12 "0402" H 6750 850 60  0001 C CNN "Package"
+F 13 "_" H 6750 850 60  0000 C CNN "Description"
+F 14 "6.3" H 6750 850 60  0001 C CNN "Voltage"
+F 15 "_" H 6750 850 60  0001 C CNN "Power"
+F 16 "10%" H 6750 850 60  0001 C CNN "Tolerance"
+F 17 "X5R" H 6750 850 60  0001 C CNN "Temperature"
+F 18 "_" H 6750 850 60  0001 C CNN "ReverseVoltage"
+F 19 "_" H 6750 850 60  0001 C CNN "ForwardVoltage"
+F 20 "_" H 6750 850 60  0001 C CNN "Cont.Current"
+F 21 "_" H 6750 850 60  0001 C CNN "Frequency"
+F 22 "_" H 6750 850 60  0001 C CNN "ResonnanceFreq"
+	1    6750 850 
+	0    1    1    0   
+$EndComp
+$Comp
+L C C64
+U 1 1 559494EC
+P 6750 1600
+F 0 "C64" V 6700 1400 50  0000 L CNN
+F 1 "100n" V 6700 1700 50  0000 L CNN
+F 2 "Dipoles_SMD:C_0402" H 6788 1450 30  0001 C CNN
+F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 6750 1600 60  0001 C CNN
+F 4 "TDK" H 6750 1600 60  0001 C CNN "MFN"
+F 5 "C1005X5R0J104K050BA" H 6750 1600 60  0001 C CNN "MFP"
+F 6 "digikey" H 6750 1600 60  0001 C CNN "D1"
+F 7 "mouser" H 6750 1600 60  0001 C CNN "D2"
+F 8 "445-1266" H 6750 1600 60  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/C1005X5R0J104K050BA/445-1266-1-ND/567731" H 6750 1600 60  0001 C CNN "D1PL"
+F 10 "_" H 6750 1600 60  0001 C CNN "D2PN"
+F 11 "_" H 6750 1600 60  0001 C CNN "D2PL"
+F 12 "0402" H 6750 1600 60  0001 C CNN "Package"
+F 13 "_" H 6750 1600 60  0000 C CNN "Description"
+F 14 "6.3" H 6750 1600 60  0001 C CNN "Voltage"
+F 15 "_" H 6750 1600 60  0001 C CNN "Power"
+F 16 "10%" H 6750 1600 60  0001 C CNN "Tolerance"
+F 17 "X5R" H 6750 1600 60  0001 C CNN "Temperature"
+F 18 "_" H 6750 1600 60  0001 C CNN "ReverseVoltage"
+F 19 "_" H 6750 1600 60  0001 C CNN "ForwardVoltage"
+F 20 "_" H 6750 1600 60  0001 C CNN "Cont.Current"
+F 21 "_" H 6750 1600 60  0001 C CNN "Frequency"
+F 22 "_" H 6750 1600 60  0001 C CNN "ResonnanceFreq"
+	1    6750 1600
+	0    1    1    0   
+$EndComp
+$Comp
+L +3V3 #PWR059
+U 1 1 559495B3
+P 6100 1700
+AR Path="/559495B3" Ref="#PWR059"  Part="1" 
+AR Path="/5593AC77/559495B3" Ref="#PWR059"  Part="1" 
+F 0 "#PWR059" H 6100 1550 50  0001 C CNN
+F 1 "+3V3" H 6100 1840 50  0000 C CNN
+F 2 "" H 6100 1700 60  0000 C CNN
+F 3 "" H 6100 1700 60  0000 C CNN
+	1    6100 1700
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR060
+U 1 1 5594D69D
+P 12400 10700
+AR Path="/5594D69D" Ref="#PWR060"  Part="1" 
+AR Path="/5593AC77/5594D69D" Ref="#PWR060"  Part="1" 
+F 0 "#PWR060" H 12400 10550 50  0001 C CNN
+F 1 "+3V3" H 12400 10840 50  0000 C CNN
+F 2 "" H 12400 10700 60  0000 C CNN
+F 3 "" H 12400 10700 60  0000 C CNN
+	1    12400 10700
+	-1   0    0    1   
+$EndComp
+$Comp
+L +3V3 #PWR061
+U 1 1 5594D74B
+P 7950 1050
+AR Path="/5594D74B" Ref="#PWR061"  Part="1" 
+AR Path="/5593AC77/5594D74B" Ref="#PWR061"  Part="1" 
+F 0 "#PWR061" H 7950 900 50  0001 C CNN
+F 1 "+3V3" H 7950 1190 50  0000 C CNN
+F 2 "" H 7950 1050 60  0000 C CNN
+F 3 "" H 7950 1050 60  0000 C CNN
+	1    7950 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR062
+U 1 1 5594D782
+P 7700 2250
+AR Path="/5594D782" Ref="#PWR062"  Part="1" 
+AR Path="/5593AC77/5594D782" Ref="#PWR062"  Part="1" 
+F 0 "#PWR062" H 7700 2100 50  0001 C CNN
+F 1 "+3V3" H 7700 2390 50  0000 C CNN
+F 2 "" H 7700 2250 60  0000 C CNN
+F 3 "" H 7700 2250 60  0000 C CNN
+	1    7700 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L SW_PUSH SW2
+U 1 1 559C0D8A
+P 6750 1850
+AR Path="/559C0D8A" Ref="SW2"  Part="1" 
+AR Path="/5593AC77/559C0D8A" Ref="SW2"  Part="1" 
+F 0 "SW2" H 6650 1950 50  0000 C CNN
+F 1 "EVPAA" H 6750 1770 50  0000 C CNN
+F 2 "Switches:SWITCH_EVPAA" H 6750 1850 60  0001 C CNN
+F 3 "http://industrial.panasonic.com/lecs/www-data/pdf/ATK0000/ATK0000CE26.pdf" H 6750 1850 60  0001 C CNN
+F 4 " Panasonic" H 6750 1850 60  0001 C CNN "MFN"
+F 5 " EVP-AA402W" H 6750 1850 60  0001 C CNN "MFP"
+F 6 "digikey" H 6750 1850 60  0001 C CNN "D1"
+F 7 "mouser" H 6750 1850 60  0001 C CNN "D2"
+F 8 "P13349STR" H 6750 1850 60  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/EVP-AA402W/P13349STR-ND/822253" H 6750 1850 60  0001 C CNN "D1PL"
+F 10 "_" H 6750 1850 60  0001 C CNN "D2PN"
+F 11 "_" H 6750 1850 60  0001 C CNN "D2PL"
+F 12 "_" H 6750 1850 60  0001 C CNN "Package"
+F 13 "SW_BOOT" H 6750 1700 60  0000 C CNN "Description"
+F 14 "_" H 6750 1850 60  0001 C CNN "Voltage"
+F 15 "_" H 6750 1850 60  0001 C CNN "Power"
+F 16 "_" H 6750 1850 60  0001 C CNN "Tolerance"
+F 17 "_" H 6750 1850 60  0001 C CNN "Temperature"
+F 18 "_" H 6750 1850 60  0001 C CNN "ReverseVoltage"
+F 19 "_" H 6750 1850 60  0001 C CNN "ForwardVoltage"
+F 20 "_" H 6750 1850 60  0001 C CNN "Cont.Current"
+F 21 "_" H 6750 1850 60  0001 C CNN "Frequency"
+F 22 "_" H 6750 1850 60  0001 C CNN "ResonnanceFreq"
+	1    6750 1850
+	1    0    0    -1  
+$EndComp
+Text Label 11800 10600 0    60   ~ 0
+VDDA
+Text Label 4000 8500 2    60   ~ 0
+zPA0
+Text Label 4000 8600 2    60   ~ 0
+zPA1
+Text Label 4000 8700 2    60   ~ 0
+zPA2
+Text Label 4000 8800 2    60   ~ 0
+zPA3
+Text Label 4000 8900 2    60   ~ 0
+zPA4
+Text Label 4000 9000 2    60   ~ 0
+zPA5
+Text Label 4000 9100 2    60   ~ 0
+zPA6
+Text Label 4000 9200 2    60   ~ 0
+zPA7
+Text Label 4000 9300 2    60   ~ 0
+zPA8
+Text Label 4000 9400 2    60   ~ 0
+zPA9
+Text Label 4000 9500 2    60   ~ 0
+zPA10
+Text Label 4000 9600 2    60   ~ 0
+zPA11
+Text Label 4000 9700 2    60   ~ 0
+zPA12
+Text Label 4000 9800 2    60   ~ 0
+zPA13
+Text Label 4000 9900 2    60   ~ 0
+zPA14
+Text Label 4000 10000 2    60   ~ 0
+zPA15
+Text Label 4000 6700 2    60   ~ 0
+zPB0
+Text Label 4000 6800 2    60   ~ 0
+zPB1
+Text Label 4000 6900 2    60   ~ 0
+zPB2
+Text Label 4000 7000 2    60   ~ 0
+zPB3
+Text Label 4000 7100 2    60   ~ 0
+zPB4
+Text Label 4000 7200 2    60   ~ 0
+zPB5
+Text Label 4000 7300 2    60   ~ 0
+zPB6
+Text Label 4000 7400 2    60   ~ 0
+zPB7
+Text Label 4000 7500 2    60   ~ 0
+zPB8
+Text Label 4000 7600 2    60   ~ 0
+zPB9
+Text Label 4000 7700 2    60   ~ 0
+zPB10
+Text Label 4000 7800 2    60   ~ 0
+zPB11
+Text Label 4000 7900 2    60   ~ 0
+zPB12
+Text Label 4000 8000 2    60   ~ 0
+zPB13
+Text Label 4000 8100 2    60   ~ 0
+zPB14
+Text Label 4000 8200 2    60   ~ 0
+zPB15
+Text Label 4000 5000 2    60   ~ 0
+zPC0
+Text Label 4000 5100 2    60   ~ 0
+zPC1
+Text Label 4000 5200 2    60   ~ 0
+zPC2
+Text Label 4000 5300 2    60   ~ 0
+zPC3
+Text Label 4000 5400 2    60   ~ 0
+zPC4
+Text Label 4000 5500 2    60   ~ 0
+zPC5
+Text Label 4000 5600 2    60   ~ 0
+zPC6
+Text Label 4000 5700 2    60   ~ 0
+zPC7
+Text Label 4000 5800 2    60   ~ 0
+zPC8
+Text Label 4000 5900 2    60   ~ 0
+zPC9
+Text Label 4000 6000 2    60   ~ 0
+zPC10
+Text Label 4000 6100 2    60   ~ 0
+zPC11
+Text Label 4000 6200 2    60   ~ 0
+zPC12
+Text Label 4000 6300 2    60   ~ 0
+zPC13
+Text Label 4000 6400 2    60   ~ 0
+zPC14
+Text Label 4000 6500 2    60   ~ 0
+zPC15
+Text Label 4000 3200 2    60   ~ 0
+zPD0
+Text Label 4000 3300 2    60   ~ 0
+zPD1
+Text Label 4000 3400 2    60   ~ 0
+zPD2
+Text Label 4000 3500 2    60   ~ 0
+zPD3
+Text Label 4000 3600 2    60   ~ 0
+zPD4
+Text Label 4000 3700 2    60   ~ 0
+zPD5
+Text Label 4000 3800 2    60   ~ 0
+zPD6
+Text Label 4000 3900 2    60   ~ 0
+zPD7
+Text Label 4000 4000 2    60   ~ 0
+zPD8
+Text Label 4000 4100 2    60   ~ 0
+zPD9
+Text Label 4000 4200 2    60   ~ 0
+zPD10
+Text Label 4000 4300 2    60   ~ 0
+zPD11
+Text Label 4000 4400 2    60   ~ 0
+zPD12
+Text Label 4000 4500 2    60   ~ 0
+zPD13
+Text Label 4000 4600 2    60   ~ 0
+zPD14
+Text Label 4000 4700 2    60   ~ 0
+zPD15
+Text Label 18800 8500 0    60   ~ 0
+zPE0
+Text Label 18800 8600 0    60   ~ 0
+zPE1
+Text Label 18800 8700 0    60   ~ 0
+zPE2
+Text Label 18800 8800 0    60   ~ 0
+zPE3
+Text Label 18800 8900 0    60   ~ 0
+zPE4
+Text Label 18800 9000 0    60   ~ 0
+zPE5
+Text Label 18800 9100 0    60   ~ 0
+zPE6
+Text Label 18800 9200 0    60   ~ 0
+zPE7
+Text Label 18800 9300 0    60   ~ 0
+zPE8
+Text Label 18800 9400 0    60   ~ 0
+zPE9
+Text Label 18800 9500 0    60   ~ 0
+zPE10
+Text Label 18800 9600 0    60   ~ 0
+zPE11
+Text Label 18800 9700 0    60   ~ 0
+zPE12
+Text Label 18800 9800 0    60   ~ 0
+zPE13
+Text Label 18800 9900 0    60   ~ 0
+zPE14
+Text Label 18800 10000 0    60   ~ 0
+zPE15
+Text Label 18800 6700 0    60   ~ 0
+zPF0
+Text Label 18800 6800 0    60   ~ 0
+zPF1
+Text Label 18800 6900 0    60   ~ 0
+zPF2
+Text Label 18800 7000 0    60   ~ 0
+zPF3
+Text Label 18800 7100 0    60   ~ 0
+zPF4
+Text Label 18800 7200 0    60   ~ 0
+zPF5
+Text Label 18800 7300 0    60   ~ 0
+zPF6
+Text Label 18800 7400 0    60   ~ 0
+zPF7
+Text Label 18800 7500 0    60   ~ 0
+zPF8
+Text Label 18800 7600 0    60   ~ 0
+zPF9
+Text Label 18800 7700 0    60   ~ 0
+zPF10
+Text Label 18800 7800 0    60   ~ 0
+zPF11
+Text Label 18800 7900 0    60   ~ 0
+zPF12
+Text Label 18800 8000 0    60   ~ 0
+zPF13
+Text Label 18800 8100 0    60   ~ 0
+zPF14
+Text Label 18800 8200 0    60   ~ 0
+zPF15
+Text HLabel 19200 6450 2    60   BiDi ~ 0
+zPF[15..0]
+Text HLabel 19150 8400 2    60   BiDi ~ 0
+zPE[15..0]
+Text Label 18800 4900 0    60   ~ 0
+zPG0
+Text Label 18800 5000 0    60   ~ 0
+zPG1
+Text Label 18800 5100 0    60   ~ 0
+zPG2
+Text Label 18800 5200 0    60   ~ 0
+zPG3
+Text Label 18800 5300 0    60   ~ 0
+zPG4
+Text Label 18800 5400 0    60   ~ 0
+zPG5
+Text Label 18800 5500 0    60   ~ 0
+zPG6
+Text Label 18800 5600 0    60   ~ 0
+zPG7
+Text Label 18800 5700 0    60   ~ 0
+zPG8
+Text Label 18800 5800 0    60   ~ 0
+zPG9
+Text Label 18800 5900 0    60   ~ 0
+zPG10
+Text Label 18800 6000 0    60   ~ 0
+zPG11
+Text Label 18800 6100 0    60   ~ 0
+zPG12
+Text Label 18800 6200 0    60   ~ 0
+zPG13
+Text Label 18800 6300 0    60   ~ 0
+zPG14
+Text Label 18800 6400 0    60   ~ 0
+zPG15
+Text Label 18800 3100 0    60   ~ 0
+zPH0
+Text Label 18800 3200 0    60   ~ 0
+zPH1
+Text Label 18800 3300 0    60   ~ 0
+zPH2
+Text Label 18800 3400 0    60   ~ 0
+zPH3
+Text Label 18800 3500 0    60   ~ 0
+zPH4
+Text Label 18800 3600 0    60   ~ 0
+zPH5
+Text Label 18800 3700 0    60   ~ 0
+zPH6
+Text Label 18800 3800 0    60   ~ 0
+zPH7
+Text Label 18800 3900 0    60   ~ 0
+zPH8
+Text Label 18800 4000 0    60   ~ 0
+zPH9
+Text Label 18800 4100 0    60   ~ 0
+zPH10
+Text Label 18800 4200 0    60   ~ 0
+zPH11
+Text Label 18800 4300 0    60   ~ 0
+zPH12
+Text Label 18800 4400 0    60   ~ 0
+zPH13
+Text Label 18800 4500 0    60   ~ 0
+zPH14
+Text Label 18800 4600 0    60   ~ 0
+zPH15
+Text HLabel 19200 2850 2    60   BiDi ~ 0
+zPH[15..0]
+Text HLabel 19200 4650 2    60   BiDi ~ 0
+zPG[15..0]
+Text Label 11900 2700 1    60   ~ 0
+zPJ0
+Text Label 12000 2700 1    60   ~ 0
+zPJ1
+Text Label 12100 2700 1    60   ~ 0
+zPJ2
+Text Label 12200 2700 1    60   ~ 0
+zPJ3
+Text Label 12300 2700 1    60   ~ 0
+zPJ4
+Text Label 12400 2700 1    60   ~ 0
+zPJ5
+Text Label 12500 2700 1    60   ~ 0
+zPJ6
+Text Label 12600 2700 1    60   ~ 0
+zPJ7
+Text Label 12700 2700 1    60   ~ 0
+zPJ8
+Text Label 12800 2700 1    60   ~ 0
+zPJ9
+Text Label 12900 2700 1    60   ~ 0
+zPJ10
+Text Label 13000 2700 1    60   ~ 0
+zPJ11
+Text Label 13100 2700 1    60   ~ 0
+zPJ12
+Text Label 13200 2700 1    60   ~ 0
+zPJ13
+Text Label 13300 2700 1    60   ~ 0
+zPJ14
+Text Label 13400 2700 1    60   ~ 0
+zPJ15
+Text HLabel 11800 2150 2    60   BiDi ~ 0
+zPJ[15..0]
+Text Label 10100 2700 1    60   ~ 0
+zPI0
+Text Label 10200 2700 1    60   ~ 0
+zPI1
+Text Label 10300 2700 1    60   ~ 0
+zPI2
+Text Label 10400 2700 1    60   ~ 0
+zPI3
+Text Label 10500 2700 1    60   ~ 0
+zPI4
+Text Label 10600 2700 1    60   ~ 0
+zPI5
+Text Label 10700 2700 1    60   ~ 0
+zPI6
+Text Label 10800 2700 1    60   ~ 0
+zPI7
+Text Label 10900 2700 1    60   ~ 0
+zPI8
+Text Label 11000 2700 1    60   ~ 0
+zPI9
+Text Label 11100 2700 1    60   ~ 0
+zPI10
+Text Label 11200 2700 1    60   ~ 0
+zPI11
+Text Label 11300 2700 1    60   ~ 0
+zPI12
+Text Label 11400 2700 1    60   ~ 0
+zPI13
+Text Label 11500 2700 1    60   ~ 0
+zPI14
+Text Label 11600 2700 1    60   ~ 0
+zPI15
+Text HLabel 10000 2150 2    60   BiDi ~ 0
+zPI[15..0]
+Text Label 13800 2700 1    60   ~ 0
+zPK0
+Text Label 13900 2700 1    60   ~ 0
+zPK1
+Text Label 14000 2700 1    60   ~ 0
+zPK2
+Text Label 14100 2700 1    60   ~ 0
+zPK3
+Text Label 14200 2700 1    60   ~ 0
+zPK4
+Text Label 14300 2700 1    60   ~ 0
+zPK5
+Text Label 14400 2700 1    60   ~ 0
+zPK6
+Text Label 14500 2700 1    60   ~ 0
+zPK7
+Text HLabel 13700 2150 2    60   BiDi ~ 0
+zPK[15..0]
+Text HLabel 11800 10750 2    60   Output ~ 0
+VDDA
+Text Notes 6200 2350 0    60   ~ 0
+zPDR_ON = high means on-chip\npower supervisor is enabled.
+Text Label 7300 1750 0    60   ~ 0
+BOOT
+Text Label 7300 1450 0    60   ~ 0
+RESET
+Text Label 10000 2300 0    60   ~ 0
+zPI[15..0]
+Text Label 11800 2300 0    60   ~ 0
+zPJ[15..0]
+Text Label 13700 2300 0    60   ~ 0
+zPK[15..0]
+Text Label 19200 3000 0    60   ~ 0
+zPH[15..0]
+Text Label 19200 4800 0    60   ~ 0
+zPG[15..0]
+Text Label 19200 6600 0    60   ~ 0
+zPF[15..0]
+Text Label 19150 8400 0    60   ~ 0
+zPE[15..0]
+Text Label 3650 3100 0    60   ~ 0
+zPD[15..0]
+Text Label 3600 4900 0    60   ~ 0
+zPC[15..0]
+Text Label 3600 6600 0    60   ~ 0
+zPB[15..0]
+Text Label 3600 8400 0    60   ~ 0
+zPA[15..0]
+Text HLabel 3600 3100 0    60   BiDi ~ 0
+zPD[15..0]
+Text HLabel 3600 4900 0    60   BiDi ~ 0
+zPC[15..0]
+Text HLabel 3600 6600 0    60   BiDi ~ 0
+zPB[15..0]
+Text HLabel 3600 8400 0    60   BiDi ~ 0
+zPA[15..0]
+Wire Wire Line
+	8450 2700 8450 2800
+Wire Wire Line
+	8450 2250 8450 2500
+Wire Wire Line
+	8700 2800 8700 2600
+Wire Wire Line
+	8800 2800 8900 2800
+Wire Wire Line
+	8900 2800 8900 2600
+Wire Wire Line
+	8450 2300 8900 2300
+Wire Wire Line
+	8600 10500 8600 10300
+Wire Wire Line
+	11800 10300 11800 10750
+Wire Wire Line
+	7950 1200 7950 1050
+Wire Wire Line
+	7950 1400 7950 1450
+Wire Wire Line
+	7700 2450 7700 2800
+Wire Wire Line
+	7450 2650 7450 2600
+Wire Wire Line
+	4100 8500 3750 8500
+Wire Wire Line
+	4100 8700 3750 8700
+Wire Wire Line
+	4100 8800 3750 8800
+Wire Wire Line
+	4100 8900 3750 8900
+Wire Wire Line
+	4100 9000 3750 9000
+Wire Wire Line
+	4100 9100 3750 9100
+Wire Wire Line
+	4100 9200 3750 9200
+Wire Wire Line
+	4100 9300 3750 9300
+Wire Wire Line
+	4100 9400 3750 9400
+Wire Wire Line
+	4100 9500 3750 9500
+Wire Wire Line
+	4100 9600 3750 9600
+Wire Wire Line
+	4100 9700 3750 9700
+Wire Wire Line
+	4100 9800 3750 9800
+Wire Wire Line
+	4100 9900 3750 9900
+Wire Wire Line
+	4100 10000 3750 10000
+Wire Wire Line
+	4100 6700 3750 6700
+Wire Wire Line
+	4100 6800 3750 6800
+Wire Wire Line
+	4100 6900 3750 6900
+Wire Wire Line
+	4100 7000 3750 7000
+Wire Wire Line
+	4100 7100 3750 7100
+Wire Wire Line
+	4100 7200 3750 7200
+Wire Wire Line
+	4100 7300 3750 7300
+Wire Wire Line
+	4100 7400 3750 7400
+Wire Wire Line
+	4100 7500 3750 7500
+Wire Wire Line
+	4100 7600 3750 7600
+Wire Wire Line
+	4100 7700 3750 7700
+Wire Wire Line
+	4100 7800 3750 7800
+Wire Wire Line
+	4100 7900 3750 7900
+Wire Wire Line
+	4100 8000 3750 8000
+Wire Wire Line
+	4100 8100 3750 8100
+Wire Wire Line
+	4100 8200 3750 8200
+Wire Wire Line
+	4100 5000 3750 5000
+Wire Wire Line
+	4100 5100 3750 5100
+Wire Wire Line
+	4100 5200 3750 5200
+Wire Wire Line
+	4100 5300 3750 5300
+Wire Wire Line
+	4100 5400 3750 5400
+Wire Wire Line
+	4100 5500 3750 5500
+Wire Wire Line
+	4100 5600 3750 5600
+Wire Wire Line
+	4100 5700 3750 5700
+Wire Wire Line
+	4100 5800 3750 5800
+Wire Wire Line
+	4100 5900 3750 5900
+Wire Wire Line
+	4100 6000 3750 6000
+Wire Wire Line
+	4100 6100 3750 6100
+Wire Wire Line
+	4100 6200 3750 6200
+Wire Wire Line
+	4100 6300 3750 6300
+Wire Wire Line
+	4100 6400 3750 6400
+Wire Wire Line
+	4100 6500 3750 6500
+Wire Wire Line
+	4100 3200 3750 3200
+Wire Wire Line
+	4100 3300 3750 3300
+Wire Wire Line
+	4100 3400 3750 3400
+Wire Wire Line
+	4100 3500 3750 3500
+Wire Wire Line
+	4100 3600 3750 3600
+Wire Wire Line
+	4100 3700 3750 3700
+Wire Wire Line
+	4100 3800 3750 3800
+Wire Wire Line
+	4100 3900 3750 3900
+Wire Wire Line
+	4100 4000 3750 4000
+Wire Wire Line
+	4100 4100 3750 4100
+Wire Wire Line
+	4100 4200 3750 4200
+Wire Wire Line
+	4100 4300 3750 4300
+Wire Wire Line
+	4100 4400 3750 4400
+Wire Wire Line
+	4100 4500 3750 4500
+Wire Wire Line
+	4100 4600 3750 4600
+Wire Wire Line
+	4100 4700 3750 4700
+Wire Wire Line
+	18700 8500 19050 8500
+Wire Wire Line
+	18700 8600 19050 8600
+Wire Wire Line
+	18700 8700 19050 8700
+Wire Wire Line
+	18700 8800 19050 8800
+Wire Wire Line
+	18700 8900 19050 8900
+Wire Wire Line
+	18700 9000 19050 9000
+Wire Wire Line
+	18700 9100 19050 9100
+Wire Wire Line
+	18700 9200 19050 9200
+Wire Wire Line
+	18700 9300 19050 9300
+Wire Wire Line
+	18700 9400 19050 9400
+Wire Wire Line
+	18700 9500 19050 9500
+Wire Wire Line
+	18700 9600 19050 9600
+Wire Wire Line
+	18700 9700 19050 9700
+Wire Wire Line
+	18700 9800 19050 9800
+Wire Wire Line
+	18700 9900 19050 9900
+Wire Wire Line
+	18700 10000 19050 10000
+Wire Bus Line
+	19150 8400 19150 9900
+Wire Wire Line
+	18700 6700 19050 6700
+Wire Wire Line
+	18700 6800 19050 6800
+Wire Wire Line
+	18700 6900 19050 6900
+Wire Wire Line
+	18700 7000 19050 7000
+Wire Wire Line
+	18700 7100 19050 7100
+Wire Wire Line
+	18700 7200 19050 7200
+Wire Wire Line
+	18700 7300 19050 7300
+Wire Wire Line
+	18700 7400 19050 7400
+Wire Wire Line
+	18700 7500 19050 7500
+Wire Wire Line
+	18700 7600 19050 7600
+Wire Wire Line
+	18700 7700 19050 7700
+Wire Wire Line
+	18700 7900 19050 7900
+Wire Wire Line
+	18700 8000 19050 8000
+Wire Wire Line
+	18700 8100 19050 8100
+Wire Wire Line
+	18700 8200 19050 8200
+Wire Bus Line
+	19150 6600 19150 8100
+Wire Bus Line
+	19200 6600 19150 6600
+Wire Bus Line
+	19200 8400 19150 8400
+Wire Wire Line
+	18700 4900 19050 4900
+Wire Wire Line
+	18700 5000 19050 5000
+Wire Wire Line
+	18700 5100 19050 5100
+Wire Wire Line
+	18700 5200 19050 5200
+Wire Wire Line
+	18700 5300 19050 5300
+Wire Wire Line
+	18700 5400 19050 5400
+Wire Wire Line
+	18700 5500 19050 5500
+Wire Wire Line
+	18700 5600 19050 5600
+Wire Wire Line
+	18700 5700 19050 5700
+Wire Wire Line
+	18700 5800 19050 5800
+Wire Wire Line
+	18700 5900 19050 5900
+Wire Wire Line
+	18700 6000 19050 6000
+Wire Wire Line
+	18700 6100 19050 6100
+Wire Wire Line
+	18700 6200 19050 6200
+Wire Wire Line
+	18700 6300 19050 6300
+Wire Wire Line
+	18700 6400 19050 6400
+Wire Bus Line
+	19150 4800 19150 6300
+Wire Wire Line
+	18700 3100 19050 3100
+Wire Wire Line
+	18700 3200 19050 3200
+Wire Wire Line
+	18700 3300 19050 3300
+Wire Wire Line
+	18700 3400 19050 3400
+Wire Wire Line
+	18700 3500 19050 3500
+Wire Wire Line
+	18700 3600 19050 3600
+Wire Wire Line
+	18700 3700 19050 3700
+Wire Wire Line
+	18700 3800 19050 3800
+Wire Wire Line
+	18700 3900 19050 3900
+Wire Wire Line
+	18700 4000 19050 4000
+Wire Wire Line
+	18700 4100 19050 4100
+Wire Wire Line
+	18700 4200 19050 4200
+Wire Wire Line
+	18700 4300 19050 4300
+Wire Wire Line
+	18700 4400 19050 4400
+Wire Wire Line
+	18700 4500 19050 4500
+Wire Wire Line
+	18700 4600 19050 4600
+Wire Bus Line
+	19150 3000 19150 4500
+Wire Bus Line
+	19200 3000 19150 3000
+Wire Bus Line
+	19200 4800 19150 4800
+Wire Wire Line
+	11900 2800 11900 2450
+Wire Wire Line
+	12000 2800 12000 2450
+Wire Wire Line
+	12100 2800 12100 2450
+Wire Wire Line
+	12200 2800 12200 2450
+Wire Wire Line
+	12300 2800 12300 2450
+Wire Wire Line
+	12400 2800 12400 2450
+Wire Wire Line
+	12500 2800 12500 2450
+Wire Wire Line
+	12600 2800 12600 2450
+Wire Wire Line
+	12700 2800 12700 2450
+Wire Wire Line
+	12800 2800 12800 2450
+Wire Wire Line
+	12900 2800 12900 2450
+Wire Wire Line
+	13000 2800 13000 2450
+Wire Wire Line
+	13200 2800 13200 2450
+Wire Wire Line
+	13300 2800 13300 2450
+Wire Wire Line
+	13400 2800 13400 2450
+Wire Bus Line
+	11800 2350 13300 2350
+Wire Bus Line
+	11800 2150 11800 2350
+Wire Wire Line
+	10100 2800 10100 2450
+Wire Wire Line
+	10200 2800 10200 2450
+Wire Wire Line
+	10300 2800 10300 2450
+Wire Wire Line
+	10400 2800 10400 2450
+Wire Wire Line
+	10500 2800 10500 2450
+Wire Wire Line
+	10600 2800 10600 2450
+Wire Wire Line
+	10700 2800 10700 2450
+Wire Wire Line
+	10800 2800 10800 2450
+Wire Wire Line
+	10900 2800 10900 2450
+Wire Wire Line
+	11000 2800 11000 2450
+Wire Wire Line
+	11100 2800 11100 2450
+Wire Wire Line
+	11200 2800 11200 2450
+Wire Wire Line
+	11300 2800 11300 2450
+Wire Wire Line
+	11400 2800 11400 2450
+Wire Wire Line
+	11500 2800 11500 2450
+Wire Wire Line
+	11600 2800 11600 2450
+Wire Bus Line
+	10000 2350 11500 2350
+Wire Bus Line
+	10000 2150 10000 2350
+Wire Wire Line
+	13800 2800 13800 2450
+Wire Wire Line
+	13900 2800 13900 2450
+Wire Wire Line
+	14000 2800 14000 2450
+Wire Wire Line
+	14100 2800 14100 2450
+Wire Wire Line
+	14200 2800 14200 2450
+Wire Wire Line
+	14300 2800 14300 2450
+Wire Wire Line
+	14400 2800 14400 2450
+Wire Wire Line
+	14500 2800 14500 2450
+Wire Bus Line
+	13700 2350 14400 2350
+Wire Bus Line
+	13700 2150 13700 2350
+Wire Wire Line
+	6600 850  6450 850 
+Wire Wire Line
+	6450 850  6450 1100
+Wire Wire Line
+	7050 850  6900 850 
+Wire Wire Line
+	6450 950  6100 950 
+Wire Wire Line
+	6100 950  6100 1100
+Wire Wire Line
+	6600 1600 6450 1600
+Wire Wire Line
+	6450 1600 6450 1850
+Wire Wire Line
+	7050 1600 7050 1850
+Wire Wire Line
+	7050 1600 6900 1600
+Wire Wire Line
+	6450 1700 6100 1700
+Wire Wire Line
+	7650 2600 7800 2600
+Wire Wire Line
+	7800 1750 7800 2800
+Wire Wire Line
+	7050 850  7050 1450
+Wire Wire Line
+	7050 1450 8000 1450
+Wire Wire Line
+	7050 1750 7800 1750
+Wire Wire Line
+	11800 10750 11500 10750
+Wire Wire Line
+	18700 7800 19050 7800
+Wire Wire Line
+	8000 1450 8000 2800
+Wire Wire Line
+	13100 2450 13100 2800
+Wire Wire Line
+	8600 10300 10800 10300
+Wire Wire Line
+	11500 10750 11500 10300
+Wire Wire Line
+	12000 10300 14100 10300
+Wire Wire Line
+	12400 10700 12400 10300
+Wire Wire Line
+	8450 2800 7900 2800
+Wire Bus Line
+	19200 3000 19200 2850
+Wire Bus Line
+	19200 4800 19200 4650
+Wire Bus Line
+	19200 6450 19200 6600
+Wire Bus Line
+	19200 8250 19200 8400
+Wire Bus Line
+	3600 4900 3650 4900
+Wire Bus Line
+	3600 3100 3650 3100
+Wire Bus Line
+	3650 3050 3650 4600
+Wire Bus Line
+	3650 4900 3650 6400
+Wire Bus Line
+	3600 8400 3650 8400
+Wire Bus Line
+	3600 6600 3650 6600
+Wire Bus Line
+	3650 6600 3650 8100
+Wire Bus Line
+	3650 8400 3650 9900
+Wire Wire Line
+	3750 8600 4100 8600
+Entry Wire Line
+	19150 8400 19050 8500
+Entry Wire Line
+	19150 8500 19050 8600
+Entry Wire Line
+	19150 8600 19050 8700
+Entry Wire Line
+	19150 8700 19050 8800
+Entry Wire Line
+	19150 8800 19050 8900
+Entry Wire Line
+	19150 8900 19050 9000
+Entry Wire Line
+	19150 9000 19050 9100
+Entry Wire Line
+	19150 9100 19050 9200
+Entry Wire Line
+	19150 9200 19050 9300
+Entry Wire Line
+	19150 9300 19050 9400
+Entry Wire Line
+	19150 9400 19050 9500
+Entry Wire Line
+	19150 9500 19050 9600
+Entry Wire Line
+	19150 9600 19050 9700
+Entry Wire Line
+	19150 9700 19050 9800
+Entry Wire Line
+	19150 9800 19050 9900
+Entry Wire Line
+	19150 9900 19050 10000
+Entry Wire Line
+	19150 6600 19050 6700
+Entry Wire Line
+	19150 6700 19050 6800
+Entry Wire Line
+	19150 6800 19050 6900
+Entry Wire Line
+	19150 6900 19050 7000
+Entry Wire Line
+	19150 7000 19050 7100
+Entry Wire Line
+	19150 7100 19050 7200
+Entry Wire Line
+	19150 7200 19050 7300
+Entry Wire Line
+	19150 7300 19050 7400
+Entry Wire Line
+	19150 7400 19050 7500
+Entry Wire Line
+	19150 7500 19050 7600
+Entry Wire Line
+	19150 7600 19050 7700
+Entry Wire Line
+	19150 7700 19050 7800
+Entry Wire Line
+	19150 7800 19050 7900
+Entry Wire Line
+	19150 7900 19050 8000
+Entry Wire Line
+	19150 8000 19050 8100
+Entry Wire Line
+	19150 8100 19050 8200
+Entry Wire Line
+	19150 4800 19050 4900
+Entry Wire Line
+	19150 4900 19050 5000
+Entry Wire Line
+	19150 5000 19050 5100
+Entry Wire Line
+	19150 5100 19050 5200
+Entry Wire Line
+	19150 5200 19050 5300
+Entry Wire Line
+	19150 5300 19050 5400
+Entry Wire Line
+	19150 5400 19050 5500
+Entry Wire Line
+	19150 5500 19050 5600
+Entry Wire Line
+	19150 5600 19050 5700
+Entry Wire Line
+	19150 5700 19050 5800
+Entry Wire Line
+	19150 5800 19050 5900
+Entry Wire Line
+	19150 5900 19050 6000
+Entry Wire Line
+	19150 6000 19050 6100
+Entry Wire Line
+	19150 6100 19050 6200
+Entry Wire Line
+	19150 6200 19050 6300
+Entry Wire Line
+	19150 6300 19050 6400
+Entry Wire Line
+	19150 3000 19050 3100
+Entry Wire Line
+	19150 3100 19050 3200
+Entry Wire Line
+	19150 3200 19050 3300
+Entry Wire Line
+	19150 3300 19050 3400
+Entry Wire Line
+	19150 3400 19050 3500
+Entry Wire Line
+	19150 3500 19050 3600
+Entry Wire Line
+	19150 3600 19050 3700
+Entry Wire Line
+	19150 3700 19050 3800
+Entry Wire Line
+	19150 3800 19050 3900
+Entry Wire Line
+	19150 3900 19050 4000
+Entry Wire Line
+	19150 4000 19050 4100
+Entry Wire Line
+	19150 4100 19050 4200
+Entry Wire Line
+	19150 4200 19050 4300
+Entry Wire Line
+	19150 4300 19050 4400
+Entry Wire Line
+	19150 4400 19050 4500
+Entry Wire Line
+	19150 4500 19050 4600
+Entry Wire Line
+	11800 2350 11900 2450
+Entry Wire Line
+	11900 2350 12000 2450
+Entry Wire Line
+	12000 2350 12100 2450
+Entry Wire Line
+	12100 2350 12200 2450
+Entry Wire Line
+	12200 2350 12300 2450
+Entry Wire Line
+	12300 2350 12400 2450
+Entry Wire Line
+	12400 2350 12500 2450
+Entry Wire Line
+	12500 2350 12600 2450
+Entry Wire Line
+	12600 2350 12700 2450
+Entry Wire Line
+	12700 2350 12800 2450
+Entry Wire Line
+	12800 2350 12900 2450
+Entry Wire Line
+	12900 2350 13000 2450
+Entry Wire Line
+	13000 2350 13100 2450
+Entry Wire Line
+	13100 2350 13200 2450
+Entry Wire Line
+	13200 2350 13300 2450
+Entry Wire Line
+	13300 2350 13400 2450
+Entry Wire Line
+	10000 2350 10100 2450
+Entry Wire Line
+	10100 2350 10200 2450
+Entry Wire Line
+	10200 2350 10300 2450
+Entry Wire Line
+	10300 2350 10400 2450
+Entry Wire Line
+	10400 2350 10500 2450
+Entry Wire Line
+	10500 2350 10600 2450
+Entry Wire Line
+	10600 2350 10700 2450
+Entry Wire Line
+	10700 2350 10800 2450
+Entry Wire Line
+	10800 2350 10900 2450
+Entry Wire Line
+	10900 2350 11000 2450
+Entry Wire Line
+	11000 2350 11100 2450
+Entry Wire Line
+	11100 2350 11200 2450
+Entry Wire Line
+	11200 2350 11300 2450
+Entry Wire Line
+	11300 2350 11400 2450
+Entry Wire Line
+	11400 2350 11500 2450
+Entry Wire Line
+	11500 2350 11600 2450
+Entry Wire Line
+	13700 2350 13800 2450
+Entry Wire Line
+	13800 2350 13900 2450
+Entry Wire Line
+	13900 2350 14000 2450
+Entry Wire Line
+	14000 2350 14100 2450
+Entry Wire Line
+	14100 2350 14200 2450
+Entry Wire Line
+	14200 2350 14300 2450
+Entry Wire Line
+	14300 2350 14400 2450
+Entry Wire Line
+	14400 2350 14500 2450
+Entry Wire Line
+	3650 4600 3750 4700
+Entry Wire Line
+	3650 4500 3750 4600
+Entry Wire Line
+	3650 4400 3750 4500
+Entry Wire Line
+	3650 4300 3750 4400
+Entry Wire Line
+	3650 4200 3750 4300
+Entry Wire Line
+	3650 4100 3750 4200
+Entry Wire Line
+	3650 4000 3750 4100
+Entry Wire Line
+	3650 3900 3750 4000
+Entry Wire Line
+	3650 3800 3750 3900
+Entry Wire Line
+	3650 3700 3750 3800
+Entry Wire Line
+	3650 3600 3750 3700
+Entry Wire Line
+	3650 3500 3750 3600
+Entry Wire Line
+	3650 3400 3750 3500
+Entry Wire Line
+	3650 3300 3750 3400
+Entry Wire Line
+	3650 3200 3750 3300
+Entry Wire Line
+	3650 3100 3750 3200
+Entry Wire Line
+	3650 6400 3750 6500
+Entry Wire Line
+	3650 6300 3750 6400
+Entry Wire Line
+	3650 6200 3750 6300
+Entry Wire Line
+	3650 6100 3750 6200
+Entry Wire Line
+	3650 6000 3750 6100
+Entry Wire Line
+	3650 5900 3750 6000
+Entry Wire Line
+	3650 5800 3750 5900
+Entry Wire Line
+	3650 5700 3750 5800
+Entry Wire Line
+	3650 5600 3750 5700
+Entry Wire Line
+	3650 5500 3750 5600
+Entry Wire Line
+	3650 5400 3750 5500
+Entry Wire Line
+	3650 5300 3750 5400
+Entry Wire Line
+	3650 5200 3750 5300
+Entry Wire Line
+	3650 5100 3750 5200
+Entry Wire Line
+	3650 5000 3750 5100
+Entry Wire Line
+	3650 4900 3750 5000
+Entry Wire Line
+	3650 8100 3750 8200
+Entry Wire Line
+	3650 8000 3750 8100
+Entry Wire Line
+	3650 7900 3750 8000
+Entry Wire Line
+	3650 7800 3750 7900
+Entry Wire Line
+	3650 7700 3750 7800
+Entry Wire Line
+	3650 7600 3750 7700
+Entry Wire Line
+	3650 7500 3750 7600
+Entry Wire Line
+	3650 7400 3750 7500
+Entry Wire Line
+	3650 7300 3750 7400
+Entry Wire Line
+	3650 7200 3750 7300
+Entry Wire Line
+	3650 7100 3750 7200
+Entry Wire Line
+	3650 7000 3750 7100
+Entry Wire Line
+	3650 6900 3750 7000
+Entry Wire Line
+	3650 6800 3750 6900
+Entry Wire Line
+	3650 6700 3750 6800
+Entry Wire Line
+	3650 6600 3750 6700
+Entry Wire Line
+	3650 9900 3750 10000
+Entry Wire Line
+	3650 9800 3750 9900
+Entry Wire Line
+	3650 9700 3750 9800
+Entry Wire Line
+	3650 9600 3750 9700
+Entry Wire Line
+	3650 9500 3750 9600
+Entry Wire Line
+	3650 9400 3750 9500
+Entry Wire Line
+	3650 9300 3750 9400
+Entry Wire Line
+	3650 9200 3750 9300
+Entry Wire Line
+	3650 9100 3750 9200
+Entry Wire Line
+	3650 9000 3750 9100
+Entry Wire Line
+	3650 8900 3750 9000
+Entry Wire Line
+	3650 8800 3750 8900
+Entry Wire Line
+	3650 8700 3750 8800
+Entry Wire Line
+	3650 8600 3750 8700
+Entry Wire Line
+	3650 8500 3750 8600
+Entry Wire Line
+	3650 8400 3750 8500
+Connection ~ 8450 2300
+Connection ~ 8700 2300
+Connection ~ 8700 10300
+Connection ~ 8800 10300
+Connection ~ 8900 10300
+Connection ~ 9000 10300
+Connection ~ 9100 10300
+Connection ~ 9200 10300
+Connection ~ 9300 10300
+Connection ~ 9400 10300
+Connection ~ 9500 10300
+Connection ~ 9600 10300
+Connection ~ 9700 10300
+Connection ~ 9800 10300
+Connection ~ 9900 10300
+Connection ~ 10000 10300
+Connection ~ 10100 10300
+Connection ~ 10200 10300
+Connection ~ 10300 10300
+Connection ~ 6450 950 
+Connection ~ 6450 1700
+Connection ~ 7050 1100
+Connection ~ 7950 1450
+Connection ~ 7800 2600
+Connection ~ 7050 1750
+Connection ~ 10600 10300
+Connection ~ 12100 10300
+Connection ~ 12200 10300
+Connection ~ 12300 10300
+Connection ~ 12400 10300
+Connection ~ 12500 10300
+Connection ~ 12600 10300
+Connection ~ 12700 10300
+Connection ~ 12800 10300
+Connection ~ 12900 10300
+Connection ~ 13000 10300
+Connection ~ 13100 10300
+Connection ~ 13200 10300
+Connection ~ 13300 10300
+Connection ~ 13400 10300
+Connection ~ 13500 10300
+Connection ~ 13600 10300
+Connection ~ 13700 10300
+Connection ~ 13900 10300
+$EndSCHEMATC
