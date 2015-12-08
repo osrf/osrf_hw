@@ -590,31 +590,19 @@ class BOMEditor(QtGui.QWidget):
             self.saveBOM(fname)
 
     def saveBOM(self, fileName):
+        #TODO not export component with same Reference/Designator
         print('filename=' + fileName)
         with open(fileName, "wb") as fileOutput:
             writer = csv.writer(fileOutput,delimiter=',',quotechar="'")
+            designators = []
             for rowNumber in range(self.model.rowCount()):
                 fields=[]
+                des = str(self.model.data(self.model.index(rowNumber, 1),
+                    QtCore.Qt.DisplayRole ))
+                if des in designators:
+                    continue
+                designators.append(des)
                 for columnNumber in [1,2,5,6,7,9,10,8,11,12]:
-                    a = str(self.model.data(self.model.index(rowNumber, columnNumber),
-                        QtCore.Qt.DisplayRole ))
-                    if len(a)>0:
-                        if columnNumber != 0:
-                            if a[0]!='"':
-                                a = '"' + str(a) + '"'
-                        fields.append(a)
-                    else:
-                        a = '""'
-                        fields.append(a)
-                writer.writerow(fields)
-
-    def saveCsv(self, fileName):
-        print('filename=' + fileName)
-        with open(fileName, "wb") as fileOutput:
-            writer = csv.writer(fileOutput,delimiter=',',quotechar="'")
-            for rowNumber in range(self.model.rowCount()):
-                fields=[]
-                for columnNumber in range(self.model.columnCount()):
                     a = str(self.model.data(self.model.index(rowNumber, columnNumber),
                         QtCore.Qt.DisplayRole ))
                     if len(a)>0:
