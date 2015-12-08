@@ -1,0 +1,705 @@
+EESchema Schematic File Version 2
+LIBS:device
+LIBS:OSCILLATOR
+LIBS:usb_controller
+LIBS:ADP50xx
+LIBS:usb3_connector
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:lattice
+LIBS:connectors
+LIBS:altera
+LIBS:power
+LIBS:voltage_translators
+LIBS:semtech
+LIBS:i2c_flash
+LIBS:generic_ic
+LIBS:mt41k128m16
+LIBS:artix7
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 12 12
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L INDUCTOR L?
+U 1 1 56673010
+P 4350 1650
+F 0 "L?" V 4400 1900 50  0000 C CNN
+F 1 "1u" V 4400 1350 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0603" H 4350 1650 50  0001 C CNN
+F 3 "http://www.yuden.co.jp/productdata/catalog/en/wound01_e.pdf" H 4350 1650 50  0001 C CNN
+F 4 "Taiyo Yuden" H 4350 1650 50  0001 C CNN "MFN"
+F 5 "LBMF1608T1R0M" H 4350 1650 50  0001 C CNN "MFP"
+F 6 "digikey" H 4350 1650 50  0001 C CNN "D1"
+F 7 "mouser" H 4350 1650 50  0001 C CNN "D2"
+F 8 "587-1711" H 4350 1650 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/LBMF1608T1R0M/587-1711-1-ND/1008030" H 4350 1650 50  0001 C CNN "D1PL"
+F 10 "_" H 4350 1650 50  0001 C CNN "D2PN"
+F 11 "_" H 4350 1650 50  0001 C CNN "D2PL"
+F 12 "0603" H 4350 1650 50  0001 C CNN "Package"
+F 13 "_" H 4350 1650 50  0000 C CNN "Description"
+F 14 "_" H 4350 1650 50  0001 C CNN "Voltage"
+F 15 "_" H 4350 1650 50  0001 C CNN "Power"
+F 16 "_" H 4350 1650 50  0001 C CNN "Tolerance"
+F 17 "_" H 4350 1650 50  0001 C CNN "Temperature"
+F 18 "_" H 4350 1650 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 4350 1650 50  0001 C CNN "ForwardVoltage"
+F 20 "230m" H 4350 1650 50  0001 C CNN "Cont.Current"
+F 21 "_" H 4350 1650 50  0001 C CNN "Frequency"
+F 22 "100M" H 4350 1650 50  0001 C CNN "ResonnanceFreq"
+	1    4350 1650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R?
+U 1 1 5667302A
+P 4050 1900
+F 0 "R?" V 4130 1900 50  0000 C CNN
+F 1 "26.7k" V 4050 1900 50  0000 C CNN
+F 2 "Dipoles_SMD:R_0402" V 3980 1900 30  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 4050 1900 30  0001 C CNN
+F 4 "Vishay" H 4050 1900 50  0001 C CNN "MFN"
+F 5 "CRCW040226K7FKED" H 4050 1900 50  0001 C CNN "MFP"
+F 6 "digikey" H 4050 1900 50  0001 C CNN "D1"
+F 7 "mouser" H 4050 1900 50  0001 C CNN "D2"
+F 8 "541-26.7KL" H 4050 1900 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/CRCW040226K7FKED/541-26.7KLCT-ND/1183283" H 4050 1900 50  0001 C CNN "D1PL"
+F 10 "_" H 4050 1900 50  0001 C CNN "D2PN"
+F 11 "_" H 4050 1900 50  0001 C CNN "D2PL"
+F 12 "0402" H 4050 1900 50  0001 C CNN "Package"
+F 13 "_" H 4050 1900 50  0000 C CNN "Description"
+F 14 "_" H 4050 1900 50  0001 C CNN "Voltage"
+F 15 "1/16" H 4050 1900 50  0001 C CNN "Power"
+F 16 "1%" H 4050 1900 50  0001 C CNN "Tolerance"
+F 17 "_" H 4050 1900 50  0001 C CNN "Temperature"
+F 18 "_" H 4050 1900 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 4050 1900 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 4050 1900 50  0001 C CNN "Cont.Current"
+F 21 "_" H 4050 1900 50  0001 C CNN "Frequency"
+F 22 "_" H 4050 1900 50  0001 C CNN "ResonnanceFreq"
+	1    4050 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 56673044
+P 4350 1750
+F 0 "R?" V 4430 1750 50  0000 C CNN
+F 1 "150k" V 4350 1750 50  0000 C CNN
+F 2 "Dipoles_SMD:R_0402" V 4280 1750 30  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 4350 1750 30  0001 C CNN
+F 4 "Vishay" H 4350 1750 50  0001 C CNN "MFN"
+F 5 "CRCW0402150KFKED" H 4350 1750 50  0001 C CNN "MFP"
+F 6 "digikey" H 4350 1750 50  0001 C CNN "D1"
+F 7 "mouser" H 4350 1750 50  0001 C CNN "D2"
+F 8 "541-150KL" H 4350 1750 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/CRCW0402150KFKED/541-150KLCT-ND/1183369" H 4350 1750 50  0001 C CNN "D1PL"
+F 10 "_" H 4350 1750 50  0001 C CNN "D2PN"
+F 11 "_" H 4350 1750 50  0001 C CNN "D2PL"
+F 12 "0402" H 4350 1750 50  0001 C CNN "Package"
+F 13 "_" H 4350 1750 50  0000 C CNN "Description"
+F 14 "_" H 4350 1750 50  0001 C CNN "Voltage"
+F 15 "1/16" H 4350 1750 50  0001 C CNN "Power"
+F 16 "1%" H 4350 1750 50  0001 C CNN "Tolerance"
+F 17 "_" H 4350 1750 50  0001 C CNN "Temperature"
+F 18 "_" H 4350 1750 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 4350 1750 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 4350 1750 50  0001 C CNN "Cont.Current"
+F 21 "_" H 4350 1750 50  0001 C CNN "Frequency"
+F 22 "_" H 4350 1750 50  0001 C CNN "ResonnanceFreq"
+	1    4350 1750
+	0    1    1    0   
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5667304B
+P 4050 2050
+F 0 "#PWR?" H 4050 1800 50  0001 C CNN
+F 1 "GND" H 4050 1900 50  0000 C CNN
+F 2 "" H 4050 2050 60  0000 C CNN
+F 3 "" H 4050 2050 60  0000 C CNN
+	1    4050 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 56673064
+P 4650 1900
+F 0 "C?" H 4675 2000 50  0000 L CNN
+F 1 "10u" H 4675 1800 50  0000 L CNN
+F 2 "Dipoles_SMD:C_0603" H 4688 1750 50  0001 C CNN
+F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 4650 1900 50  0001 C CNN
+F 4 "TDK" H 4650 1900 50  0001 C CNN "MFN"
+F 5 "C1608X5R1A106K080AC" H 4650 1900 50  0001 C CNN "MFP"
+F 6 "digikey" H 4650 1900 50  0001 C CNN "D1"
+F 7 "mouser" H 4650 1900 50  0001 C CNN "D2"
+F 8 "445-7486" H 4650 1900 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/C1608X5R1A106K080AC/445-7486-1-ND/2733558" H 4650 1900 50  0001 C CNN "D1PL"
+F 10 "_" H 4650 1900 50  0001 C CNN "D2PN"
+F 11 "_" H 4650 1900 50  0001 C CNN "D2PL"
+F 12 "0603" H 4650 1900 50  0001 C CNN "Package"
+F 13 "_" H 4650 1900 50  0000 C CNN "Description"
+F 14 "10" H 4650 1900 50  0001 C CNN "Voltage"
+F 15 "_" H 4650 1900 50  0001 C CNN "Power"
+F 16 "10%" H 4650 1900 50  0001 C CNN "Tolerance"
+F 17 "X5R" H 4650 1900 50  0001 C CNN "Temperature"
+F 18 "_" H 4650 1900 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 4650 1900 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 4650 1900 50  0001 C CNN "Cont.Current"
+F 21 "_" H 4650 1900 50  0001 C CNN "Frequency"
+F 22 "_" H 4650 1900 50  0001 C CNN "ResonnanceFreq"
+	1    4650 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L INDUCTOR L?
+U 1 1 5667307E
+P 4350 2450
+F 0 "L?" V 4400 2700 50  0000 C CNN
+F 1 "1u" V 4400 2150 50  0000 C CNN
+F 2 "Capacitors_SMD:C_0603" H 4350 2450 50  0001 C CNN
+F 3 "http://www.yuden.co.jp/productdata/catalog/en/wound01_e.pdf" H 4350 2450 50  0001 C CNN
+F 4 "Taiyo Yuden" H 4350 2450 50  0001 C CNN "MFN"
+F 5 "LBMF1608T1R0M" H 4350 2450 50  0001 C CNN "MFP"
+F 6 "digikey" H 4350 2450 50  0001 C CNN "D1"
+F 7 "mouser" H 4350 2450 50  0001 C CNN "D2"
+F 8 "587-1711" H 4350 2450 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/LBMF1608T1R0M/587-1711-1-ND/1008030" H 4350 2450 50  0001 C CNN "D1PL"
+F 10 "_" H 4350 2450 50  0001 C CNN "D2PN"
+F 11 "_" H 4350 2450 50  0001 C CNN "D2PL"
+F 12 "0603" H 4350 2450 50  0001 C CNN "Package"
+F 13 "_" H 4350 2450 50  0000 C CNN "Description"
+F 14 "_" H 4350 2450 50  0001 C CNN "Voltage"
+F 15 "_" H 4350 2450 50  0001 C CNN "Power"
+F 16 "_" H 4350 2450 50  0001 C CNN "Tolerance"
+F 17 "_" H 4350 2450 50  0001 C CNN "Temperature"
+F 18 "_" H 4350 2450 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 4350 2450 50  0001 C CNN "ForwardVoltage"
+F 20 "230m" H 4350 2450 50  0001 C CNN "Cont.Current"
+F 21 "_" H 4350 2450 50  0001 C CNN "Frequency"
+F 22 "100M" H 4350 2450 50  0001 C CNN "ResonnanceFreq"
+	1    4350 2450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R R?
+U 1 1 56673098
+P 4350 2550
+F 0 "R?" V 4430 2550 50  0000 C CNN
+F 1 "150k" V 4350 2550 50  0000 C CNN
+F 2 "Dipoles_SMD:R_0402" V 4280 2550 30  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 4350 2550 30  0001 C CNN
+F 4 "Vishay" H 4350 2550 50  0001 C CNN "MFN"
+F 5 "CRCW0402150KFKED" H 4350 2550 50  0001 C CNN "MFP"
+F 6 "digikey" H 4350 2550 50  0001 C CNN "D1"
+F 7 "mouser" H 4350 2550 50  0001 C CNN "D2"
+F 8 "541-150KL" H 4350 2550 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/CRCW0402150KFKED/541-150KLCT-ND/1183369" H 4350 2550 50  0001 C CNN "D1PL"
+F 10 "_" H 4350 2550 50  0001 C CNN "D2PN"
+F 11 "_" H 4350 2550 50  0001 C CNN "D2PL"
+F 12 "0402" H 4350 2550 50  0001 C CNN "Package"
+F 13 "_" H 4350 2550 50  0000 C CNN "Description"
+F 14 "_" H 4350 2550 50  0001 C CNN "Voltage"
+F 15 "1/16" H 4350 2550 50  0001 C CNN "Power"
+F 16 "1%" H 4350 2550 50  0001 C CNN "Tolerance"
+F 17 "_" H 4350 2550 50  0001 C CNN "Temperature"
+F 18 "_" H 4350 2550 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 4350 2550 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 4350 2550 50  0001 C CNN "Cont.Current"
+F 21 "_" H 4350 2550 50  0001 C CNN "Frequency"
+F 22 "_" H 4350 2550 50  0001 C CNN "ResonnanceFreq"
+	1    4350 2550
+	0    1    1    0   
+$EndComp
+$Comp
+L C C?
+U 1 1 566730B2
+P 4650 2700
+F 0 "C?" H 4675 2800 50  0000 L CNN
+F 1 "10u" H 4675 2600 50  0000 L CNN
+F 2 "Dipoles_SMD:C_0603" H 4688 2550 50  0001 C CNN
+F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 4650 2700 50  0001 C CNN
+F 4 "TDK" H 4650 2700 50  0001 C CNN "MFN"
+F 5 "C1608X5R1A106K080AC" H 4650 2700 50  0001 C CNN "MFP"
+F 6 "digikey" H 4650 2700 50  0001 C CNN "D1"
+F 7 "mouser" H 4650 2700 50  0001 C CNN "D2"
+F 8 "445-7486" H 4650 2700 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/C1608X5R1A106K080AC/445-7486-1-ND/2733558" H 4650 2700 50  0001 C CNN "D1PL"
+F 10 "_" H 4650 2700 50  0001 C CNN "D2PN"
+F 11 "_" H 4650 2700 50  0001 C CNN "D2PL"
+F 12 "0603" H 4650 2700 50  0001 C CNN "Package"
+F 13 "_" H 4650 2700 50  0000 C CNN "Description"
+F 14 "10" H 4650 2700 50  0001 C CNN "Voltage"
+F 15 "_" H 4650 2700 50  0001 C CNN "Power"
+F 16 "10%" H 4650 2700 50  0001 C CNN "Tolerance"
+F 17 "X5R" H 4650 2700 50  0001 C CNN "Temperature"
+F 18 "_" H 4650 2700 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 4650 2700 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 4650 2700 50  0001 C CNN "Cont.Current"
+F 21 "_" H 4650 2700 50  0001 C CNN "Frequency"
+F 22 "_" H 4650 2700 50  0001 C CNN "ResonnanceFreq"
+	1    4650 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 566730CC
+P 4050 2700
+F 0 "R?" V 4130 2700 50  0000 C CNN
+F 1 "57.6k" V 4050 2700 50  0000 C CNN
+F 2 "Dipoles_SMD:R_0402" V 3980 2700 30  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 4050 2700 30  0001 C CNN
+F 4 "Vishay" H 4050 2700 50  0001 C CNN "MFN"
+F 5 "CRCW040257K6FKED" H 4050 2700 50  0001 C CNN "MFP"
+F 6 "digikey" H 4050 2700 50  0001 C CNN "D1"
+F 7 "mouser" H 4050 2700 50  0001 C CNN "D2"
+F 8 "541-57.6KL" H 4050 2700 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/CRCW040257K6FKED/541-57.6KLCT-ND/1183324" H 4050 2700 50  0001 C CNN "D1PL"
+F 10 "_" H 4050 2700 50  0001 C CNN "D2PN"
+F 11 "_" H 4050 2700 50  0001 C CNN "D2PL"
+F 12 "0402" H 4050 2700 50  0001 C CNN "Package"
+F 13 "_" H 4050 2700 50  0000 C CNN "Description"
+F 14 "_" H 4050 2700 50  0001 C CNN "Voltage"
+F 15 "1/16" H 4050 2700 50  0001 C CNN "Power"
+F 16 "1%" H 4050 2700 50  0001 C CNN "Tolerance"
+F 17 "_" H 4050 2700 50  0001 C CNN "Temperature"
+F 18 "_" H 4050 2700 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 4050 2700 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 4050 2700 50  0001 C CNN "Cont.Current"
+F 21 "_" H 4050 2700 50  0001 C CNN "Frequency"
+F 22 "_" H 4050 2700 50  0001 C CNN "ResonnanceFreq"
+	1    4050 2700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 566730D3
+P 4050 2850
+F 0 "#PWR?" H 4050 2600 50  0001 C CNN
+F 1 "GND" H 4050 2700 50  0000 C CNN
+F 2 "" H 4050 2850 60  0000 C CNN
+F 3 "" H 4050 2850 60  0000 C CNN
+	1    4050 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 566730EC
+P 2100 1600
+F 0 "C?" H 2125 1700 50  0000 L CNN
+F 1 "4.7u" H 2125 1500 50  0000 L CNN
+F 2 "Dipoles_SMD:C_0402" H 2138 1450 50  0001 C CNN
+F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 2100 1600 50  0001 C CNN
+F 4 "TDK" H 2100 1600 50  0001 C CNN "MFN"
+F 5 "C1005X5R0J475K050BC" H 2100 1600 50  0001 C CNN "MFP"
+F 6 "digikey" H 2100 1600 50  0001 C CNN "D1"
+F 7 "mouser" H 2100 1600 50  0001 C CNN "D2"
+F 8 "445-5947" H 2100 1600 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/C1005X5R0J475K050BC/445-5947-1-ND/2443987" H 2100 1600 50  0001 C CNN "D1PL"
+F 10 "_" H 2100 1600 50  0001 C CNN "D2PN"
+F 11 "_" H 2100 1600 50  0001 C CNN "D2PL"
+F 12 "0402" H 2100 1600 50  0001 C CNN "Package"
+F 13 "_" H 2100 1600 50  0000 C CNN "Description"
+F 14 "6.3" H 2100 1600 50  0001 C CNN "Voltage"
+F 15 "_" H 2100 1600 50  0001 C CNN "Power"
+F 16 "10%" H 2100 1600 50  0001 C CNN "Tolerance"
+F 17 "X5R" H 2100 1600 50  0001 C CNN "Temperature"
+F 18 "_" H 2100 1600 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 2100 1600 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 2100 1600 50  0001 C CNN "Cont.Current"
+F 21 "_" H 2100 1600 50  0001 C CNN "Frequency"
+F 22 "_" H 2100 1600 50  0001 C CNN "ResonnanceFreq"
+	1    2100 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 56673106
+P 1900 1600
+F 0 "C?" H 1925 1700 50  0000 L CNN
+F 1 "4.7u" H 1925 1500 50  0000 L CNN
+F 2 "Dipoles_SMD:C_0402" H 1938 1450 50  0001 C CNN
+F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 1900 1600 50  0001 C CNN
+F 4 "TDK" H 1900 1600 50  0001 C CNN "MFN"
+F 5 "C1005X5R0J475K050BC" H 1900 1600 50  0001 C CNN "MFP"
+F 6 "digikey" H 1900 1600 50  0001 C CNN "D1"
+F 7 "mouser" H 1900 1600 50  0001 C CNN "D2"
+F 8 "445-5947" H 1900 1600 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/C1005X5R0J475K050BC/445-5947-1-ND/2443987" H 1900 1600 50  0001 C CNN "D1PL"
+F 10 "_" H 1900 1600 50  0001 C CNN "D2PN"
+F 11 "_" H 1900 1600 50  0001 C CNN "D2PL"
+F 12 "0402" H 1900 1600 50  0001 C CNN "Package"
+F 13 "_" H 1900 1600 50  0000 C CNN "Description"
+F 14 "6.3" H 1900 1600 50  0001 C CNN "Voltage"
+F 15 "_" H 1900 1600 50  0001 C CNN "Power"
+F 16 "10%" H 1900 1600 50  0001 C CNN "Tolerance"
+F 17 "X5R" H 1900 1600 50  0001 C CNN "Temperature"
+F 18 "_" H 1900 1600 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 1900 1600 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 1900 1600 50  0001 C CNN "Cont.Current"
+F 21 "_" H 1900 1600 50  0001 C CNN "Frequency"
+F 22 "_" H 1900 1600 50  0001 C CNN "ResonnanceFreq"
+	1    1900 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 56673120
+P 1700 1600
+F 0 "C?" H 1725 1700 50  0000 L CNN
+F 1 "100n" H 1725 1500 50  0000 L CNN
+F 2 "Dipoles_SMD:C_0201" H 1738 1450 50  0001 C CNN
+F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 1700 1600 50  0001 C CNN
+F 4 "TDK" H 1700 1600 50  0001 C CNN "MFN"
+F 5 "C0603X5R0J104K030BC" H 1700 1600 50  0001 C CNN "MFP"
+F 6 "digikey" H 1700 1600 50  0001 C CNN "D1"
+F 7 "mouser" H 1700 1600 50  0001 C CNN "D2"
+F 8 "445-1796" H 1700 1600 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/C0603X5R0J104K030BC/445-1796-1-ND/701160" H 1700 1600 50  0001 C CNN "D1PL"
+F 10 "_" H 1700 1600 50  0001 C CNN "D2PN"
+F 11 "_" H 1700 1600 50  0001 C CNN "D2PL"
+F 12 "0201" H 1700 1600 50  0001 C CNN "Package"
+F 13 "_" H 1700 1600 50  0000 C CNN "Description"
+F 14 "6.3" H 1700 1600 50  0001 C CNN "Voltage"
+F 15 "_" H 1700 1600 50  0001 C CNN "Power"
+F 16 "10%" H 1700 1600 50  0001 C CNN "Tolerance"
+F 17 "X5R" H 1700 1600 50  0001 C CNN "Temperature"
+F 18 "_" H 1700 1600 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 1700 1600 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 1700 1600 50  0001 C CNN "Cont.Current"
+F 21 "_" H 1700 1600 50  0001 C CNN "Frequency"
+F 22 "_" H 1700 1600 50  0001 C CNN "ResonnanceFreq"
+	1    1700 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 56673127
+P 1700 1750
+F 0 "#PWR?" H 1700 1500 50  0001 C CNN
+F 1 "GND" H 1700 1600 50  0000 C CNN
+F 2 "" H 1700 1750 60  0000 C CNN
+F 3 "" H 1700 1750 60  0000 C CNN
+	1    1700 1750
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5667312D
+P 2550 3450
+F 0 "#PWR?" H 2550 3200 50  0001 C CNN
+F 1 "GND" H 2550 3300 50  0000 C CNN
+F 2 "" H 2550 3450 60  0000 C CNN
+F 3 "" H 2550 3450 60  0000 C CNN
+	1    2550 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R?
+U 1 1 56673146
+P 4500 3200
+F 0 "R?" V 4580 3200 50  0000 C CNN
+F 1 "150k" V 4500 3200 50  0000 C CNN
+F 2 "Dipoles_SMD:R_0402" V 4430 3200 30  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 4500 3200 30  0001 C CNN
+F 4 "Vishay" H 4500 3200 50  0001 C CNN "MFN"
+F 5 "CRCW0402150KFKED" H 4500 3200 50  0001 C CNN "MFP"
+F 6 "digikey" H 4500 3200 50  0001 C CNN "D1"
+F 7 "mouser" H 4500 3200 50  0001 C CNN "D2"
+F 8 "541-150KL" H 4500 3200 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/CRCW0402150KFKED/541-150KLCT-ND/1183369" H 4500 3200 50  0001 C CNN "D1PL"
+F 10 "_" H 4500 3200 50  0001 C CNN "D2PN"
+F 11 "_" H 4500 3200 50  0001 C CNN "D2PL"
+F 12 "0402" H 4500 3200 50  0001 C CNN "Package"
+F 13 "_" H 4500 3200 50  0000 C CNN "Description"
+F 14 "_" H 4500 3200 50  0001 C CNN "Voltage"
+F 15 "1/16" H 4500 3200 50  0001 C CNN "Power"
+F 16 "1%" H 4500 3200 50  0001 C CNN "Tolerance"
+F 17 "_" H 4500 3200 50  0001 C CNN "Temperature"
+F 18 "_" H 4500 3200 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 4500 3200 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 4500 3200 50  0001 C CNN "Cont.Current"
+F 21 "_" H 4500 3200 50  0001 C CNN "Frequency"
+F 22 "_" H 4500 3200 50  0001 C CNN "ResonnanceFreq"
+	1    4500 3200
+	-1   0    0    1   
+$EndComp
+$Comp
+L R R?
+U 1 1 56673160
+P 4500 3500
+F 0 "R?" V 4580 3500 50  0000 C CNN
+F 1 "37.4k" V 4500 3500 50  0000 C CNN
+F 2 "Dipoles_SMD:R_0402" V 4430 3500 30  0001 C CNN
+F 3 "http://www.vishay.com/docs/20035/dcrcwe3.pdf" H 4500 3500 30  0001 C CNN
+F 4 "Vishay" H 4500 3500 50  0001 C CNN "MFN"
+F 5 "CRCW040237K4FKED" H 4500 3500 50  0001 C CNN "MFP"
+F 6 "digikey" H 4500 3500 50  0001 C CNN "D1"
+F 7 "mouser" H 4500 3500 50  0001 C CNN "D2"
+F 8 "541-37.4KL" H 4500 3500 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/CRCW040237K4FKED/541-37.4KLCT-ND/1183301" H 4500 3500 50  0001 C CNN "D1PL"
+F 10 "_" H 4500 3500 50  0001 C CNN "D2PN"
+F 11 "_" H 4500 3500 50  0001 C CNN "D2PL"
+F 12 "0402" H 4500 3500 50  0001 C CNN "Package"
+F 13 "_" H 4500 3500 50  0000 C CNN "Description"
+F 14 "_" H 4500 3500 50  0001 C CNN "Voltage"
+F 15 "1/16" H 4500 3500 50  0001 C CNN "Power"
+F 16 "1%" H 4500 3500 50  0001 C CNN "Tolerance"
+F 17 "_" H 4500 3500 50  0001 C CNN "Temperature"
+F 18 "_" H 4500 3500 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 4500 3500 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 4500 3500 50  0001 C CNN "Cont.Current"
+F 21 "_" H 4500 3500 50  0001 C CNN "Frequency"
+F 22 "_" H 4500 3500 50  0001 C CNN "ResonnanceFreq"
+	1    4500 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L +2V5 #PWR?
+U 1 1 56673167
+P 4700 3050
+F 0 "#PWR?" H 4700 2900 50  0001 C CNN
+F 1 "+2V5" H 4700 3190 50  0000 C CNN
+F 2 "" H 4700 3050 60  0000 C CNN
+F 3 "" H 4700 3050 60  0000 C CNN
+	1    4700 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 56673180
+P 4700 3350
+F 0 "C?" H 4725 3450 50  0000 L CNN
+F 1 "1u" H 4725 3250 50  0000 L CNN
+F 2 "Dipoles_SMD:C_0201" H 4738 3200 50  0001 C CNN
+F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 4700 3350 50  0001 C CNN
+F 4 "TDK" H 4700 3350 50  0001 C CNN "MFN"
+F 5 "C0603X5R0J105M030BC" H 4700 3350 50  0001 C CNN "MFP"
+F 6 "digikey" H 4700 3350 50  0001 C CNN "D1"
+F 7 "mouser" H 4700 3350 50  0001 C CNN "D2"
+F 8 "445-8008" H 4700 3350 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/C0603X5R0J105M030BC/445-8008-1-ND/2792131" H 4700 3350 50  0001 C CNN "D1PL"
+F 10 "_" H 4700 3350 50  0001 C CNN "D2PN"
+F 11 "_" H 4700 3350 50  0001 C CNN "D2PL"
+F 12 "0201" H 4700 3350 50  0001 C CNN "Package"
+F 13 "_" H 4700 3350 50  0000 C CNN "Description"
+F 14 "6.3" H 4700 3350 50  0001 C CNN "Voltage"
+F 15 "_" H 4700 3350 50  0001 C CNN "Power"
+F 16 "20%" H 4700 3350 50  0001 C CNN "Tolerance"
+F 17 "X5R" H 4700 3350 50  0001 C CNN "Temperature"
+F 18 "_" H 4700 3350 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 4700 3350 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 4700 3350 50  0001 C CNN "Cont.Current"
+F 21 "_" H 4700 3350 50  0001 C CNN "Frequency"
+F 22 "_" H 4700 3350 50  0001 C CNN "ResonnanceFreq"
+	1    4700 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 56673187
+P 4500 3650
+F 0 "#PWR?" H 4500 3400 50  0001 C CNN
+F 1 "GND" H 4500 3500 50  0000 C CNN
+F 2 "" H 4500 3650 60  0000 C CNN
+F 3 "" H 4500 3650 60  0000 C CNN
+	1    4500 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L C C?
+U 1 1 566731A0
+P 2300 1600
+F 0 "C?" H 2325 1700 50  0000 L CNN
+F 1 "1u" H 2325 1500 50  0000 L CNN
+F 2 "Dipoles_SMD:C_0402" H 2338 1450 50  0001 C CNN
+F 3 "http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf" H 2300 1600 50  0001 C CNN
+F 4 "TDK" H 2300 1600 50  0001 C CNN "MFN"
+F 5 "C1005X5R0J105K050BB" H 2300 1600 50  0001 C CNN "MFP"
+F 6 "digikey" H 2300 1600 50  0001 C CNN "D1"
+F 7 "mouser" H 2300 1600 50  0001 C CNN "D2"
+F 8 "445-4998" H 2300 1600 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/C1005X5R0J105K050BB/445-4998-1-ND/2093613" H 2300 1600 50  0001 C CNN "D1PL"
+F 10 "_" H 2300 1600 50  0001 C CNN "D2PN"
+F 11 "_" H 2300 1600 50  0001 C CNN "D2PL"
+F 12 "0402" H 2300 1600 50  0001 C CNN "Package"
+F 13 "_" H 2300 1600 50  0000 C CNN "Description"
+F 14 "6.3" H 2300 1600 50  0001 C CNN "Voltage"
+F 15 "_" H 2300 1600 50  0001 C CNN "Power"
+F 16 "10%" H 2300 1600 50  0001 C CNN "Tolerance"
+F 17 "X5R" H 2300 1600 50  0001 C CNN "Temperature"
+F 18 "_" H 2300 1600 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 2300 1600 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 2300 1600 50  0001 C CNN "Cont.Current"
+F 21 "_" H 2300 1600 50  0001 C CNN "Frequency"
+F 22 "_" H 2300 1600 50  0001 C CNN "ResonnanceFreq"
+	1    2300 1600
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 566731A7
+P 2550 1450
+F 0 "#PWR?" H 2550 1300 50  0001 C CNN
+F 1 "+5V" H 2550 1590 50  0000 C CNN
+F 2 "" H 2550 1450 60  0000 C CNN
+F 3 "" H 2550 1450 60  0000 C CNN
+	1    2550 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR?
+U 1 1 566731AD
+P 4650 1450
+F 0 "#PWR?" H 4650 1300 50  0001 C CNN
+F 1 "+3V3" H 4650 1590 50  0000 C CNN
+F 2 "" H 4650 1450 60  0000 C CNN
+F 3 "" H 4650 1450 60  0000 C CNN
+	1    4650 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L +1V8 #PWR?
+U 1 1 566731B3
+P 4650 2250
+F 0 "#PWR?" H 4650 2100 50  0001 C CNN
+F 1 "+1V8" H 4650 2390 50  0000 C CNN
+F 2 "" H 4650 2250 60  0000 C CNN
+F 3 "" H 4650 2250 60  0000 C CNN
+	1    4650 2250
+	1    0    0    -1  
+$EndComp
+$Comp
+L ADP5023 U?
+U 1 1 566731CC
+P 3350 2250
+F 0 "U?" H 3350 3350 50  0000 C CNN
+F 1 "ADP5023" H 3400 950 50  0000 C CNN
+F 2 "Housings_DFN_QFN:QFN-24-1EP_4x4mm_Pitch0.5mm" H 3350 2250 50  0001 C CNN
+F 3 "http://www.analog.com/media/en/technical-documentation/data-sheets/ADP5023.pdf" H 3350 2250 50  0001 C CNN
+F 4 "Analog Devices" H 3350 2250 50  0001 C CNN "MFN"
+F 5 "ADP5023ACPZ-R7" H 3350 2250 50  0001 C CNN "MFP"
+F 6 "digikey" H 3350 2250 50  0001 C CNN "D1"
+F 7 "mouser" H 3350 2250 50  0001 C CNN "D2"
+F 8 "ADP5023ACPZ-R7" H 3350 2250 50  0001 C CNN "D1PN"
+F 9 "http://www.digikey.com/product-detail/en/ADP5023ACPZ-R7/ADP5023ACPZ-R7CT-ND/2757841" H 3350 2250 50  0001 C CNN "D1PL"
+F 10 "_" H 3350 2250 50  0001 C CNN "D2PN"
+F 11 "_" H 3350 2250 50  0001 C CNN "D2PL"
+F 12 "24QFN" H 3350 2250 50  0001 C CNN "Package"
+F 13 "_" H 3350 2250 50  0001 C CNN "Description"
+F 14 "_" H 3350 2250 50  0001 C CNN "Voltage"
+F 15 "_" H 3350 2250 50  0001 C CNN "Power"
+F 16 "_" H 3350 2250 50  0001 C CNN "Tolerance"
+F 17 "_" H 3350 2250 50  0001 C CNN "Temperature"
+F 18 "_" H 3350 2250 50  0001 C CNN "ReverseVoltage"
+F 19 "_" H 3350 2250 50  0001 C CNN "ForwardVoltage"
+F 20 "_" H 3350 2250 50  0001 C CNN "Cont.Current"
+F 21 "_" H 3350 2250 50  0001 C CNN "Frequency"
+F 22 "_" H 3350 2250 50  0001 C CNN "ResonnanceFreq"
+	1    3350 2250
+	1    0    0    -1  
+$EndComp
+Text Notes 2250 3950 0    60   ~ 0
+Vout1 = 0.5*(150k/26.7k +1)=3.308V\nVout2 = 0.5*(150k/57.6k +1)=1.80208V\nVout3 (2.5)= 0.5*(150k/37.4k +1)=2.505V
+Wire Wire Line
+	2550 2550 2550 3450
+Wire Wire Line
+	4700 3050 4700 3200
+Wire Wire Line
+	4700 3650 4500 3650
+Wire Wire Line
+	4700 3500 4700 3650
+Wire Wire Line
+	4050 3050 4700 3050
+Wire Wire Line
+	4500 3350 4050 3350
+Wire Wire Line
+	1700 1450 2550 1450
+Wire Wire Line
+	1700 1750 2300 1750
+Wire Wire Line
+	4050 2850 4650 2850
+Wire Wire Line
+	4650 2250 4650 2550
+Wire Wire Line
+	4650 2550 4500 2550
+Wire Wire Line
+	4050 2550 4200 2550
+Wire Wire Line
+	4050 2250 4650 2250
+Wire Wire Line
+	4650 2050 4050 2050
+Wire Wire Line
+	4650 1450 4650 1750
+Wire Wire Line
+	4650 1750 4500 1750
+Wire Wire Line
+	4050 1750 4200 1750
+Wire Wire Line
+	4050 1450 4650 1450
+Wire Wire Line
+	2550 1450 2550 2350
+Wire Wire Line
+	3150 3650 2700 3650
+Wire Wire Line
+	2700 3650 2700 3450
+Wire Wire Line
+	2700 3450 2550 3450
+Connection ~ 2300 1450
+Connection ~ 2100 1750
+Connection ~ 2550 2250
+Connection ~ 4650 1450
+Connection ~ 4500 3050
+Connection ~ 2100 1450
+Connection ~ 1900 1450
+Connection ~ 1900 1750
+Connection ~ 2550 2050
+Connection ~ 2550 1850
+Connection ~ 2550 3150
+Connection ~ 2550 3050
+Connection ~ 2550 2950
+Connection ~ 2550 2550
+Connection ~ 4650 2450
+Connection ~ 4650 2250
+Connection ~ 4650 1650
+Connection ~ 2550 1750
+Connection ~ 2550 1650
+Connection ~ 2550 3250
+Connection ~ 2550 3350
+NoConn ~ 3050 1150
+$EndSCHEMATC
