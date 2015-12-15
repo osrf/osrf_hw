@@ -9,7 +9,7 @@ sip.setapi('QVariant', 2)
 
 import os
 import sys
-from PyQt4 import QtGui, QtCore, Qt 
+from PyQt4 import QtGui, QtCore, Qt
 from sch.sch import *
 
 #BUGS supports only copy past of block cells not isolated cells
@@ -38,7 +38,7 @@ class BOMEditor(QtGui.QWidget):
         else:
             self.mode = mode
         self.model = QtGui.QStandardItemModel(self)
-        self.sortOrder = 1 
+        self.sortOrder = 1
 
         print('edition mode')
         ############################
@@ -58,7 +58,7 @@ class BOMEditor(QtGui.QWidget):
         self.actionPaste.setObjectName('actionPaste')
         self.actionPaste.triggered.connect(self.paste)
         self.actionPaste.setShortcut('Ctrl+V')
-        
+
         self.actionOpen = QtGui.QAction(self)
         self.actionOpen.setObjectName('actionOpen')
         self.actionOpen.triggered.connect(self.load)
@@ -149,7 +149,7 @@ class BOMEditor(QtGui.QWidget):
         self.layoutVertical.addLayout(self.layoutHorizontal)
 
         self.header.sectionClicked.connect(self.onSectionClicked)
-        
+
 #        self.tableView.setFont(QtGui.QFont('Courier', 10, QtGui.QFont.Bold))
         if self.mode == 'edit':
             if fileName.lower().endswith('sch'):
@@ -158,7 +158,6 @@ class BOMEditor(QtGui.QWidget):
                 self.loadSch(self.fileName[:-3]+'sch')
             else:
                 self.loadCsv(self.fileName)
-    
             self.cb = QtGui.QApplication.clipboard()
             self.showMaximized()
         elif self.mode == 'generate':
@@ -173,7 +172,6 @@ class BOMEditor(QtGui.QWidget):
         else:
             print('"' + self.mode + '"is not a known mode')
 
-                           
 
     def help(self):
         qmbox = QtGui.QMessageBox()
@@ -249,7 +247,7 @@ class BOMEditor(QtGui.QWidget):
         selection = self.tableView.selectionModel()
         unsortedIndexes = selection.selectedIndexes()
         indexes = sorted(sorted(unsortedIndexes,key=getCol),key=getRow)
-        row = indexes[0].row() 
+        row = indexes[0].row()
         col0 = indexes[0].column()
         # split lines
         lines = self.cb.text().split('\n')
@@ -265,7 +263,7 @@ class BOMEditor(QtGui.QWidget):
                     self.model.setData(idx,elt)
                 col += 1
             row += 1
-        return 
+        return
 
     #################################
     ## Column Management Functions ##
@@ -285,7 +283,7 @@ class BOMEditor(QtGui.QWidget):
             idx = self.model.index(0,col)
             self.model.setData(idx,llist[col])
 
-    
+
     #################################
     ####### AutoFill Functions ######
     #################################
@@ -370,7 +368,7 @@ class BOMEditor(QtGui.QWidget):
                     for i in range(len(keyGen)):
                         if str(self.model.data(self.model.index(0, col),
                             QtCore.Qt.DisplayRole )) == keyGen[i]:
-                                keyGenIdx[str(i)] = col 
+                                keyGenIdx[str(i)] = col
                                 # set background to green to show that a value is expected in this cell
                                 if str(self.model.data(self.model.index(curRow, col),QtCore.Qt.DisplayRole)) == '_':
                                     color = QtCore.Qt.red
@@ -413,7 +411,6 @@ class BOMEditor(QtGui.QWidget):
                         QtGui.QColor(QtCore.Qt.white),
                         QtCore.Qt.TextColorRole
                         )
-                    
 
             if len(keyGen) > len(keyGenIdx):
                 print('Missing parameters in you sch file')
@@ -434,15 +431,15 @@ class BOMEditor(QtGui.QWidget):
 #            if keyFail == True:
 #                continue
             #print('new dbKey is :' + keyComp)
-            # openfile 
+            # openfile
             with open(fileName, "rb") as fileInput:
             # create dbParamlist from first row
                 first = True
-                for row in csv.reader(fileInput):    
+                for row in csv.reader(fileInput):
                     if first:
                         for j in range(len(row)):
                             if row[j] != '' and row[j] != 'KEY':
-                                dbParamList[row[j]] = j 
+                                dbParamList[row[j]] = j
                         first = False
                         #print(dbParamList)
                     else:
@@ -472,7 +469,7 @@ class BOMEditor(QtGui.QWidget):
             self.model.removeRows(0, int(self.model.rowCount()))
             with open(fileName, "rb") as fileInput:
                 print('loading csv')
-                for row in csv.reader(fileInput):    
+                for row in csv.reader(fileInput):
                     items = [
                         QtGui.QStandardItem(field)
                         for field in row
@@ -571,7 +568,7 @@ class BOMEditor(QtGui.QWidget):
 #                                if field['ref'] != '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"':
                                 field['ref'] = '"' + self.model.data(self.model.index(row,col),QtCore.Qt.DisplayRole) + '"'
         sch.save()
-            
+
     @QtCore.pyqtSlot()
     def saveSchSlot(self):
         print('SCH Saved')
@@ -590,30 +587,91 @@ class BOMEditor(QtGui.QWidget):
             self.saveBOM(fname)
 
     def saveBOM(self, fileName):
-        #TODO not export component with same Reference/Designator
+        #first let's sort table by designator
+        self.onSectionClicked(1)
+        designators = []
+        rowRem = []
+        for rowNumber in range(self.model.rowCount()):
+            des = str(self.model.data(self.model.index(rowNumber, 1),
+                QtCore.Qt.DisplayRole ))
+            if des not in designators:
+                designators.append(des)
+            else:
+                rowRem.append(rowNumber)
+                continue
+        rowRem = sorted(rowRem,reverse=True)
+        # remove duplicates
+        for i in rowRem:
+            self.model.removeRow(i)
+        # sort by MFP
+        self.onSectionClicked(6)
+
         print('filename=' + fileName)
+        qty=1; first=1; prevMFP = None; MFP=None; designators=[]
+        strfield='"'
         with open(fileName, "wb") as fileOutput:
             writer = csv.writer(fileOutput,delimiter=',',quotechar="'")
-            designators = []
-            for rowNumber in range(self.model.rowCount()):
-                fields=[]
-                des = str(self.model.data(self.model.index(rowNumber, 1),
-                    QtCore.Qt.DisplayRole ))
-                if des in designators:
-                    continue
-                designators.append(des)
-                for columnNumber in [1,2,5,6,7,9,10,8,11,12]:
-                    a = str(self.model.data(self.model.index(rowNumber, columnNumber),
+            #initialize designators and MFP
+            MFP = str(self.model.data(self.model.index(1, 6),
                         QtCore.Qt.DisplayRole ))
-                    if len(a)>0:
-                        if columnNumber != 0:
-                            if a[0]!='"':
-                                a = '"' + str(a) + '"'
-                        fields.append(a)
-                    else:
-                        a = '""'
-                        fields.append(a)
-                writer.writerow(fields)
+            designators.append(str(self.model.data(self.model.index(1, 1),
+                        QtCore.Qt.DisplayRole )))
+            fields = []
+            # export the title row as is
+            for columnNumber in [1,2,5,6,7,9,10,8,11,12]:
+                a = str(self.model.data(self.model.index(0, columnNumber),
+                    QtCore.Qt.DisplayRole ))
+                if len(a)>0:
+                    if columnNumber != 0:
+                        if a[0]!='"':
+                            a = '"' + str(a) + '"'
+                    fields.append(a)
+                else:
+                    a = '""'
+                    fields.append(a)
+            fields.append('Qty')
+            print(fields)
+            writer.writerow(fields)
+            # now that header is ok lets browse the components
+            # count the components having the same MFP
+            for rowNumber in range(2,self.model.rowCount()+2):
+                prevMFP = MFP
+                MFP = str(self.model.data(self.model.index(rowNumber, 6),
+                    QtCore.Qt.DisplayRole ))
+                if MFP == prevMFP:
+                    qty += 1
+                    designators.append(str(self.model.data(self.model.index(rowNumber, 1),
+                        QtCore.Qt.DisplayRole )))
+                else:
+                    #print("MFP:"+str(prevMFP)+ " qty:"+str(qty)+\
+                    #          " designators:"+str(designators))
+                    fields=[]
+                    strfield='"'
+                    for des in designators:
+                        if strfield != '"':
+                            strfield += ';'
+                        strfield += des
+                    strfield += '"'
+                    print(strfield)
+                    fields.append(strfield)
+                    for columnNumber in [2,5,6,7,9,10,8,11,12]:
+                        a = str(self.model.data(self.model.index(rowNumber-1, columnNumber),
+                            QtCore.Qt.DisplayRole ))
+                        if len(a)>0:
+                            if columnNumber != 0:
+                                if a[0]!='"':
+                                    a = '"' + str(a) + '"'
+                            fields.append(a)
+                        else:
+                            a = '""'
+                            fields.append(a)
+                    fields.append(qty)
+                    print(fields)
+                    writer.writerow(fields)
+                    designators = []
+                    designators.append(str(self.model.data(self.model.index(rowNumber, 1),
+                        QtCore.Qt.DisplayRole )))
+                    qty = 1
 
 if __name__ == "__main__":
     import sys
@@ -628,7 +686,7 @@ if __name__ == "__main__":
         outfilepath = args[2]
     elif len(args)==2:
         infilepath = args[1]
-        
+
     main = BOMEditor(infilepath,outfilepath,mode)
     main.show()
 
