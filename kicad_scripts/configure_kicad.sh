@@ -192,7 +192,8 @@ if [ $# -eq 1 -a "$1" == "--install-update-modules" ]; then
 fi
 
 if [ $# -eq 1 -a "$1" == "--install-update-libraries" ]; then
-    checkout_or_update_repo "keulYSMB" "kicad-library"
+#    checkout_or_update_repo "keulYSMB" "kicad-library"
+    checkout_or_update_repo "KiCad" "kicad-library"
     # copy content in workspace resources
     cp -r "$WORKING_TREES/kicad-library/library"/* "$LIB_DIR"
     #FIXME should copy only the .3dshape folders ?
@@ -220,7 +221,7 @@ fi
 if [ $# -eq 1 -a "$1" == "--all" ]; then
     install_update_all_modules
 
-    checkout_or_update_repo "keulYSMB" "kicad-library"
+    checkout_or_update_repo "KiCad" "kicad-library"
     # copy content in workspace resources
     cp -r "$WORKING_TREES/kicad-library/library"/* "$LIB_DIR"
     #FIXME should copy only the .3dshape folders ?
