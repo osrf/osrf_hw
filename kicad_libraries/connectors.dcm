@@ -6,6 +6,12 @@ K 02x30 1GND
 F http://dummy.dummy
 $ENDCMP
 #
+$CMP CONN_02X50
+D 100 contacts connector
+K 02x50 connector
+F none
+$ENDCMP
+#
 $CMP microSD_Card
 D microSD Card Reader
 K microSD connector
