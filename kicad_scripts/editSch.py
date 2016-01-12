@@ -630,7 +630,6 @@ class BOMEditor(QtGui.QWidget):
                     a = '""'
                     fields.append(a)
             fields.append('Qty')
-            print(fields)
             writer.writerow(fields)
             # now that header is ok lets browse the components
             # count the components having the same MFP
@@ -652,7 +651,6 @@ class BOMEditor(QtGui.QWidget):
                             strfield += ';'
                         strfield += des
                     strfield += '"'
-                    print(strfield)
                     fields.append(strfield)
                     for columnNumber in [2,5,6,7,9,10,8,11,12]:
                         a = str(self.model.data(self.model.index(rowNumber-1, columnNumber),
@@ -666,7 +664,6 @@ class BOMEditor(QtGui.QWidget):
                             a = '""'
                             fields.append(a)
                     fields.append(qty)
-                    print(fields)
                     writer.writerow(fields)
                     designators = []
                     designators.append(str(self.model.data(self.model.index(rowNumber, 1),
