@@ -7,7 +7,7 @@ DEF MT41K128M16 U 0 40 Y Y 1 F N
 F0 "U" -1400 1750 50 H V C CNN
 F1 "MT41K128M16" -1950 -2050 50 H V C CNN
 F2 "BGA:WBGA96C80P6X16_90X1300X120" -1050 50 50 H I C CNN
-F3 "http://www.micron.com/~/media/documents/products/data-sheet/dram/ddr3/2gb_1_35v_ddr3l.pdf" -1050 50 50 H I C CNN
+F3 "https://www.micron.com/~/media/documents/products/data-sheet/dram/ddr3/2gb_1_35v_ddr3l.pdf" -1050 50 50 H I C CNN
 F4 "Micron" 0 0 50 H I C CNN "MFN"
 F5 "MT41K128M16JT-107 IT:K" 0 0 50 H I C CNN "MFP"
 F6 "digikey" 0 0 50 H I C CNN "D1"

@@ -1,5 +1,11 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP LTM4622
+D Dual 2.5 DC DC converter
+K LTM4622 DualBuck LGA25
+F http://cds.linear.com/docs/en/datasheet/4622fa.pdf
+$ENDCMP
+#
 $CMP LTM4623
 D 3A DC-DC converter 
 K DC-DC buck converter LGA
