@@ -138,9 +138,9 @@
   (pad J11 smd circle (at 4 2.4 180) (size 0.3 0.3) (layers F.Cu F.Paste F.Mask))
   (pad K11 smd circle (at 4 3.2 180) (size 0.3 0.3) (layers F.Cu F.Paste F.Mask))
   (pad L11 smd circle (at 4 4 180) (size 0.3 0.3) (layers F.Cu F.Paste F.Mask))
-  (model ${KIWORKSPACE}/osrf_hw_nonfree/kicad_3dmodels/BGA.3dshapes/BGA121C80P11X11_1000X1000X110.wrl
+  (model ${KIWORKSPACE}/osrf_hw_nonfree/BGA.3dshapes/BGA121C80P11X11_1000X1000X110.wrl
     (at (xyz 0 0 0))
-    (scale (xyz 0.3937 0.3937 0.3937))
+    (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
   )
 )
