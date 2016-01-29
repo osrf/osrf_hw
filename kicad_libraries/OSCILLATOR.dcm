@@ -12,4 +12,10 @@ K 50M 50MHz Oscillator Abracon
 F http://www.abracon.com/Oscillators/ASFL1.pdf
 $ENDCMP
 #
+$CMP OSCILLATOR_LVDS
+D LVDS Oscillator
+K Oscillator Abracon LVDS
+F http://www.abracon.com/Oscillators/ASDMP.pdf
+$ENDCMP
+#
 #End Doc Library

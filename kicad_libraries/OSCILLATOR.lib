@@ -71,4 +71,41 @@ X VDD 4 400 100 100 L 50 50 1 1 U
 ENDDRAW
 ENDDEF
 #
+# OSCILLATOR_LVDS
+#
+DEF OSCILLATOR_LVDS U 0 40 Y Y 1 F N
+F0 "U" -250 350 50 H V C CNN
+F1 "OSCILLATOR_LVDS" 0 -400 50 H V C CNN
+F2 "" -150 0 50 H I C CNN
+F3 "http://www.abracon.com/Oscillators/ASFL1.pdf" -150 100 50 H I C CNN
+F4 "_" -50 100 50 H I C CNN "MFN"
+F5 "_" -50 100 50 H I C CNN "MFP"
+F6 "digikey" -50 100 50 H I C CNN "D1"
+F7 "mouser" -50 100 50 H I C CNN "D2"
+F8 "_" -50 100 50 H I C CNN "D1PN"
+F9 "_" -50 100 50 H I C CNN "D1PL"
+F10 "_" -50 100 50 H I C CNN "D2PN"
+F11 "_" -50 100 50 H I C CNN "D2PL"
+F12 "_" -50 100 50 H I C CNN "Package"
+F13 "_" -50 100 50 H I C CNN "Description"
+F14 "_" -50 100 50 H I C CNN "Voltage"
+F15 "_" -50 100 50 H I C CNN "Power"
+F16 "_" -50 100 50 H I C CNN "Tolerance"
+F17 "_" -50 100 50 H I C CNN "Temperature"
+F18 "_" -50 100 50 H I C CNN "ReverseVoltage"
+F19 "_" -50 100 50 H I C CNN "ForwardVoltage"
+F20 "_" -50 100 50 H I C CNN "Cont.Current"
+F21 "_" -50 100 50 H I C CNN "Frequency"
+F22 "_" -50 100 50 H I C CNN "ResonnanceFreq"
+DRAW
+S -300 -300 300 300 0 1 0 f
+X OE 1 -400 200 100 R 50 50 1 1 U
+X NC 2 -400 0 100 R 50 50 1 1 U
+X GND 3 -400 -200 100 R 50 50 1 1 U
+X Output 4 400 200 100 L 50 50 1 1 U
+X Output# 5 400 0 100 L 50 50 1 1 U
+X VDD 6 400 -200 100 L 50 50 1 1 U
+ENDDRAW
+ENDDEF
+#
 #End Library
