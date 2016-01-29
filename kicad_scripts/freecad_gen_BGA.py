@@ -8,15 +8,14 @@ import FreeCADGui# as Gui
 import os
 import Draft#,Sketch,Part
 # lets assume for now that we have all the information in a filename
-#lets also assume that they are only full ball arrays no missing ball in the center)
+# lets also assume that they are only full ball arrays no missing ball in the center)
 # all distances in mm
 #TODO Argument passing
 #FIXME doesnt handle different x and y pitch
-#FIXME size of white dot
 #FIXME size of balls
-#TODO Handle nissing balls according to pin quantity
+#TODO Handle nissing balls according to pin quantity: or remove them by hand because impossible to handle all the fishy cases ?
 
-parameter = "/home/mikael/work/kicad_ws/osrf_hw_nonfree/kicad_3dmodels/BGA.3dshapes/BGA100C80P10X10_1400X1000X110.wrl"
+parameter = "/home/mikael/work/kicad_ws/osrf_hw_nonfree/BGAScriptTest/BGA900C80P30X30_2500X2500X150.wrl"
 string = os.path.basename(parameter)
 string = string[:string.rfind('.')]
 directory = os.path.dirname(parameter)
@@ -44,7 +43,7 @@ str2 = str2[idx+1:]
 #height = float(str2[:idx])/100.0
 height = float(str2)/100.0
 #print(height)
-ballradius = 0.15
+ballradius = 0.225
 
 # go in sketch mode
 Gui.activateWorkbench("SketcherWorkbench")
@@ -68,7 +67,6 @@ App.ActiveDocument.Sketch.addGeometry(Part.Line(App.Vector(-width/2.0,length/2.0
 App.ActiveDocument.Sketch.addGeometry(Part.Line(App.Vector(width/2.0,length/2.0,0),App.Vector(width/2.0,-length/2.0,0)))
 print("place lines")
 # add circular cutout
-#FIXME (currently fixed size) fixed size or proportional ? or proportional within limit ?
 App.ActiveDocument.Sketch.addGeometry(Part.Circle(App.Vector(-width/2.0+1,-length/2.0+1,0),App.Vector(0,0,1),0.5))
 
 
@@ -103,52 +101,53 @@ App.ActiveDocument.recompute()
 FreeCAD.getDocument("Unnamed").getObject("Sphere").Radius = ballradius
 App.ActiveDocument.recompute()
 
-# Ball Array cration
+# Ball Array creation
 Gui.activateWorkbench("ArchWorkbench")
 Draft.array(App.getDocument("Unnamed").getObject("Sphere"),App.Vector(pitch,0,0),App.Vector(0,pitch,0),nBallx,nBally)
 
-# Merge all the spheres into a single object
-Gui.activateWorkbench("ArchWorkbench")
+## Merge all the spheres into a single object
+Gui.activateWorkbench("PartWorkbench")
+shapesToFuse=[]
 for obj in FreeCAD.ActiveDocument.Objects:
   if obj.Name.find("Sphere") != -1:
-    objName = obj.Name
-    obj = App.ActiveDocument.getObject(objName)
     Gui.Selection.addSelection(obj)
-Draft.upgrade(Gui.Selection.getSelection(),delete=True)
-FreeCAD.getDocument("Unnamed").getObject("Block").Placement = App.Placement(App.Vector(-(nBallx-1)*pitch/2.0,-(nBally-1)*pitch/2.0,ballradius),App.Rotation(0,0,0,1))
+    shapesToFuse.append(obj)
+App.activeDocument().addObject("Part::MultiFuse","Fusion")
+App.activeDocument().Fusion.Shapes = shapesToFuse
+App.ActiveDocument.recompute()
 
-FreeCAD.getDocument("Unnamed").getObject("Pad").Placement = App.Placement(App.Vector(0,0,ballradius),App.Rotation(0,0,0,1))
-Gui.getDocument("Unnamed").getObject("Pad").Visibility=True
+fuse = FreeCAD.ActiveDocument.getObject("Fusion")
+fuse.Placement = App.Placement(App.Vector(-(nBallx-1)*pitch/2.0,-(nBally-1)*pitch/2.0,ballradius),App.Rotation(0,0,0,1))
+App.ActiveDocument.getObject("Pad").Placement = App.Placement(App.Vector(0,0,ballradius),App.Rotation(0,0,0,1))
+Gui.ActiveDocument.getObject("Pad").Visibility=True
 Gui.SendMsgToActiveView("ViewFit")
 Gui.activeDocument().activeView().viewBottom()
 
-
-# Export as a step model
+## Export as a step model
 expObjects = []
 for obj in FreeCAD.ActiveDocument.Objects:
-  # sleect all but indivudial Spheres
+  # select all but indivudial Spheres and Sketch
   if (obj.Name.find("Sphere") == -1) and (obj.Name.find("Sketch") == -1):
-    objName = obj.Name
-    obj = App.ActiveDocument.getObject(objName)
+    Gui.Selection.addSelection(obj)
     expObjects.append(obj)
+  else:
+    FreeCAD.ActiveDocument.removeObject(obj.Name)
 ImportGui.export(expObjects,os.path.join(directory,string+'.step'))
+
+App.activeDocument().addObject("Part::MultiFuse","Fusion2")
+App.activeDocument().Fusion2.Shapes = expObjects
+App.ActiveDocument.recompute()
+for obj in expObjects:
+    FreeCAD.ActiveDocument.removeObject(obj.Name) 
 del expObjects
 
+# Scale to inches before export to VRML for KiCAD use
+Draft.scale(FreeCAD.ActiveDocument.ActiveObject, FreeCAD.Vector(0.3937,0.3937,0.3937))
+FreeCAD.ActiveDocument.removeObject("Fusion2") 
 
-ImportGui.open(os.path.join(directory,string+'.step'))
-App.setActiveDocument("Unnamed1")
-App.ActiveDocument=App.getDocument("Unnamed1")
-Gui.ActiveDocument=Gui.getDocument("Unnamed1")
-Gui.SendMsgToActiveView("ViewFit")
-
-# Export as a VRML model
+### Export as a VRML model
 expObjects = []
-for obj in FreeCAD.ActiveDocument.Objects:
-  # select all but indivudial Spheres
-  if (obj.Name.find("Sketch") == -1):
-    objName = obj.Name
-    obj = App.ActiveDocument.getObject(objName)
-    expObjects.append(obj)
+expObjects.append(FreeCAD.ActiveDocument.getObject("Scale"))
 FreeCADGui.export(expObjects,os.path.join(directory,string+'.wrl'))
 del expObjects
-exit(1)
+#exit(1)
