@@ -48,3 +48,5 @@ CAPA_470n_0201_6.3_10%_X5R,"Dipoles_SMD:C_0201","http://product.tdk.com/en/catal
 CAPA_1u_0201_6.3_20%_X5R,"Dipoles_SMD:C_0201","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C0603X5R0J105M030BC","445-8008","http://www.digikey.com/product-detail/en/C0603X5R0J105M030BC/445-8008-1-ND/2792131","_","_"
 ## 1206 capacitors
 CAPA_100u_1206_6.3_20%_X5R,"Dipoles_SMD:C_1206","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C3216X5R0J107M160AB","445-6008","http://www.digikey.com/product-detail/en/C3216X5R0J107M160AB/445-6008-1-ND/2444049","_","_"
+## 1210 capacitors
+CAPA_330u_1210_4_20%_X5R,"Capacitors_SMD:C_1210","http://ds.yuden.co.jp/TYCOMPAS/ut/detail.do?productNo=AMK325ABJ337MM-T&fileName=AMK325ABJ337MM-T_SS&mode=specSheetDownload","Taiyo Yuden","AMK325ABJ337MM-T","587-3977","http://www.digikey.com/product-detail/en/AMK325ABJ337MM-T/587-3977-1-ND/4950531","_","_"
