@@ -38,6 +38,27 @@ do
   echo -e $outString > $file 
 done
 
+cc=$(find $1 -type f -name "*.sch")
+outString=""
+for file in $cc
+do
+  echo $file
+  cd "$( dirname $file)"
+  first=0
+  while IFS='' read -r line || [[ -n "$line" ]]; do
+      if [[ $first != 0 ]]
+      then
+        outString=$outString"\n"
+      fi
+      if [[ $line == LIBS* ]] && [[ $line == *-cache ]];then
+          :
+      else
+          outString=$outString"$line"
+          first=1
+      fi
+  done < $file
+  echo -e $outString > $file
+done
 
 #FIXME Chunk of code to find osrf_hw and workspace: useless because workspace structure is fixed
 #DIRECTORYTEST="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
