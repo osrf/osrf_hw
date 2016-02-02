@@ -15,7 +15,9 @@ import Draft#,Sketch,Part
 #FIXME size of balls
 #TODO Handle nissing balls according to pin quantity: or remove them by hand because impossible to handle all the fishy cases ?
 
-parameter = "/home/mikael/work/kicad_ws/osrf_hw_nonfree/BGAScriptTest/BGA900C80P30X30_2500X2500X150.wrl"
+#parameter = "/home/mikael/work/kicad_ws/osrf_hw_nonfree/BGAScriptTest/BGA900C80P30X30_2500X2500X150.wrl"
+#parameter = "/home/mikael/work/kicad_ws/osrf_hw_nonfree/BGAScriptTest/BGA10C80P5X2_500X500X150.wrl"
+parameter = sys.argv[2]
 string = os.path.basename(parameter)
 string = string[:string.rfind('.')]
 directory = os.path.dirname(parameter)
@@ -67,7 +69,7 @@ App.ActiveDocument.Sketch.addGeometry(Part.Line(App.Vector(-width/2.0,length/2.0
 App.ActiveDocument.Sketch.addGeometry(Part.Line(App.Vector(width/2.0,length/2.0,0),App.Vector(width/2.0,-length/2.0,0)))
 print("place lines")
 # add circular cutout
-App.ActiveDocument.Sketch.addGeometry(Part.Circle(App.Vector(-width/2.0+1,-length/2.0+1,0),App.Vector(0,0,1),0.5))
+App.ActiveDocument.Sketch.addGeometry(Part.Circle(App.Vector(-width/2.0+1,length/2.0-1,0),App.Vector(0,0,1),0.5))
 
 
 App.ActiveDocument.recompute()
@@ -91,7 +93,7 @@ Gui.activateWorkbench("PartWorkbench")
 App.ActiveDocument.addObject("Part::Cylinder","Cylinder")
 FreeCAD.getDocument("Unnamed").getObject("Cylinder").Radius = 0.5
 FreeCAD.getDocument("Unnamed").getObject("Cylinder").Height = height
-FreeCAD.getDocument("Unnamed").getObject("Cylinder").Placement = App.Placement(App.Vector(-width/2.0+1,-length/2.0+1,ballradius),App.Rotation(0,0,0,1))
+FreeCAD.getDocument("Unnamed").getObject("Cylinder").Placement = App.Placement(App.Vector(-width/2.0+1,length/2.0-1,ballradius),App.Rotation(0,0,0,1))
 App.ActiveDocument.recompute()
 
 
@@ -132,15 +134,20 @@ for obj in FreeCAD.ActiveDocument.Objects:
     expObjects.append(obj)
   else:
     FreeCAD.ActiveDocument.removeObject(obj.Name)
-ImportGui.export(expObjects,os.path.join(directory,string+'.step'))
+#ImportGui.export(expObjects,os.path.join(directory,string+'.step'))
 
 App.activeDocument().addObject("Part::MultiFuse","Fusion2")
 App.activeDocument().Fusion2.Shapes = expObjects
 App.ActiveDocument.recompute()
 for obj in expObjects:
     FreeCAD.ActiveDocument.removeObject(obj.Name) 
-del expObjects
+expObjects= []
 
+for obj in FreeCAD.ActiveDocument.Objects:
+  if (obj.Name.find("Fusion2") != -1):
+    expObjects.append(obj)
+ImportGui.export(expObjects,os.path.join(directory,string+'.step'))
+del expObjects
 # Scale to inches before export to VRML for KiCAD use
 Draft.scale(FreeCAD.ActiveDocument.ActiveObject, FreeCAD.Vector(0.3937,0.3937,0.3937))
 FreeCAD.ActiveDocument.removeObject("Fusion2") 
@@ -150,4 +157,4 @@ expObjects = []
 expObjects.append(FreeCAD.ActiveDocument.getObject("Scale"))
 FreeCADGui.export(expObjects,os.path.join(directory,string+'.wrl'))
 del expObjects
-#exit(1)
+exit(1)

@@ -16,7 +16,8 @@ dictParameters=OrderedDict([
 ('outLibrary',''),
 ('name',''),
 ('keywords',''),
-('Description','_') ])
+('Description','_'),
+('3dModelPath','_') ])
 
 with open(infile,'r+') as inf:
     while True:
@@ -100,6 +101,7 @@ for pin in pinlist:
     outstring += '  (pad {} smd circle (at {} {}) (size {} {}) (layers F.Cu F.Paste F.Mask))\n'.format(pin,posx,posy,bsize,bsize)
     posy += pitch
     pn += 1
+outstring += '  (model '+str(os.path.join(dictParameters['3dModelPath'],dictParameters['name']+'.wrl'))+'\n    (at (xyz 0 0 0))\n    (scale (xyz 1 1 1))\n    (rotate (xyz 0 0 0))\n  )\n'
 outstring += ')'
 outfilepath = os.path.join(dictParameters['outLibrary'],dictParameters['name']+'.kicad_mod')
 print(outfilepath)

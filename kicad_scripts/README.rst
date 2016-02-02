@@ -95,6 +95,11 @@ Edit the freecad_gen_BGA.py file l.18 and give the absolute path of where you wa
 Please provide a filename matching the BGA chip naming convention.
 It can be runned by launching `freecad freecad_gen_BGA.py`
 
+generate_BGA.sh
+---------------
+This script parse config file and calls sequentially generate_BGA_footprint.py and freecad_gen_BGA.py.
+This it creates the footprint and the asociated 3d model that can be displayed directly in kicad.
+to run it just launch: `./generate_BGA.sh <configFile>`. You can look at configGlobalBGA.txt for an example of valid config file.
 
 KiCADToFreeCAD
 -------------

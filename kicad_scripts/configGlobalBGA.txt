@@ -1,0 +1,10 @@
+# name of the component and the files generated
+name=BGA400C80P20X20_2500X2500X150
+# Description of the component
+Description=20x20 BGA 0.8mm pitch 15x15mm
+# keywords displayed when you use the component inside kicad
+keywords=BGA 20x20 pitch 0.8mm
+# directory to store the generated files
+#outLibrary=/home/mikael/kicad_ws/osrf_hw/kicad_modules/testScript.pretty
+outLibrary=/home/mikael/work/kicad_ws/osrf_hw/kicad_modules/BGAScriptTest.pretty
+3dModelPath=/home/mikael/work/kicad_ws/osrf_hw_nonfree/BGAScriptTest.3dshapes
