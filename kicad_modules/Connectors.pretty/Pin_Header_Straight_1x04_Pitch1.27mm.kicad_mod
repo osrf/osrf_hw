@@ -4,7 +4,7 @@
   (fp_text reference P2 (at 0.65 -1.65) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
-  (fp_text value CONN_01X04 (at 0 5.6) (layer F.Fab)
+  (fp_text value Pin_Header_Straight_1x04_Pitch1.27mm (at 0 5.6) (layer F.Fab)
     (effects (font (size 1 1) (thickness 0.15)))
   )
   (fp_line (start -1.1 -1.05) (end -1.1 4.85) (layer F.CrtYd) (width 0.05))
