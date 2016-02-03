@@ -4,7 +4,6 @@
 b="osrf_hw"
 cd $1
 pwd
-#DIRECTORYTEST=$1
 
 remove_backup_files()
 {
@@ -53,6 +52,7 @@ removeCacheLib()
     outString=""
     echo $file
     cd "$( dirname $file)"
+    sed -i -e 's/\\n/newLineToReplace/g' $file
     first=0
     while IFS='' read -r line || [[ -n "$line" ]]; do
         if [[ $line == LIBS* ]] && [[ $line == *-cache ]];
@@ -68,6 +68,7 @@ removeCacheLib()
         fi
     done < $file
     echo -e $outString > $file
+    sed -i -e 's/newLineToReplace/\\n/g' $file
   done
 }
 
