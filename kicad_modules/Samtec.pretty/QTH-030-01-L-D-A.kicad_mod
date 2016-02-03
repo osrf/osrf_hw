@@ -85,7 +85,7 @@
   (pad GND thru_hole rect (at 8.45 0) (size 2.54 0.64) (drill oval 2.5 0.6) (layers *.Cu *.Mask F.SilkS))
   (pad GND thru_hole circle (at -9.24 -2.03) (size 1.02 1.02) (drill 1.02) (layers *.Cu *.Mask F.SilkS))
   (pad GND thru_hole circle (at 9.24 -2.03) (size 1.02 1.02) (drill 1.02) (layers *.Cu *.Mask F.SilkS))
-  (model /home/mikael/work/kicad_ws/osrf_hw_nonfree/Samtec.3dshapes/QTH-030-01-L-D-A.wrl
+  (model Samtec.3dshapes/QTH-030-01-L-D-A.wrl
     (at (xyz 0 0 0.01))
     (scale (xyz 0.3937 0.3937 0.3937))
     (rotate (xyz -90 0 180))

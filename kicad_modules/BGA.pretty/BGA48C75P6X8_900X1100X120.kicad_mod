@@ -63,4 +63,4 @@
   (pad F6 smd circle (at 1.875 1.125) (size 0.35 0.35) (layers F.Cu F.Paste F.Mask))
   (pad G6 smd circle (at 1.875 1.875) (size 0.35 0.35) (layers F.Cu F.Paste F.Mask))
   (pad H6 smd circle (at 1.875 2.625) (size 0.35 0.35) (layers F.Cu F.Paste F.Mask))
-  (model ${KIWORKSPACE}/osrf_hw_nonfree/BGA.3dshapes/BGA48C75P6X8_900X1100X120.wrl (at (xyz 0 0 0)) (scale (xyz 0.3937 0.3937 0.3937)) (rotate (xyz 0 0 0))))
+  (model BGA.3dshapes/BGA48C75P6X8_900X1100X120.wrl (at (xyz 0 0 0)) (scale (xyz 0.3937 0.3937 0.3937)) (rotate (xyz 0 0 0))))

@@ -501,7 +501,7 @@
   (pad Y22 smd circle (at 10.5 8.5) (size 0.6 0.6) (layers F.Cu F.Paste F.Mask))
   (pad AA22 smd circle (at 10.5 9.5) (size 0.6 0.6) (layers F.Cu F.Paste F.Mask))
   (pad AB22 smd circle (at 10.5 10.5) (size 0.6 0.6) (layers F.Cu F.Paste F.Mask))
-  (model ${KIWORKSPACE}/osrf_hw_nonfree/BGA.3dshapes/BGA484C100P22X22_2300X2300X110.wrl
+  (model BGA.3dshapes/BGA484C100P22X22_2300X2300X110.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

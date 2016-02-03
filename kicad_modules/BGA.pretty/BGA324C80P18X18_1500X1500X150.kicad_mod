@@ -341,7 +341,7 @@
   (pad T18 smd circle (at 6.8 5.2) (size 0.4 0.4) (layers F.Cu F.Paste F.Mask))
   (pad U18 smd circle (at 6.8 6) (size 0.4 0.4) (layers F.Cu F.Paste F.Mask))
   (pad V18 smd circle (at 6.8 6.8) (size 0.4 0.4) (layers F.Cu F.Paste F.Mask))
-  (model /home/mikael/work/kicad_ws/osrf_hw_nonfree/BGA.3dshapes/BGA324C80P18X18_1500X1500X150.wrl
+  (model BGA.3dshapes/BGA324C80P18X18_1500X1500X150.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

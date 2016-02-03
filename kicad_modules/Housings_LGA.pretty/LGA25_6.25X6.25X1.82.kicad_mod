@@ -42,7 +42,7 @@
   (pad C5 smd circle (at 2.54 0) (size 0.63 0.63) (layers F.Cu F.Paste F.Mask))
   (pad D5 smd circle (at 2.54 1.27) (size 0.63 0.63) (layers F.Cu F.Paste F.Mask))
   (pad E5 smd circle (at 2.54 2.54) (size 0.63 0.63) (layers F.Cu F.Paste F.Mask))
-  (model /home/mikael/work/kicad_ws/osrf_hw_nonfree/Housings_LGA.3dshapes/LGA25_6.25X6.25X1.82.wrl
+  (model Housings_LGA.3dshapes/LGA25_6.25X6.25X1.82.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

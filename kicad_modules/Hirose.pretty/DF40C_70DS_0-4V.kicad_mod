@@ -86,7 +86,7 @@
   (pad 66 smd rect (at 6 1.54) (size 0.2 1.4) (layers F.Cu F.Paste F.Mask))
   (pad 68 smd rect (at 6.4 1.54) (size 0.2 1.4) (layers F.Cu F.Paste F.Mask))
   (pad 70 smd rect (at 6.8 1.54) (size 0.2 1.4) (layers F.Cu F.Paste F.Mask))
-  (model /home/mikael/work/kicad_ws/osrf_hw_nonfree/Hirose.3dshapes/DF40C_70DS_0-4V.wrl
+  (model Hirose.3dshapes/DF40C_70DS_0-4V.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

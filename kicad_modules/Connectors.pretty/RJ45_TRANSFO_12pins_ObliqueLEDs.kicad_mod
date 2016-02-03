@@ -24,4 +24,4 @@
   (pad 11 thru_hole circle (at -3.785 -4.605) (size 1.524 1.524) (drill 1.02) (layers *.Cu *.Mask F.SilkS))
   (pad 10 thru_hole circle (at 3.785 -2.725) (size 1.524 1.524) (drill 1.02) (layers *.Cu *.Mask F.SilkS))
   (pad 1 thru_hole rect (at 4.445 6.645) (size 1.524 1.524) (drill 1.016) (layers *.Cu *.Mask F.SilkS))
-  (model /home/mikael/kicad_ws/osrf_hw_nonfree/Connectors.3dshapes/rj45-12PIN-ObliqueLEDs.wrl (at (xyz 0 0 0.28)) (scale (xyz 0.3937 0.3937 0.3937)) (rotate (xyz -90 0 180))))
+  (model Connectors.3dshapes/rj45-12PIN-ObliqueLEDs.wrl (at (xyz 0 0 0.28)) (scale (xyz 0.3937 0.3937 0.3937)) (rotate (xyz -90 0 180))))

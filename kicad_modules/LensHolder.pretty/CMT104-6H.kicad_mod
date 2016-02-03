@@ -37,7 +37,7 @@
   (fp_circle (center 10 0) (end 8 0) (layer B.Paste) (width 0.05))
   (pad HOLE thru_hole circle (at 10 0) (size 2.54 2.54) (drill 2.15) (layers *.Cu *.Mask F.SilkS))
   (pad HOLE thru_hole circle (at -10 0) (size 2.54 2.54) (drill 2.15) (layers *.Cu *.Mask F.SilkS))
-  (model ${KIWORKSPACE}/osrf_hw_nonfree/LensHolder.3dshapes/CMT104-6H.wrl
+  (model LensHolder.3dshapes/CMT104-6H.wrl
     (at (xyz 0 0 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))

@@ -37,7 +37,7 @@
   (pad 18 smd rect (at 1.75 2) (size 0.26 1.8) (layers F.Cu F.Paste F.Mask))
   (pad 19 smd rect (at 2.25 -2) (size 0.26 1.8) (layers F.Cu F.Paste F.Mask))
   (pad 20 smd rect (at 2.25 2) (size 0.26 1.8) (layers F.Cu F.Paste F.Mask))
-  (model /home/mikael/work/kicad_ws/osrf_hw_nonfree/Molex.3dshapes/SlimStack_Receptacle_02x10_0.5mm_52991-10208.wrl
+  (model Molex.3dshapes/SlimStack_Receptacle_02x10_0.5mm_52991-10208.wrl
     (at (xyz 0 0 0.045))
     (scale (xyz 0.3937 0.3937 0.3937))
     (rotate (xyz -90 0 0))
