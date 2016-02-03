@@ -134,6 +134,26 @@ update_config_files()
     else
         echo "file $EESCHEMAFILE doesnt exist, please open KiCad software and launch eeschema to create it"
     fi
+
+    KISYSMODINBASHRC=0
+    file=$HOME/.bashrc
+    outstring=""
+    while IFS='' read -r line || [[ -n "$line" ]]; do
+      if [[ $line == "export KISYS3DMOD"* ]] && [[ $line != "export KISYS3DMOD="$MODELS_DIR ]];
+      then
+        #replace the line
+        KISYSMODINBASHRC=1
+        linetoreplace=$line
+        newline="export KISYS3DMOD="$MODELS_DIR
+        outstring=$outstring"\n$newline"
+      else
+        outstring=$outstring"\n$line"
+      fi
+    done < $file
+    echo -e $outstring > $file
+    if [ $KISYSMODINBASHRC -eq 0 ];then
+      echo 'export KISYS3DMOD='$MODELS_DIR >> $HOME/.bashrc
+    fi
 }
 
 install_update_all_modules()
@@ -210,6 +230,8 @@ fi
 
 if [ $# -eq 1 -a "$1" == "--install-update-3dmodels" ]; then
     checkout_or_update_repo "osrf" "osrf_hw_nonfree"
+    #copy Manufacturers copyrighted 3d models
+    cp -r "$WORKING_TREES/osrf_hw_nonfree"/* "$MODELS_DIR"
     exit
 fi
 
