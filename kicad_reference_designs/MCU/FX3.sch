@@ -28,8 +28,6 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:STM32F74xNx
-LIBS:ADP50xx
 LIBS:usb_controller
 LIBS:OSCILLATOR
 EELAYER 25 0
