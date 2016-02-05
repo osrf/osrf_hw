@@ -10,42 +10,13 @@ import Draft#,Sketch,Part
 # lets assume for now that we have all the information in a filename
 # lets also assume that they are only full ball arrays no missing ball in the center)
 # all distances in mm
-#TODO Argument passing
 #FIXME doesnt handle different x and y pitch
 #FIXME size of balls
-#TODO Handle nissing balls according to pin quantity: or remove them by hand because impossible to handle all the fishy cases ?
+# remove them by hand because impossible to handle all the fishy cases ?
+MMTOMIL = 0.3937
 
-#parameter = "/home/mikael/work/kicad_ws/osrf_hw_nonfree/BGAScriptTest/BGA900C80P30X30_2500X2500X150.wrl"
-#parameter = "/home/mikael/work/kicad_ws/osrf_hw_nonfree/BGAScriptTest/BGA10C80P5X2_500X500X150.wrl"
-parameter = sys.argv[2]
-string = os.path.basename(parameter)
-string = string[:string.rfind('.')]
-directory = os.path.dirname(parameter)
-idx = string.find('P')
-pitch = float(string[string.find('C')+1:idx])/100.0
-#print(pitch)
-str2 = string[idx + 1 :] 
-idx = str2.find('X')
-nBallx = int(str2[:idx])
-#print(nBallx)
-str2 = str2[idx+1:]
-idx = str2.find('_')
-nBally = int(str2[:idx])
-#print(nBally)
-str2 = str2[idx+1:]
-idx = str2.find('X')
-length = float(str2[:idx])/100.0
-#print(length)
-str2 = str2[idx+1:]
-idx = str2.find('X')
-width = float(str2[:idx])/100.0
-#print(width)
-str2 = str2[idx+1:]
-#idx = str2.find('.')
-#height = float(str2[:idx])/100.0
-height = float(str2)/100.0
-#print(height)
-ballradius = 0.225
+directory = sys.argv[2]; name = sys.argv[3]; pitch = float(sys.argv[4]); nBallx = int(sys.argv[5]); nBally = int(sys.argv[6]); length = float(sys.argv[7]); width = float(sys.argv[8]); height = float(sys.argv[9])
+ballradius = pitch/4.
 
 # go in sketch mode
 Gui.activateWorkbench("SketcherWorkbench")
@@ -58,7 +29,7 @@ print("document created")
 # create sketch
 App.activeDocument().addObject('Sketcher::SketchObject','Sketch')
 print("sketch added")
-App.activeDocument().Sketch.Placement = App.Placement(App.Vector(0.000000,0.000000,0.000000),App.Rotation(0.000000,0.000000,0.000000,1.000000))
+App.activeDocument().Sketch.Placement = App.Placement(App.Vector(0.0,0.0,0.0),App.Rotation(0.0,0.0,0.0,1.0))
 Gui.activeDocument().setEdit('Sketch')
 print("edit sketch")
 
@@ -70,7 +41,6 @@ App.ActiveDocument.Sketch.addGeometry(Part.Line(App.Vector(width/2.0,length/2.0,
 print("place lines")
 # add circular cutout
 App.ActiveDocument.Sketch.addGeometry(Part.Circle(App.Vector(-width/2.0+1,length/2.0-1,0),App.Vector(0,0,1),0.5))
-
 
 App.ActiveDocument.recompute()
 
@@ -95,7 +65,6 @@ FreeCAD.getDocument("Unnamed").getObject("Cylinder").Radius = 0.5
 FreeCAD.getDocument("Unnamed").getObject("Cylinder").Height = height
 FreeCAD.getDocument("Unnamed").getObject("Cylinder").Placement = App.Placement(App.Vector(-width/2.0+1,length/2.0-1,ballradius),App.Rotation(0,0,0,1))
 App.ActiveDocument.recompute()
-
 
 # Ball creation
 App.ActiveDocument.addObject("Part::Sphere","Sphere")
@@ -134,7 +103,6 @@ for obj in FreeCAD.ActiveDocument.Objects:
     expObjects.append(obj)
   else:
     FreeCAD.ActiveDocument.removeObject(obj.Name)
-#ImportGui.export(expObjects,os.path.join(directory,string+'.step'))
 
 App.activeDocument().addObject("Part::MultiFuse","Fusion2")
 App.activeDocument().Fusion2.Shapes = expObjects
@@ -143,18 +111,16 @@ for obj in expObjects:
     FreeCAD.ActiveDocument.removeObject(obj.Name) 
 expObjects= []
 
-for obj in FreeCAD.ActiveDocument.Objects:
-  if (obj.Name.find("Fusion2") != -1):
-    expObjects.append(obj)
-ImportGui.export(expObjects,os.path.join(directory,string+'.step'))
+expObjects.append(FreeCAD.ActiveDocument.getObject("Fusion2"))
+ImportGui.export(expObjects,os.path.join(directory, name + '.step'))
 del expObjects
-# Scale to inches before export to VRML for KiCAD use
-Draft.scale(FreeCAD.ActiveDocument.ActiveObject, FreeCAD.Vector(0.3937,0.3937,0.3937))
+# Scale to mil before export to VRML for KiCAD use
+Draft.scale(FreeCAD.ActiveDocument.ActiveObject, FreeCAD.Vector(MMTOMIL,MMTOMIL,MMTOMIL))
 FreeCAD.ActiveDocument.removeObject("Fusion2") 
 
 ### Export as a VRML model
 expObjects = []
 expObjects.append(FreeCAD.ActiveDocument.getObject("Scale"))
-FreeCADGui.export(expObjects,os.path.join(directory,string+'.wrl'))
+FreeCADGui.export(expObjects,os.path.join(directory, name + '.wrl'))
 del expObjects
 exit(1)
