@@ -140,30 +140,30 @@ default_value='missing'
 # print 'KISYS3DMOD='
 FreeCAD.Console.PrintMessage('KISYS3DMOD='+os.getenv('KISYS3DMOD', default_value)+'\r\n')
 
-filePath = os.path.dirname(os.path.abspath(__file__))
-FreeCAD.Console.PrintMessage(filePath+"\r\n")
+file_path = os.path.dirname(os.path.abspath(__file__))
+FreeCAD.Console.PrintMessage(file_path+"\r\n")
 
 if logging:
     f_log = open('./log.log','w')
-    f_log.write(filePath+"\n") #\n its enough in write
+    f_log.write(file_path+"\n") #\n its enough in write
 
 
-fullfilePath3D = filePath+os.sep+sys.argv[2]
+fullfile_path3D = file_path+os.sep+sys.argv[2]
 ext = os.path.splitext(os.path.basename(sys.argv[2]))[1]
 aux_orig=0;base_orig=0;base_point=0
 bbox_all=0; bbox_list=0; whitelisted_model_elements=''
 fusion=False
 addVirtual=0
 if ext == '.cfg':
-    # fullfilePath3D = filePath+os.sep+'ksu-config.cfg'
-    if os.path.exists(fullfilePath3D):
-        FreeCAD.Console.PrintMessage("opening "+ fullfilePath3D)
-        f= open(fullfilePath3D, "r")
+    # fullfile_path3D = file_path+os.sep+'ksu-config.cfg'
+    if os.path.exists(fullfile_path3D):
+        FreeCAD.Console.PrintMessage("opening "+ fullfile_path3D)
+        f= open(fullfile_path3D, "r")
         path3D = f.readlines()
         #reply = QtGui.QMessageBox.information(None,"Info ...","... using module(s) prefix path\n"+ path3D[0])
     else:
-        FreeCAD.Console.PrintMessage("error missing "+ fullfilePath3D+'\r\n')
-        reply = QtGui.QMessageBox.information(None,"Error ...","... missing \r\n"+ fullfilePath3D+"\r\nhave you configured your "+file3DpathName+"?")
+        FreeCAD.Console.PrintMessage("error missing "+ fullfile_path3D+'\r\n')
+        reply = QtGui.QMessageBox.information(None,"Error ...","... missing \r\n"+ fullfile_path3D+"\r\nhave you configured your "+file3DpathName+"?")
 
     ## extracting config values
     t=0; bbox_all=0; bbox_list=0; whitelisted_model_elements=''
@@ -242,12 +242,12 @@ col= col.split(',')
 colr=float(col[0]);colg=float(col[1]);colb=float(col[2])
 
 fileName=sys.argv[1][:-4]
-fullfilePath = filePath+os.sep+sys.argv[1]
-if os.path.exists(fullfilePath):
-    FreeCAD.Console.PrintMessage("opening "+ fullfilePath)
+fullfile_path = file_path+os.sep+sys.argv[1]
+if os.path.exists(fullfile_path):
+    FreeCAD.Console.PrintMessage("opening "+ fullfile_path)
 else:
-    FreeCAD.Console.PrintMessage("error missing "+ fullfilePath+'\r\n')
-    reply = QtGui.QMessageBox.information(None,"Error ...","... missing \r\n"+ fullfilePath+"\r\nhave you exported your board in IDF?")
+    FreeCAD.Console.PrintMessage("error missing "+ fullfile_path+'\r\n')
+    reply = QtGui.QMessageBox.information(None,"Error ...","... missing \r\n"+ fullfile_path+"\r\nhave you exported your board in IDF?")
 
 ext = os.path.splitext(os.path.basename(sys.argv[1]))[1]
 
@@ -255,22 +255,22 @@ if ext!='.emn':
     reply = QtGui.QMessageBox.information(None,"error ...",".emn file ha to be used\r\n\r\n"+"have you exported your board in IDF?")
     quit() # quit at this point
 
-# fullfilePath = filePath+os.sep+sys.argv[1][:-4]+'.emn'
-# if os.path.exists(fullfilePath):
-#     FreeCAD.Console.PrintMessage("opening "+ fullfilePath)
+# fullfile_path = file_path+os.sep+sys.argv[1][:-4]+'.emn'
+# if os.path.exists(fullfile_path):
+#     FreeCAD.Console.PrintMessage("opening "+ fullfile_path)
 # else:
-#     FreeCAD.Console.PrintMessage("error missing "+ fullfilePath+'\r\n')
-#     reply = QtGui.QMessageBox.information(None,"Error ...","... missing \r\n"+ fullfilePath+"\r\nhave you exported your board in IDF?")
+#     FreeCAD.Console.PrintMessage("error missing "+ fullfile_path+'\r\n')
+#     reply = QtGui.QMessageBox.information(None,"Error ...","... missing \r\n"+ fullfile_path+"\r\nhave you exported your board in IDF?")
 
 #coloring board
 FreeCADGui.ActiveDocument.getObject("Board_outline").ShapeColor = (colr,colg,colb)
 
-fullfilePath = filePath+os.sep+sys.argv[1][:-4]+'.kicad_pcb'
-if os.path.exists(fullfilePath):
-    FreeCAD.Console.PrintMessage("opening "+ fullfilePath)
+fullfile_path = file_path+os.sep+sys.argv[1][:-4]+'.kicad_pcb'
+if os.path.exists(fullfile_path):
+    FreeCAD.Console.PrintMessage("opening "+ fullfile_path)
 else:
-    FreeCAD.Console.PrintMessage("error missing "+ fullfilePath+'\r\n')
-    reply = QtGui.QMessageBox.information(None,"Error ...","... missing \r\n"+ fullfilePath)
+    FreeCAD.Console.PrintMessage("error missing "+ fullfile_path+'\r\n')
+    reply = QtGui.QMessageBox.information(None,"Error ...","... missing \r\n"+ fullfile_path)
 
 
 if App.getDocument(FreeCAD.ActiveDocument.Name).getObject("Step_Lib")== None:
@@ -329,7 +329,7 @@ start_time=current_milli_time()
 
 xMax=0; xmin=0; yMax=0; ymin=0
 Kicad_Board = ''
-Kicad_Board += open(fullfilePath, 'rU').read()
+Kicad_Board += open(fullfile_path, 'rU').read()
 # print Kicad_Board
 
 def reset_prop(obj,doc,App,Gui):
@@ -896,7 +896,7 @@ def findPcbCenter(pcbName):
 
     return center_x, center_y, bb_x, bb_y
 
-Kicad_Board_elaborated = Elaborate_Kicad_Board(fullfilePath)
+Kicad_Board_elaborated = Elaborate_Kicad_Board(fullfile_path)
 
 modules = []
 modules = getParts(modules)
@@ -1025,98 +1025,98 @@ for i in range(len(modules)):
                 rot=modules[i][3]
                 step_layer=modules[i][4]
 
-                impPart=FreeCAD.ActiveDocument.ActiveObject
+                imp_part=FreeCAD.ActiveDocument.ActiveObject
                 FreeCAD.Console.PrintMessage("module"+step_module+"\r\n")
-                impPart.Label = impPart.Label + '_'
-                FreeCAD.Console.PrintMessage("selection 3D model "+ impPart.Name+'\r\n')
-                impPart=reset_prop_shapes(impPart,FreeCAD.ActiveDocument, FreeCAD,Gui)
-                model3D=impPart.Name
-                FreeCAD.Console.PrintMessage("impPart "+ impPart.Name+'\r\n')
+                imp_part.Label = imp_part.Label + '_'
+                FreeCAD.Console.PrintMessage("selection 3D model "+ imp_part.Name+'\r\n')
+                imp_part=reset_prop_shapes(imp_part,FreeCAD.ActiveDocument, FreeCAD,Gui)
+                model3D=imp_part.Name
+                FreeCAD.Console.PrintMessage("imp_part "+ imp_part.Name+'\r\n')
                 obj = App.ActiveDocument.getObject(model3D)
                 Gui.Selection.addSelection(obj)
                 obj=FreeCAD.ActiveDocument.ActiveObject
 
                 #volume_minimum=1
-                myPart=App.ActiveDocument.getObject(obj.Name)   #mauitemp min vol
-                if myPart.Shape.Volume>volume_minimum:  #mauitemp min vol
-                    if myPart.Shape.BoundBox.ZMax>height_minimum:  #mauitemp min height
+                my_part=App.ActiveDocument.getObject(obj.Name)   #mauitemp min vol
+                if my_part.Shape.Volume>volume_minimum:  #mauitemp min vol
+                    if my_part.Shape.BoundBox.ZMax>height_minimum:  #mauitemp min height
                         if (height_minimum!=0):
-                            FreeCAD.Console.PrintMessage("height > Min height "+ str(myPart.Shape.BoundBox.ZMax) + " "+impPart.Name+'\r\n')
+                            FreeCAD.Console.PrintMessage("height > Min height "+ str(my_part.Shape.BoundBox.ZMax) + " "+imp_part.Name+'\r\n')
                         if (volume_minimum!=0):
-                            FreeCAD.Console.PrintMessage("Volume > Min Volume "+ str(myPart.Shape.Volume) + " "+impPart.Name+'\r\n')
+                            FreeCAD.Console.PrintMessage("Volume > Min Volume "+ str(my_part.Shape.Volume) + " "+imp_part.Name+'\r\n')
                         if (bbox_all==1) or (bbox_list==1):
                                 if whitelisted_model_elements.find(model_name) == -1:
-                                    bboxName=createSolidBBox(model3D)
+                                    bbox_name=createSolidBBox(model3D)
                         if step_layer == 'Top':
-                            impPart.Placement = App.Placement(App.Vector(pos_x,pos_y,0),App.Rotation(App.Vector(0,0,1),rot))
+                            imp_part.Placement = App.Placement(App.Vector(pos_x,pos_y,0),App.Rotation(App.Vector(0,0,1),rot))
                             if (bbox_all==1) or (bbox_list==1):
                                 if whitelisted_model_elements.find(model_name) == -1:
                                     bbox_col=bbox_default_col
-                                    FreeCAD.Console.PrintMessage("bboxName "+ bboxName +'\r\n')
-                                    FreeCAD.Console.PrintMessage("bboxName "+str(bboxName.upper().startswith('R'))+'\r\n')
-                                    if (bboxName.upper().startswith('X')):
+                                    FreeCAD.Console.PrintMessage("bbox_name "+ bbox_name +'\r\n')
+                                    FreeCAD.Console.PrintMessage("bbox_name "+str(bbox_name.upper().startswith('R'))+'\r\n')
+                                    if (bbox_name.upper().startswith('X')):
                                         bbox_col=bbox_x_col
-                                    if (bboxName.upper().startswith('L')):
+                                    if (bbox_name.upper().startswith('L')):
                                         bbox_col=bbox_l_col
-                                    if (bboxName.upper().startswith('R')):
+                                    if (bbox_name.upper().startswith('R')):
                                         bbox_col=bbox_r_col
-                                    if (bboxName.upper().startswith('C')):
+                                    if (bbox_name.upper().startswith('C')):
                                         bbox_col=bbox_c_col
-                                    if (bboxName.upper().startswith('S')|bboxName.upper().startswith('Q')|bboxName.upper().startswith('D')|bboxName.upper().startswith('T')):
+                                    if (bbox_name.upper().startswith('S')|bbox_name.upper().startswith('Q')|bbox_name.upper().startswith('D')|bbox_name.upper().startswith('T')):
                                         bbox_col=bbox_IC_col
-                                    obj = App.ActiveDocument.getObject(bboxName)
+                                    obj = App.ActiveDocument.getObject(bbox_name)
                                     obj.Placement = App.Placement(App.Vector(pos_x,pos_y,0),App.Rotation(App.Vector(0,0,1),rot))
-                                    FreeCADGui.ActiveDocument.getObject(bboxName).ShapeColor=bbox_col
+                                    FreeCADGui.ActiveDocument.getObject(bbox_name).ShapeColor=bbox_col
                                     Gui.Selection.addSelection(obj)
                                     FreeCAD.Console.PrintMessage("selection 3D model "+ obj.Name+'\r\n')
                                     FreeCAD.ActiveDocument.getObject("Step_Models").addObject(obj)
-                            Gui.Selection.addSelection(impPart)
+                            Gui.Selection.addSelection(imp_part)
 
-                            FreeCAD.ActiveDocument.getObject("Step_Models").addObject(impPart)
+                            FreeCAD.ActiveDocument.getObject("Step_Models").addObject(imp_part)
                             if (bbox_all==1) or (bbox_list==1):
                                 if whitelisted_model_elements.find(model_name) == -1:
-                                    App.activeDocument().removeObject(impPart.Name)
-                        #App.activeDocument().removeObject(impPart.Name)
+                                    App.activeDocument().removeObject(imp_part.Name)
+                        #App.activeDocument().removeObject(imp_part.Name)
                         ###
                         else:
                         #Bottom
                         #Bottom
-                            impPart.Placement = App.Placement(App.Vector(pos_x,pos_y,-getPCBThickness()),App.Rotation(App.Vector(0,1,0),180))
-                            #obj.Placement = impPart.Placement
-                            shape=impPart.Shape.copy()
-                            shape.Placement=impPart.Placement;
+                            imp_part.Placement = App.Placement(App.Vector(pos_x,pos_y,-getPCBThickness()),App.Rotation(App.Vector(0,1,0),180))
+                            #obj.Placement = imp_part.Placement
+                            shape=imp_part.Shape.copy()
+                            shape.Placement=imp_part.Placement;
                             shape.rotate((pos_x,pos_y,-getPCBThickness()),(0,0,1),-rot+180)
-                            impPart.Placement=shape.Placement
+                            imp_part.Placement=shape.Placement
                             if (bbox_all==1) or (bbox_list==1):
                                 if whitelisted_model_elements.find(model_name) == -1:
                                     bbox_col=bbox_default_col
-                                    if (bboxName.upper().startswith('X')):
+                                    if (bbox_name.upper().startswith('X')):
                                         bbox_col=bbox_x_col
-                                    if (bboxName.upper().startswith('L')):
+                                    if (bbox_name.upper().startswith('L')):
                                         bbox_col=bbox_l_col
-                                    if (bboxName.upper().startswith('R')):
+                                    if (bbox_name.upper().startswith('R')):
                                         bbox_col=bbox_r_col
-                                    if (bboxName.upper().startswith('C')):
+                                    if (bbox_name.upper().startswith('C')):
                                         bbox_col=bbox_c_col
-                                    if (bboxName.upper().startswith('S')|bboxName.upper().startswith('Q')|bboxName.upper().startswith('D')|bboxName.upper().startswith('T')):
+                                    if (bbox_name.upper().startswith('S')|bbox_name.upper().startswith('Q')|bbox_name.upper().startswith('D')|bbox_name.upper().startswith('T')):
                                         bbox_col=bbox_IC_col
-                                    obj = App.ActiveDocument.getObject(bboxName)
+                                    obj = App.ActiveDocument.getObject(bbox_name)
                                     Gui.Selection.addSelection(obj)
                                     obj.Placement = App.Placement(App.Vector(pos_x,pos_y,-getPCBThickness()),App.Rotation(App.Vector(0,1,0),180))
                                     shape2=obj.Shape.copy()
                                     shape2.Placement=obj.Placement;
                                     shape2.rotate((pos_x,pos_y,-getPCBThickness()),(0,0,1),-rot+180)
                                     obj.Placement=shape2.Placement
-                                    FreeCADGui.ActiveDocument.getObject(bboxName).ShapeColor=bbox_col
+                                    FreeCADGui.ActiveDocument.getObject(bbox_name).ShapeColor=bbox_col
                                     Gui.Selection.addSelection(obj)
                                     App.ActiveDocument.getObject(obj.Name)
                                     FreeCAD.ActiveDocument.getObject("Step_Models").addObject(obj)
-                            Gui.Selection.addSelection(impPart)
-                            App.ActiveDocument.getObject(impPart.Name)
-                            FreeCAD.ActiveDocument.getObject("Step_Models").addObject(impPart)
+                            Gui.Selection.addSelection(imp_part)
+                            App.ActiveDocument.getObject(imp_part.Name)
+                            FreeCAD.ActiveDocument.getObject("Step_Models").addObject(imp_part)
                             if (bbox_all==1) or (bbox_list==1):
                                 if whitelisted_model_elements.find(model_name) == -1:
-                                    App.activeDocument().removeObject(impPart.Name)
+                                    App.activeDocument().removeObject(imp_part.Name)
                             #Part.show(shape)
                             #Part.show(shape2)
                             FreeCAD.Console.PrintMessage("todo ...\r\n")
@@ -1168,9 +1168,9 @@ for obj in doc.Objects:
 
 
 if (bbox_all==1) or (bbox_list==1):
-    fpath=filePath+os.sep+doc.Label+"_bbox"+'.step'
+    fpath=file_path+os.sep+doc.Label+"_bbox"+'.step'
 else:
-    fpath=filePath+os.sep+doc.Label+'.step'
+    fpath=file_path+os.sep+doc.Label+'.step'
 ImportGui.export(__objs__,fpath)
 
 #fusion=False
@@ -1200,9 +1200,9 @@ if (fusion==True):
     FreeCAD.Console.PrintMessage(fused_obj)
     fobjs.append(fused_obj)
     if (bbox_all==1) or (bbox_list==1):
-        fpath=filePath+os.sep+doc.Label+"_bbox_union"+'.step'
+        fpath=file_path+os.sep+doc.Label+"_bbox_union"+'.step'
     else:
-        fpath=filePath+os.sep+doc.Label+"_union"+'.step'
+        fpath=file_path+os.sep+doc.Label+"_union"+'.step'
     FreeCAD.Console.PrintMessage(fpath+" fusion path \r\n")
     FreeCAD.Console.PrintMessage(fobjs)
     #Export fused object
@@ -1210,7 +1210,7 @@ if (fusion==True):
     App.activeDocument().recompute()
     del fobjs
 
-    #ImportGui.export(doc.ActiveObject,filePath+os.sep+doc.Label+'.step')
+    #ImportGui.export(doc.ActiveObject,file_path+os.sep+doc.Label+'.step')
 
 for obj in doc.Objects:
    # do what you want to automate
@@ -1230,9 +1230,9 @@ App.setActiveDocument(doc.Name)
 App.ActiveDocument=App.getDocument(doc.Name)
 Gui.ActiveDocument=Gui.getDocument(doc.Name)
 if (bbox_all==1) or (bbox_list==1):
-    fpath=filePath+os.sep+doc.Name+"_bbox"
+    fpath=file_path+os.sep+doc.Name+"_bbox"
 else:
-    fpath=filePath+os.sep+doc.Name
+    fpath=file_path+os.sep+doc.Name
 if (fusion==True):
     fpath=fpath+"_union"
 FreeCAD.Console.PrintMessage(fpath+".FCStd"+"\r\n")
@@ -1243,7 +1243,7 @@ App.getDocument(doc.Name).Label = doc.Name
 Gui.SendMsgToActiveView("Save")
 App.getDocument(doc.Name).save()
 
-msgpath=filePath+os.sep+doc.Name
+msgpath=file_path+os.sep+doc.Name
 if (bbox_all==1) or (bbox_list==1):
     msgpath=msgpath+"_bbox"
 

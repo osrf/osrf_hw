@@ -15,8 +15,10 @@ import Draft#,Sketch,Part
 # remove them by hand because impossible to handle all the fishy cases ?
 MMTOMIL = 0.3937
 
-directory = sys.argv[2]; name = sys.argv[3]; pitch = float(sys.argv[4]); nBallx = int(sys.argv[5]); nBally = int(sys.argv[6]); length = float(sys.argv[7]); width = float(sys.argv[8]); height = float(sys.argv[9])
-ballradius = pitch/4.
+directory = sys.argv[2]; name = sys.argv[3]; pitch = float(sys.argv[4])
+nBallx = int(sys.argv[5]); nBally = int(sys.argv[6])
+length = float(sys.argv[7]); width = float(sys.argv[8])
+height = float(sys.argv[9]); ballradius = pitch/4.
 
 # go in sketch mode
 Gui.activateWorkbench("SketcherWorkbench")
@@ -95,32 +97,32 @@ Gui.SendMsgToActiveView("ViewFit")
 Gui.activeDocument().activeView().viewBottom()
 
 ## Export as a step model
-expObjects = []
+exp_objects = []
 for obj in FreeCAD.ActiveDocument.Objects:
   # select all but indivudial Spheres and Sketch
   if (obj.Name.find("Sphere") == -1) and (obj.Name.find("Sketch") == -1):
     Gui.Selection.addSelection(obj)
-    expObjects.append(obj)
+    exp_objects.append(obj)
   else:
     FreeCAD.ActiveDocument.removeObject(obj.Name)
 
 App.activeDocument().addObject("Part::MultiFuse","Fusion2")
-App.activeDocument().Fusion2.Shapes = expObjects
+App.activeDocument().Fusion2.Shapes = exp_objects
 App.ActiveDocument.recompute()
-for obj in expObjects:
+for obj in exp_objects:
     FreeCAD.ActiveDocument.removeObject(obj.Name) 
-expObjects= []
+exp_objects= []
 
-expObjects.append(FreeCAD.ActiveDocument.getObject("Fusion2"))
-ImportGui.export(expObjects,os.path.join(directory, name + '.step'))
-del expObjects
+exp_objects.append(FreeCAD.ActiveDocument.getObject("Fusion2"))
+ImportGui.export(exp_objects,os.path.join(directory, name + '.step'))
+del exp_objects
 # Scale to mil before export to VRML for KiCAD use
 Draft.scale(FreeCAD.ActiveDocument.ActiveObject, FreeCAD.Vector(MMTOMIL,MMTOMIL,MMTOMIL))
 FreeCAD.ActiveDocument.removeObject("Fusion2") 
 
 ### Export as a VRML model
-expObjects = []
-expObjects.append(FreeCAD.ActiveDocument.getObject("Scale"))
-FreeCADGui.export(expObjects,os.path.join(directory, name + '.wrl'))
-del expObjects
+exp_objects = []
+exp_objects.append(FreeCAD.ActiveDocument.getObject("Scale"))
+FreeCADGui.export(exp_objects,os.path.join(directory, name + '.wrl'))
+del exp_objects
 exit(1)

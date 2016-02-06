@@ -89,7 +89,7 @@ else:
 ##### Function declaration #####
 ################################
 
-def importCSV(filename,pinOrder):
+def import_csv(filename,pin_order):
 # expected csv format: 
 # PIN_NAME,PIN_NUMBER
     if not os.path.isfile(filename):
@@ -97,67 +97,67 @@ def importCSV(filename,pinOrder):
         return
     with open(filename, mode='r') as infile:
         reader = csv.reader(infile)
-        pinDict = {rows[1]:rows[0] for rows in reader}
-    if pinOrder == 'BYNAME':
-        sortedDico = OrderedDict(sorted(pinDict.items(), key=operator.itemgetter(1)))
-#        print(sortedDico)
-        return sortedDico
+        pin_dict = {rows[1]:rows[0] for rows in reader}
+    if pin_order == 'BYNAME':
+        sorted_dico = OrderedDict(sorted(pin_dict.items(), key=operator.itemgetter(1)))
+#        print(sorted_dico)
+        return sorted_dico
     else:
-        return pinDict
-def correctModulo(table):
+        return pin_dict
+def correct_modulo(table):
     for r in table:
         if r%100 != 0:
             r -= r%100
     return table
 
-def rectCorners(NbPin, nbside, step):#, stepy, initoffsetx, initoffsety):
+def rect_corners(nb_pins, nbside, step):#, stepy, initoffsetx, initoffsety):
 # return coordinate of top-left and bottom-right corner of the schematic rectangle
     res = []
     if nbside==1:
-        res = [-step,-(step + NbPin/2*step), step, step + NbPin/2*step]
-        res = correctModulo(res)
+        res = [-step,-(step + nb_pins/2*step), step, step + nb_pins/2*step]
+        res = correct_modulo(res)
     elif nbside == 2:
-            res = [-2*step,-NbPin/4*step-step,2*step,NbPin/4*step+step]
-            res = correctModulo(res)
+            res = [-2*step,-nb_pins/4*step-step,2*step,nb_pins/4*step+step]
+            res = correct_modulo(res)
     elif nbside == 4:
-        res = [-(2*step+NbPin/8*step), -(2*step+NbPin/8*step),\
-                2*step+NbPin/8*step, 2*step+NbPin/8*step]
-        res = correctModulo(res)
+        res = [-(2*step+nb_pins/8*step), -(2*step+nb_pins/8*step),\
+                2*step+nb_pins/8*step, 2*step+nb_pins/8*step]
+        res = correct_modulo(res)
     return res
         
 #checks if the pin exist in the dictionary, if not the pin will be named:\
 # PIN_"PIN_NUMBER" for example A5 will be named PIN_A5
-def checkPinListSorted(index,typec='OTHER'):
-    if usePinList ==1:
+def check_pin_list_sorted(index,typec='OTHER'):
+    if use_pin_list == 1:
         try:
-            pinPair = pinDico.items()[index-1] 
-            pinName = pinPair[1]
+            pin_pair = pin_dico.items()[index-1] 
+            pin_name = pin_pair[1]
 
-            pinNumber = pinPair[0]
-            return str(pinName) + ' ' + str(pinNumber)
+            pin_number = pin_pair[0]
+            return str(pin_name) + ' ' + str(pin_number)
         except IndexError:
             pass
     if typec == 'BGA':
         return ''
-    pinName = dictParameters['PinFormat'] + str(index)
-    return pinName + ' ' + str(index)
+    pin_name = dict_parameters['PinFormat'] + str(index)
+    return pin_name + ' ' + str(index)
 
-def checkPinList(pinNumberStr):
-    if usePinList ==1:
+def checkPinList(pin_number_str):
+    if use_pin_list ==1:
         try:
-            pinName = pinDico[pinNumberStr]
-            return pinName
+            pin_name = pin_dico[pin_number_str]
+            return pin_name
         except KeyError:
             pass
-    pinName = 'PIN_' + pinNumberStr
-    return pinName   
+    pin_name = 'PIN_' + pin_number_str
+    return pin_name   
 ###############################################
 ##### Variable declaration/initialization #####
 ###############################################
 if not os.path.isfile(infile) or infile == '':
     print('ERROR: config file doesnt exist')
     sys.exit()
-dictParameters=OrderedDict([
+dict_parameters=OrderedDict([
 ('nbSide','1'),
 ('chiptype','OTHER'),
 ('pinOrder','NAME'),
@@ -199,66 +199,66 @@ with open(infile,'r+') as inf:
         line = line.replace('\n','')
         if not line: break
         lsplit = line.split('=')
-        if lsplit[0] in dictParameters:
-                if (lsplit[1] != '' and lsplit[1]!= dictParameters[lsplit[0]]) or lsplit[0] in whitelist:
-                    dictParameters[lsplit[0]]=lsplit[1]
+        if lsplit[0] in dict_parameters:
+                if (lsplit[1] != '' and lsplit[1]!= dict_parameters[lsplit[0]]) or lsplit[0] in whitelist:
+                    dict_parameters[lsplit[0]]=lsplit[1]
 
 #check incoherences
 # between order and sides
-if dictParameters['chiptype'] != 'BGA':
-    if dictParameters['pinOrder'] != 'BYNAME':
-        if dictParameters['pinOrder'] == 'SIL' or dictParameters['pinOrder'] == 'SIL-ALT':
-            dictParameters['nbSide'] = '1'
-        elif dictParameters['pinOrder'] == 'CONN1' or dictParameters['pinOrder'] == 'CONN2' or dictParameters['pinOrder'] == 'DIL':
-            dictParameters['nbSide'] = '2'
-        elif dictParameters['pinOrder'] == 'PLCC' or dictParameters['pinOrder'] == 'PQFP':
-            dictParameters['nbSide'] = '4'
-# between sides and NPin
-if dictParameters['chiptype'] == 'BGA':
-    NPin = int(dictParameters['height'])*int(dictParameters['width']) - int(dictParameters['NIntw'])*int(dictParameters['NIntw'])
+if dict_parameters['chiptype'] != 'BGA':
+    if dict_parameters['pinOrder'] != 'BYNAME':
+        if dict_parameters['pinOrder'] == 'SIL' or dict_parameters['pinOrder'] == 'SIL-ALT':
+            dict_parameters['nbSide'] = '1'
+        elif dict_parameters['pinOrder'] == 'CONN1' or dict_parameters['pinOrder'] == 'CONN2' or dict_parameters['pinOrder'] == 'DIL':
+            dict_parameters['nbSide'] = '2'
+        elif dict_parameters['pinOrder'] == 'PLCC' or dict_parameters['pinOrder'] == 'PQFP':
+            dict_parameters['nbSide'] = '4'
+# between sides and npin
+if dict_parameters['chiptype'] == 'BGA':
+    npin = int(dict_parameters['height'])*int(dict_parameters['width']) - int(dict_parameters['NIntw'])*int(dict_parameters['NIntw'])
 else:
-    if dictParameters['width'] > 2:
-        NPin = 2 * int(dictParameters['height']) + 2*(int(dictParameters['width'])-2)
-    elif dictParameters['width'] == 2:
-        NPin = 2 * int(dictParameters['height'])
+    if dict_parameters['width'] > 2:
+        npin = 2 * int(dict_parameters['height']) + 2*(int(dict_parameters['width'])-2)
+    elif dict_parameters['width'] == 2:
+        npin = 2 * int(dict_parameters['height'])
     else:
-        NPin = int(dictParameters['height'])
-#print(NPin)
+        npin = int(dict_parameters['height'])
+#print(npin)
 #Not existing letters in BGA naming: I,O,Q,S,X,Z,
 BGAdico=['A','B','C','D','E','F','G','H','J','K','L','M','N','P','R','T','U','V',\
         'W','Y','AA','AB','AC','AD','AE','AF','AG','AH','AJ','AK']
 length = 200
-typePin = 'U'
-textSize = 50
+type_pin = 'U'
+text_size = 50
 step = 200
-stdString = '" 0 0 50 H I C C'
-[rectxmin,rectymin,rectxmax,rectymax]=rectCorners(NPin,int(dictParameters['nbSide']),step)
+std_string = '" 0 0 50 H I C C'
+[rectxmin,rectymin,rectxmax,rectymax]=rect_corners(npin,int(dict_parameters['nbSide']),step)
 
 outstring = 'EESchema-LIBRARY Version 2.2 Date: ' + time.strftime("%d/%m/%Y") + '-' + time.strftime('%H:%M:%S') + '\n'
-outstring += '#encoding utf-8\n#\n# ' + dictParameters['name'] + '\n#\nDEF '
-outstring += dictParameters['name'] + ' U 0 40 Y Y 1 F N\n'
-outstring += 'F0 "' + dictParameters['prefix'] + '" ' + str(rectxmin) + ' ' + str(rectymax+2*textSize) + ' 50 H V C C\n'
-outstring += 'F1 "' + dictParameters['name'] + '" ' + str(rectxmin) + ' ' + str(rectymin - 2*textSize) + ' 50 H V C C\n'
-outstring += 'F2 "_'+ stdString +'\n'
-outstring += 'F3 "' + dictParameters['datasheet'] + stdString + '\n'
-outstring += 'F4 "' + dictParameters['MFN'] + stdString + ' "MFN"\n'
-outstring += 'F5 "' + dictParameters['MFP'] + stdString + ' "MFP"\n'
-outstring += 'F6 "digikey' + stdString + ' "D1"\n'
-outstring += 'F7 "mouser' + stdString + ' "D2"\n'
+outstring += '#encoding utf-8\n#\n# ' + dict_parameters['name'] + '\n#\nDEF '
+outstring += dict_parameters['name'] + ' U 0 40 Y Y 1 F N\n'
+outstring += 'F0 "' + dict_parameters['prefix'] + '" ' + str(rectxmin) + ' ' + str(rectymax+2*text_size) + ' 50 H V C C\n'
+outstring += 'F1 "' + dict_parameters['name'] + '" ' + str(rectxmin) + ' ' + str(rectymin - 2*text_size) + ' 50 H V C C\n'
+outstring += 'F2 "_'+ std_string +'\n'
+outstring += 'F3 "' + dict_parameters['datasheet'] + std_string + '\n'
+outstring += 'F4 "' + dict_parameters['MFN'] + std_string + ' "MFN"\n'
+outstring += 'F5 "' + dict_parameters['MFP'] + std_string + ' "MFP"\n'
+outstring += 'F6 "digikey' + std_string + ' "D1"\n'
+outstring += 'F7 "mouser' + std_string + ' "D2"\n'
 i=0
-for key in dictParameters:
+for key in dict_parameters:
 #17 = index of D1PN
-    if(i>len(dictParameters)-16):
-        outstring += 'F'+str(i-10)+' "' + dictParameters[key] + stdString + ' "' + key + '"\n'
+    if(i>len(dict_parameters)-16):
+        outstring += 'F'+str(i-10)+' "' + dict_parameters[key] + std_string + ' "' + key + '"\n'
     i+=1
 
 # Add Alias
-if dictParameters['alias'] != '':
-    outstring += 'ALIAS ' + dictParameters['alias'] + '\n'
+if dict_parameters['alias'] != '':
+    outstring += 'ALIAS ' + dict_parameters['alias'] + '\n'
 # Add footprint list
-if dictParameters['footprintFormat'] != '':
+if dict_parameters['footprintFormat'] != '':
     outstring += '$FPLIST\n'
-    for elt in dictParameters['footprintFormat'].split(','):
+    for elt in dict_parameters['footprintFormat'].split(','):
         if elt !='':
             outstring += ' ' + elt + '\n'
     outstring += '$ENDFPLIST\n'
@@ -268,225 +268,225 @@ outstring += 'S '+str(rectxmin)+' '+str(rectymin)+' '+str(rectxmax)+' '\
              +str(rectymax)+ ' 0 1 0 f\n'
 
 # import pins from provided CSV file
-usePinList = 0
-if dictParameters['PinoutFile'] != '' and os.path.isfile(dictParameters['PinoutFile']):
-    pinDico = importCSV(dictParameters['PinoutFile'],dictParameters['pinOrder']) 
-    if len(pinDico) != 0:
-        usePinList = 1
+use_pin_list = 0
+if dict_parameters['PinoutFile'] != '' and os.path.isfile(dict_parameters['PinoutFile']):
+    pin_dico = import_csv(dict_parameters['PinoutFile'],dict_parameters['pinOrder']) 
+    if len(pin_dico) != 0:
+        use_pin_list = 1
 
 # Check if chip is a BallArray or a regular chip
-halfNpin = NPin/2
-if dictParameters['chiptype'] == 'BGA':
-    if int(dictParameters['width'])>30 or int(dictParameters['height'])>30:
+half_npin = npin/2
+if dict_parameters['chiptype'] == 'BGA':
+    if int(dict_parameters['width'])>30 or int(dict_parameters['height'])>30:
         print('BGA dimension cannot exceed 30 balls per side (900 pins)')
         sys.exit(0)
-#    Npin = int(dictParameters['height'])*int(dictParameters['width']) - int(dictParameters['NIntw'])*int(dictParameters['NIntw'])
+#    Npin = int(dict_parameters['height'])*int(dict_parameters['width']) - int(dict_parameters['NIntw'])*int(dict_parameters['NIntw'])
     index = 0; iforbidmin=0;iforbidmax=0;jforbidmin=0;jforbidmax=0;
-    if(int(dictParameters['NIntw']) != 0 and int(dictParameters['NInth']) != 0):
-        iforbidmin = (int(dictParameters['height'])-int(dictParameters['NInth']))/2
-        iforbidmax = int(dictParameters['height']) - iforbidmin + int(dictParameters['NInth'])/2
-        jforbidmin = (int(dictParameters['width'])-int(dictParameters['NIntw']))/2
-        jforbidmax = int(dictParameters['width']) - jforbidmin + int(dictParameters['NIntw'])/2
-    quarterNpin = NPin/4
-    threeQuartNpin = 3*quarterNpin
-    for i in range(int(dictParameters['height'])):
-        for j in range(int(dictParameters['width'])):
+    if(int(dict_parameters['NIntw']) != 0 and int(dict_parameters['NInth']) != 0):
+        iforbidmin = (int(dict_parameters['height'])-int(dict_parameters['NInth']))/2
+        iforbidmax = int(dict_parameters['height']) - iforbidmin + int(dict_parameters['NInth'])/2
+        jforbidmin = (int(dict_parameters['width'])-int(dict_parameters['NIntw']))/2
+        jforbidmax = int(dict_parameters['width']) - jforbidmin + int(dict_parameters['NIntw'])/2
+    quarter_npin = npin/4
+    three_quart_npin = 3*quarter_npin
+    for i in range(int(dict_parameters['height'])):
+        for j in range(int(dict_parameters['width'])):
             # skip center balls if needed
             if(not(i > iforbidmin and i < iforbidmax and j > jforbidmin and j < jforbidmax)):
                 index += 1
                 string = BGAdico[i]+str(j+1)
-                if dictParameters['nbSide'] == '1':
+                if dict_parameters['nbSide'] == '1':
                     print('only 2 and 4 sides supported for BGA components')
                     sys.exit(0)
-                elif dictParameters['nbSide'] == '2':
-                    if index <= halfNpin:
+                elif dict_parameters['nbSide'] == '2':
+                    if index <= half_npin:
                         posx = rectxmin - length
-                        posy = rectymin + step + (halfNpin-index) * step
+                        posy = rectymin + step + (half_npin-index) * step
                         side = 'R'
                     else:
                         posx = rectxmax + length
-                        posy = rectymin + step + (index-halfNpin-1) * step
+                        posy = rectymin + step + (index-half_npin-1) * step
                         side = 'L'
-                elif dictParameters['nbSide'] == '4':
-                    if index <= quarterNpin:
+                elif dict_parameters['nbSide'] == '4':
+                    if index <= quarter_npin:
                         side = 'R'
                         posx = rectxmin - length
-                        posy = rectymin + 2*step + (quarterNpin-index+1)*step
-                    elif index <= halfNpin:
+                        posy = rectymin + 2*step + (quarter_npin-index+1)*step
+                    elif index <= half_npin:
                         side = 'U'
-                        posx = rectxmin + 2*step + ((index-quarterNpin))*step
+                        posx = rectxmin + 2*step + ((index-quarter_npin))*step
                         posy = rectymin - length
-                    elif index <= threeQuartNpin:
+                    elif index <= three_quart_npin:
                         side = 'L'
                         posx = rectxmax + length
-                        posy = rectymin + 2*step + (index-halfNpin)*step
+                        posy = rectymin + 2*step + (index-half_npin)*step
                     else:
                         side = 'D'
-                        posx = rectxmin + 2*step + (NPin-(index))*step
+                        posx = rectxmin + 2*step + (npin-(index))*step
                         posy = rectymax + length
-                if dictParameters['pinOrder']=='BYNAME':
-                    pinPairStr = checkPinListSorted(index,'BGA')
-                    if pinPairStr == '':
-                        pinPairStr = checkPinList(string) + ' ' + string
+                if dict_parameters['pinOrder']=='BYNAME':
+                    pin_pair_str = check_pin_list_sorted(index,'BGA')
+                    if pin_pair_str == '':
+                        pin_pair_str = checkPinList(string) + ' ' + string
                 else:
-                    pinPairStr = checkPinList(string) + ' ' + string
+                    pin_pair_str = checkPinList(string) + ' ' + string
     
-                outstring += 'X '+ pinPairStr + ' ' + str(posx) + ' ' +\
+                outstring += 'X '+ pin_pair_str + ' ' + str(posx) + ' ' +\
                             str(posy) + ' ' + str(length)\
-                            + ' ' + side + ' ' + str(textSize) + ' ' + \
-                            str(textSize) + ' 1 1 ' + typePin + '\n'
+                            + ' ' + side + ' ' + str(text_size) + ' ' + \
+                            str(text_size) + ' 1 1 ' + type_pin + '\n'
 
-elif dictParameters['chiptype'] == 'OTHER':
-    print('in OTHER case: "' + dictParameters['nbSide'] + '"')
+elif dict_parameters['chiptype'] == 'OTHER':
+    print('in OTHER case: "' + dict_parameters['nbSide'] + '"')
 
     side = 'R'
-    if dictParameters['nbSide'] == '1':
+    if dict_parameters['nbSide'] == '1':
         print('\n\n1side\n')
-        for i in range(NPin):
-            if dictParameters['pinOrder']=='BYNAME':
-                pinPairStr = checkPinListSorted(i+1)
-            elif dictParameters['pinOrder'] == 'SIL':
-                    pinPairStr = checkPinList(str(i+1))+ ' ' + str(i+1) 
-            elif dictParameters['pinOrder'] == 'SIL-ALT':
+        for i in range(npin):
+            if dict_parameters['pinOrder']=='BYNAME':
+                pin_pair_str = check_pin_list_sorted(i+1)
+            elif dict_parameters['pinOrder'] == 'SIL':
+                    pin_pair_str = checkPinList(str(i+1))+ ' ' + str(i+1) 
+            elif dict_parameters['pinOrder'] == 'SIL-ALT':
                 if i%2==0:
-                    pinPairStr = checkPinList(str(i/2+1)) + ' ' + str(i/2+1)
+                    pin_pair_str = checkPinList(str(i/2+1)) + ' ' + str(i/2+1)
                 else:
-                    pinPairStr = checkPinList(str((NPin+i)/2+1)) + ' ' + str((NPin+i)/2+1)
+                    pin_pair_str = checkPinList(str((npin+i)/2+1)) + ' ' + str((npin+i)/2+1)
 
             else:
                 print('error your pinorder doesnt match number os sides')
                 sys.exit()
-            outstring += 'X '+ pinPairStr+ ' ' + str(rectxmin - \
+            outstring += 'X '+ pin_pair_str+ ' ' + str(rectxmin - \
                         length) + ' ' + str(rectymin + step + \
-                        (NPin-i)*step) + ' ' + str(length) + ' ' +\
-                        side + ' ' + str(textSize) + ' ' + \
-                        str(textSize) + ' 1 1 ' + typePin + '\n'
+                        (npin-i)*step) + ' ' + str(length) + ' ' +\
+                        side + ' ' + str(text_size) + ' ' + \
+                        str(text_size) + ' 1 1 ' + type_pin + '\n'
                 
-    elif dictParameters['nbSide'] == '2':
+    elif dict_parameters['nbSide'] == '2':
         print('\n\n2sides\n')
-        if dictParameters['pinOrder']=='BYNAME':
-            for i in range(NPin):
-                pinPairStr = checkPinListSorted(i+1)
-                if i < int(dictParameters['height']):
+        if dict_parameters['pinOrder']=='BYNAME':
+            for i in range(npin):
+                pin_pair_str = check_pin_list_sorted(i+1)
+                if i < int(dict_parameters['height']):
                     posx = rectxmin - length
-                    posy = rectymin + step + (halfNpin-i) * step
+                    posy = rectymin + step + (half_npin-i) * step
                     side = 'R'
                 else:
                     posx = rectxmax + length
-                    posy = rectymin + step + (i-halfNpin+1) * step
+                    posy = rectymin + step + (i-half_npin+1) * step
                     side = 'L'
-                outstring += 'X '+ pinPairStr\
+                outstring += 'X '+ pin_pair_str\
                             + ' ' + str(posx) + ' ' + str(posy) + ' ' +\
-                            str(length) + ' ' + side + ' ' + str(textSize)\
-                            + ' ' + str(textSize) + ' 1 1 ' + typePin\
+                            str(length) + ' ' + side + ' ' + str(text_size)\
+                            + ' ' + str(text_size) + ' 1 1 ' + type_pin\
                             + '\n'
-        elif dictParameters['pinOrder'] == 'CONN2':
-            for i in range(NPin):
-                if i < int(dictParameters['height']):
+        elif dict_parameters['pinOrder'] == 'CONN2':
+            for i in range(npin):
+                if i < int(dict_parameters['height']):
                     posx = rectxmin - length
-                    posy = rectymin + step + (halfNpin-i) * step
+                    posy = rectymin + step + (half_npin-i) * step
                     side = 'R'
                 else:
                     posx = rectxmax + length
-                    posy = rectymin + step + (NPin-i) * step
+                    posy = rectymin + step + (npin-i) * step
                     side = 'L'
                 outstring += 'X '+ checkPinList(str(i+1)) + ' ' + str(i+1)\
                             + ' ' + str(posx) + ' ' + str(posy) + ' ' +\
-                            str(length) + ' ' + side + ' ' + str(textSize)\
-                            + ' ' + str(textSize) + ' 1 1 ' + typePin\
+                            str(length) + ' ' + side + ' ' + str(text_size)\
+                            + ' ' + str(text_size) + ' 1 1 ' + type_pin\
                             + '\n'
     
-        elif dictParameters['pinOrder'] == 'CONN1':
-            for i in range(NPin):
+        elif dict_parameters['pinOrder'] == 'CONN1':
+            for i in range(npin):
                 if i%2 ==0:
                     posx = rectxmin - length
-                    posy = rectymin + step + ((NPin-i)/2-1) * step
+                    posy = rectymin + step + ((npin-i)/2-1) * step
                     side = 'R'
                 else:
                     posx = rectxmax + length
-                    posy = rectymin + step + ((NPin-i)/2) * step
+                    posy = rectymin + step + ((npin-i)/2) * step
                     side = 'L'
                 outstring += 'X '+ checkPinList(str(i+1)) + ' ' + str(i+1)\
                             + ' ' + str(posx) + ' ' + str(posy) + ' ' +\
-                            str(length) + ' ' + side + ' ' + str(textSize)\
-                            + ' ' + str(textSize) + ' 1 1 ' + typePin\
+                            str(length) + ' ' + side + ' ' + str(text_size)\
+                            + ' ' + str(text_size) + ' 1 1 ' + type_pin\
                             + '\n'
     
-        elif dictParameters['pinOrder'] == 'DIL':
-            for i in range(NPin):
-                if i < halfNpin:
+        elif dict_parameters['pinOrder'] == 'DIL':
+            for i in range(npin):
+                if i < half_npin:
                     posx = rectxmin - length
-                    posy = rectymin + step + (halfNpin-i) * step
+                    posy = rectymin + step + (half_npin-i) * step
                     side = 'R'
                 else:
                     posx = rectxmax + length
-                    posy = rectymin + step + (i-halfNpin+1) * step
+                    posy = rectymin + step + (i-half_npin+1) * step
                     side = 'L'
                 outstring += 'X '+ checkPinList(str(i+1)) + ' ' + str(i+1)\
                             + ' ' + str(posx) + ' ' + str(posy) + ' ' +\
-                            str(length) + ' ' + side + ' ' + str(textSize)\
-                            + ' ' + str(textSize) + ' 1 1 ' + typePin\
+                            str(length) + ' ' + side + ' ' + str(text_size)\
+                            + ' ' + str(text_size) + ' 1 1 ' + type_pin\
                             + '\n'
             
     ### Four sides schematics ###
-    elif dictParameters['nbSide'] == '4':
-        quarterNpin = NPin/4
-        threeQuartNpin = 3*quarterNpin
-        for i in range(NPin):
-            if i < quarterNpin:
+    elif dict_parameters['nbSide'] == '4':
+        quarter_npin = npin/4
+        three_quart_npin = 3*quarter_npin
+        for i in range(npin):
+            if i < quarter_npin:
                 side = 'R'
                 posx = rectxmin - length
-                posy = rectymin + step + (quarterNpin-i)*step
-            elif i < halfNpin:
+                posy = rectymin + step + (quarter_npin-i)*step
+            elif i < half_npin:
                 side = 'U'
-                posx = rectxmin + step + ((i+1-quarterNpin))*step
+                posx = rectxmin + step + ((i+1-quarter_npin))*step
                 posy = rectymin - length
-            elif i< threeQuartNpin:
+            elif i< three_quart_npin:
                 side = 'L'
                 posx = rectxmax + length
-                posy = rectymin + step + (i+1-halfNpin)*step
+                posy = rectymin + step + (i+1-half_npin)*step
             else:
                 side = 'D'
-                posx = rectxmin + step + (NPin-(i-1))*step
+                posx = rectxmin + step + (npin-(i-1))*step
                 posy = rectymax + length
-            if dictParameters['pinOrder']=='BYNAME':
-                pinPairStr = checkPinListSorted(i+1)
-            elif dictParameters['pinOrder'] == 'PQFP':
-                pinPairStr = checkPinList(str(i+1)) + ' ' + str(i+1)
+            if dict_parameters['pinOrder']=='BYNAME':
+                pin_pair_str = check_pin_list_sorted(i+1)
+            elif dict_parameters['pinOrder'] == 'PQFP':
+                pin_pair_str = checkPinList(str(i+1)) + ' ' + str(i+1)
      
-            elif dictParameters['pinOrder'] == 'PLCC':
+            elif dict_parameters['pinOrder'] == 'PLCC':
                 print('PLCC not implemented yet sorry')
                 exit(0)
             else:
                 print('order not compatible with number of sides provided')
                 exit(0)
                 
-            outstring += 'X '+ pinPairStr + ' ' + str(posx) + ' ' + str(posy) + ' '\
-                        + str(length) + ' ' + side + ' ' + str(textSize) + ' ' + \
-                        str(textSize) + ' 1 1 ' + typePin + '\n'
+            outstring += 'X '+ pin_pair_str + ' ' + str(posx) + ' ' + str(posy) + ' '\
+                        + str(length) + ' ' + side + ' ' + str(text_size) + ' ' + \
+                        str(text_size) + ' 1 1 ' + type_pin + '\n'
     else:
         print('wrong nbSide')
 else:
     print('unknown package type')
     sys.exit(0)
 
-destLib = ''
-if dictParameters['outLibrary']!='' and dictParameters['outLibrary'].endswith('.lib'):
-    if os.path.isfile(dictParameters['outLibrary']):
-        print('part will be added to ' +dictParameters['outLibrary'] + ' library')
-        destLib = dictParameters['outLibrary']
-        fileout = dictParameters['outLibrary'][:-4]+ 'temp'
+dest_lib = ''
+if dict_parameters['outLibrary']!='' and dict_parameters['outLibrary'].endswith('.lib'):
+    if os.path.isfile(dict_parameters['outLibrary']):
+        print('part will be added to ' +dict_parameters['outLibrary'] + ' library')
+        dest_lib = dict_parameters['outLibrary']
+        fileout = dict_parameters['outLibrary'][:-4]+ 'temp'
     else:
-        print('creating a new library: ' + dictParameters['outLibrary'])
-        fileout = dictParameters['outLibrary'][:-4]
+        print('creating a new library: ' + dict_parameters['outLibrary'])
+        fileout = dict_parameters['outLibrary'][:-4]
 else:
-    fileout = dictParameters['name']
+    fileout = dict_parameters['name']
     print('creating a new library: ' + fileout)
 print(fileout)
-docstring = 'EESchema-DOCLIB Version 2.0\n#\n$CMP '+dictParameters['name']+'\n'
-docstring += 'D ' + dictParameters['Description'] + '\n'
-docstring += 'K ' + dictParameters['keywords'] + '\n'
-docstring += 'F ' + dictParameters['datasheet'] + '\n'
+docstring = 'EESchema-DOCLIB Version 2.0\n#\n$CMP '+dict_parameters['name']+'\n'
+docstring += 'D ' + dict_parameters['Description'] + '\n'
+docstring += 'K ' + dict_parameters['keywords'] + '\n'
+docstring += 'F ' + dict_parameters['datasheet'] + '\n'
 docstring += '$ENDCMP\n#\n#End Doc Library'
 
 with open(fileout+'.dcm','w+') as docfile:
@@ -496,8 +496,8 @@ with open(fileout+'.lib', 'w+') as outfile:
     outstring += 'ENDDRAW\nENDDEF\n#\n#End Library'
     outfile.write(outstring)
 
-if destLib !='':
-#    os.system('python '+os.path.join(os.getcwd(),'move_part.py') + ' ' + dictParameters['name'] + ' ' + fileout+'.lib' + ' ' + destLib )
-    os.system('move_part.py' + ' ' + dictParameters['name'] + ' ' + fileout+'.lib' + ' ' + destLib )
+if dest_lib !='':
+#    os.system('python '+os.path.join(os.getcwd(),'move_part.py') + ' ' + dict_parameters['name'] + ' ' + fileout+'.lib' + ' ' + dest_lib )
+    os.system('move_part.py' + ' ' + dict_parameters['name'] + ' ' + fileout+'.lib' + ' ' + dest_lib )
     os.remove(fileout+'.lib')
     os.remove(fileout+'.dcm')
