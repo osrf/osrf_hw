@@ -7,6 +7,7 @@ import sip
 sip.setapi('QString', 2)
 sip.setapi('QVariant', 2)
 
+import re
 import os
 import sys
 from PyQt4 import QtGui, QtCore, Qt
@@ -20,6 +21,12 @@ def get_row(index):
     return index.row()
 def get_col(index):
     return index.column()
+
+def safeint(x):
+  try:
+    return int(x)
+  except ValueError:
+    return x
 
 class BOMEditor(QtGui.QWidget):
     def __init__(self, file_name = None, file_out = None, mode='edit', parent=None):
@@ -609,6 +616,7 @@ class BOMEditor(QtGui.QWidget):
         print('filename=' + file_name)
         qty=1; first=1; prev_MFP = None; MFP=None; designators=[]
         strfield='"'
+        item_line_num = 1
         with open(file_name, "wb") as file_output:
             writer = csv.writer(file_output,delimiter=',',quotechar="'")
             #initialize designators and MFP
@@ -617,6 +625,8 @@ class BOMEditor(QtGui.QWidget):
             designators.append(str(self.model.data(self.model.index(1, 1),
                         QtCore.Qt.DisplayRole )))
             fields = []
+            fields.append('Line item #')
+            fields.append('Qty')
             # export the title row as is
             for col_number in [1,2,5,6,7,9,10,8,11,12]:
                 a = str(self.model.data(self.model.index(0, col_number),
@@ -629,7 +639,6 @@ class BOMEditor(QtGui.QWidget):
                 else:
                     a = '""'
                     fields.append(a)
-            fields.append('Qty')
             writer.writerow(fields)
             # now that header is ok lets browse the components
             # count the components having the same MFP
@@ -645,7 +654,10 @@ class BOMEditor(QtGui.QWidget):
                     #print("MFP:"+str(prev_MFP)+ " qty:"+str(qty)+\
                     #          " designators:"+str(designators))
                     fields=[]
+                    fields.append(item_line_num)
+                    fields.append(qty)
                     strfield='"'
+                    designators.sort(key=lambda x:map(safeint, re.findall("\d+|\D+", x)))
                     for des in designators:
                         if strfield != '"':
                             strfield += ';'
@@ -663,12 +675,12 @@ class BOMEditor(QtGui.QWidget):
                         else:
                             a = '""'
                             fields.append(a)
-                    fields.append(qty)
                     writer.writerow(fields)
                     designators = []
                     designators.append(str(self.model.data(self.model.index(row_number, 1),
                         QtCore.Qt.DisplayRole )))
                     qty = 1
+                    item_line_num += 1
 
 if __name__ == "__main__":
     import sys
