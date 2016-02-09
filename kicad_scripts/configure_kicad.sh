@@ -9,7 +9,8 @@ usage()
     echo "      --install-update-libraries  (clone/update libraries from kicad-library repo and populate the kicad workspace)"
     echo "      --install-update-3dmodels   (clone/update 3dmodels from osrf_hw_nonfree repo and populate the kicad workspace)"
     echo "      --install-update-utils      (clone/update and install utils to parse and modify kicad files)"
-    echo "      --update-kicad-config       (update the kicag configuration files in ~/.config/kicad)"
+    echo "      --update-kicad-config       (update the kicad configuration files in ~/.config/kicad)"
+    echo "      --update-kicad-plugins      (update the plugins in KICAD_PATH/scripting/plugins)"
     echo "      --all                       (all the previous commands sequentialy)"
 
 }
@@ -156,6 +157,12 @@ update_config_files()
     fi
 }
 
+update_kicad_plugins()
+{
+  cd "$WORKING_TREES/osrf_hw/kicad_plugins"
+  sudo cp ./*.py "$KICAD_PATH/scripting/plugins/"
+}
+
 install_update_all_modules()
 {
     checkout_or_update_modules "KiCad"
@@ -237,6 +244,11 @@ fi
 
 if [ $# -eq 1 -a "$1" == "--update-kicad-config" ]; then
     update_config_files
+    exit
+fi
+
+if [ $# -eq 1 -a "$1" == "--update-kicad-plugins" ]; then
+    update_kicad_plugins
     exit
 fi
 

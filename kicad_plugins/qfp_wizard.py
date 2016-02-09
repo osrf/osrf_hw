@@ -20,26 +20,23 @@ import pcbnew
 import HelpfulFootprintWizardPlugin
 import PadArray as PA
 
-class EPADGridArray(PA.PadGridArray):
-  def NamingFunction(self, nx, ny):
-    return self.firstPadNum
 
-class QFNWizard(HelpfulFootprintWizardPlugin.HelpfulFootprintWizardPlugin):
+class QFPWizard(HelpfulFootprintWizardPlugin.HelpfulFootprintWizardPlugin):
 
     def GetName(self):
-        return "QFN"
+        return "QFP"
 
     def GetDescription(self):
-        return "Quad Flat No-lead footprint wizard"
+        return "Quad Flat Package footprint wizard"
 
     def GenerateParameterList(self):
         self.AddParam("Pads", "n", self.uNatural, 100)
         self.AddParam("Pads", "pad pitch", self.uMM, 0.5)
         self.AddParam("Pads", "pad width", self.uMM, 0.25)
         self.AddParam("Pads", "pad length", self.uMM, 1.5)
+        self.AddParam("Pads", "vertical pitch", self.uMM, 15)
+        self.AddParam("Pads", "horizontal pitch", self.uMM, 15)
         self.AddParam("Pads", "oval", self.uBool, True)
-        self.AddParam("Pads", "epad subdiv x", self.uNatural, 2)
-        self.AddParam("Pads", "epad subdiv y", self.uNatural, 2)
 
         self.AddParam("Package", "package width", self.uMM, 14)
         self.AddParam("Package", "package height", self.uMM, 14)
@@ -50,17 +47,17 @@ class QFNWizard(HelpfulFootprintWizardPlugin.HelpfulFootprintWizardPlugin):
         self.CheckParamBool("Pads", "*oval")
 
     def GetValue(self):
-        return "QFN_%d" % self.parameters["Pads"]["*n"]
+        return "QFP_%d" % self.parameters["Pads"]["*n"]
 
     def BuildThisFootprint(self):
         pads = self.parameters["Pads"]
 
         pad_pitch = pads["pad pitch"]
-        pad_length = pads["pad length"]
-        pad_width = pads["pad width"]
+        pad_length = self.parameters["Pads"]["pad length"]
+        pad_width = self.parameters["Pads"]["pad width"]
 
-        v_pitch = self.parameters["Package"]["package height"]
-        h_pitch = self.parameters["Package"]["package width"]
+        v_pitch = pads["vertical pitch"]
+        h_pitch = pads["horizontal pitch"]
 
         pads_per_row = pads["*n"] // 4
 
@@ -102,30 +99,6 @@ class QFNWizard(HelpfulFootprintWizardPlugin.HelpfulFootprintWizardPlugin):
         lim_y = self.parameters["Package"]["package height"] / 2
         inner = (row_len / 2) + pad_pitch
 
-        # epad
-        epad_width = self.parameters["Package"]["package height"] - (2*pad_length)
-        epad_length  = self.parameters["Package"]["package width"] - (2*pad_length)
-        epad_subdv_x = pads["*epad subdiv x"]
-        epad_subdv_y = pads["*epad subdiv y"]
-
-        if (epad_subdv_y != 0 and epad_subdv_x != 0) and (epad_subdv_y != 1 or epad_subdv_y != 1):
-          px = pcbnew.FromMM(0.1); py = pcbnew.FromMM(0.1)
-          esubpad_size_x = epad_length / epad_subdv_x - px
-          esubpad_size_y = epad_width / epad_subdv_y - py
-          epad1_pos = pcbnew.wxPoint(-(esubpad_size_x*(epad_subdv_x-1)/2), -esubpad_size_y*(epad_subdv_y-1)/2)
-          epad = PA.PadMaker(self.module).SMDPad( esubpad_size_y, esubpad_size_x,
-                  shape=pcbnew.PAD_SHAPE_RECT, rot_degree=0.0)
-          array = EPADGridArray(epad, epad_subdv_x, epad_subdv_y, esubpad_size_x + px, esubpad_size_y + py, pcbnew.wxPoint(0,0))
-          array.SetFirstPadInArray(pads["*n"]+1)
-          array.AddPadsToModule(self.draw)
-
-        else:
-          epad = PA.PadMaker(self.module).SMDPad(epad_length, epad_width)
-          epad_pos = pcbnew.wxPoint(0,0)
-          array = PA.PadLineArray(epad, 1, 1, False, epad_pos)
-          array.SetFirstPadInArray(pads["*n"])
-          array.AddPadsToModule(self.draw)
-        
         #top left - diagonal
         self.draw.Line(-lim_x, -inner, -inner, -lim_y)
         # top right
@@ -138,8 +111,8 @@ class QFNWizard(HelpfulFootprintWizardPlugin.HelpfulFootprintWizardPlugin):
         # Courtyard
         cmargin = self.parameters["Package"]["courtyard margin"]
         self.draw.SetLayer(pcbnew.F_CrtYd)
-        sizex = (lim_x + cmargin) * 2 + pad_length/2.
-        sizey = (lim_y + cmargin) * 2 + pad_length/2.
+        sizex = (lim_x + cmargin) * 2 + pad_length
+        sizey = (lim_y + cmargin) * 2 + pad_length
         # set courtyard line thickness to the one defined in KLC
         thick = self.draw.GetLineTickness()
         self.draw.SetLineTickness(pcbnew.FromMM(0.05))
@@ -154,6 +127,4 @@ class QFNWizard(HelpfulFootprintWizardPlugin.HelpfulFootprintWizardPlugin):
         self.draw.Value(0, text_offset, text_size)
         self.draw.Reference(0, -text_offset, text_size)
 
-QFNWizard().register()
-
-
+QFPWizard().register()

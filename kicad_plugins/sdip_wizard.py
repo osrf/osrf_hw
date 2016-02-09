@@ -37,7 +37,7 @@ class RowedGridArray(PA.PadGridArray):
 
 class RowedFootprint(HFPW.HelpfulFootprintWizardPlugin):
 
-    pad_count_key = 'pad count'
+    pad_count_key = 'pas count'
     row_count_key = 'row count'
     row_spacing_key = 'row spacing'
     pad_length_key = 'pad length'
@@ -84,15 +84,6 @@ class RowedFootprint(HFPW.HelpfulFootprintWizardPlugin):
         array = RowedGridArray(pad, pads_per_row, num_rows, pad_pitch, row_pitch)
         array.AddPadsToModule(self.draw)
 
-        try:
-            epad = self.GetEpad()
-            array = PA.PadLineArray(epad, 1, 1, False, pcbnew.wxPoint(0,0))
-            array.SetFirstPadInArray(pads['*'+self.pad_count_key]+1)
-            array.AddPadsToModule(self.draw)
-        except:
-            print('GetEpad not known')
-            pass
-            
         # draw the Silk Screen
         Hsize = pad_pitch * (num_pads / num_rows - 1)
         Vsize = row_pitch * (num_rows - 1)
@@ -113,6 +104,17 @@ class RowedFootprint(HFPW.HelpfulFootprintWizardPlugin):
 
         self.DrawBox(ssx, ssy)
 
+        # Courtyard
+        cmargin = self.draw.GetLineTickness()
+        self.draw.SetLayer(pcbnew.F_CrtYd)
+        sizex = (ssx + cmargin) * 2
+        sizey = (ssy + cmargin) * 2
+        # set courtyard line thickness to the one defined in KLC
+        self.draw.SetLineTickness(pcbnew.FromMM(0.05))
+        self.draw.Box(0, 0, sizex, sizey)
+        # restore line thickness to previous value
+        self.draw.SetLineTickness(pcbnew.FromMM(cmargin))
+        
         #reference and value
         text_size = self.GetTextSize()  # IPC nominal
 
@@ -249,59 +251,3 @@ class SOICWizard(RowedFootprint):
         self.draw.BoxWithDiagonalAtCorner(0, 0, ssx*2, ssy*2, setback, self.draw.flipY)
 
 SOICWizard().register()
-
-class SONWizard(RowedFootprint):
-
-    def GetName(self):
-        return "SON"
-
-    def GetDescription(self):
-        return "SON footprint wizard"
-
-    def GetValue(self):
-        pad_count = self.parameters["Pads"]['*' + self.pad_count_key]
-        return "%s-%d" % ("SON", pad_count)
-
-    def GenerateParameterList(self):
-        RowedFootprint.GenerateParameterList(self)
-
-        #and override some of them
-        self.AddParam("Pads", self.pad_pitch_key, self.uMM, 1.27)
-        self.AddParam("Pads", self.pad_width_key, self.uMM, 0.6)
-        self.AddParam("Pads", self.pad_length_key, self.uMM, 2.2)
-        self.AddParam("Pads", self.row_spacing_key, self.uMM, 5.2)
-
-        # add epad parameters
-        self.AddParam("Pads", "epad_length", self.uMM, (self.parameters["Pads"][self.row_spacing_key]-1.5*self.parameters["Pads"][self.pad_length_key])/1000000.)
-        self.AddParam("Pads", "epad_width", self.uMM, 
-                      self.parameters["Pads"][self.pad_pitch_key]*(self.parameters["Pads"]['*'+self.pad_count_key]-1)/2./1000000.)
-        
-
-    def GetPad(self):
-        pad_length = self.parameters["Pads"][self.pad_length_key]
-        pad_width = self.parameters["Pads"][self.pad_width_key]
-        return PA.PadMaker(self.module).SMDPad(
-            pad_length, pad_width, shape=pcbnew.PAD_SHAPE_RECT)
-
-    def GetEpad(self):
-        epad_length = self.parameters["Pads"]["epad_length"]
-        epad_width = self.parameters["Pads"]["epad_width"]
-        return PA.PadMaker(self.module).SMDPad(
-            epad_length, epad_width, shape=pcbnew.PAD_SHAPE_RECT)
-
-    def DrawBox(self, ssx, ssy):
-
-        #  ----------
-        #  |8 7 6 5 |
-        #  |1 2 3 4 |
-        #  \---------
-
-        setback = pcbnew.FromMM(0.8)
-
-        if setback > ssy:
-            setback = ssy
-
-        self.draw.BoxWithDiagonalAtCorner(0, 0, ssx*2, ssy*2, setback, self.draw.flipY)
-
-SONWizard().register()
-
