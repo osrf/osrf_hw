@@ -1,9 +1,0 @@
-EESchema-DOCLIB Version 2.0
-#
-$CMP xc7a50tcsg325pkg
-D Xilinx test
-K Artix7 xc7a50
-F http://www.xilinx.com/support/documentation/data_sheets/ds180_7Series_Overview.pdf
-$ENDCMP
-#
-#End Doc Library

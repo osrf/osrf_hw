@@ -7,14 +7,20 @@ F http://www.xilinx.com/support/documentation/data_sheets/ds181_Artix_7_Data_She
 $ENDCMP
 #
 $CMP xc7a50tcsg325pkg
-D Xilinx test
-K Artix7 xc7a50
+D Xilinx
+K Artix7 xc7a50 csg325
 F http://www.xilinx.com/support/documentation/data_sheets/ds180_7Series_Overview.pdf
 $ENDCMP
 #
 $CMP xc7a50tcsg324pkg
 D Artix7a50csg324 
-K Artix7 xc7a50
+K Artix7 xc7a50 xc7a100 csg324
+F http://www.xilinx.com/support/documentation/data_sheets/ds180_7Series_Overview.pdf
+$ENDCMP
+#
+$CMP xc7a50tcpg236pkg
+D Artix7a50tcpg236
+K Artix7 xc7a50 cpg236
 F http://www.xilinx.com/support/documentation/data_sheets/ds180_7Series_Overview.pdf
 $ENDCMP
 #
