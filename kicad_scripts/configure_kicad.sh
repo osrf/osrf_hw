@@ -96,13 +96,17 @@ update_config_files()
     # Adding KiCad modules
     echo "(fp_lib_table" > "$FILENAME"
     for mod in $MODULE_LIST;do
-        echo "  (lib (name ${mod%".pretty"})(type KiCad)(uri \${KISYSMOD}/$mod)(options \"\")(descr \"\"))" >> "$FILENAME"    
+        if [[ $mod == *.pretty ]];then
+          echo "  (lib (name ${mod%".pretty"})(type KiCad)(uri \${KISYSMOD}/$mod)(options \"\")(descr \"\"))" >> "$FILENAME"
+        fi
     done
     
     # Adding osrf modules
     MODULE_LIST=$(ls "$WORKING_TREES/osrf_hw/kicad_modules")
     for mod in $MODULE_LIST;do
-        echo "  (lib (name ${mod%".pretty"})(type KiCad)(uri \${KIWORKSPACE}/osrf_hw/kicad_modules/$mod)(options \"\")(descr \"\"))" >> "$FILENAME"    
+        if [[ $mod == *.pretty ]];then
+          echo "  (lib (name ${mod%".pretty"})(type KiCad)(uri \${KIWORKSPACE}/osrf_hw/kicad_modules/$mod)(options \"\")(descr \"\"))" >> "$FILENAME"
+        fi
     done
         echo ")" >> "$FILENAME"    
     
