@@ -971,7 +971,9 @@ for i in range(len(modules)):
         FreeCAD.Console.PrintMessage('adjusting Local Path\r\n')
         FreeCAD.Console.PrintMessage('step-module-replaced '+step_module+'\r\n')
     if step_module != 'no3Dmodel':
-        step_module=step_module[:-3]+'step'
+        step_module=step_module.replace('"', '')  # name with spaces
+        index_dot = step_module.rfind('.')
+        step_module=step_module[:index_dot+1]+'step'
         step_module2=step_module[:-4]+'stp'
         step_module3=step_module[:-4]+'iges'
         step_module4=step_module[:-4]+'igs'
@@ -991,7 +993,6 @@ for i in range(len(modules)):
     if (blacklisted==0):
         if step_module != 'no3Dmodel':
             module_path='not-found'
-            step_module=step_module.replace('"', '')  # name with spaces
             if os.path.exists(os.path.join(models3D_prefix,step_module)):
                 module_path=os.path.join(models3D_prefix,step_module)
             else:
@@ -1127,7 +1128,7 @@ for i in range(len(modules)):
 
             ###
             else:
-                FreeCAD.Console.PrintMessage("error missing "+ models3D_prefix+step_module+'\r\n')
+                FreeCAD.Console.PrintMessage("error missing "+ os.path.join(models3D_prefix,step_module)+'\r\n')
                 test = missing_models.find(step_module)
                 if test is -1:
                     missing_models += models3D_prefix+step_module+'\r\n' #matched
