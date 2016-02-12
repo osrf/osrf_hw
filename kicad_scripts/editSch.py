@@ -594,6 +594,7 @@ class BOMEditor(QtGui.QWidget):
             self.save_BOM(fname)
 
     def save_BOM(self, file_name):
+        #TODO if value = DNP, create one new line for each designator "letter"
         #first let's sort table by designator
         self.onSectionClicked(1)
         designators = []
@@ -610,6 +611,8 @@ class BOMEditor(QtGui.QWidget):
         # remove duplicates
         for i in rowRem:
             self.model.removeRow(i)
+        # set order to have same output whatever we sorted upon before
+        self.sort_order = 0
         # sort by MFP
         self.onSectionClicked(6)
 
