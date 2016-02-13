@@ -593,8 +593,38 @@ class BOMEditor(QtGui.QWidget):
         if fname != '':
             self.save_BOM(fname)
 
+    def write_BOM_row(self,item_line_num,qty,designators,row_number,col_number,writer):
+      fields=[]
+      fields.append(item_line_num)
+      fields.append(qty)
+      strfield='"'
+      designators.sort(key=lambda x:map(safeint, re.findall("\d+|\D+", x)))
+      for des in designators:
+          if strfield != '"':
+              strfield += ';'
+          strfield += des
+      strfield += '"'
+      fields.append(strfield)
+      for col_number in [2,5,6,7,9,10,8,11,12]:
+          a = str(self.model.data(self.model.index(row_number-1, col_number),
+              QtCore.Qt.DisplayRole ))
+          if len(a)>0:
+              if col_number != 0:
+                  if a[0]!='"':
+                      a = '"' + str(a) + '"'
+              fields.append(a)
+          else:
+              a = '""'
+              fields.append(a)
+      writer.writerow(fields)
+      designators = []
+      designators.append(str(self.model.data(self.model.index(row_number, 1),
+          QtCore.Qt.DisplayRole )))
+      qty = 1
+      item_line_num += 1
+      return [item_line_num,qty,designators]
+
     def save_BOM(self, file_name):
-        #TODO if value = DNP, create one new line for each designator "letter"
         #first let's sort table by designator
         self.onSectionClicked(1)
         designators = []
@@ -618,6 +648,7 @@ class BOMEditor(QtGui.QWidget):
 
         print('filename=' + file_name)
         qty=1; first=1; prev_MFP = None; MFP=None; designators=[]
+        prev_desig=None; desig=None
         strfield='"'
         item_line_num = 1
         with open(file_name, "wb") as file_output:
@@ -649,41 +680,33 @@ class BOMEditor(QtGui.QWidget):
                 prev_MFP = MFP
                 MFP = str(self.model.data(self.model.index(row_number, 6),
                     QtCore.Qt.DisplayRole ))
-                if MFP == prev_MFP:
+                if MFP == "DNP":
+                  desig = str(self.model.data(self.model.index(row_number, 1),
+                      QtCore.Qt.DisplayRole ))
+                  if prev_MFP != "DNP":
+                    [item_line_num,qty,designators] = self.write_BOM_row(item_line_num,qty,designators,row_number,col_number,writer)
+                  else:
+                    if prev_desig != None:
+                      if desig.startswith(prev_desig):
+                        qty += 1
+                        designators.append(desig)
+                      else:
+                        [item_line_num,qty,designators] = self.write_BOM_row(item_line_num,qty,designators,row_number,col_number,writer)
+                        match = re.search("\d", desig)
+                        prev_desig = desig[:match.start()]
+                    else:
+                      match = re.search("\d", desig)
+                      prev_desig = desig[:match.start()]
+                      designators.append(str(self.model.data(self.model.index(row_number, 1),
+                            QtCore.Qt.DisplayRole )))
+                      qty = 1
+                else:
+                  if MFP == prev_MFP:
                     qty += 1
                     designators.append(str(self.model.data(self.model.index(row_number, 1),
                         QtCore.Qt.DisplayRole )))
-                else:
-                    #print("MFP:"+str(prev_MFP)+ " qty:"+str(qty)+\
-                    #          " designators:"+str(designators))
-                    fields=[]
-                    fields.append(item_line_num)
-                    fields.append(qty)
-                    strfield='"'
-                    designators.sort(key=lambda x:map(safeint, re.findall("\d+|\D+", x)))
-                    for des in designators:
-                        if strfield != '"':
-                            strfield += ';'
-                        strfield += des
-                    strfield += '"'
-                    fields.append(strfield)
-                    for col_number in [2,5,6,7,9,10,8,11,12]:
-                        a = str(self.model.data(self.model.index(row_number-1, col_number),
-                            QtCore.Qt.DisplayRole ))
-                        if len(a)>0:
-                            if col_number != 0:
-                                if a[0]!='"':
-                                    a = '"' + str(a) + '"'
-                            fields.append(a)
-                        else:
-                            a = '""'
-                            fields.append(a)
-                    writer.writerow(fields)
-                    designators = []
-                    designators.append(str(self.model.data(self.model.index(row_number, 1),
-                        QtCore.Qt.DisplayRole )))
-                    qty = 1
-                    item_line_num += 1
+                  else:
+                    [item_line_num,qty,designators] = self.write_BOM_row(item_line_num,qty,designators,row_number,col_number,writer)
 
 if __name__ == "__main__":
     import sys
