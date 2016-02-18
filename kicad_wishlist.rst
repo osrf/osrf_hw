@@ -4,9 +4,9 @@ A set of features that I would like to see in kicad and may implement whenever I
 
 PCBNEW
 ------
-- Net class/group highlighting
+- Net class/group highlighting: blueprint but no code yet
 - Allow to change net in the track/via edit dialog box
-- Allow user to define length matching margin for a given net/net class
+- Allow user to define length matching margin for a given net/net class: pull request pending
 - drag traces in OpenGL mode
 - group routing
 
