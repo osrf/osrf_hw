@@ -1,4 +1,4 @@
-(module BGA_236 (layer F.Cu) (tedit 56BA666B)
+(module BGA236C50P19X19_1000X1000X106 (layer F.Cu) (tedit 56BA666B)
   (descr "Xilinx cpg236 package")
   (tags "cpg236 BGA236")
   (attr smd)
