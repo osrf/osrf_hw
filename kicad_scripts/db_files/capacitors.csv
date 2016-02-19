@@ -1,5 +1,5 @@
 "KEY","Footprint","Datasheet","MFN","MFP","D1PN","D1PL","D2PN","D2PL"
-"## 0402 capacitors",,,,,,,,
+## 0402 capacitors
 "CAPA_15p_0402_50_5%_CH","Dipoles_SMD:C_0402","https://product.tdk.com/info/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C1005CH1H150J050BA","445-10834","http://www.digikey.com/product-detail/en/C1005CH1H150J050BA/445-10834-1-ND/3952500","_","_"
 "CAPA_20p_0402_50_1%_C0G","Dipoles_SMD:C_0402","http://capacitoredge.kemet.com/capedge2/DataSheet?pn=CBR04C200F5GAC","Kemet","CBR04C200F5GAC","399-8786","http://www.digikey.com/product-detail/en/CBR04C200F5GAC/399-8786-1-ND/3479845","_","_"
 "CAPA_4.7n_0402_100_10%_X7S","Dipoles_SMD:C_0402","https://product.tdk.com/info/en/catalog/spec/mlccspec_commercial_general_midvoltage_en.pdf","TDK","C1005X7S2A472K050BB","445-6026","http://www.digikey.com/product-detail/en/C1005X7S2A472K050BB/445-6026-1-ND/2444067","_","_"
@@ -30,15 +30,15 @@
 "CAPA_4700n_0402_6.3_10%_X5R","Dipoles_SMD:C_0402","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C1005X5R0J475K050BC","445-5947","http://www.digikey.com/product-detail/en/C1005X5R0J475K050BC/445-5947-1-ND/2443987","810-C1005X5R0J475K","http://www.mouser.fr/ProductDetail/TDK/C1005X5R0J475K050BC/?qs=NRhsANhppD%2frOmlfBttPRA%3d%3d"
 "CAPA_4.7u_0402_6.3_10%_X5R","Dipoles_SMD:C_0402","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C1005X5R0J475K050BC","445-5947","http://www.digikey.com/product-detail/en/C1005X5R0J475K050BC/445-5947-1-ND/2443987","810-C1005X5R0J475K","http://www.mouser.fr/ProductDetail/TDK/C1005X5R0J475K050BC/?qs=NRhsANhppD%2frOmlfBttPRA%3d%3d"
 "CAPA_10u_0402_6.3_20%_X5R","Dipoles_SMD:C_0402","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C1005X5R0J106M050BC","445-8920","http://www.digikey.com/product-detail/en/C1005X5R0J106M050BC/445-8920-1-ND/3507812","_","_"
-"## 0603 capacitors",,,,,,,,
+## 0603 capacitors
 "CAPA_10u_0603_6.3_10%_X5R","Dipoles_SMD:C_0603","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C1608X5R0J106K080AB","445-7492","http://www.digikey.com/product-detail/en/C1608X5R0J106K080AB/445-7492-1-ND/2733564","_","_"
 "CAPA_10u_0603_10_10%_X5R","Dipoles_SMD:C_0603","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C1608X5R1A106K080AC","445-7486","http://www.digikey.com/product-detail/en/C1608X5R1A106K080AC/445-7486-1-ND/2733558","_","_"
 "CAPA_22u_0603_6.3_20%_X5R","Dipoles_SMD:C_0603","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C1608X5R0J226M080AC","445-8028","http://www.digikey.com/product-detail/en/C1608X5R0J226M080AC/445-8028-1-ND/2792158","_","_"
-"## 0805 capacitors",,,,,,,,
+## 0805 capacitors
 "CAPA_10u_0805_16_10%_JB","Capacitors_SMD:C_0805","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C2012JB1C106K125AB","445-11430","http://www.digikey.com/product-detail/en/C2012JB1C106K125AB/445-11430-1-ND/3953096","_","_"
 "CAPA_22u_0805_6.3_10%_X5R","Capacitors_SMD:C_0805","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C2012X5R0J226K125AB","445-7679","http://www.digikey.com/product-detail/en/C2012X5R0J226K125AB/445-7679-1-ND/2733751","_","_"
 "CAPA_47u_0805_10_20%_X5R","Capacitors_SMD:C_0805","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C2012X5R1A476M125AC","445-8239","http://www.digikey.com/product-detail/en/C2012X5R1A476M125AC/445-8239-1-ND/2812081","_","_"
-"## 0201 capacitors",,,,,,,,
+## 0201 capacitors
 "CAPA_100p_0201_25_10%_X5R","Dipoles_SMD:C_0201","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C0603X5R1E101K030BA","445-4683","http://www.digikey.com/product-detail/en/C0603X5R1E101K030BA/445-4683-1-ND/2050289","_","_"
 "CAPA_2200p_0201_25_10%_X7R","Dipoles_SMD:C_0201","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C0603X7R1E222K030BA","445-7279","http://www.digikey.com/product-detail/en/C0603X7R1E222K030BA/445-7279-1-ND/2733351","_","_"
 "CAPA_2.2n_0201_25_10%_X7R","Dipoles_SMD:C_0201","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C0603X7R1E222K030BA","445-7279","http://www.digikey.com/product-detail/en/C0603X7R1E222K030BA/445-7279-1-ND/2733351","_","_"
@@ -52,7 +52,9 @@
 "CAPA_100n_0201_6.3_10%_X5R","Dipoles_SMD:C_0201","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C0603X5R0J104K030BC","445-1796","http://www.digikey.com/product-detail/en/C0603X5R0J104K030BC/445-1796-1-ND/701160","_","_"
 "CAPA_470n_0201_6.3_10%_X5R","Dipoles_SMD:C_0201","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C0603X5R0J474K030BC","445-13653","http://www.digikey.com/product-detail/en/C0603X5R0J474K030BC/445-13653-1-ND/3955319","_","_"
 "CAPA_1u_0201_6.3_20%_X5R","Dipoles_SMD:C_0201","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C0603X5R0J105M030BC","445-8008","http://www.digikey.com/product-detail/en/C0603X5R0J105M030BC/445-8008-1-ND/2792131","_","_"
-"## 1206 capacitors",,,,,,,,
+## 1206 capacitors
 "CAPA_100u_1206_6.3_20%_X5R","Dipoles_SMD:C_1206","http://product.tdk.com/en/catalog/datasheets/mlcc_commercial_general_en.pdf","TDK","C3216X5R0J107M160AB","445-6008","http://www.digikey.com/product-detail/en/C3216X5R0J107M160AB/445-6008-1-ND/2444049","_","_"
-"## 1210 capacitors",,,,,,,,
+## 1210 capacitors
 "CAPA_330u_1210_4_20%_X5R","Capacitors_SMD:C_1210","http://ds.yuden.co.jp/TYCOMPAS/ut/detail.do?productNo=AMK325ABJ337MM-T&fileName=AMK325ABJ337MM-T_SS&mode=specSheetDownload","Taiyo Yuden","AMK325ABJ337MM-T","587-3977","http://www.digikey.com/product-detail/en/AMK325ABJ337MM-T/587-3977-1-ND/4950531","_","_"
+"CAPA_100u_1210_10_20%_","Dipoles_SMD:C_1210Polarized","http://datasheets.avx.com/tps.pdf","AVX Corporation","TPSB107M010R0400","478-5231","http://www.digikey.com/product-detail/en/TPSB107M010R0400/478-5231-1-ND/1913301","_","_"
+"CAPA_100u_1210_10_20%__","Dipoles_SMD:C_1210Polarized","http://datasheets.avx.com/tps.pdf","AVX Corporation","TPSB107M010R0400","478-5231","http://www.digikey.com/product-detail/en/TPSB107M010R0400/478-5231-1-ND/1913301","_","_"

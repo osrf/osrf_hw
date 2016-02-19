@@ -5,6 +5,7 @@ CONN_CONN_01X01__,"Pin_Headers:Pin_Header_Straight_1x01","DNP","DNP","DNP","DNP"
 CONN_CONN_01X02__,"Pin_Headers:Pin_Header_Straight_1x02","DNP","DNP","DNP","DNP","DNP","_","_"
 CONN_CONN_01X03__,"Pin_Headers:Pin_Header_Straight_1x03","DNP","DNP","DNP","DNP","DNP","_","_"
 CONN_CONN_01X04__,"Pin_Headers:Pin_Header_Straight_1x04","DNP","DNP","DNP","DNP","DNP","_","_"
+CONN_CONN_01X04_50mil__,"Pin_Headers:Pin_Header_Straight_1x04_Pitch1.27mm","DNP","DNP","DNP","DNP","DNP","_","_"
 CONN_CONN_01X05__,"Pin_Headers:Pin_Header_Straight_1x05","DNP","DNP","DNP","DNP","DNP","_","_"
 CONN_CONN_01X06__,"Pin_Headers:Pin_Header_Straight_1x06","DNP","DNP","DNP","DNP","DNP","_","_"
 CONN_CONN_01X07__,"Pin_Headers:Pin_Header_Straight_1x07","DNP","DNP","DNP","DNP","DNP","_","_"
@@ -88,3 +89,5 @@ CONN_DF40C_100DP_0-4V__,"Hirose:DF40C_100DP_0-4V","http://www.hirose.co.jp/catal
 ## Molex
 CONN_Milligrid_02x07__,"Connectors_Molex:Connector_MilliGrid_02x07_87832-1420","http://www.molex.com/webdocs/datasheets/pdf/en-us/0878321420_PCB_HEADERS.pdf","Molex","87832-1420","DNP","DNP","_","_"
 CONN_Picoblade_01x04__,"Connectors_Molex:Connector_Molex_PicoBlade_53047-0410","http://www.molex.com/webdocs/datasheets/pdf/en-us/0530470410_PCB_HEADERS.pdf","Molex","53047-0410","DNP","DNP","_","_"
+## misc
+CONN_GRPB061VWTC__,"Connectors:GRPB061VWTC","_","DNP","DNP","DNP","DNP","_","_"
