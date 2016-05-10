@@ -1,9 +1,32 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 74AVCH8T245
+D 8bit voltage translator
+K translator shifter
+$ENDCMP
+#
+$CMP SI53306
+D Low Jitter level translator
+K clock distribution leve translator
+F http://www.silabs.com/Support%20Documents/TechnicalDocs/Si53306.pdf
+$ENDCMP
+#
+$CMP SN74AUP1T34
+D TI Voltage Translator dual supply
+K SN74AUP Voltage Translator
+F http://www.ti.com/lit/ds/symlink/sn74aup1t34.pdf
+$ENDCMP
+#
 $CMP SN74AVC1T45DCKR
 D TI Voltage Translator dual supply
 K SN74AVC Voltage Translator
 F http://www.ti.com/lit/ds/symlink/sn74avc1t45.pdf
+$ENDCMP
+#
+$CMP TXB0106PWR
+D 6bit bidirectional voltage translator
+K translator shifter 6bits
+F http://www.ti.com/lit/ds/symlink/txb0106.pdf
 $ENDCMP
 #
 #End Doc Library

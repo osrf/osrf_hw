@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP ADUM5211
+D Duel channel isolator
+K isolator
+F http://www.analog.com/media/en/technical-documentation/data-sheets/ADuM5210_5211_5212.pdf
+$ENDCMP
+#
+#End Doc Library

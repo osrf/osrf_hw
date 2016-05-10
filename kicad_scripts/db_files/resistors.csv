@@ -1,4 +1,7 @@
 "KEY","Footprint","Datasheet","MFN","MFP","D1PN","D1PL","D2PN","D2PL"
+## RESISTOR 0603
+"RES_1_0603_1/4_1%","Dipoles_SMD:R_0603","http://www.vishay.com/docs/20043/crcwhpe3.pdf","Vishay","CRCW0603200RFKEAHP","541-200S","http://www.digikey.com/product-detail/en/vishay-dale/CRCW0603200RFKEAHP/541-200SCT-ND/5326826","_","_"
+"RES_1_0603____","Dipoles_SMD:R_0603","http://www.vishay.com/docs/20043/crcwhpe3.pdf","Vishay","CRCW0603200RFKEAHP","541-200S","http://www.digikey.com/product-detail/en/vishay-dale/CRCW0603200RFKEAHP/541-200SCT-ND/5326826","_","_"
 ## RESISTOR 0402
 "RES_1_0402____","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW04021R00FKED","541-1.00LL","http://www.digikey.com/product-detail/en/CRCW04021R00FKED/541-1.00LLCT-ND/1961882","_","_"
 "RES_1_0402_1/16_1%","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW04021R00FKED","541-1.00LL","http://www.digikey.com/product-detail/en/CRCW04021R00FKED/541-1.00LLCT-ND/1961882","_","_"
@@ -286,6 +289,8 @@
 "RES_15k_0402_1/16_1%","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040215K0FKED","541-15.0KL","http://www.digikey.com/product-detail/en/CRCW040215K0FKED/541-15.0KLCT-ND/1183255","_","_"
 "RES_16k_0402____","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040216K0FKED","541-16.0KL","http://www.digikey.com/product-detail/en/CRCW040216K0FKED/541-16.0KLTR-ND/1178142","_","_"
 "RES_16k_0402_1/16_1%","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040216K0FKED","541-16.0KL","http://www.digikey.com/product-detail/en/CRCW040216K0FKED/541-16.0KLTR-ND/1178142","_","_"
+"RES_16.9k_0402____","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040216K9FKED","541-16.9KL","http://www.digikey.com/product-detail/en/vishay-dale/CRCW040216K9FKED/541-16.9KLCT-ND/1183261","_","_"
+"RES_16.9k_0402_1/16_1%","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040216K9FKED","541-16.9KL","http://www.digikey.com/product-detail/en/vishay-dale/CRCW040216K9FKED/541-16.9KLCT-ND/1183261","_","_"
 "RES_18k_0402____","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040218K0FKED","541-18.0KL","http://www.digikey.com/product-detail/en/CRCW040218K0FKED/541-18.0KLTR-ND/1178148","_","_"
 "RES_18k_0402_1/16_1%","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040218K0FKED","541-18.0KL","http://www.digikey.com/product-detail/en/CRCW040218K0FKED/541-18.0KLTR-ND/1178148","_","_"
 "RES_19.1k_0402____","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW040219K1FKED","541-19.1KL","http://www.digikey.com/product-detail/en/CRCW040219K1FKED/541-19.1KLTR-ND/1178151","_","_"

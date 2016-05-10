@@ -5,4 +5,11 @@ D STMicroelectronics IMU I2C SPI
 K IMU I2C SPI
 F http://www.st.com/web/en/resource/technical/document/datasheet/DM00133076.pdf
 $ENDCMP
+#
+$CMP VN-100
+D VectorNav IMU VN-100
+K IMU Vectornav VN-100
+F http://www.vectornav.com/docs/default-source/documentation/vn-100-documentation/UM001.pdf?sfvrsn=10
+$ENDCMP
+#
 #End Doc Library
