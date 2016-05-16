@@ -5,6 +5,11 @@ D 8bit voltage translator
 K translator shifter
 $ENDCMP
 #
+$CMP 74AVCH8T245-1EP
+D 8bit voltage translator
+K translator shifter
+$ENDCMP
+#
 $CMP SI53306
 D Low Jitter level translator
 K clock distribution leve translator
