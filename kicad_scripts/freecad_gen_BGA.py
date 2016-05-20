@@ -10,9 +10,10 @@ import Draft#,Sketch,Part
 # lets assume for now that we have all the information in a filename
 # lets also assume that they are only full ball arrays no missing ball in the center)
 # all distances in mm
-#FIXME doesnt handle different x and y pitch
-#FIXME size of balls
-# remove them by hand because impossible to handle all the fishy cases ?
+# FIXME doesnt handle different x and y pitch
+# FIXME size of balls
+# NOTE incomplete bsall matrices not handled
+# one should remove them by hand because impossible to handle all the fishy cases automatically
 MMTOMIL = 0.3937
 
 directory = sys.argv[2]; name = sys.argv[3]; pitch = float(sys.argv[4])
