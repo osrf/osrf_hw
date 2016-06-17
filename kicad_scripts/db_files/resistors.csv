@@ -1,7 +1,9 @@
 "KEY","Footprint","Datasheet","MFN","MFP","D1PN","D1PL","D2PN","D2PL"
 ## RESISTOR 0603
-"RES_1_0603_1/4_1%","Dipoles_SMD:R_0603","http://www.vishay.com/docs/20043/crcwhpe3.pdf","Vishay","CRCW0603200RFKEAHP","541-200S","http://www.digikey.com/product-detail/en/vishay-dale/CRCW0603200RFKEAHP/541-200SCT-ND/5326826","_","_"
-"RES_1_0603____","Dipoles_SMD:R_0603","http://www.vishay.com/docs/20043/crcwhpe3.pdf","Vishay","CRCW0603200RFKEAHP","541-200S","http://www.digikey.com/product-detail/en/vishay-dale/CRCW0603200RFKEAHP/541-200SCT-ND/5326826","_","_"
+"RES_200_0603_1/4_1%","Dipoles_SMD:R_0603","http://www.vishay.com/docs/20043/crcwhpe3.pdf","Vishay","CRCW0603200RFKEAHP","541-200S","http://www.digikey.com/product-detail/en/vishay-dale/CRCW0603200RFKEAHP/541-200SCT-ND/5326826","_","_"
+"RES_200_0603____","Dipoles_SMD:R_0603","http://www.vishay.com/docs/20043/crcwhpe3.pdf","Vishay","CRCW0603200RFKEAHP","541-200S","http://www.digikey.com/product-detail/en/vishay-dale/CRCW0603200RFKEAHP/541-200SCT-ND/5326826","_","_"
+"RES_10k_0603_1/4_1%","Dipoles_SMD:R_0603","http://www.vishay.com/docs/20065/rcse3.pdf","Vishay","RCS060310K0FKEA","541-2795","http://www.digikey.com/product-detail/en/vishay-dale/RCS060310K0FKEA/541-2795-1-ND/5867088","_","_"
+"RES_10k_0603____","Dipoles_SMD:R_0603", "http://www.vishay.com/docs/20065/rcse3.pdf","Vishay","RCS060310K0FKEA","541-2795",  "http://www.digikey.com/product-detail/en/vishay-dale/RCS060310K0FKEA/541-2795-1-ND/5867088","_","_"
 ## RESISTOR 0402
 "RES_1_0402____","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW04021R00FKED","541-1.00LL","http://www.digikey.com/product-detail/en/CRCW04021R00FKED/541-1.00LLCT-ND/1961882","_","_"
 "RES_1_0402_1/16_1%","Dipoles_SMD:R_0402","http://www.vishay.com/docs/20035/dcrcwe3.pdf","Vishay","CRCW04021R00FKED","541-1.00LL","http://www.digikey.com/product-detail/en/CRCW04021R00FKED/541-1.00LLCT-ND/1961882","_","_"
