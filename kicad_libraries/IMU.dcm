@@ -12,4 +12,9 @@ K IMU Vectornav VN-100
 F http://www.vectornav.com/docs/default-source/documentation/vn-100-documentation/UM001.pdf?sfvrsn=10
 $ENDCMP
 #
+$CMP uIMU-2
+D InertialSense IMU
+K uIMU-2 IMU InertialSense
+$ENDCMP
+#
 #End Doc Library
