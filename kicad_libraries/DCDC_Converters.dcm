@@ -1,5 +1,11 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP LD39150PU
+D 1.5A LDO DFN6 Low Dropout voltage
+K LDO DFN6
+F http://www.st.com/content/ccc/resource/technical/document/datasheet/4d/39/ee/07/53/02/48/d0/CD00150601.pdf/files/CD00150601.pdf/jcr:content/translations/en.CD00150601.pdf
+$ENDCMP
+#
 $CMP LTM4622
 D Dual 2.5 DC DC converter
 K LTM4622 DualBuck LGA25
@@ -10,6 +16,24 @@ $CMP LTM4623
 D 3A DC-DC converter 
 K DC-DC buck converter LGA
 F http://cds.linear.com/docs/en/datasheet/4623fa.pdf
+$ENDCMP
+#
+$CMP mic5302
+D LDO 1.8V Ultra low dropout
+K LDO 1,8V
+F http://ww1.microchip.com/downloads/en/DeviceDoc/mic5302.pdf
+$ENDCMP
+#
+$CMP mic5325
+D LDO Ultra low dropout ULDO MLF6 400mA
+K LDO
+F http://ww1.microchip.com/downloads/en/DeviceDoc/mic5325.pdf
+$ENDCMP
+#
+$CMP mic5330
+D Dual LDO Ultra low dropout
+K LDO
+F http://ww1.microchip.com/downloads/en/DeviceDoc/mic5330.pdf
 $ENDCMP
 #
 #End Doc Library
