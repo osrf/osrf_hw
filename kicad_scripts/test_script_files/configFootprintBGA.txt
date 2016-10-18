@@ -1,0 +1,10 @@
+# name of the component and the files generated
+name=BGA324C80P18X18_1500X1500X150
+# Description of the component
+Description= 18x18 BGA 0.8mm pitch 15x15mm
+# keywords displayed when you use the component inside kicad
+keywords=BGA 18x18 pitch 0.4mm
+# directory to store the generated files
+#outLibrary=/home/mikael/kicad_ws/osrf_hw/kicad_modules/testScript.pretty
+outLibrary=/home/mikael/work/kicad_ws/osrf_hw/kicad_modules/BGA.pretty
+

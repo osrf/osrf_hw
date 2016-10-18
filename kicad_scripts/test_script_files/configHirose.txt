@@ -1,0 +1,12 @@
+# name of the component and the files generated
+name=DF40C_10DP_0-4V
+# Description of the component
+Description=Hirose Stack header 02x05 0.4mm pitch
+# keywords displayed when you use the component inside kicad
+keywords=Hirose Header 02x05 0.4mm
+#
+ncontacts=10
+# directory to store the generated files
+#outLibrary=/home/mikael/kicad_ws/osrf_hw/kicad_modules/testScript.pretty
+outLibrary=/home/mikael/work/kicad_ws/osrf_hw/kicad_modules/Hirose.pretty
+

@@ -1,0 +1,29 @@
+# name of the component and the files generated
+name=SAM-S70-144BGA
+# alternative name for the same symbol
+alias=
+# designator for your component [C,D,FB,R,L,U,P,J,Y,SW]
+prefix=U
+# Description of the component
+Description=Atmel Cortex-M7 300MHz, 2048kB Flash,
+# URI of component datasheet
+datasheet=http://www.atmel.com/Images/Atmel-11242-32-bit-Cortex-M7-Microcontroller-SAM-S70Q-SAM-S70N-SAM-S70J_Datasheet.pdf
+# keywords displayed when you use the component inside kicad
+keywords=ARM Cortex-M7 SAM S70
+# substrings to look for when associating footprint, for example: *QFN*,32QFN*,QFN_32*
+footprintFormat=BGA144C80P12X12_1000X1000*
+# File containing pin definition of the component. Expected format: PIN_NAME,PIN_NUMBER
+PinoutFile=/home/mikael/work/kicad_ws/osrf_hw/kicad_scripts/SAM-S70-144lead_pinout.csv
+# prefix added to pinName in pinout file not provided. default: "PIN_", meaning pin 1 will be named PIN_1
+PinFormat=
+# directory to store the generated files, default: Current Directory
+outLibrary=/home/mikael/work/kicad_ws/osrf_hw/kicad_libraries/atmel.lib
+Package=BGA144
+# manufacturer name
+MFN=Atmel
+# manufacturer part number
+MFP=ATSAMS70Q21A
+# digikey part number
+D1PN=ATSAMS70Q21A
+# digikey part link/URI
+D1PL=http://www.digikey.com/product-detail/en/ATSAMS70Q21A-CN/ATSAMS70Q21A-CN-ND/5235937

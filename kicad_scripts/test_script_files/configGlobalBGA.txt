@@ -1,0 +1,10 @@
+# name of the component and the files generated
+name=BGA100C80P10X10_1000X1000X150
+# Description of the component
+Description=10x10 BGA 0.8mm pitch 10x10mm
+# keywords displayed when you use the component inside kicad
+keywords=BGA 10x10 pitch 0.8mm
+# directory to store the generated footprint
+outLibrary=/home/mikael/work/kicad_ws/osrf_hw/kicad_modules/testScript.pretty
+# directory to store the generated 3d model files
+3dModelPath=/home/mikael/work/kicad_ws/osrf_hw_nonfree/testScript.3dshapes

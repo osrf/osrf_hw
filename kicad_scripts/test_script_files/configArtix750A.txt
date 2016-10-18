@@ -1,0 +1,21 @@
+# name of the component and the files generated
+name=xc7a50tcpg236pkg
+# alternative name for the same symbol
+alias=
+# designator for your component [C,D,FB,R,L,U,P,J,Y,SW]
+prefix=U
+# Description of the component
+Description=Artix7a50tcpg236
+# URI of component datasheet
+datasheet=http://www.xilinx.com/support/documentation/data_sheets/ds180_7Series_Overview.pdf
+# keywords displayed when you use the component inside kicad
+keywords=Artix7 xc7a50 cpg236
+# substrings to look for when associating footprint, for example: *QFN*,32QFN*,QFN_32*
+footprintFormat=BGA236*
+# File containing pin definition of the component. Expected format: PIN_NAME,PIN_NUMBER
+PinoutFile=/home/mikael/work/kicad_ws/osrf_hw/kicad_scripts/xc7a50tcpg236pkg.csv
+# prefix added to pinName in pinout file not provided. default: "PIN_", meaning pin 1 will be named PIN_1
+PinFormat=
+# directory to store the generated files, default: Current Directory
+outLibrary=/home/mikael/work/kicad_ws/osrf_hw/kicad_libraries/artix7.lib
+Package=BGA324

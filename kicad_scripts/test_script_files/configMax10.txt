@@ -1,0 +1,21 @@
+# name of the component and the files generated
+name=MAX10m50da-484
+# alternative name for the same symbol
+alias=
+# designator for your component [C,D,FB,R,L,U,P,J,Y,SW]
+prefix=U
+# Description of the component
+Description=Altera Max10 484 pin FPGA
+# URI of component datasheet
+datasheet=https://www.altera.com/en_US/pdfs/literature/hb/max-10/m10_datasheet.pdf
+# keywords displayed when you use the component inside kicad
+keywords=FPGA Altera Max10 50k BGA484
+# substrings to look for when associating footprint, for example: *QFN*,32QFN*,QFN_32*
+footprintFormat=BGA484C80P22X22_2300X2300*
+# File containing pin definition of the component. Expected format: PIN_NAME,PIN_NUMBER
+PinoutFile=/home/mikael/work/kicad_ws/osrf_hw/kicad_scripts/10m50damodified.csv
+# prefix added to pinName in pinout file not provided. default: "PIN_", meaning pin 1 will be named PIN_1
+PinFormat=
+# directory to store the generated files, default: Current Directory
+outLibrary=/home/mikael/work/kicad_ws/osrf_hw/kicad_libraries/altera.lib
+Package=BGA484

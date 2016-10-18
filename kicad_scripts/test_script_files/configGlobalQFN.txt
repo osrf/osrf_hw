@@ -1,0 +1,10 @@
+# name of the component and the files generated
+name=QFN50P500X500X100-28_315X315
+# Description of the component
+Description=QFN 28pin 0.5mm pitch 5x5mm
+# keywords displayed when you use the component inside kicad
+keywords=QFN 28pin 0.5mm pitch 5x5mm
+# directory to store the generated footprint
+outLibrary=/home/mikael/work/kicad_ws/osrf_hw/kicad_modules/testScript.pretty
+# directory to store the generated 3d model files
+3dModelPath=/home/mikael/work/kicad_ws/osrf_hw_nonfree/testScript.3dshapes
