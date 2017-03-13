@@ -239,7 +239,7 @@ else:
     fileout = dict_param['name']
     print('creating a new library: ' + fileout)
 print(fileout)
-docstring = 'EESchema-DOCLIB Version  2.0\n#\n$CMP '+dict_param['name']+'\n'
+docstring = 'EESchema-DOCLIB  Version 2.0\n#\n$CMP '+dict_param['name']+'\n'
 docstring += 'D ' + dict_param['Description'] + '\n'
 docstring += 'K ' + dict_param['keywords'] + '\n'
 docstring += 'F ' + dict_param['datasheet'] + '\n'
