@@ -1,21 +1,21 @@
 # name of the component and the files generated
-name=Xilinxtest
+name=XC7A100T-FTG256
 # alternative name for the same symbol
 alias=
 # designator for your component [C,D,FB,R,L,U,P,J,Y,SW]
 prefix=U
 # Description of the component
-Description=Xilinx test
+Description=Xilinx Artix-7
 # URI of component datasheet
 datasheet=
 # keywords displayed when you use the component inside kicad
 keywords=FPGA Xilinx
 # substrings to look for when associating footprint, for example: *QFN*,32QFN*,QFN_32*
-footprintFormat=BGA484*
+footprintFormat=BGA256*
 # File containing pin definition of the component. Expected format: PIN_NAME,PIN_NUMBER
-PinoutFile=/home/mikael/work/kicad_ws/osrf_hw/kicad_scripts/xc7k480tffg1156pkg.csv
+PinoutFile=/home/mquigley/hw/osrf_hw/kicad_scripts/xc7a100tftg256pkg.csv
 # prefix added to pinName in pinout file not provided. default: "PIN_", meaning pin 1 will be named PIN_1
 PinFormat=
 # directory to store the generated files, default: Current Directory
-outLibrary=/home/mikael/work/kicad_ws/osrf_hw/kicad_libraries/xilinxtest.lib
-Package=BGA484
+outLibrary=/home/mquigley/hw/osrf_hw/kicad_libraries/artix7ftg256.lib
+Package=BGA256

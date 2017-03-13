@@ -1,9 +1,9 @@
-EESchema-LIBRARY Version 2.2 Date: 12/10/2015-17:33:37
+EESchema-LIBRARY Version 2.3
 #encoding utf-8
 #
 # Artix7-484
 #
-DEF Artix7-484 U 0 40 Y Y 9 F N
+DEF Artix7-484 U 0 40 Y Y 9 L N
 F0 "U" 0 0 50 H V C C
 F1 "Artix7-484" 0 -100 50 H V C C
 F2 "BGA:BGA484C100P22X22_2300X2300X185" 0 0 50 H I C C

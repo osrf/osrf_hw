@@ -153,7 +153,7 @@ type_pin = 'U'
 text_size = 50
 step = 100
 std_string = '" 0 0 50 H I C C'
-outstring = 'EESchema-LIBRARY Version 2.2 Date: ' + time.strftime("%d/%m/%Y") + '-' + time.strftime('%H:%M:%S') + '\n'
+outstring = 'EESchema-LIBRARY Version 2.3\n'
 outstring += '#encoding utf-8\n#\n# ' + dict_param['name'] + '\n#\nDEF '
 #create a component with all the fields
 outstring += dict_param['name'] + ' U 0 40 Y Y '+ str(len(banks)) + ' F N\n'
@@ -239,7 +239,7 @@ else:
     fileout = dict_param['name']
     print('creating a new library: ' + fileout)
 print(fileout)
-docstring = 'EESchema-DOCLIB Version 2.0\n#\n$CMP '+dict_param['name']+'\n'
+docstring = 'EESchema-DOCLIB Version  2.0\n#\n$CMP '+dict_param['name']+'\n'
 docstring += 'D ' + dict_param['Description'] + '\n'
 docstring += 'K ' + dict_param['keywords'] + '\n'
 docstring += 'F ' + dict_param['datasheet'] + '\n'
