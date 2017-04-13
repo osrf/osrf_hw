@@ -13,7 +13,7 @@ F http://cds.linear.com/docs/en/datasheet/4622fa.pdf
 $ENDCMP
 #
 $CMP LTM4623
-D 3A DC-DC converter 
+D 3A DC-DC converter
 K DC-DC buck converter LGA
 F http://cds.linear.com/docs/en/datasheet/4623fa.pdf
 $ENDCMP
