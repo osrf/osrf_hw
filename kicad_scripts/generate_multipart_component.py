@@ -147,6 +147,7 @@ banks = import_csv(dict_param['PinoutFile'])
 if banks == {}:
   print('parsing failed verify the format of your CSV file')
   sys.exit()
+print(banks)
 #name = 'testBanks'
 length = 200
 type_pin = 'U'
