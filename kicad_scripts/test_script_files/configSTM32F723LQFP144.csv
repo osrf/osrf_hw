@@ -1,0 +1,29 @@
+# name of the component and the files generated
+name=STM32F723ZET6
+# alternative name for the same symbol
+alias=
+# designator for your component [C,D,FB,R,L,U,P,J,Y,SW]
+prefix=U
+# Description of the component
+Description=STM32F723 in LQFP144
+# URI of component datasheet
+datasheet=
+# keywords displayed when you use the component inside kicad
+keywords=STM32F7
+# substrings to look for when associating footprint, for example: *QFN*,32QFN*,QFN_32*
+footprintFormat=
+# File containing pin definition of the component. Expected format: PIN_NAME,PIN_NUMBER
+PinoutFile=stm32f723lqfp144.csv
+# prefix added to pinName in pinout file not provided. default: "PIN_", meaning pin 1 will be named PIN_1
+PinFormat=
+# directory to store the generated files, default: Current Directory
+outLibrary=stm32f723.lib
+Package=LQFP144
+# manufacturer name
+MFN=ST Microelectronics
+# manufacturer part number
+MFP=STM32F723ZET6
+# digikey part number
+D1PN=497-17189
+# digikey part link/URI
+D1PL=https://www.digikey.com/product-detail/en/stmicroelectronics/STM32F723ZET6/497-17189-ND/6621776
