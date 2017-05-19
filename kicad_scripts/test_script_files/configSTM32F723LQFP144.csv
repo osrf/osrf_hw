@@ -11,7 +11,7 @@ datasheet=
 # keywords displayed when you use the component inside kicad
 keywords=STM32F7
 # substrings to look for when associating footprint, for example: *QFN*,32QFN*,QFN_32*
-footprintFormat=
+footprintFormat=Housings_QFP:LQFP-144_20x20mm_Pitch0.5mm
 # File containing pin definition of the component. Expected format: PIN_NAME,PIN_NUMBER
 PinoutFile=stm32f723lqfp144.csv
 # prefix added to pinName in pinout file not provided. default: "PIN_", meaning pin 1 will be named PIN_1

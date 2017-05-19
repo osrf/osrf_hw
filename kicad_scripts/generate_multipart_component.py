@@ -63,8 +63,8 @@ def import_csv(filename):
           if string != '':
             string += '/'
           string+= row[i]
-      if row[bank_idx] != '-' and row[bank_idx] != '':
-        string+= '/BANK'+row[bank_idx]
+      #if row[bank_idx] != '-' and row[bank_idx] != '':
+      #  string+= '/BANK'+row[bank_idx]
       banks[row[bank_idx]][row[-1]]=string
   return banks
 
@@ -93,6 +93,14 @@ def rect_corners(nb_pin, nbside, step):#, stepy, initoffsetx, initoffsety):
         res = correct_modulo_table(res)
     return res
         
+def pin_name_to_sort_key(s):
+    if s[0] != 'P':
+        return s
+    if not s[2].isdigit():
+        return s
+    pin_name_token = s.split("/")[0]
+    return int(pin_name_token[2:])
+
 ###############################################
 ##### Variable declaration/initialization #####
 ###############################################
@@ -190,16 +198,16 @@ unit = 1
 for key,val in sorted(banks.items()):
   #create a rectangle for each bank
   npin = len(banks[key])
-  halfnpin = npin /2
-  [rectxmin,rectymin,rectxmax,rectymax] = rect_corners(npin,2,step)
+  #halfnpin = npin /2
+  [rectxmin,rectymin,rectxmax,rectymax] = rect_corners(npin,1,step)
   # modified rectx min and max according to lenght of pinname
   lenmax=0
   for keypin,value in sorted(banks[key].items(), key=operator.itemgetter(1)):
     if len(value) > lenmax:
       lenmax = len(value)
 #  print(lenmax)
-  rectxmax = max(300,int(lenmax * text_size / float(length) * 2*step))
-  rectxmin = -rectxmax
+  rectxmax = max(800,int(lenmax * text_size / float(length) * 2*step))
+  rectxmin = 0 #-rectxmax
   rectxmax = correct_modulo(rectxmax)
   rectxmin = correct_modulo(rectxmin)
 #  print(rectxmax)
@@ -207,18 +215,20 @@ for key,val in sorted(banks.items()):
               str(rectymax) + ' ' + str(unit) + ' 1 0 f\n'
   #add the pins
   index=0
-  sortedlist = sorted(banks[key].items(), key=operator.itemgetter(1))
+  #pins = banks[key].items()
+
+  sortedpins = sorted(banks[key].items(), key=lambda x: pin_name_to_sort_key(x[1]))
 #  print()
 #  print(sortedlist)
-  for keypin,value in sorted(banks[key].items(), key=operator.itemgetter(1)):
-    if index <= npin/2:
-      posx = rectxmin - length
-      posy = rectymin + step + (halfnpin-index) * step
-      side = 'R'
-    else:
-      posx = rectxmax + length
-      posy = rectymin + step + (npin-index) * step
-      side = 'L'
+  for keypin,value in sortedpins:
+    #if index <= npin/2:
+    #  posx = rectxmin - length
+    #  posy = rectymin + step + (halfnpin-index) * step
+    #  side = 'R'
+    #else:
+    posx = rectxmax + length
+    posy = rectymin + step + (npin-index) * step
+    side = 'L'
     outstring += 'X '+ value + ' ' + keypin + ' ' + str(posx) + ' ' +\
                 str(posy) + ' ' + str(length)\
                 + ' ' + side + ' ' + str(text_size) + ' ' + \
