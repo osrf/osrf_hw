@@ -1,4 +1,4 @@
-(module J8064D628ANL (layer F.Cu) (tedit 591E0F66)
+(module J8064D628ANL (layer F.Cu) (tedit 59233AF4)
   (fp_text reference REF** (at 0 -3) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -38,4 +38,9 @@
   (pad 9B thru_hole circle (at 0.508 11.176) (size 1.3716 1.3716) (drill 1.016) (layers *.Cu *.Mask))
   (pad 10B thru_hole circle (at 3.048 11.176) (size 1.3716 1.3716) (drill 1.016) (layers *.Cu *.Mask))
   (pad 12B thru_hole circle (at 13.4874 12.954) (size 1.3716 1.3716) (drill 1.016) (layers *.Cu *.Mask))
+  (model ${KIWORKSPACE}/osrf_hw/kicad_modules/Ethernet.pretty/3d/pulse_J8064D628ANL.step
+    (at (xyz 0 -0.3622047244094488 0))
+    (scale (xyz 1 1 1))
+    (rotate (xyz 0 0 0))
+  )
 )
