@@ -34,10 +34,22 @@ K 2 channel
 F http://www.ti.com/lit/ds/symlink/sn74avc2t244.pdf
 $ENDCMP
 #
+$CMP TXB0104PWR
+D 4bit bidirectional voltage translator
+K translator shifter 4bits
+F http://www.ti.com/lit/ds/symlink/txb0104.pdf
+$ENDCMP
+#
 $CMP TXB0106PWR
 D 6bit bidirectional voltage translator
 K translator shifter 6bits
 F http://www.ti.com/lit/ds/symlink/txb0106.pdf
+$ENDCMP
+#
+$CMP TXS0104EPWR
+D 4bit bidirectional voltage translator
+K translator shifter 4bits
+F http://www.ti.com/lit/ds/symlink/txb0104.pdf
 $ENDCMP
 #
 #End Doc Library
