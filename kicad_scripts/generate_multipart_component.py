@@ -67,7 +67,7 @@ def import_csv(filename):
                     string+= row[i]
             banks[row[bank_idx]][row[-1]]=string
 
-  return banks
+    return banks
 
 def correct_modulo_table(table):
     for r in table:
