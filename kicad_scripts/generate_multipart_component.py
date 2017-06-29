@@ -32,40 +32,41 @@ else:
 def import_csv(filename): 
 # expected csv format: 
 # ....,BANK,..., PIN_NUMBER
-  if not os.path.isfile(filename):
-    print('pinfile not found')
-    return
-  with open(filename, mode='r') as infile2:
-    first = True;
-    reader2 = csv.reader(infile2)
-    banks={}
-    for row in reader2:
-      if first:
-        for i in range(len(row)):
-          if row[i].find('Bank') != -1:
-            bank_idx = i
-            break
-        first = False
-        continue
-      banks[row[bank_idx]]={}
-  with open(filename, mode='r') as infile:
-    first = True;
-    reader = csv.reader(infile)
-    for row in reader:
-      if first:
-        first = False
-        continue
-      string = ''
-      for i in range(len(row)-1):
-        if i == bank_idx:
-          continue
-        if row[i] != '-' and row[i] != '':
-          if string != '':
-            string += '/'
-          string+= row[i]
-      #if row[bank_idx] != '-' and row[bank_idx] != '':
-      #  string+= '/BANK'+row[bank_idx]
-      banks[row[bank_idx]][row[-1]]=string
+    if not os.path.isfile(filename):
+        print('pinfile not found')
+        return
+
+    with open(filename, mode='r') as infile2:
+        first = True
+        reader2 = csv.reader(infile2)
+        banks = {}
+        for row in reader2:
+            if first:
+                for i in range(len(row)):
+                    if row[i].find('Bank') != -1:
+                        bank_idx = i
+                        break
+                first = False
+                continue
+            banks[row[bank_idx]] = []
+
+    with open(filename, mode='r') as infile:
+        first = True
+        reader = csv.reader(infile)
+        for row in reader:
+            if first:
+                first = False
+                continue
+            string = ''
+            for i in range(len(row)-1):
+                if i == bank_idx:
+                    continue
+                if row[i] != '-' and row[i] != '':
+                    if string != '':
+                        string += '/'
+                    string+= row[i]
+            banks[row[bank_idx]][row[-1]]=string
+
   return banks
 
 def correct_modulo_table(table):
@@ -78,11 +79,12 @@ def correct_modulo(val):
   if val%100 != 0:
     val -= val%100
   return val
+
 def rect_corners(nb_pin, nbside, step):#, stepy, initoffsetx, initoffsety):
 # return coordinate of top-left and bottom-right corner of the schematic rectangle
     res = []
     if nbside==1:
-        res = [-step,-(step + nb_pin/2*step), step, step + nb_pin/2*step]
+        res = [-step,-(2*step + nb_pin/2*step), step, step + nb_pin/2*step]
         res = correct_modulo_table(res)
     elif nbside == 2:
             res = [-2*step,-nb_pin/4*step-step,2*step,nb_pin/4*step+step]
@@ -200,7 +202,7 @@ for key,val in sorted(banks.items()):
   npin = len(banks[key])
   #halfnpin = npin /2
   [rectxmin,rectymin,rectxmax,rectymax] = rect_corners(npin,1,step)
-  # modified rectx min and max according to lenght of pinname
+  # modified rectx min and max according to length of pinname
   lenmax=0
   for keypin,value in sorted(banks[key].items(), key=operator.itemgetter(1)):
     if len(value) > lenmax:
@@ -217,10 +219,14 @@ for key,val in sorted(banks.items()):
   index=0
   #pins = banks[key].items()
 
-  sortedpins = sorted(banks[key].items(), key=lambda x: pin_name_to_sort_key(x[1]))
+  should_sort_pins = False  # TODO: parameterize this
+  pins = banks[key].items()
+  if should_sort_pins:
+    pins = sorted(pins, key=lambda x: pin_name_to_sort_key(x[1]))
+
 #  print()
 #  print(sortedlist)
-  for keypin,value in sortedpins:
+  for keypin,value in pins:
     #if index <= npin/2:
     #  posx = rectxmin - length
     #  posy = rectymin + step + (halfnpin-index) * step
