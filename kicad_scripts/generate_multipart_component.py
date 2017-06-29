@@ -29,9 +29,9 @@ else:
 #TODO adapt it for uControllers
 #FIXME assumes that last column is the pin number
 #FIXME assumes that the component has several banks and that one column contains "Bank" string
-def import_csv(filename): 
 # expected csv format: 
 # ....,BANK,..., PIN_NUMBER
+def import_csv(filename):
     if not os.path.isfile(filename):
         print('pinfile not found')
         return
@@ -48,7 +48,7 @@ def import_csv(filename):
                         break
                 first = False
                 continue
-            banks[row[bank_idx]] = []
+            banks[row[bank_idx]] = OrderedDict()
 
     with open(filename, mode='r') as infile:
         first = True
@@ -65,7 +65,7 @@ def import_csv(filename):
                     if string != '':
                         string += '/'
                     string+= row[i]
-            banks[row[bank_idx]][row[-1]]=string
+            banks[row[bank_idx]][row[-1]] = string
 
     return banks
 
