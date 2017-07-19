@@ -546,11 +546,6 @@ D USB Type B connector
 K connector USB USB_B
 $ENDCMP
 #
-$CMP USB_OTG
-D USB micro/mini connector
-K connector USB USB_OTG USB_mini USB_micro
-$ENDCMP
-#
 $CMP XLR3
 D 3 pins
 K connector
