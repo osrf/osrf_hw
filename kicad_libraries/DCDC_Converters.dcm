@@ -6,6 +6,10 @@ K LDO DFN6
 F http://www.st.com/content/ccc/resource/technical/document/datasheet/4d/39/ee/07/53/02/48/d0/CD00150601.pdf/files/CD00150601.pdf/jcr:content/translations/en.CD00150601.pdf
 $ENDCMP
 #
+$CMP LMZ31707
+D LMZ31707
+$ENDCMP
+#
 $CMP LTM4622
 D Dual 2.5 DC DC converter
 K LTM4622 DualBuck LGA25
