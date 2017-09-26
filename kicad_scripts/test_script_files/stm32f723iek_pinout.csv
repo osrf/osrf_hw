@@ -1,4 +1,4 @@
-bank,pin name,alternate functions,pin number
+Bank,pin name,alternate functions,pin number
 0,VSS,,D5
 0,VSS,,D7
 0,VSS,,D8

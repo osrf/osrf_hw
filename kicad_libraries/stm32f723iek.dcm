@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP STM32F723IEK
+D STM32F723 in BGA176
+K STM32F7
+$ENDCMP
+#
+#End Doc Library
