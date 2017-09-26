@@ -1,0 +1,29 @@
+# name of the component and the files generated
+name=STM32F723IEK
+# alternative name for the same symbol
+alias=
+# designator for your component [C,D,FB,R,L,U,P,J,Y,SW]
+prefix=U
+# Description of the component
+Description=STM32F723 in BGA176
+# URI of component datasheet
+datasheet=
+# keywords displayed when you use the component inside kicad
+keywords=STM32F7
+# substrings to look for when associating footprint, for example: *QFN*,32QFN*,QFN_32*
+footprintFormat=STM32_UFBGA176
+# File containing pin definition of the component. Expected format: PIN_NAME,PIN_NUMBER
+PinoutFile=stm32f723iek_pinout.csv
+# prefix added to pinName in pinout file not provided. default: "PIN_", meaning pin 1 will be named PIN_1
+PinFormat=
+# directory to store the generated files, default: Current Directory
+outLibrary=stm32f723iek.lib
+Package=STM32_UFBGA176
+# manufacturer name
+MFN=ST Microelectronics
+# manufacturer part number
+MFP=STM32F723IEK
+# digikey part number
+D1PN=497-17186
+# digikey part link/URI
+D1PL=https://www.digikey.com/products/en?keywords=stm32f723iek
