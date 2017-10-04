@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP 24AA02
+D I2C Serial EEPROM, 32kb
+K I2C Serial EEPROM
+F http://ww1.microchip.com/downloads/en/DeviceDoc/22124D.pdf
+$ENDCMP
+#
+$CMP 24AA32
+D I2C Serial EEPROM, 32kb
+K I2C Serial EEPROM
+F http://ww1.microchip.com/downloads/en/DeviceDoc/22124D.pdf
+$ENDCMP
+#
+#End Doc Library
