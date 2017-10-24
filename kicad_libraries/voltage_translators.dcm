@@ -1,5 +1,11 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP 74AUP1G34
+D Single Buffef Gate, Low-Voltage CMOS
+K Single Gate Buff LVC CMOS
+F http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf
+$ENDCMP
+#
 $CMP 74AVCH8T245
 D 8bit voltage translator
 K translator shifter
@@ -8,6 +14,12 @@ $ENDCMP
 $CMP 74AVCH8T245-1EP
 D 8bit voltage translator
 K translator shifter
+$ENDCMP
+#
+$CMP 74LVC1G34
+D Single Buffef Gate, Low-Voltage CMOS
+K Single Gate Buff LVC CMOS
+F http://www.ti.com/lit/sg/scyt129e/scyt129e.pdf
 $ENDCMP
 #
 $CMP SI53306
