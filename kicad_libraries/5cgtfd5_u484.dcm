@@ -3,6 +3,7 @@ EESchema-DOCLIB  Version 2.0
 $CMP 5CGTFD5U19
 D Intel Cyclone V GT in U484
 K FPGA Intel Cyclone V GT
+F 
 $ENDCMP
 #
 #End Doc Library
