@@ -58,6 +58,12 @@ K translator shifter 6bits
 F http://www.ti.com/lit/ds/symlink/txb0106.pdf
 $ENDCMP
 #
+$CMP TXB0106RGY
+D 6bit bidirectional voltage translator
+K translator shifter 6bits
+F http://www.ti.com/lit/ds/symlink/txb0106.pdf
+$ENDCMP
+#
 $CMP TXB0108RGY
 D 8bit bidirectional voltage translator
 K translator shifter 8bits
@@ -68,6 +74,12 @@ $CMP TXS0104EPWR
 D 4bit bidirectional voltage translator
 K translator shifter 4bits
 F http://www.ti.com/lit/ds/symlink/txb0104.pdf
+$ENDCMP
+#
+$CMP TXS0108RGY
+D 8bit bidirectional voltage translator
+K translator shifter 8bits
+F http://www.ti.com/lit/ds/symlink/txb0108.pdf
 $ENDCMP
 #
 #End Doc Library
