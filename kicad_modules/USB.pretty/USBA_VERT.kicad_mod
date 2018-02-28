@@ -16,7 +16,7 @@
   (pad 5 thru_hole circle (at -6.57 2.71) (size 3 3) (drill 2.3) (layers *.Cu *.Mask))
   (pad 5 thru_hole circle (at 6.57 2.71) (size 3 3) (drill 2.3) (layers *.Cu *.Mask))
   (model ${KIWORKSPACE}/osrf_hw/kicad_modules/USB.pretty/3d/wurth_vert_usb_614004135023.step
-    (at (xyz 0 -0.05511811023622047 0.3070866141732284))
+    (offset (xyz 0 -1.39999997897411 7.799999882855755))
     (scale (xyz 1 1 1))
     (rotate (xyz 90 0 180))
   )
