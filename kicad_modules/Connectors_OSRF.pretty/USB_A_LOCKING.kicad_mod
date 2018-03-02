@@ -24,7 +24,7 @@
   (pad 3 thru_hole circle (at 4.57 0 270) (size 1.5 1.5) (drill 1) (layers *.Cu *.Mask))
   (pad 4 thru_hole circle (at 7.11 0 270) (size 1.5 1.5) (drill 1) (layers *.Cu *.Mask))
   (model ${KIWORKSPACE}/osrf_hw/kicad_modules/Connectors.pretty/3d/M-LUSB-A111-00-REVT2.STEP
-    (at (xyz 0.1377952755905512 0.421259842519685 0.1574803149606299))
+    (offset (xyz 3.499999947435274 10.69999983930212 3.999999939926027))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))
   )

@@ -9,7 +9,7 @@
   (pad 2 thru_hole circle (at -1.5 0) (size 1.42 1.42) (drill 1.02) (layers *.Cu *.Mask))
   (pad 3 thru_hole circle (at 0 4.32) (size 3.4 3.4) (drill 3) (layers *.Cu *.Mask))
   (model ${KIWORKSPACE}/osrf_hw_nonfree/Connectors.3dshapes/molex_436500201.step
-    (at (xyz 0 -0.1574803149606299 0.09448818897637795))
+    (offset (xyz 0 -3.999999939926027 2.399999963955616))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))
   )

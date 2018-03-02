@@ -14,7 +14,7 @@
   (pad MNT thru_hole circle (at -4.5 1.96) (size 1.6 1.6) (drill 1.27) (layers *.Cu *.Mask))
   (pad MNT thru_hole circle (at 4.5 1.96) (size 1.6 1.6) (drill 1.27) (layers *.Cu *.Mask))
   (model ${KIWORKSPACE}/osrf_hw_nonfree/Connectors_OSRF.3dshapes/molex_436500216.step
-    (at (xyz 0 0 0.1948818897637795))
+    (offset (xyz 0 0 4.949999925658457))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
   )

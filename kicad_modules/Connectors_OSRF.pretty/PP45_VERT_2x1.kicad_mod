@@ -12,12 +12,12 @@
   (pad 1 thru_hole oval (at 0 0) (size 6.5 3) (drill oval 5.23 1.27) (layers *.Cu *.Mask))
   (pad 2 thru_hole oval (at 7.9 0) (size 6.5 3) (drill oval 5.23 1.27) (layers *.Cu *.Mask))
   (model ${KIWORKSPACE}/osrf_hw_nonfree/Connectors_OSRF.3dshapes/anderson_1335g1.step
-    (at (xyz -0.1811023622047244 -1.913385826771654 0))
+    (offset (xyz -4.599999930914931 -48.59999927010124 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 90 0))
   )
   (model ${KIWORKSPACE}/osrf_hw_nonfree/Connectors_OSRF.3dshapes/anderson_1335g1.step
-    (at (xyz 0.1299212598425197 -1.913385826771654 0))
+    (offset (xyz 3.299999950438973 -48.59999927010124 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 90 0))
   )

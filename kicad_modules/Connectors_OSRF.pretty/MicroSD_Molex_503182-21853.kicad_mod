@@ -32,7 +32,7 @@
   (pad SW smd rect (at 6.805 -3.7475) (size 1.16 1.25) (layers F.Cu F.Paste F.Mask))
   (pad DET smd rect (at 6.805 4.6525) (size 1.16 1.2) (layers F.Cu F.Paste F.Mask))
   (model Connectors.3dshapes/MicroSD_Molex_503182-21853.wrl
-    (at (xyz 0 0.025 0.025))
+    (offset (xyz 0 0.6349999904632568 0.6349999904632568))
     (scale (xyz 0.3937 0.3937 0.3937))
     (rotate (xyz 0 0 0))
   )

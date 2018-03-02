@@ -16,7 +16,7 @@
   (pad MNT thru_hole circle (at -7.4 26.15) (size 2 2) (drill 1.2) (layers *.Cu *.Mask))
   (pad MNT thru_hole circle (at 7.4 26.15) (size 2 2) (drill 1.2) (layers *.Cu *.Mask))
   (model ${KIWORKSPACE}/osrf_hw_nonfree/Connectors.3dshapes/anderson_pp45_ra_2x2.step
-    (at (xyz -0.328740157480315 -1.417322834645669 0))
+    (offset (xyz -8.349999874595582 -35.99999945933424 0))
     (scale (xyz 1 1 1))
     (rotate (xyz 90 0 0))
   )
