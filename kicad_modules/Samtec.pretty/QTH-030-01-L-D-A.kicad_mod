@@ -86,7 +86,7 @@
   (pad GND thru_hole circle (at -9.24 -2.03) (size 1.02 1.02) (drill 1.02) (layers *.Cu *.Mask))
   (pad GND thru_hole circle (at 9.24 -2.03) (size 1.02 1.02) (drill 1.02) (layers *.Cu *.Mask))
   (model Samtec.3dshapes/QTH-030-01-L-D-A.wrl
-    (at (xyz 0 0 0.01))
+    (offset (xyz 0 0 0.2539999961853027))
     (scale (xyz 0.3937 0.3937 0.3937))
     (rotate (xyz -90 0 180))
   )
