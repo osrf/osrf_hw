@@ -1,0 +1,21 @@
+# name of the component and the files generated
+name=10CXyyy_F672
+# alternative name for the same symbol
+alias=
+# designator for your component [C,D,FB,R,L,U,P,J,Y,SW]
+prefix=U
+# Description of the component
+Description=Intel Cyclone 10 GX in F672
+# URI of component datasheet
+datasheet=
+# keywords displayed when you use the component inside kicad
+keywords=FPGA Intel Cyclone 10 GX
+# substrings to look for when associating footprint, for example: *QFN*,32QFN*,QFN_32*
+footprintFormat=INTEL_F672*
+# File containing pin definition of the component. Expected format: PIN_NAME,PIN_NUMBER
+PinoutFile=10cx_f672.csv
+# prefix added to pinName in pinout file not provided. default: "PIN_", meaning pin 1 will be named PIN_1
+PinFormat=
+# directory to store the generated files, default: Current Directory
+outLibrary=10cx_f672.lib
+Package=INTEL_F672
