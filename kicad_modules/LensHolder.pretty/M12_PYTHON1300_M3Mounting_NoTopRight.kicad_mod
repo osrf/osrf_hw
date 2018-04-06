@@ -9,7 +9,7 @@
   (pad 1 thru_hole circle (at -10.5 -10.5) (size 4 4) (drill 3.5) (layers *.Cu *.Mask))
   (pad 1 thru_hole circle (at -10.5 10.5) (size 4 4) (drill 3.5) (layers *.Cu *.Mask))
   (model ${KIWORKSPACE}/osrf_hw/kicad_modules/LensHolder.pretty/custom_m12_python1300.step
-    (at (xyz 0.007874015748031498 -0.05118110236220473 0.1968503937007874))
+    (offset (xyz 0.1999999969963014 -1.299999980475959 4.999999924907534))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 0))
   )

@@ -35,7 +35,7 @@
   (pad 13 smd rect (at 6 0) (size 1 2.75) (layers F.Cu F.Mask))
   (pad 14 smd rect (at 6 0) (size 1 2.75) (layers B.Cu B.Paste B.Mask))
   (model ${KISYS3DMOD}/Pin_Headers.3dshapes/Pin_Header_Straight_2x07.wrl
-    (at (xyz 0 0.05 -0.03937))
+    (offset (xyz 0 1.269999980926514 -0.9999979849815369))
     (scale (xyz 0.787 0.787 0.787))
     (rotate (xyz 90 0 0))
   )

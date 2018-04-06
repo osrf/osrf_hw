@@ -31,7 +31,7 @@
   (pad HOLE thru_hole circle (at 10 10) (size 2.54 2.54) (drill 2.15) (layers *.Cu *.Mask))
   (pad HOLE thru_hole circle (at 10 -10) (size 2.54 2.54) (drill 2.15) (layers *.Cu *.Mask))
   (model ${KIWORKSPACE}/osrf_hw_nonfree/LensHolder.3dshapes/Custom3MountingHoles_noTopLeft.wrl
-    (at (xyz 0 0 0.67))
+    (offset (xyz 0 0 17.01799974441528))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 180 0))
   )
