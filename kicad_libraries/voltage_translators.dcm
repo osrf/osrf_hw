@@ -46,6 +46,17 @@ K 2 channel
 F http://www.ti.com/lit/ds/symlink/sn74avc2t244.pdf
 $ENDCMP
 #
+$CMP SN74AVC8T245
+D 8bit voltage translator
+K translator shifter
+$ENDCMP
+#
+$CMP SN74LVC2T45
+D 2 Channel level shifter
+K 2 channel
+F http://www.ti.com/lit/ds/symlink/sn74avc2t244.pdf
+$ENDCMP
+#
 $CMP TXB0104PWR
 D 4bit bidirectional voltage translator
 K translator shifter 4bits
