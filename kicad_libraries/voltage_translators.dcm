@@ -92,6 +92,12 @@ K translator shifter 4bits
 F http://www.ti.com/lit/ds/symlink/txb0104.pdf
 $ENDCMP
 #
+$CMP TXS0108EPW
+D 8bit bidirectional voltage translator in TSSOP-20
+K translator shifter 8bits
+F http://www.ti.com/lit/ds/symlink/txb0108.pdf
+$ENDCMP
+#
 $CMP TXS0108RGY
 D 8bit bidirectional voltage translator
 K translator shifter 8bits
