@@ -1,4 +1,4 @@
-(module LENS_HOLDER_20MM_WITH_PINS (layer F.Cu) (tedit 5BC54558)
+(module LENS_HOLDER_20MM_WITH_PINS (layer F.Cu) (tedit 5BCD5EBB)
   (fp_text reference J8 (at 0 0.5) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -15,8 +15,8 @@
   (fp_line (start -9.5 9.5) (end -9.5 2.5) (layer F.SilkS) (width 1))
   (pad 1 thru_hole circle (at 10 0) (size 2.55 2.55) (drill 2.15) (layers *.Cu *.Mask))
   (pad 1 thru_hole circle (at -10 0) (size 2.55 2.55) (drill 2.15) (layers *.Cu *.Mask))
-  (pad 1 thru_hole circle (at -8.635 -2.265) (size 1.45 1.45) (drill 1.05) (layers *.Cu *.Mask))
-  (pad 1 thru_hole circle (at 8.635 2.265) (size 1.45 1.45) (drill 1.05) (layers *.Cu *.Mask))
+  (pad 1 thru_hole circle (at -9 -2) (size 1.45 1.45) (drill 1.05) (layers *.Cu *.Mask))
+  (pad 1 thru_hole circle (at 9 2) (size 1.45 1.45) (drill 1.05) (layers *.Cu *.Mask))
   (model ${KIWORKSPACE}/osrf_hw/kicad_modules/LensHolder.pretty/custom_m12_python1300.step
     (offset (xyz 0.1999999969963014 -1.299999980475959 4.999999924907534))
     (scale (xyz 1 1 1))
