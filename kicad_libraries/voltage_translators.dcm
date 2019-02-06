@@ -56,6 +56,11 @@ D 8bit voltage translator
 K translator shifter
 $ENDCMP
 #
+$CMP SN74AXCH8T245
+D 8bit voltage translator
+K translator shifter
+$ENDCMP
+#
 $CMP SN74LVC2T45
 D 2 Channel level shifter
 K 2 channel
