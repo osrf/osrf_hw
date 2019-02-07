@@ -1,0 +1,8 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP Jetson
+D Interface for TX2 module
+K Jetson TX2
+$ENDCMP
+#
+#End Doc Library
