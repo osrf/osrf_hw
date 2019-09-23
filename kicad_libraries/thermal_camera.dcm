@@ -1,0 +1,7 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MLX90640
+D Melexis 32x24 thermal sensor
+$ENDCMP
+#
+#End Doc Library
