@@ -7,7 +7,7 @@ DEF EN5322QI U 0 20 Y Y 1 F N
 F0 "U" 150 650 50 H V L CNN
 F1 "EN5322QI" 150 550 50 H V L CNN
 F2 "DCDC:Converter_DCDC_Intel_QFN-24_4x6mm_P0.65mm_ThermalVias" 150 -650 50 H I L CNN
-F3 "" 0 0 50 H I C CNN
+F3 "https://www.intel.sg/content/dam/www/programmable/us/en/pdfs/literature/ds/en5322qi_03454.pdf" 0 0 50 H I C CNN
 $FPLIST
  Converter*DCDC*Intel*QFN*4x6mm*P0.65mm*
 $ENDFPLIST
@@ -47,7 +47,7 @@ DEF LD39150PU U 0 40 Y Y 1 F N
 F0 "U" -250 350 60 H V C CNN
 F1 "LD39150PU" -350 -450 60 H V C CNN
 F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
+F3 "http://www.st.com/content/ccc/resource/technical/document/datasheet/4d/39/ee/07/53/02/48/d0/CD00150601.pdf/files/CD00150601.pdf/jcr:content/translations/en.CD00150601.pdf" 0 0 60 H I C CNN
 DRAW
 S -200 250 250 -350 0 1 0 f
 X GND 1 0 -550 200 U 50 50 1 1 I
@@ -483,13 +483,43 @@ X PAD 9 -500 -250 200 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
+# TPSM53604
+#
+DEF TPSM53604 U 0 40 Y Y 1 F N
+F0 "U" 550 -600 50 H V C CNN
+F1 "TPSM53604" 550 -600 50 H V C CNN
+F2 "DCDC:TI_B3QFN" 550 -600 50 H I C CNN
+F3 "" 550 -600 50 H I C CNN
+$FPLIST
+ *B3QFN*
+$ENDFPLIST
+DRAW
+S -300 500 400 -500 0 1 6 f
+X VIN 1 0 600 100 D 50 50 1 1 W
+X NC/GND 10 -400 0 100 R 50 50 1 1 I
+X NC/GND 11 -400 -100 100 R 50 50 1 1 I
+X AGND 12 0 -600 100 U 50 50 1 1 W
+X V5V 13 500 -200 100 L 50 50 1 1 O
+X VIN 14 100 600 100 D 50 50 1 1 W
+X PGND 15 100 -600 100 U 50 50 1 1 W
+X EN 2 -400 300 100 R 50 50 1 1 I
+X NC/GND 3 -400 -200 100 R 50 50 1 1 I
+X DNC 4 -400 200 100 R 50 50 1 1 N
+X DNC 5 -400 100 100 R 50 50 1 1 N
+X PGOOD 6 500 -100 100 L 50 50 1 1 O
+X VOUT 7 500 300 100 L 50 50 1 1 w
+X VOUT 8 500 200 100 L 50 50 1 1 w
+X FB 9 500 0 100 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
 # mic5302
 #
 DEF mic5302 U 0 40 Y Y 1 F N
 F0 "U" 0 400 60 H V C CNN
 F1 "mic5302" -450 -300 60 H V C CNN
 F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
+F3 "http://ww1.microchip.com/downloads/en/DeviceDoc/mic5302.pdf" 0 0 60 H I C CNN
 DRAW
 S -400 300 400 -200 0 1 0 f
 X EN 1 -600 100 200 R 50 50 1 1 I
@@ -506,7 +536,7 @@ DEF mic5325 U 0 40 Y Y 1 F N
 F0 "U" 0 400 60 H V C CNN
 F1 "mic5325" 0 -650 60 H V C CNN
 F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
+F3 "http://ww1.microchip.com/downloads/en/DeviceDoc/mic5325.pdf" 0 0 60 H I C CNN
 DRAW
 S -400 300 400 -350 0 1 0 f
 X VBIAS 1 -600 200 200 R 50 50 1 1 I
@@ -525,7 +555,7 @@ DEF mic5330 U 0 40 Y Y 1 F N
 F0 "U" 0 600 60 H V C CNN
 F1 "mic5330" 0 -650 60 H V C CNN
 F2 "" 0 0 60 H I C CNN
-F3 "" 0 0 60 H I C CNN
+F3 "http://ww1.microchip.com/downloads/en/DeviceDoc/mic5330.pdf" 0 0 60 H I C CNN
 DRAW
 S -400 300 400 -350 0 1 0 f
 X VIN 1 -600 200 200 R 50 50 1 1 I
