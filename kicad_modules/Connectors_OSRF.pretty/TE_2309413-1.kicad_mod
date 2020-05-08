@@ -1,4 +1,4 @@
-(module "TE_2309413-1" (layer F.Cu) (tedit 5E965930)
+(module "TE_2309413-1" (layer F.Cu) (tedit 5EB4FFD6)
   (fp_text reference "REF**" (at 31.7 8.1 unlocked) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -273,12 +273,12 @@
   (pad "260" smd rect (at -29.625 4.1) (size 0.3 1.75) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp fb286b75-47c1-4a34-bc89-73fa875ee7f2))
   (pad "261" smd rect (at -34.25 8) (size 2 3.5) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 8a701d98-8a8c-4f07-88ab-314dda913b9a))
   (pad "262" smd rect (at 41.25 12) (size 2 3.5) (layers "F.Cu" "F.Paste" "F.Mask") (tstamp 8a701d98-8a8c-4f07-88ab-314dda913b9a))
-  (model "/home/luca/hw/142-13668_A00_envelope_0927.stp"
+  (model "${KIWORKSPACE}/osrf_hw_nonfree/Jetson.pretty/142-13668_A00_envelope_0927.stp"
     (offset (xyz 36.3 -5.5 5.5))
     (scale (xyz 1 1 1))
     (rotate (xyz 0 0 180))
   )
-  (model "/home/luca/hw/c-2309413-1-1-3d.stp"
+  (model "${KIWORKSPACE}/osrf_hw_nonfree/Jetson.pretty/c-2309413-1-1-3d.stp"
     (offset (xyz 3.5 -20.8 4.5))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))
