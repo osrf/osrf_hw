@@ -1,4 +1,4 @@
-(module "USBA_DUAL_HOR" (layer F.Cu) (tedit 5EA8E5F9)
+(module "USBA_DUAL_HOR" (layer F.Cu) (tedit 5EC500D0)
   (fp_text reference "REF**" (at 0 -10.15) (layer F.SilkS)
     (effects (font (size 1 1) (thickness 0.15)))
   )
@@ -24,7 +24,7 @@
   (pad "2" thru_hole circle (at -1 -7.34) (size 1.5 1.5) (drill 0.92) (layers *.Cu *.Mask) (tstamp 2bebf9d2-d650-4492-84ee-c47732acdea4))
   (pad "1" thru_hole circle (at -3.5 -7.34) (size 1.5 1.5) (drill 0.92) (layers *.Cu *.Mask) (tstamp b0a9c2f1-ccb3-4873-8158-da39c6b55ea4))
   (model "/home/luca/hw/72309-8034BLFc.stp"
-    (offset (xyz 0 3.75 7.5))
+    (offset (xyz 0 8.75 7.5))
     (scale (xyz 1 1 1))
     (rotate (xyz -90 0 0))
   )
