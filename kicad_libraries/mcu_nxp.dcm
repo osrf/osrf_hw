@@ -1,3 +1,7 @@
 EESchema-DOCLIB  Version 2.0
 #
+$CMP LPC55S66JBD100
+D Dual core ARM Cortex M33 MCU
+$ENDCMP
+#
 #End Doc Library
