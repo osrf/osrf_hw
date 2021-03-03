@@ -680,7 +680,7 @@
       )
       (pin input line (at 30.48 -106.68 180) (length 5.08)
         (name "ETH1_A_N" (effects (font (size 1.27 1.27))))
-        (number "162" (effects (font (size 1.27 1.27))))
+        (number "A162" (effects (font (size 1.27 1.27))))
       )
       (pin input line (at 30.48 -109.22 180) (length 5.08)
         (name "ETH1_A_P" (effects (font (size 1.27 1.27))))
