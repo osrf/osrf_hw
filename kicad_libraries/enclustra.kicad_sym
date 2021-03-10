@@ -993,7 +993,7 @@
       )
       (pin input line (at -30.48 -86.36 0) (length 5.08)
         (name "B66_L17_AD10_E8_N" (effects (font (size 1.27 1.27))))
-        (number "A147" (effects (font (size 1.27 1.27))))
+        (number "B147" (effects (font (size 1.27 1.27))))
       )
       (pin input line (at -30.48 -88.9 0) (length 5.08)
         (name "GND" (effects (font (size 1.27 1.27))))
