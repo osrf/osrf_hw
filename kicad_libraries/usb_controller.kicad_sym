@@ -2491,11 +2491,11 @@
       )
     )
   )
-  (symbol "usb_controller:TSUSBC41" (in_bom yes) (on_board yes)
+  (symbol "usb_controller:TS5USBC41" (in_bom yes) (on_board yes)
     (property "Reference" "U" (id 0) (at 5.08 -12.7 0)
       (effects (font (size 1.27 1.27)))
     )
-    (property "Value" "TSUSBC41" (id 1) (at 0 12.7 0)
+    (property "Value" "TS5USBC41" (id 1) (at 0 12.7 0)
       (effects (font (size 1.27 1.27)))
     )
     (property "Footprint" "Package_BGA:Texas_DSBGA-12_1.36x1.86mm_Layout3x4_P0.5mm" (id 2) (at 0 -25.4 0)
@@ -2504,12 +2504,12 @@
     (property "Datasheet" "https://www.ti.com/lit/ds/symlink/ts5usbc41.pdf" (id 3) (at 0 -27.94 0)
       (effects (font (size 1.27 1.27)) hide)
     )
-    (symbol "TSUSBC41_0_1"
+    (symbol "TS5USBC41_0_1"
       (rectangle (start 10.16 -11.43) (end -10.16 11.43)
         (stroke (width 0.1524)) (fill (type background))
       )
     )
-    (symbol "TSUSBC41_1_1"
+    (symbol "TS5USBC41_1_1"
       (pin input line (at -12.7 -2.54 0) (length 2.54)
         (name "SEL1" (effects (font (size 1.27 1.27))))
         (number "A1" (effects (font (size 1.27 1.27))))
